@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Гигасправка — кейс Полины Ефремовой</title>
+  <meta name="description" content="Агентная архитектура поддержки умных устройств Sber Devices: агент решает поломки раньше, чем пользователь их заметит.">
+  <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/v2.css">
+  <link rel="stylesheet" href="css/case.css">
+</head>
+<body>
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Навигация">
+    <a href="v2.html" onclick="if(document.referrer&&new URL(document.referrer).origin===location.origin){history.back();return false}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Главная</a>
+    <span class="sep">/</span><span>Гигасправка</span>
+  </nav>
+
+  <!-- Шапка -->
+  <header class="head card">
+    <div class="tags"><span>Mobile</span><span>Agent UX</span><span>Sber Devices</span></div>
+    <img class="icon" src="assets/img/giga/app-icon.png" alt="" width="56" height="56">
+    <h1>Гигасправка</h1>
+    <p class="lead">Агентная архитектура поддержки для&nbsp;150&nbsp;тысяч пользователей умных устройств Sber. Агент решает поломки раньше, чем пользователь успевает&nbsp;их&nbsp;заметить.</p>
+    <dl class="meta">
+      <div><dt>Роль</dt><dd>Продуктовый дизайнер: исследование, концепция, UX-флоу,&nbsp;UI</dd></div>
+      <div><dt>Команда</dt><dd>5&nbsp;человек</dd></div>
+      <div><dt>Формат</dt><dd>Коммерческий проект для&nbsp;Sber Devices в&nbsp;Британской высшей школе&nbsp;дизайна</dd></div>
+      <div><dt>Год</dt><dd>2026</dd></div>
+    </dl>
+  </header>
+
+  <figure class="figure video">
+    <video class="autoplay" poster="assets/video/giga-cover-v2-poster.jpg" muted loop playsinline preload="metadata" aria-label="Прототип: ассистент находит проблему, показывает инструкцию и сообщает, что лампочка снова в сети">
+      <source src="assets/video/giga-cover-v2.webm" type="video/webm">
+      <source src="assets/video/giga-cover-v2.mp4" type="video/mp4">
+    </video>
+  </figure>
+
+  <!-- Кратко -->
+  <section class="brief card" aria-labelledby="brief-title">
+    <header class="sec-head"><span class="eyebrow" id="brief-title">Кратко</span></header>
+    <div class="brief-grid">
+      <div class="brief-item"><h3>Проблема</h3><p>150&nbsp;тысяч пользователей в&nbsp;месяц сталкиваются с&nbsp;поломками умных устройств. Треть идёт в&nbsp;поддержку, 4%&nbsp;просто бросают&nbsp;устройство.</p></div>
+      <div class="brief-item"><h3>Инсайт</h3><p>Новички не&nbsp;доверяют чат-ботам и&nbsp;не&nbsp;хотят разбираться в&nbsp;настройках&nbsp;— им нужна «простая кнопка», после которой всё&nbsp;работает.</p></div>
+      <div class="brief-item accent"><h3>Решение</h3><p>Агент сам замечает сбой, спрашивает ГигаЧат, находит инструкцию и&nbsp;чинит. Пользователь узнаёт о&nbsp;проблеме, когда она уже&nbsp;решена.</p></div>
+    </div>
+    <a class="btn" href="#solution">Смотреть решение <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a>
+  </section>
+
+  <!-- 01 Контекст -->
+  <section class="sec card">
+    <header><span class="eyebrow"><span class="num">01</span>&nbsp;· Контекст и&nbsp;проблема</span><h2>Каждый месяц 150&nbsp;тысяч пользователей сталкиваются с&nbsp;поломками умных&nbsp;устройств</h2></header>
+    <div class="text">
+      <p>Колонка не&nbsp;видит лампочку, телевизор не&nbsp;подключается к&nbsp;сети&nbsp;— и&nbsp;пользователь остаётся с&nbsp;проблемой один на&nbsp;один. Часть людей разбирается сама, часть идёт в&nbsp;поддержку, а&nbsp;часть просто перестаёт пользоваться&nbsp;устройством.</p>
+      <p>Это&nbsp;напрямую бьёт по <strong>CSI и&nbsp;NPS</strong> и&nbsp;ведёт к&nbsp;оттоку: брошенное устройство&nbsp;— потерянный пользователь&nbsp;экосистемы.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>63%</b><span>пытаются решить проблему сами</span></div>
+      <div class="stat"><b>33%</b><span>обращаются в&nbsp;поддержку</span></div>
+      <div class="stat"><b>4%</b><span>бросают устройство</span></div>
+    </div>
+  </section>
+
+  <!-- 02 Исследование -->
+  <section class="sec card">
+    <header><span class="eyebrow"><span class="num">02</span>&nbsp;· Исследование</span><h2>Прожили путь пользователя сами и&nbsp;поговорили с&nbsp;сотней&nbsp;людей</h2></header>
+    <div class="text">
+      <p>Мы&nbsp;покупали и&nbsp;настраивали устройства, ломали сценарии и&nbsp;звонили на&nbsp;900, чтобы пройти путь пользователя от&nbsp;первой ошибки до&nbsp;решения. Параллельно провели&nbsp;интервью.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>82</b><span>количественных интервью</span></div>
+      <div class="stat"><b>19</b><span>глубинных интервью</span></div>
+      <div class="stat"><b>2</b><span>интервью с&nbsp;сотрудниками поддержки</span></div>
+    </div>
+    <figure>
+      <div class="inner ph photo-slot"><span>Фото с&nbsp;интервью и&nbsp;полевого исследования</span></div>
+    </figure>
+    <h3 class="sub">Три сегмента аудитории&nbsp;— и&nbsp;осознанный выбор, на&nbsp;кого делать&nbsp;решение</h3>
+    <div class="tiles">
+      <div class="tile"><div class="seg-top"><img class="ava" src="assets/img/giga/case/seg-tech.jpg" alt="" width="56" height="56"><span class="badge">Сегмент</span></div><h3>Техногики</h3><p>Разбираются сами, поддержка им почти&nbsp;не&nbsp;нужна.</p></div>
+      <div class="tile"><div class="seg-top"><img class="ava" src="assets/img/giga/case/seg-confident.jpg" alt="" width="56" height="56"><span class="badge">Сегмент</span></div><h3>Уверенные&nbsp;пользователи</h3><p>Справляются, если подсказать, где&nbsp;искать.</p></div>
+      <div class="tile focus"><div class="seg-top"><img class="ava" src="assets/img/giga/case/seg-novice.jpg" alt="" width="56" height="56"><span class="badge">Фокус</span></div><h3>Технофобы-новички</h3><p>Теряются при&nbsp;первой ошибке&nbsp;— для&nbsp;них решение важнее&nbsp;всего.</p></div>
+    </div>
+    <h3 class="sub">Ключевые инсайты, которые определили&nbsp;решение</h3>
+    <ul class="list">
+      <li><strong>Не&nbsp;доверяют чат-ботам.</strong> Переписка с&nbsp;ботом воспринимается как&nbsp;отписка,&nbsp;а&nbsp;не&nbsp;помощь.</li>
+      <li><strong>Хотят «простую кнопку».</strong> Не&nbsp;разбираться в&nbsp;настройках, а&nbsp;нажать&nbsp;— и&nbsp;чтобы&nbsp;заработало.</li>
+      <li><strong>Боятся выглядеть смешно.</strong> Неловко звонить в&nbsp;поддержку с&nbsp;«глупым»&nbsp;вопросом.</li>
+      <li><strong>Не&nbsp;знают модель своего устройства</strong>&nbsp;— а&nbsp;без&nbsp;неё не&nbsp;найти нужную&nbsp;инструкцию.</li>
+    </ul>
+  </section>
+
+  <!-- 03 Решение -->
+  <section class="sec card">
+    <header><span class="eyebrow"><span class="num">03</span>&nbsp;· Решение</span><h2>Агент, который замечает и&nbsp;чинит проблему без&nbsp;участия&nbsp;пользователя</h2></header>
+    <div class="text">
+      <p>Вместо того чтобы ждать, пока человек сам найдёт инструкцию, агент следит за&nbsp;состоянием устройств, спрашивает ГигаЧат, находит решение в&nbsp;базе инструкций и&nbsp;чинит. Пользователь узнаёт о&nbsp;проблеме, когда она уже&nbsp;решена.</p>
+    </div>
+    <div class="modes">
+      <div class="seg" role="tablist" aria-label="Режимы агента"><button class="seg-tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Проактивный</button><button class="seg-tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Реактивный</button><button class="seg-tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">SOS</button></div>
+      <div class="mode-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+        <p class="mode-desc">Агент сам замечает сбой и&nbsp;устраняет его&nbsp;до&nbsp;того, как&nbsp;пользователь что-то&nbsp;заметит.</p>
+        <div class="carousel" data-carousel>
+          <div class="track" tabindex="0" aria-label="Шаги проактивного режима"><figure class="slide"><img src="assets/img/giga/case/proactive-1.jpg" alt="Общая схема агента" loading="lazy"><figcaption>Общая схема агента</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-2.jpg" alt="Устройства и умный хаб передают данные агенту" loading="lazy"><figcaption>Устройства и умный хаб передают данные агенту</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-3.jpg" alt="Агент спрашивает ГигаЧат о проблеме" loading="lazy"><figcaption>Агент спрашивает ГигаЧат о проблеме</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-4.jpg" alt="Решаемая проблема: агент пробует починить устройство сам" loading="lazy"><figcaption>Решаемая проблема: агент пробует починить устройство сам</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-5.jpg" alt="Нерешаемая: инструкция, карта центров, заявка на возврат" loading="lazy"><figcaption>Нерешаемая: инструкция, карта центров, заявка на возврат</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-6.jpg" alt="Пользователь получает пуш «Проблема устранена»" loading="lazy"><figcaption>Пользователь получает пуш «Проблема устранена»</figcaption></figure></div>
+          <button class="nav nav-prev" aria-label="Назад"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="nav nav-next" aria-label="Дальше"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="dots" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="mode-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+        <p class="mode-desc">Пользователь сообщает о&nbsp;проблеме&nbsp;— агент ведёт диагностику и&nbsp;даёт пошаговую&nbsp;инструкцию.</p>
+        <div class="inner ph"><span>Схема реактивного режима</span></div>
+      </div>
+      <div class="mode-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+        <p class="mode-desc">Если решить нельзя&nbsp;— агент сразу передаёт проблему в&nbsp;поддержку вместе&nbsp;с&nbsp;контекстом.</p>
+        <div class="inner ph"><span>Схема экстренного режима SOS</span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="inner"><video class="autoplay" poster="assets/video/giga-diagnostics-poster.jpg" muted loop playsinline preload="metadata" aria-label="Шаги диагностики агента над колонкой">
+        <source src="assets/video/giga-diagnostics.webm" type="video/webm"><source src="assets/video/giga-diagnostics.mp4" type="video/mp4"></video></div>
+      <div class="inner"><img src="assets/img/giga/case/hologram.jpg" alt="Колонка Sber и схема связи агента с ГигаЧатом и устройствами" loading="lazy" style="object-position:30% 50%"></div>
+    </div>
+  </section>
+
+  <!-- 04 Интерфейс -->
+  <section class="sec card" id="solution">
+    <header><span class="eyebrow"><span class="num">04</span>&nbsp;· Интерфейс</span><h2>Когда без&nbsp;пользователя не&nbsp;обойтись&nbsp;— ассистент ведёт&nbsp;его&nbsp;за&nbsp;руку</h2></header>
+    <div class="text">
+      <p>Если агент не&nbsp;может починить устройство сам, ассистент проверяет его&nbsp;состояние, объясняет, что&nbsp;случилось, и&nbsp;открывает короткую инструкцию с&nbsp;иллюстрациями&nbsp;— без&nbsp;поиска модели устройства и&nbsp;переписки&nbsp;с&nbsp;ботом.</p>
+    </div>
+    <div class="screens">
+      <figure><div class="inner"><img src="assets/img/giga/case/screen-assistant.png" alt="Ассистент запускается" loading="lazy"></div><figcaption>Запуск&nbsp;ассистента</figcaption></figure>
+      <figure><div class="inner"><img src="assets/img/giga/case/screen-check.png" alt="Ассистент проверяет устройство" loading="lazy"></div><figcaption>Проверка&nbsp;устройства</figcaption></figure>
+      <figure><div class="inner"><img src="assets/img/giga/case/screen-answer.png" alt="Ассистент предлагает ручную диагностику" loading="lazy"></div><figcaption>Объяснение&nbsp;проблемы</figcaption></figure>
+      <figure><div class="inner"><img src="assets/img/giga/case/screen-instruction.png" alt="Инструкция по ручной диагностике" loading="lazy"></div><figcaption>Пошаговая&nbsp;инструкция</figcaption></figure>
+    </div>
+  </section>
+
+  <!-- 05 Валидация -->
+  <section class="sec card">
+    <header><span class="eyebrow"><span class="num">05</span>&nbsp;· Валидация</span><h2>Проверили гипотезу на&nbsp;реальном MVP, а&nbsp;не&nbsp;только&nbsp;на&nbsp;макетах</h2></header>
+    <div class="text">
+      <p>Вместе с&nbsp;разработчиком ГигаЧата мы&nbsp;собрали работающий прототип агента: подключили реальные токены, загрузили базу инструкций Гигасправки и&nbsp;прогнали тестовые логи устройств. Агент правильно классифицировал проблемы и&nbsp;находил нужные&nbsp;инструкции.</p>
+      <p>Это&nbsp;главный аргумент, что&nbsp;решение&nbsp;— не&nbsp;фантазия дизайнера, а&nbsp;проверенная&nbsp;концепция.</p>
+    </div>
+      <figure>
+      <div class="inner video-slot ph" data-video-slot>
+        <span>Видео: работа агента на&nbsp;реальных логах</span>
+        <!-- когда будет файл — заменить содержимое на:
+        <video class="autoplay" muted loop playsinline preload="metadata" poster="assets/video/giga-agent-poster.jpg" aria-label="Агент разбирает лог устройства и находит инструкцию">
+          <source src="assets/video/giga-agent.webm" type="video/webm"><source src="assets/video/giga-agent.mp4" type="video/mp4">
+        </video> -->
+      </div>
+      <figcaption>MVP-агент разбирает тестовый лог устройства и&nbsp;находит нужную&nbsp;инструкцию</figcaption>
+    </figure>
+  </section>
+
+  <!-- 06 Другие функции -->
+  <section class="sec card">
+    <header><span class="eyebrow"><span class="num">06</span>&nbsp;· Другие функции</span><h2>Помогаем и&nbsp;тогда, когда агент не&nbsp;может починить устройство&nbsp;сам</h2></header>
+    <div class="text">
+      <p>Агент закрывает большую часть сбоев, но&nbsp;не&nbsp;все. Для&nbsp;остальных случаев мы&nbsp;спроектировали сценарии, в&nbsp;которых пользователь не&nbsp;остаётся с&nbsp;проблемой&nbsp;один.</p>
+    </div>
+    <div class="modes">
+      <div class="seg" role="tablist" aria-label="Другие функции"><button class="seg-tab" role="tab" id="ftab-health" aria-controls="fpanel-health" aria-selected="true">Здоровье устройств</button><button class="seg-tab" role="tab" id="ftab-share" aria-controls="fpanel-share" aria-selected="false" tabindex="-1">Поделиться с&nbsp;близким</button><button class="seg-tab" role="tab" id="ftab-warranty" aria-controls="fpanel-warranty" aria-selected="false" tabindex="-1">Возврат по&nbsp;гарантии</button></div>
+      <div class="mode-panel" role="tabpanel" id="fpanel-health" aria-labelledby="ftab-health">
+        <p class="mode-desc">Состояние всех устройств дома на&nbsp;одном экране: что работает, что требует внимания и&nbsp;что агент уже починил.</p>
+        <div class="flow" data-flow>
+          <div class="flow-phone" aria-hidden="true"><div class="flow-screen on" data-d="2400" data-tap="36,51"><img src="assets/img/giga/case/health-1.jpg" alt="" loading="lazy"></div><div class="flow-screen" data-d="1500"><img src="assets/img/giga/case/health-2.jpg" alt="" loading="lazy"></div><div class="flow-screen" data-d="1500"><img src="assets/img/giga/case/health-3.jpg" alt="" loading="lazy"></div><div class="flow-screen" data-d="1500"><img src="assets/img/giga/case/health-4.jpg" alt="" loading="lazy"></div><div class="flow-screen" data-d="3000"><img src="assets/img/giga/case/health-5.jpg" alt="" loading="lazy"></div><span class="tap"></span></div></div>
+        </div>
+      </div>
+      <div class="mode-panel" role="tabpanel" id="fpanel-share" aria-labelledby="ftab-share" hidden>
+        <p class="mode-desc">Если не&nbsp;получается разобраться самому, проблему можно в&nbsp;один тап отправить родственнику&nbsp;— он&nbsp;увидит, что случилось, и&nbsp;поможет удалённо.</p>
+        <div class="flow" data-flow>
+          <div class="flow-phone" aria-hidden="true"><span class="tap"></span><div class="flow-screen on"><span>Экран 1</span></div><div class="flow-screen"><span>Экран 2</span></div><div class="flow-screen"><span>Экран 3</span></div><div class="flow-screen"><span>Экран 4</span></div><div class="flow-screen"><span>Экран 5</span></div></div>
+        </div>
+      </div>
+      <div class="mode-panel" role="tabpanel" id="fpanel-warranty" aria-labelledby="ftab-warranty" hidden>
+        <p class="mode-desc">Если устройство неисправно, возврат оформляется прямо из&nbsp;сценария диагностики&nbsp;— без&nbsp;звонков и&nbsp;поиска чеков.</p>
+        <div class="flow" data-flow>
+          <div class="flow-phone" aria-hidden="true"><span class="tap"></span><div class="flow-screen on"><span>Экран 1</span></div><div class="flow-screen"><span>Экран 2</span></div><div class="flow-screen"><span>Экран 3</span></div><div class="flow-screen"><span>Экран 4</span></div><div class="flow-screen"><span>Экран 5</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Эффект -->
+  <section class="sec card">
+    <header><span class="eyebrow"><span class="num">07</span>&nbsp;· Эффект для&nbsp;бизнеса</span><h2>Даже простая версия самопомощи уже даёт&nbsp;результат</h2></header>
+    <div class="stats">
+      <div class="stat"><b>+1500%</b><span>рост чтения статей-инструкций</span></div>
+      <div class="stat"><b>96%</b><span>CSAT</span></div>
+    </div>
+    <p class="note">Данные существующего MVP Sber Devices со&nbsp;встраиванием инструкций в&nbsp;интерфейс&nbsp;— не&nbsp;результат нашего агента. Мы&nbsp;опирались на&nbsp;них как&nbsp;на&nbsp;подтверждение&nbsp;гипотезы.</p>
+    <h3 class="sub">Что&nbsp;ожидаем&nbsp;от&nbsp;агента</h3>
+    <div class="stats">
+      <div class="stat"><b>+0,3–0,5</b><span>CSI&nbsp;— прогноз</span></div>
+      <div class="stat"><b>MAU</b><span>устройства не&nbsp;забрасывают&nbsp;— пользователи остаются в&nbsp;экосистеме</span></div>
+      <div class="stat"><b>PR</b><span>аналогов на&nbsp;рынке умного дома нет</span></div>
+    </div>
+  </section>
+
+  <!-- 08 Автопилот на коробке -->
+  <section class="sec card">
+    <header><span class="eyebrow"><span class="num">08</span>&nbsp;· Наша инициатива</span><h2>«Умный дом с&nbsp;автопилотом» прямо&nbsp;на&nbsp;упаковке</h2></header>
+    <div class="text">
+      <p>Этого не&nbsp;было в&nbsp;задаче&nbsp;— мы&nbsp;придумали и&nbsp;сами сделали дизайн упаковки. Пользователь узнаёт, что&nbsp;устройство умеет чинить себя само, ещё в&nbsp;магазине&nbsp;— и&nbsp;это становится аргументом&nbsp;для&nbsp;покупки.</p>
+    </div>
+    <figure>
+      <div class="inner box-shot"><img src="assets/img/giga/shot-box.jpg" alt="Упаковка SberBoom Mini 2 с плашкой «Умный дом с автопилотом»" loading="lazy"></div>
+    </figure>
+  </section>
+
+  <!-- 09 Итог -->
+  <section class="sec card">
+    <header><span class="eyebrow"><span class="num">09</span>&nbsp;· Итог</span><h2>Проект был принят заказчиком</h2></header>
+    <div class="text">
+      <p>Sber Devices остались довольны результатом и&nbsp;подходом к&nbsp;решению задачи. Это стало подтверждением того, что&nbsp;глубокое исследование и&nbsp;доведение решения до&nbsp;реальной технической валидации&nbsp;— то, что&nbsp;отличает рабочее решение от&nbsp;красивой&nbsp;презентации.</p>
+    </div>
+    <div class="photos-sm">
+      <div class="inner ph"><span>Фото с&nbsp;защиты</span></div>
+      <div class="inner ph"><span>Фото с&nbsp;защиты</span></div>
+      <div class="inner ph"><span>Фото с&nbsp;защиты</span></div>
+      <div class="inner ph"><span>Фото с&nbsp;защиты</span></div>
+    </div>
+  </section>
+
+  <!-- Следующий кейс -->
+  <a class="next card" href="v2.html">
+    <div><span class="eyebrow">Следующий кейс</span><b>Телемост</b></div>
+    <span class="arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
+
+</div>
+<script>
+/* карусель: свайп, стрелки, точки */
+document.querySelectorAll('[data-carousel]').forEach(function(c){
+  var tr=c.querySelector('.track'),sl=[].slice.call(tr.children),dots=c.querySelector('.dots');
+  sl.forEach(function(_,i){var b=document.createElement('button');b.addEventListener('click',function(){go(i)});dots.appendChild(b)});
+  var db=[].slice.call(dots.children);
+  function idx(){return Math.round(tr.scrollLeft/tr.clientWidth)}
+  function go(i){i=Math.max(0,Math.min(sl.length-1,i));tr.scrollTo({left:i*tr.clientWidth,behavior:'smooth'})}
+  function upd(){var i=idx();db.forEach(function(d,k){d.classList.toggle('on',k===i)});c.querySelector('.nav-prev').disabled=i===0;c.querySelector('.nav-next').disabled=i===sl.length-1}
+  c.querySelector('.nav-prev').addEventListener('click',function(){go(idx()-1)});
+  c.querySelector('.nav-next').addEventListener('click',function(){go(idx()+1)});
+  tr.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(idx()+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(idx()-1)}});
+  tr.addEventListener('scroll',function(){requestAnimationFrame(upd)},{passive:true});upd();
+});
+/* режимы агента: переключение схем */
+document.querySelectorAll('.seg').forEach(function(group){
+  var tabs=[].slice.call(group.querySelectorAll('.seg-tab'));
+  function select(t,focus){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on);x.tabIndex=on?0:-1;
+    var p=document.getElementById(x.getAttribute('aria-controls'));p.hidden=!on;if(on)p.dispatchEvent(new Event('shown'))});if(focus)t.focus()}
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(t)});
+    t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){e.preventDefault();select(tabs[(i+d+tabs.length)%tabs.length],true)}});
+  });
+});
+/* сценарий фичи: экраны сменяются по таймингам data-d; data-tap="x,y" — касание перед переходом */
+document.querySelectorAll('[data-flow]').forEach(function(f){
+  var screens=[].slice.call(f.querySelectorAll('.flow-screen')),tap=f.querySelector('.tap'),i=0,timer=null,run=false;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function show(n){var prev=i;i=(n+screens.length)%screens.length;
+    screens.forEach(function(s,k){s.classList.toggle('on',k===i);s.classList.toggle('out',k===prev&&k!==i)})}
+  function step(){var s=screens[i],d=+s.dataset.d||2000,t=s.dataset.tap;
+    timer=setTimeout(function(){
+      if(t&&tap){var p=t.split(',');tap.style.left=p[0]+'%';tap.style.top=p[1]+'%';tap.classList.remove('go');void tap.offsetWidth;tap.classList.add('go');
+        timer=setTimeout(function(){show(i+1);step()},550)}
+      else{show(i+1);step()}
+    },d)}
+  function play(){stop();if(reduce)return;run=true;step()}
+  function stop(){run=false;if(timer)clearTimeout(timer);timer=null}
+  var panel=f.closest('[role=tabpanel]');if(panel)panel.addEventListener('shown',function(){show(0);play()});
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){es[0].isIntersecting&&!(panel&&panel.hidden)?(run||play()):stop()},{threshold:.3}).observe(f);
+  show(0);
+});
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting&&!reduce){var p=e.target.play();p&&p.catch&&p.catch(function(){})} else e.target.pause();
+  })},{threshold:.3});
+  document.querySelectorAll('video.autoplay').forEach(function(v){io.observe(v)});
+})();
+</script>
+</body>
+</html>
