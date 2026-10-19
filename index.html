@@ -4,130 +4,142 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Полина Ефремова — продуктовый дизайнер</title>
-  <meta name="description" content="Портфолио продуктового дизайнера Полины Ефремовой: агентные интерфейсы, B2B-страхование, запуск бренда.">
-  <meta property="og:title" content="Полина Ефремова — продуктовый дизайнер">
-  <meta property="og:description" content="Кейсы: Гигасправка (Sber Devices), Телемост (Яндекс).">
-  <meta property="og:image" content="assets/video/giga-cover-v2-poster.jpg">
+  <meta name="description" content="Портфолио продуктового дизайнера Полины Ефремовой.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="assets/fonts/bebas-neue-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/v2.css">
 </head>
 <body>
+<div class="page">
 
-<a class="name" id="name" href="#top" aria-label="Полина Ефремова — наверх">Polina Efremova</a>
-<header class="header" id="header">
-  <nav class="links" aria-label="Контакты">
-    <a class="u" href="https://t.me/" target="_blank" rel="noopener">Telegram</a><span class="sep">/</span>
-    <a class="u" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a><span class="sep">/</span>
-    <a class="u" href="#contacts">Почта</a><span class="sep">/</span>
-    <a class="u" href="#" target="_blank" rel="noopener">CV</a>
-    <a class="u only-m" href="#contacts">Контакты</a>
-  </nav>
-</header>
-
-<main id="top">
-
-  <!-- Первый экран -->
-  <section class="hero" id="hero">
-    <div class="glow" aria-hidden="true"><i class="g1"></i><i class="g2"></i></div>
-    <div class="grid">
-      <div class="who">
-        <img class="avatar rise" style="--d:.1s" src="assets/img/hero/avatar.png" alt="Полина Ефремова" width="160" height="160">
-        <h1 class="rise" style="--d:.25s">Продуктовый дизайнер<br>с&nbsp;4-летним опытом, работаю<br>в&nbsp;B2B-страховании</h1>
-      </div>
-      <div class="clients rise" style="--d:.4s">
-        <div class="logos">
-          <img src="assets/img/hero/logo-sber.png" alt="Сбер" width="56" height="56">
-          <img src="assets/img/hero/logo-yandex.png" alt="Яндекс" width="56" height="56">
-          <img src="assets/img/hero/logo-sisley.png" alt="Sisley" width="56" height="56">
-          <img src="assets/img/hero/logo-luchi.png" alt="Лучи" width="56" height="56">
-        </div>
-        <p>Работала с&nbsp;компаниями:<br>Сбер, Яндекс, Sisley, Лучи</p>
-      </div>
+  <!-- Слева: о себе, зафиксировано -->
+  <aside class="side">
+   <div class="card intro">
+    <div class="me">
+      <img src="assets/img/hero/avatar-square.jpg" alt="" width="56" height="56">
+      <h1>Ефремова&nbsp;Полина</h1>
     </div>
-  </section>
-
-  <!-- Кейсы -->
-  <section class="cases" id="cases">
-
-    <article class="case grid" id="giga">
-      <div class="info">
-        <div class="tags"><span>(Mobile)</span><span>(Agent UX)</span><span>(2026)</span></div>
-        <div class="title"><img src="assets/img/giga/app-icon.png" alt="" width="44" height="44"><h2>Гигасправка</h2></div>
-        <p class="desc">Агентная архитектура поддержки умных устройств Sber Devices&nbsp;— решение чинит проблемы раньше, чем их&nbsp;заметит пользователь.</p>
-        <div class="contrib"><h3>Мой вклад</h3><p>Исследование, архитектура агента, презентация</p></div>
-        <a class="more u" href="#">Смотреть кейс</a>
-      </div>
-      <div class="media">
-        <div class="cover giga-cover">
-          <video class="autoplay cover-video" poster="assets/video/giga-cover-v2-poster.jpg" muted loop playsinline preload="metadata"
-                 aria-label="Прототип: ассистент проверяет лампочку, показывает инструкцию и сообщает, что проблема устранена">
-            <source src="assets/video/giga-cover-v2.webm" type="video/webm">
-            <source src="assets/video/giga-cover-v2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="pair">
-          <div class="shot">
-            <video class="autoplay" poster="assets/video/giga-diagnostics-poster.jpg" muted loop playsinline preload="metadata"
-                   aria-label="Агент диагностирует и чинит лампочку: шаги работы под капотом">
-              <source src="assets/video/giga-diagnostics.webm" type="video/webm">
-              <source src="assets/video/giga-diagnostics.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="shot"><img src="assets/img/giga/shot-box.jpg" alt="Коробка SberBoom Mini 2 в интерьере" loading="lazy"></div>
-        </div>
-      </div>
-    </article>
-
-    <article class="case grid" id="telemost">
-      <div class="info">
-        <div class="tags"><span>(Mobile)</span><span>(Agent UX)</span></div>
-        <div class="title"><img src="assets/img/telemost/app-icon.png" alt="" width="44" height="44"><h2>Телемост</h2></div>
-        <p class="desc">Агент Мост сам переносит договорённости из&nbsp;переписки в&nbsp;календарь, а&nbsp;один аккаунт делится на&nbsp;рабочий, личный и&nbsp;игровой режимы&nbsp;— в&nbsp;каждом только нужные чаты.</p>
-        <a class="more u" href="#">Смотреть кейс</a>
-      </div>
-      <div class="media">
-        <div class="cover tm-cover anim" data-anim>
-          <img class="layer-full" src="assets/img/telemost/cover-bg.jpg" alt="Список чатов с плашкой «Агент Мост» в Телемосте">
-          <img class="tm-cards" src="assets/img/telemost/cover-cards.png" alt="">
-          <div class="tm-cluster"><img src="assets/img/telemost/cover-cluster.png" alt="Плашка «Агент Мост» с задачами"></div>
-          <span class="tm-badge" aria-hidden="true"><b>1</b><b>2</b></span>
-        </div>
-        <div class="pair">
-          <div class="shot anim tm-agent" data-anim>
-            <img class="layer-full" src="assets/img/telemost/agent-bg.jpg" alt="Женщина читает пуш от Агента Моста" loading="lazy">
-            <img class="tm-cal" src="assets/img/telemost/agent-calendar.png" alt="">
-            <div class="tm-text" aria-label="В календарь добавлено новое событие: встреча с Беллой Нечаевой — 16.03.2026 в 16:00.">
-              <img class="l1" src="assets/img/telemost/agent-text.png" alt="">
-              <img class="l2" src="assets/img/telemost/agent-text.png" alt="">
-              <img class="l3" src="assets/img/telemost/agent-text.png" alt="">
-            </div>
-          </div>
-          <div class="shot anim tm-modes" data-anim>
-            <img class="layer-full" src="assets/img/telemost/modes-bg.jpg" alt="Переключатель трёх режимов аккаунта" loading="lazy">
-            <span class="tm-ring" aria-hidden="true"></span>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Шаблон следующего кейса (NEURAE, Лучи): скопировать <article class="case grid"> и&nbsp;заменить тексты и&nbsp;визуалы -->
-  </section>
-
-  <!-- Контакты -->
-  <footer class="footer" id="contacts">
-    <div class="grid">
-      <p class="footer-lead">Открыта к&nbsp;разговору о&nbsp;продуктовых задачах</p>
-      <div class="footer-links">
-        <a class="u" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
-        <a class="u" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-        <span class="mail">почта@пример.ру</span>
-      </div>
-      <p class="copy">© 2026&nbsp;Полина Ефремова</p>
+    <div class="bio">
+      <p class="lead">4+ лет опыта в&nbsp;продуктовом дизайне. Работала как&nbsp;с&nbsp;B2C, так&nbsp;и&nbsp;с&nbsp;B2B, последние 2&nbsp;года&nbsp;— в&nbsp;медтехе&nbsp;и&nbsp;страховании.</p>
+      <p>Отвечаю за&nbsp;продукт целиком&nbsp;— от&nbsp;сайта до&nbsp;личных кабинетов, включая HR-кабинеты. Провожу интервью, формирую гипотезы по&nbsp;улучшению UX и&nbsp;довожу их&nbsp;до&nbsp;конкретных решений, которые снимают реальную нагрузку с&nbsp;пользователей&nbsp;и&nbsp;команды.</p>
+      <p>Училась в&nbsp;Британской высшей школе дизайна, там&nbsp;же&nbsp;сделала три коммерческих проекта для&nbsp;СберДевайс, Яндекса&nbsp;и&nbsp;Sisley&nbsp;Group.</p>
     </div>
-  </footer>
-</main>
+    <nav class="contacts" aria-label="Контакты">
+      <a class="u" href="https://t.me/" target="_blank" rel="noopener">Telegram</a>
+      <a class="u" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="u" href="#">Почта</a>
+      <a class="u" href="#">CV</a>
+    </nav>
+   </div>
 
-<script src="js/main.js"></script>
+   <div class="card brands">
+    <h2>Работала&nbsp;с&nbsp;компаниями</h2>
+    <ul class="logos">
+      <li><img src="assets/img/logos/sber.png" alt="" width="56" height="56">Сбер<br>Девайс</li>
+      <li><img src="assets/img/logos/telemost.png" alt="" width="56" height="56">Яндекс<br>Телемост</li>
+      <li><img class="light" src="assets/img/logos/sisley.png" alt="" width="56" height="56">Sisley<br>Paris</li>
+      <li><img src="assets/img/logos/luchi.png" alt="" width="56" height="56">Лучи<br>Здоровье</li>
+    </ul>
+    <h2>Обучение</h2>
+    <ul class="logos">
+      <li><img src="assets/img/logos/bvshd.png" alt="" width="56" height="56">БВШД</li>
+    </ul>
+   </div>
+  </aside>
+
+  <!-- Справа: лента карточек -->
+  <main class="feed">
+
+    <a class="case card" href="giga-case.html">
+      <div class="media">
+        <video class="autoplay" poster="assets/video/giga-cover-v2-poster.jpg" muted loop playsinline preload="metadata" aria-label="Прототип Гигасправки в iPhone">
+          <source src="assets/video/giga-cover-v2.webm" type="video/webm">
+          <source src="assets/video/giga-cover-v2.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="body">
+        <div class="name"><img src="assets/img/giga/app-icon.png" alt=""><h2>Гигасправка</h2></div>
+        <div class="tags"><span>Mobile</span><span>Agent UX</span></div>
+        <p class="desc">Агентная архитектура поддержки умных устройств Sber Devices&nbsp;— решение чинит проблемы раньше, чем их&nbsp;заметит&nbsp;пользователь.</p>
+        <span class="year">2026</span>
+      </div>
+    </a>
+
+    <a class="case card" href="#">
+      <div class="media anim" data-anim>
+        <img src="assets/img/telemost/cover-bg.jpg" alt="Список чатов с плашкой «Агент Мост»">
+        <img class="tm-cards" src="assets/img/telemost/cover-cards.png" alt="">
+        <div class="tm-cluster"><img src="assets/img/telemost/cover-cluster.png" alt=""></div>
+      </div>
+      <div class="body">
+        <div class="name"><img src="assets/img/telemost/app-icon.png" alt=""><h2>Телемост</h2></div>
+        <div class="tags"><span>Mobile</span><span>Agent UX</span></div>
+        <p class="desc">Стратегия вывода Яндекс Телемоста в&nbsp;B2C&nbsp;— единое пространство для&nbsp;жизни вместо ещё одного&nbsp;мессенджера.</p>
+        <span class="year">2026</span>
+      </div>
+    </a>
+
+    <a class="case card" href="#">
+      <div class="media"></div>
+      <div class="body">
+        <div class="name"><i></i><h2>NEURAE</h2></div>
+        <div class="tags"><span>Brand</span><span>Web</span></div>
+        <p class="desc">Запуск бренда нейрокосметики Sisley Group в&nbsp;России: стратегия&nbsp;и&nbsp;лендинг.</p>
+        <span class="year">2026</span>
+      </div>
+    </a>
+
+    <a class="case card" href="#">
+      <div class="media"></div>
+      <div class="body">
+        <div class="name"><img src="assets/img/luchi/app-icon.png" alt=""><h2>Лучи</h2></div>
+        <div class="tags"><span>Web</span><span>B2B</span></div>
+        <p class="desc">Сайт и&nbsp;личные кабинеты для&nbsp;B2B-страхования и&nbsp;медтеха, включая&nbsp;HR-кабинет.</p>
+        <span class="year">2026</span>
+      </div>
+    </a>
+
+    <section class="block card">
+      <h2>Инструменты</h2>
+      <p class="lead">Прошла аттестацию по&nbsp;ИИ в&nbsp;Лучах&nbsp;— AI-native&nbsp;компании.</p>
+      <div class="chips"><span>Figma</span><span>Figma MCP</span><span>Claude</span><span>ChatGPT</span><span>Cursor</span><span>Nano Banana</span></div>
+      <p>Генерирую гипотезы через Claude и&nbsp;ChatGPT, изображения и&nbsp;видео&nbsp;— через Nano Banana, прототипирую в&nbsp;Figma MCP и&nbsp;через вайб-кодинг в&nbsp;Cursor&nbsp;и&nbsp;Claude.</p>
+    </section>
+
+    <section class="block card">
+      <h2>Обо&nbsp;мне</h2>
+      <p>Дизайн&nbsp;— это&nbsp;не&nbsp;просто работа, а&nbsp;то, во&nbsp;что&nbsp;я&nbsp;вкладываюсь и&nbsp;продолжаю развивать. Год в&nbsp;Британской высшей школе дизайна был не&nbsp;про&nbsp;«прошла курс», а&nbsp;про&nbsp;полное погружение: я&nbsp;сама проводила интервью, питчила проекты, была активна на&nbsp;защитах и&nbsp;в&nbsp;обсуждениях. С&nbsp;командой защитила результат в&nbsp;офисе Яндекса, Sisley и&nbsp;Сбера. На&nbsp;защите получила хорошую обратную связь от&nbsp;менторов и&nbsp;руководительницы&nbsp;курса.</p>
+      <div class="photos">
+        <img src="assets/img/about/photo-1.jpg" alt="Выступление на защите проекта" loading="lazy">
+        <img src="assets/img/about/photo-2.jpg" alt="Команда в офисе Яндекса" loading="lazy">
+        <img src="assets/img/about/photo-3.jpg" alt="Защита проекта" loading="lazy">
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script>
+/* левая колонка липнет; если она выше экрана — липнет нижним краем, чтобы всё было видно */
+(function(){
+  var side=document.querySelector('.side');
+  function fit(){
+    var pad=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--page'))||16;
+    var h=side.offsetHeight, vh=innerHeight;
+    side.style.top=(h+2*pad>vh ? (vh-h-pad) : pad)+'px';
+  }
+  addEventListener('resize',fit); if(document.fonts)document.fonts.ready.then(fit); fit();
+})();
+/* видео и анимации играют, только когда видны на экране */
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    var el=e.target;
+    if(el.tagName==='VIDEO'){ if(e.isIntersecting&&!reduce){var p=el.play();p&&p.catch&&p.catch(function(){})} else el.pause(); }
+    else el.classList.toggle('play',e.isIntersecting&&!reduce);
+  })},{threshold:.3});
+  document.querySelectorAll('video.autoplay,[data-anim]').forEach(function(el){io.observe(el)});
+})();
+</script>
 </body>
 </html>
