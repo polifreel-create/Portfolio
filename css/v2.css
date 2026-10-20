@@ -12,13 +12,13 @@
 
 :root{
   --bg:#EBEEF1; --card:#ffffff;
-  --ink:#0F1414; --ink-2:#555555; --ink-3:#9a9a9a;
+  --ink:#0F1414; --ink-2:#525A5B; --ink-3:#959C9E;   /* серые с тем же холодным оттенком, что и чёрный */
   --chip:#F4F7FA; --wash:#F4F7FA;   /* все серые плашки — один оттенок */ --accent:#ef6a2a;
   --font:"Onest","Helvetica Neue",Arial,sans-serif;
 
   /* текст */
   --t-caption:500 12px/1.3 var(--font);   /* теги, год */
-  --t-small:400 16px/1.4 var(--font);     /* описание кейса, ссылки */
+  --t-small:400 16px/1.45 var(--font);     /* описание кейса, ссылки */
   --t-body:400 16px/1.45 var(--font);     /* текст о себе */
   --t-title:500 24px/1.15 var(--font);     /* название кейса */
   --t-h:500 32px/1.1 var(--font);        /* имя, заголовки блоков */
@@ -71,7 +71,7 @@ p{margin:0}
 .me h1{margin:0;font:var(--t-h);letter-spacing:-.02em}
 .bio{display:flex;flex-direction:column;gap:var(--s-4);margin-top:var(--s-6);color:var(--ink-2);max-width:30em}
 .bio p{font-size:18px;line-height:1.45}
-.bio .lead{color:var(--ink);font-weight:500;font-size:20px;line-height:1.35;letter-spacing:-.015em;text-wrap:wrap}
+.bio .lead{color:var(--ink);font-weight:500;font-size:20px;line-height:1.3;letter-spacing:-.015em;text-wrap:wrap}
 .contacts{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-5);margin-top:var(--s-6);font:var(--t-small);font-weight:500}
 
 /* ---------- карточка кейса ---------- */
@@ -145,3 +145,11 @@ body{letter-spacing:-.01em}
 .hire:hover svg{transform:translate(2px,-2px)}
 .hire:focus-visible{outline:2px solid #21A038;outline-offset:3px}
 @media (max-width:760px){ .hire{height:56px;padding:0 var(--s-5);font-size:16px} .page{padding-bottom:96px} .me h1{font-size:26px} .block h2{font-size:26px} }
+
+/* ===== единая система: межстрочное по размеру ===== */
+/* 18 — текст: 1.5 · 16 — мелкий: 1.45 · 20 — подзаголовки: 1.3 */
+.bio p,.block p,.case .desc{line-height:1.5}
+.block .lead{line-height:1.5}
+.logos li{line-height:1.35}
+.contacts{line-height:1.45}
+.case .year{line-height:1.45}
