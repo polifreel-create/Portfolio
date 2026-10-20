@@ -28,12 +28,13 @@
 .crumbs .sep{opacity:.5}
 
 /* ---------- шапка кейса ---------- */
-.head{padding:var(--pad);display:flex;flex-direction:column}
+.head{position:relative;padding:var(--pad);display:flex;flex-direction:column}
 .head .top{display:flex;align-items:center;justify-content:space-between;gap:var(--s-4)}
 .head .year{font:var(--t-body);color:var(--ink-3)}
-.head .icon{width:56px;height:56px;border-radius:14px;margin-top:var(--s-6)}
+.head .icon{position:absolute;top:var(--pad);right:var(--pad);width:104px;height:104px;border-radius:28px;box-shadow:0 10px 30px rgba(15,20,20,.12)}
+@media (max-width:760px){ .head .icon{width:64px;height:64px;border-radius:18px} }
 .head .tags{display:flex;gap:var(--s-1);align-self:flex-start;justify-self:auto}
-.head h1{margin:var(--s-4) 0 0;font:var(--t-h1);letter-spacing:-.03em;max-width:14em;text-wrap:balance}
+.head h1{margin:var(--s-7) 0 0;font:var(--t-h1);letter-spacing:-.03em;max-width:14em;text-wrap:balance}
 .head .lead{margin-top:var(--s-4);font:var(--t-read);font-size:19px;color:var(--ink-2);max-width:var(--measure)}
 
 /* ---------- визуалы ---------- */
