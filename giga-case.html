@@ -7,7 +7,7 @@
   <meta name="description" content="Агентная архитектура поддержки умных устройств Sber Devices: агент решает поломки раньше, чем пользователь их заметит.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=6">
-  <link rel="stylesheet" href="css/case.css?v=15">
+  <link rel="stylesheet" href="css/case.css?v=16">
 </head>
 <body>
 <div class="wrap">
@@ -293,7 +293,7 @@ document.querySelectorAll('[data-scene=health]').forEach(function(f){
       titles=[].slice.call(f.querySelectorAll('.hs-title span')),beam=q('.hs-beam'),glow=q('.hs-glow'),knob=q('.hs-knob'),
       lit=q('.hs-lit'),pct=q('.hs-pct'),min=q('.hs-min');
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function fit(){st.style.transform='scale('+(scr.clientWidth/390)+')'}
+  function fit(){var w=scr.clientWidth,hh=scr.clientHeight;if(!w||!hh)return;var k=Math.min(w/390,hh/844);st.style.transform='translate('+((w-390*k)/2)+'px,0) scale('+k+')'}
   fit(); if('ResizeObserver' in window)new ResizeObserver(fit).observe(scr);
   var cl=function(v){return v<0?0:v>1?1:v},seg=function(t,a,b){return cl((t-a)/(b-a))},
       io=function(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2},       /* ease-in-out */

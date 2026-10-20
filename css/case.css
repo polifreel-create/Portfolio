@@ -283,6 +283,8 @@ h1,h2,h3{text-wrap:balance}
 .mode-panel .row .inner.ph{background:var(--wash)}
 
 /* другие функции: блок с телефоном той же высоты, что схемы (16:9) */
-.flow{aspect-ratio:16/9;padding:var(--s-5);align-items:center}
-.flow-phone{height:100%;width:auto;aspect-ratio:390/844}
-@media (max-width:760px){ .flow{aspect-ratio:auto;padding:var(--s-5) var(--s-4)} .flow-phone{height:auto;width:min(300px,70%)} }
+.flow{position:relative;aspect-ratio:16/9;padding:0}
+.flow-phone{position:absolute;top:var(--s-5);bottom:var(--s-5);left:50%;transform:translateX(-50%);width:auto;height:auto;aspect-ratio:390/844}
+@media (max-width:760px){ .flow{aspect-ratio:auto;padding:var(--s-5) var(--s-4)} .flow-phone{position:relative;top:auto;bottom:auto;left:auto;transform:none;width:min(300px,70%)} }
+/* Safari: обрезать содержимое экрана по скруглению даже при трансформациях */
+.flow-phone,.flow-screen{-webkit-mask-image:-webkit-radial-gradient(white,black);isolation:isolate}
