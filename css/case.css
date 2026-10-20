@@ -277,3 +277,6 @@ h1,h2,h3{text-wrap:balance}
 /* заголовок «Кратко» с искорками */
 .brief .sec-head h2{display:flex;align-items:center;gap:var(--s-2);margin:0;font:var(--t-h2);letter-spacing:-.02em}
 .brief .sec-head h2 img{width:40px;height:40px;margin:-6px 0 -6px -6px}
+
+/* анимация ассистента в реактивном режиме */
+.mode-panel .inner.assist{aspect-ratio:16/9;background:#030605}
