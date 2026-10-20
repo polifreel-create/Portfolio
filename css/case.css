@@ -268,8 +268,8 @@ h1,h2,h3{text-wrap:balance}
 @media (max-width:760px){ .defense{grid-template-columns:1fr} }
 
 /* роль, команда, формат, год — под описанием в шапке */
-.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-5);margin:var(--s-6) 0 0;padding-top:var(--s-5);border-top:1px solid var(--chip)}
-.meta div{margin:0}
+.meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s-5) var(--s-7);margin:var(--s-6) 0 0;padding-top:var(--s-5);border-top:1px solid var(--chip)}
+.meta div{margin:0;white-space:nowrap}
 .meta dt{font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
 .meta dd{margin:var(--s-2) 0 0;font:var(--t-small);color:var(--ink)}
-@media (max-width:760px){ .meta{grid-template-columns:1fr 1fr} }
+@media (max-width:760px){ .meta{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-5)} .meta div{white-space:normal} .meta dd br{display:none} }
