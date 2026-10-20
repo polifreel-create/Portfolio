@@ -13,7 +13,7 @@
 :root{
   --bg:#EBEEF1; --card:#ffffff;
   --ink:#111111; --ink-2:#555555; --ink-3:#9a9a9a;
-  --chip:#F9F9F9; --wash:#F9F9F9;   /* все серые плашки — один оттенок */ --accent:#ef6a2a;
+  --chip:#EBEEF1; --wash:#EBEEF1;   /* все серые плашки — один оттенок */ --accent:#ef6a2a;
   --font:"Onest","Helvetica Neue",Arial,sans-serif;
 
   /* текст */
