@@ -157,3 +157,6 @@ body{letter-spacing:-.01em}
 /* названия кейсов на главной — крупнее под увеличенные карточки */
 .case h2{font:var(--t-h);letter-spacing:-.03em}
 @media (max-width:760px){ .case h2{font-size:26px} .case .name img,.case .name i{width:40px;height:40px;border-radius:13px} }
+
+/* главная: от верха экрана — 10 px */
+.page{padding-top:10px}
