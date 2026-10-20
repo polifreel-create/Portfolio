@@ -31,7 +31,7 @@
 .head{position:relative;padding:var(--pad);display:flex;flex-direction:column}
 .head .top{display:flex;align-items:center;justify-content:space-between;gap:var(--s-4)}
 .head .year{font:var(--t-body);color:var(--ink-3)}
-.head .icon{position:absolute;top:var(--pad);right:var(--pad);width:104px;height:104px;border-radius:28px;box-shadow:0 10px 30px rgba(15,20,20,.12)}
+.head .icon{position:absolute;top:var(--pad);right:var(--pad);width:104px;height:104px;border-radius:34px;box-shadow:0 10px 30px rgba(15,20,20,.12)}
 @media (max-width:760px){ .head .icon{width:64px;height:64px;border-radius:18px} }
 .head .tags{display:flex;gap:var(--s-1);align-self:flex-start;justify-self:auto}
 .head h1{margin:var(--s-7) 0 0;font:var(--t-h1);letter-spacing:-.03em;max-width:14em;text-wrap:balance}
@@ -74,7 +74,7 @@ figcaption{margin-top:var(--s-3);font:var(--t-small);color:var(--ink-3)}
 .tile.focus h3{color:#fff}
 .tile.focus p{color:rgba(255,255,255,.66)}
 .tile.focus .badge{background:rgba(255,255,255,.1);color:#7BE38C}
-.badge{align-self:flex-start;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);background:var(--chip);padding:4px 8px;border-radius:6px}
+.badge{align-self:flex-start;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);background:var(--chip);padding:4px 10px;border-radius:10px}
 
 /* цепочка агента */
 .chain{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2)}
@@ -94,7 +94,7 @@ figcaption{margin-top:var(--s-3);font:var(--t-small);color:var(--ink-3)}
 /* экраны приложения */
 .screens{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-4)}
 .screens figure{margin:0}
-.screens .inner{aspect-ratio:390/844;border-radius:20px;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+.screens .inner{aspect-ratio:390/844;border-radius:var(--r-in);box-shadow:0 0 0 1px rgba(0,0,0,.06)}
 
 /* следующий кейс */
 .next{display:flex;justify-content:space-between;align-items:center;gap:var(--s-5);padding:var(--pad)}
