@@ -70,8 +70,8 @@ p{margin:0}
 .me img{width:56px;height:56px;border-radius:20px;object-fit:cover}
 .me h1{margin:0;font:var(--t-h);letter-spacing:-.02em}
 .bio{display:flex;flex-direction:column;gap:var(--s-4);margin-top:var(--s-6);color:var(--ink-2);max-width:30em}
-.bio p{font-size:18px;line-height:1.45}
-.bio .lead{color:var(--ink);font-weight:500;font-size:20px;line-height:1.35;letter-spacing:-.015em;text-wrap:balance}
+.bio p{font-size:16px;line-height:1.5}
+.bio .lead{color:var(--ink);font-weight:500;font-size:18px;line-height:1.4;letter-spacing:-.01em;text-wrap:balance}
 .contacts{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-5);margin-top:var(--s-6);font:var(--t-small);font-weight:500}
 
 /* ---------- карточка кейса ---------- */
@@ -131,7 +131,8 @@ h1,h2,h3{text-wrap:balance}
 body{letter-spacing:-.01em}
 .me h1,.block h2{letter-spacing:-.03em}
 .case h2{letter-spacing:-.025em}
-.block p{font-size:18px;line-height:1.45}
+.block p{font-size:16px;line-height:1.5}
+.block .lead{font-size:18px;line-height:1.4}
 .contacts{font-size:16px}
 
 /* кнопка «Нанять меня» — пухлая, зафиксирована в правом нижнем углу */
