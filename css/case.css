@@ -180,7 +180,7 @@ h1,h2,h3{text-wrap:balance}
 /* фото упаковки — широкий кадр, коробка по центру */
 .split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-6);align-items:start}
 .split .text{margin-top:0}
-.box-shot{aspect-ratio:2/1}
+.box-shot{aspect-ratio:16/9}
 .box-shot img{height:100%;object-fit:cover;object-position:50% 64%}
 @media (max-width:760px){ .split{grid-template-columns:1fr} }
 
@@ -281,3 +281,8 @@ h1,h2,h3{text-wrap:balance}
 /* под схемой режима — две вертикальные картинки или видео */
 .mode-panel .row .inner{aspect-ratio:7/8}
 .mode-panel .row .inner.ph{background:var(--wash)}
+
+/* другие функции: блок с телефоном той же высоты, что схемы (16:9) */
+.flow{aspect-ratio:16/9;padding:var(--s-5);align-items:center}
+.flow-phone{height:100%;width:auto;aspect-ratio:390/844}
+@media (max-width:760px){ .flow{aspect-ratio:auto;padding:var(--s-5) var(--s-4)} .flow-phone{height:auto;width:min(300px,70%)} }
