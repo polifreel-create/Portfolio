@@ -29,7 +29,8 @@
 
 /* ---------- шапка кейса ---------- */
 .head{padding:var(--pad);display:flex;flex-direction:column}
-.head .tags{justify-self:start}
+.head .top{display:flex;align-items:center;justify-content:space-between;gap:var(--s-4)}
+.head .year{font:var(--t-body);color:var(--ink-3)}
 .head .icon{width:56px;height:56px;border-radius:14px;margin-top:var(--s-6)}
 .head .tags{display:flex;gap:var(--s-1);align-self:flex-start;justify-self:auto}
 .head h1{margin:var(--s-4) 0 0;font:var(--t-h1);letter-spacing:-.03em;max-width:14em;text-wrap:balance}
