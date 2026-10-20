@@ -135,7 +135,7 @@ body{letter-spacing:-.01em}
 .contacts{font-size:16px}
 
 /* кнопка «Нанять меня» — пухлая, зафиксирована в правом нижнем углу */
-.hire{position:fixed;right:max(var(--page),env(safe-area-inset-right));bottom:max(var(--page),env(safe-area-inset-bottom));z-index:30;
+.hire{position:fixed;right:max(var(--page),env(safe-area-inset-right));bottom:max(20px,env(safe-area-inset-bottom));z-index:30;
   display:inline-flex;align-items:center;gap:var(--s-3);height:64px;padding:0 var(--s-6);border-radius:999px;
   background:var(--ink);color:#fff;font:500 18px/1 var(--font);letter-spacing:-.01em;
   box-shadow:0 12px 32px rgba(15,20,20,.24);transition:transform .35s cubic-bezier(.16,1,.3,1),background .3s,box-shadow .3s}
