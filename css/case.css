@@ -278,3 +278,16 @@ h1,h2,h3{text-wrap:balance}
 /* кнопка «Смотреть решение» — пухлая, как на vikki.design */
 .btn{height:64px;padding:0 var(--s-6) 0 var(--s-6);gap:var(--s-3);border-radius:999px;font:500 17px/1 var(--font)}
 .btn svg{width:20px;height:20px}
+
+/* кнопка «наверх» — пухлая, плавает в правом нижнем углу */
+.to-top{position:fixed;right:max(var(--page),env(safe-area-inset-right));bottom:max(var(--page),env(safe-area-inset-bottom));z-index:20;
+  width:64px;height:64px;border-radius:50%;border:0;padding:0;cursor:pointer;display:grid;place-items:center;
+  background:var(--ink);color:#fff;box-shadow:0 12px 32px rgba(15,20,20,.22);
+  opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;
+  transition:opacity .35s ease,transform .45s cubic-bezier(.16,1,.3,1),background .3s}
+.to-top.on{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{background:var(--sber)}
+.to-top:hover svg{transform:translateY(-2px)}
+.to-top svg{transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.to-top:focus-visible{outline:2px solid var(--sber);outline-offset:3px}
+@media (max-width:760px){ .to-top{width:56px;height:56px} }

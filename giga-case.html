@@ -7,7 +7,7 @@
   <meta name="description" content="Агентная архитектура поддержки умных устройств Sber Devices: агент решает поломки раньше, чем пользователь их заметит.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=11">
-  <link rel="stylesheet" href="css/case.css?v=27">
+  <link rel="stylesheet" href="css/case.css?v=28">
 </head>
 <body>
 <div class="wrap">
@@ -226,6 +226,7 @@
   </a>
 
 </div>
+<button class="to-top" type="button" aria-label="Наверх"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 <script>
 /* карусель: свайп, стрелки, точки */
 document.querySelectorAll('[data-carousel]').forEach(function(c){
@@ -297,6 +298,13 @@ document.querySelectorAll('[data-flow]').forEach(function(f){
   })});
   vids.forEach(function(v){v.addEventListener('loadeddata',soon)});
   check();
+})();
+/* кнопка «наверх»: появляется после первого экрана */
+(function(){
+  var b=document.querySelector('.to-top');if(!b)return;
+  function upd(){b.classList.toggle('on',scrollY>innerHeight*.8)}
+  addEventListener('scroll',upd,{passive:true});upd();
+  b.addEventListener('click',function(){var r=matchMedia('(prefers-reduced-motion: reduce)').matches;scrollTo({top:0,behavior:r?'auto':'smooth'})});
 })();
 </script>
 </body>
