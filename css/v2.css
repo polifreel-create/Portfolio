@@ -59,7 +59,7 @@ p{margin:0}
 .intro{display:flex;flex-direction:column;padding:var(--pad)}
 /* карточка с компаниями */
 .brands{padding:var(--pad)}
-.brands h2{margin:0;font:500 16px/1.4 var(--font);color:var(--ink)}
+.brands h2{margin:0;font:500 20px/1.3 var(--font);letter-spacing:-.015em;color:var(--ink)}
 .logos{list-style:none;margin:var(--s-4) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-4) var(--s-3)}
 .logos + h2{margin-top:var(--s-6)}
 .logos li{display:flex;flex-direction:column;align-items:center;gap:var(--s-2);text-align:center;font:var(--t-body);line-height:1.3;color:var(--ink-2)}
