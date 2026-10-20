@@ -260,3 +260,9 @@ h1,h2,h3{text-wrap:balance}
 /* видео функции — та же высота, что у схем */
 .inner.feat-video{aspect-ratio:16/9;background:#030605}
 .inner.feat-video video{width:100%;height:100%;object-fit:cover;display:block}
+
+/* фото с защиты: один ряд одинаковой высоты (квадрат + широкое) */
+.defense{display:grid;grid-template-columns:1fr 1.905fr;gap:var(--s-4)}
+.defense figure{margin:0}
+.defense .inner img{width:100%;height:auto;display:block}
+@media (max-width:760px){ .defense{grid-template-columns:1fr} }
