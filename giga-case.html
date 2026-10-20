@@ -7,7 +7,7 @@
   <meta name="description" content="Агентная архитектура поддержки умных устройств Sber Devices: агент решает поломки раньше, чем пользователь их заметит.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=26">
-  <link rel="stylesheet" href="css/case.css?v=30">
+  <link rel="stylesheet" href="css/case.css?v=32">
 </head>
 <body>
 <div class="wrap">
@@ -99,8 +99,8 @@
       <p>Вместо того чтобы ждать, пока человек сам найдёт инструкцию, агент следит за&nbsp;состоянием устройств, спрашивает ГигаЧат, находит решение в&nbsp;базе инструкций и&nbsp;чинит. Пользователь узнаёт о&nbsp;проблеме, когда она уже&nbsp;решена.</p>
     </div>
     <div class="modes">
-      <div class="seg" role="tablist" aria-label="Режимы агента"><button class="seg-tab" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true">Проактивный</button><button class="seg-tab" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Реактивный</button><button class="seg-tab" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">SOS</button></div>
-      <div class="mode-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
+      <div class="mode-panel" id="panel-1">
+        <h3 class="mode-title"><span class="mode-n">01</span>Проактивный режим</h3>
         <p class="mode-desc">Агент сам замечает сбой и&nbsp;устраняет его&nbsp;до&nbsp;того, как&nbsp;пользователь что-то&nbsp;заметит.</p>
         <div class="carousel" data-carousel>
           <div class="track" tabindex="0" aria-label="Шаги проактивного режима"><figure class="slide"><img src="assets/img/giga/case/proactive-1.webp" alt="Общая схема агента" loading="lazy"><figcaption>Общая схема агента</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-2.webp" alt="Устройства и умный хаб передают данные агенту" loading="lazy"><figcaption>Устройства и умный хаб передают данные агенту</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-3.webp" alt="Агент спрашивает ГигаЧат о проблеме" loading="lazy"><figcaption>Агент спрашивает ГигаЧат о проблеме</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-4.webp" alt="Решаемая проблема: агент пробует починить устройство сам" loading="lazy"><figcaption>Решаемая проблема: агент пробует починить устройство сам</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-5.webp" alt="Нерешаемая: инструкция, карта центров, заявка на возврат" loading="lazy"><figcaption>Нерешаемая: инструкция, карта центров, заявка на возврат</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-6.webp" alt="Пользователь получает пуш «Проблема устранена»" loading="lazy"><figcaption>Пользователь получает пуш «Проблема устранена»</figcaption></figure></div>
@@ -114,7 +114,8 @@
           <div class="inner"><img src="assets/img/giga/case/proactive-table.webp" alt="Телефон на столе: уведомление «Проблема устранена — лампочка снова в сети»" loading="lazy"></div>
         </div>
       </div>
-      <div class="mode-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
+      <div class="mode-panel" id="panel-2">
+        <h3 class="mode-title"><span class="mode-n">02</span>Реактивный режим</h3>
         <p class="mode-desc">Пользователь сам обращается к&nbsp;ассистенту голосом или&nbsp;текстом. Ассистент проверяет устройство, объясняет, что случилось, и&nbsp;ведёт за&nbsp;руку&nbsp;— открывает короткую инструкцию с&nbsp;иллюстрациями, без&nbsp;поиска модели и&nbsp;переписки с&nbsp;ботом.</p>
         <div class="carousel" data-carousel>
           <div class="track" tabindex="0" aria-label="Шаги реактивного режима"><figure class="slide"><img src="assets/img/giga/case/reactive-1.webp" alt="Пользователь пишет или говорит, что устройство не работает" loading="lazy"><figcaption>Пользователь пишет или&nbsp;говорит, что&nbsp;устройство не&nbsp;работает</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/reactive-2.webp" alt="Агент собирает логи и проверяет, в сети ли устройство" loading="lazy"><figcaption>Агент собирает логи и&nbsp;проверяет, в&nbsp;сети&nbsp;ли устройство</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/reactive-3.webp" alt="ГигаЧат классифицирует проблему: решаемая или нет" loading="lazy"><figcaption>ГигаЧат классифицирует проблему: решаемая или&nbsp;нет</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/reactive-4.webp" alt="Нерешаемая: инструкция, карта центров, заявка на ремонт" loading="lazy"><figcaption>Нерешаемая: инструкция, карта центров, заявка на&nbsp;ремонт</figcaption></figure></div>
@@ -128,7 +129,8 @@
             <source src="assets/video/giga-reactive-hands.webm?v=2" type='video/webm; codecs="vp9"'><source src="assets/video/giga-reactive-hands.mp4?v=2" type="video/mp4"></video></div>
         </div>
       </div>
-      <div class="mode-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
+      <div class="mode-panel" id="panel-3">
+        <h3 class="mode-title"><span class="mode-n">03</span>SOS-режим</h3>
         <p class="mode-desc">Если решить нельзя&nbsp;— агент сразу передаёт проблему в&nbsp;поддержку вместе&nbsp;с&nbsp;контекстом.</p>
         <div class="inner ph"><span>Схема экстренного режима SOS</span></div>
         <div class="row">
@@ -159,19 +161,21 @@
       <p>Агент закрывает большую часть сбоев, но&nbsp;не&nbsp;все. Для&nbsp;остальных случаев мы&nbsp;спроектировали сценарии, в&nbsp;которых пользователь не&nbsp;остаётся с&nbsp;проблемой&nbsp;один.</p>
     </div>
     <div class="modes">
-      <div class="seg" role="tablist" aria-label="Другие функции"><button class="seg-tab" role="tab" id="ftab-health" aria-controls="fpanel-health" aria-selected="true">Здоровье устройств</button><button class="seg-tab" role="tab" id="ftab-share" aria-controls="fpanel-share" aria-selected="false" tabindex="-1">Поделиться с&nbsp;близким</button><button class="seg-tab" role="tab" id="ftab-warranty" aria-controls="fpanel-warranty" aria-selected="false" tabindex="-1">Возврат по&nbsp;гарантии</button></div>
-      <div class="mode-panel" role="tabpanel" id="fpanel-health" aria-labelledby="ftab-health">
+      <div class="mode-panel" id="fpanel-health">
+        <h3 class="mode-title"><span class="mode-n">01</span>Здоровье устройств</h3>
         <p class="mode-desc">Состояние всех устройств дома на&nbsp;одном экране: что работает, что требует внимания и&nbsp;что агент уже починил.</p>
         <div class="inner feat-video"><video class="autoplay" poster="assets/video/giga-health-poster.webp" muted loop playsinline preload="none" aria-label="Здоровье устройства: нажатие «Починить неисправность», сканирование, «Сканирование завершено»">
           <source src="assets/video/giga-health.webm" type='video/webm; codecs="vp9"'><source src="assets/video/giga-health.mp4" type="video/mp4"></video></div>
       </div>
-      <div class="mode-panel" role="tabpanel" id="fpanel-share" aria-labelledby="ftab-share" hidden>
+      <div class="mode-panel" id="fpanel-share">
+        <h3 class="mode-title"><span class="mode-n">02</span>Поделиться с близким</h3>
         <p class="mode-desc">Если не&nbsp;получается разобраться самому, проблему можно в&nbsp;один тап отправить родственнику&nbsp;— он&nbsp;увидит, что случилось, и&nbsp;поможет удалённо.</p>
         <div class="flow" data-flow>
           <div class="flow-phone" aria-hidden="true"><span class="tap"></span><div class="flow-screen on"><span>Экран 1</span></div><div class="flow-screen"><span>Экран 2</span></div><div class="flow-screen"><span>Экран 3</span></div><div class="flow-screen"><span>Экран 4</span></div><div class="flow-screen"><span>Экран 5</span></div></div>
         </div>
       </div>
-      <div class="mode-panel" role="tabpanel" id="fpanel-warranty" aria-labelledby="ftab-warranty" hidden>
+      <div class="mode-panel" id="fpanel-warranty">
+        <h3 class="mode-title"><span class="mode-n">03</span>Возврат по гарантии</h3>
         <p class="mode-desc">Если устройство неисправно, возврат оформляется прямо из&nbsp;сценария диагностики&nbsp;— без&nbsp;звонков и&nbsp;поиска чеков.</p>
         <div class="flow" data-flow>
           <div class="flow-phone" aria-hidden="true"><span class="tap"></span><div class="flow-screen on"><span>Экран 1</span></div><div class="flow-screen"><span>Экран 2</span></div><div class="flow-screen"><span>Экран 3</span></div><div class="flow-screen"><span>Экран 4</span></div><div class="flow-screen"><span>Экран 5</span></div></div>
