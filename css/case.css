@@ -266,3 +266,10 @@ h1,h2,h3{text-wrap:balance}
 .defense figure{margin:0}
 .defense .inner img{width:100%;height:auto;display:block}
 @media (max-width:760px){ .defense{grid-template-columns:1fr} }
+
+/* роль, команда, формат, год — под описанием в шапке */
+.meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-5);margin:var(--s-6) 0 0;padding-top:var(--s-5);border-top:1px solid var(--chip)}
+.meta div{margin:0}
+.meta dt{font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.meta dd{margin:var(--s-2) 0 0;font:var(--t-small);color:var(--ink)}
+@media (max-width:760px){ .meta{grid-template-columns:1fr 1fr} }
