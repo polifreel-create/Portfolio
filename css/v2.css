@@ -33,7 +33,7 @@
   --r-in:32px;           /* внутренние плашки, картинки и видео — «пухлые» */
   color-scheme:light;
 }
-@media (min-width:900px){ :root{ --page:var(--s-6); --gap:var(--s-4); --pad:40px } }
+@media (min-width:900px){ :root{ --page:40px; --gap:var(--s-4); --pad:40px } }
 
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -48,10 +48,10 @@ p{margin:0}
 .u:hover::after{transform:scaleX(1)}
 
 /* ---------- раскладка: 12 колонок, слева 4, справа 8 ---------- */
-.page{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--gap);
-  padding:var(--page);max-width:1440px;margin:0 auto;align-items:start}
-.side{grid-column:1 / span 4;position:sticky;top:var(--page)}
-.feed{grid-column:5 / span 8;display:flex;flex-direction:column;gap:var(--gap);min-width:0}
+.page{display:grid;grid-template-columns:448px minmax(0,1fr);gap:var(--gap);
+  padding:var(--page);align-items:start}
+.side{grid-column:1;position:sticky;top:var(--page)}
+.feed{grid-column:2;display:flex;flex-direction:column;gap:var(--gap);min-width:0}
 .card{background:var(--card);border-radius:var(--r)}
 
 /* ---------- левая карточка ---------- */
@@ -112,8 +112,9 @@ p{margin:0}
 @keyframes tmFloat{0%,100%{transform:none}50%{transform:translateY(-3.2%)}}
 
 /* ---------- адаптив ---------- */
-@media (max-width:1000px){ .side{grid-column:1 / span 5} .feed{grid-column:6 / span 7} }
+@media (max-width:1100px){ .page{grid-template-columns:360px minmax(0,1fr)} }
 @media (max-width:760px){
+  .page{grid-template-columns:1fr}
   .side,.feed{grid-column:1 / -1}
   .side{position:static}
   .case .body{grid-template-columns:1fr}
