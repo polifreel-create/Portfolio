@@ -273,3 +273,7 @@ h1,h2,h3{text-wrap:balance}
 .brief-item.accent p{color:rgba(255,255,255,.66)}
 .brief-item.accent .big em{background:linear-gradient(115deg,#5FD3FF,#7BE38C 55%,#C9F26A);-webkit-background-clip:text;background-clip:text}
 
+
+/* заголовок «Кратко» с искорками */
+.brief .sec-head h2{display:flex;align-items:center;gap:var(--s-2);margin:0;font:var(--t-h2);letter-spacing:-.02em}
+.brief .sec-head h2 img{width:40px;height:40px;margin:-6px 0 -6px -6px}
