@@ -6,8 +6,8 @@
   <title>Гигасправка — кейс Полины Ефремовой</title>
   <meta name="description" content="Агентная архитектура поддержки умных устройств Sber Devices: агент решает поломки раньше, чем пользователь их заметит.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/v2.css?v=2">
-  <link rel="stylesheet" href="css/case.css?v=2">
+  <link rel="stylesheet" href="css/v2.css?v=3">
+  <link rel="stylesheet" href="css/case.css?v=3">
 </head>
 <body>
 <div class="wrap">
@@ -168,11 +168,21 @@
       <div class="seg" role="tablist" aria-label="Другие функции"><button class="seg-tab" role="tab" id="ftab-health" aria-controls="fpanel-health" aria-selected="true">Здоровье устройств</button><button class="seg-tab" role="tab" id="ftab-share" aria-controls="fpanel-share" aria-selected="false" tabindex="-1">Поделиться с&nbsp;близким</button><button class="seg-tab" role="tab" id="ftab-warranty" aria-controls="fpanel-warranty" aria-selected="false" tabindex="-1">Возврат по&nbsp;гарантии</button></div>
       <div class="mode-panel" role="tabpanel" id="fpanel-health" aria-labelledby="ftab-health">
         <p class="mode-desc">Состояние всех устройств дома на&nbsp;одном экране: что работает, что требует внимания и&nbsp;что агент уже починил.</p>
-        <div class="screens">
-          <figure><div class="inner"><img src="assets/img/giga/case/health-1.jpg" alt="Экран устройства с индикатором здоровья 67% и событием «Починить неисправность»" loading="lazy"></div><figcaption>Событие&nbsp;на&nbsp;устройстве</figcaption></figure>
-          <figure><div class="inner"><img src="assets/img/giga/case/health-2.jpg" alt="Сканирование: собираю логи" loading="lazy"></div><figcaption>Запуск&nbsp;сканирования</figcaption></figure>
-          <figure><div class="inner"><img src="assets/img/giga/case/health-4.jpg" alt="Сканирование: ищу инструкции" loading="lazy"></div><figcaption>Поиск&nbsp;решения</figcaption></figure>
-          <figure><div class="inner"><img src="assets/img/giga/case/health-5.jpg" alt="Сканирование завершено, устройство работает на 20% лучше" loading="lazy"></div><figcaption>Готово&nbsp;— +20% к&nbsp;здоровью</figcaption></figure>
+        <div class="flow" data-scene="health">
+          <div class="flow-phone" aria-hidden="true"><div class="flow-screen on hs"><div class="hs-stage">
+            <img class="hs-shell" src="assets/img/giga/case/health-shell.jpg" alt="" loading="lazy">
+            <img class="hs-home" src="assets/img/giga/case/health-home.jpg" alt="" loading="lazy">
+            <i class="hs-press"></i>
+            <div class="hs-card">
+              <i class="hs-glow"></i><i class="hs-beam"></i>
+              <div class="hs-title"><span>Собираю логи…</span><span>Ловлю сигнал…</span><span>Ищу инструкции…</span></div>
+              <b class="hs-more"><i></i><i></i><i></i></b>
+              <div class="hs-track"><i class="hs-dots"></i><i class="hs-dots hs-lit"></i><i class="hs-knob"></i></div>
+              <div class="hs-meta"><span>Прогресс <em class="hs-pct">0</em>%</span><span>Осталось около <em class="hs-min">3</em>&nbsp;мин.</span></div>
+            </div>
+            <img class="hs-done" src="assets/img/giga/case/health-done.jpg" alt="" loading="lazy">
+            <span class="hs-tap"></span>
+          </div></div></div>
         </div>
       </div>
       <div class="mode-panel" role="tabpanel" id="fpanel-share" aria-labelledby="ftab-share" hidden>
@@ -279,6 +289,61 @@ document.querySelectorAll('[data-flow]').forEach(function(f){
   var panel=f.closest('[role=tabpanel]');if(panel)panel.addEventListener('shown',function(){show(0);play()});
   if('IntersectionObserver' in window)new IntersectionObserver(function(es){es[0].isIntersecting&&!(panel&&panel.hidden)?(run||play()):stop()},{threshold:.3}).observe(f);
   show(0);
+});
+/* сцена «Здоровье устройства»: кадры считаются в реальном времени — тап, переход, живое сканирование, результат */
+document.querySelectorAll('[data-scene=health]').forEach(function(f){
+  var st=f.querySelector('.hs-stage'),scr=f.querySelector('.hs'),q=function(c){return f.querySelector(c)};
+  var home=q('.hs-home'),press=q('.hs-press'),card=q('.hs-card'),done=q('.hs-done'),tap=q('.hs-tap'),
+      titles=[].slice.call(f.querySelectorAll('.hs-title span')),beam=q('.hs-beam'),glow=q('.hs-glow'),knob=q('.hs-knob'),
+      lit=q('.hs-lit'),pct=q('.hs-pct'),min=q('.hs-min');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function fit(){st.style.transform='scale('+(scr.clientWidth/390)+')'}
+  fit(); if('ResizeObserver' in window)new ResizeObserver(fit).observe(scr);
+  var cl=function(v){return v<0?0:v>1?1:v},seg=function(t,a,b){return cl((t-a)/(b-a))},
+      io=function(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2},       /* ease-in-out */
+      out=function(x){return 1-Math.pow(1-x,3)},                          /* ease-out */
+      back=function(x){var c=1.4;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)}; /* лёгкий перелёт */
+  var T=14.2, X0=34, X1=342;          /* длина цикла, сек; ход луча внутри карточки */
+  function frame(t){
+    /* 1. нажатие на «Починить неисправность» */
+    var pr=seg(t,2.0,2.25)*(1-seg(t,2.45,2.9));
+    press.style.opacity=pr; home.style.transform='translateY(0) scale('+(1-.012*pr)+')';
+    var tp=seg(t,2.0,2.75); tap.style.opacity=t<2||t>2.75?0:(tp<.25?tp*4:1-(tp-.25)/.75)*.9;
+    tap.style.transform='scale('+(.4+out(tp)*1.2)+')';
+    /* 2. главный экран уходит вверх, карточка сканирования поднимается */
+    var h=out(seg(t,2.55,3.25)), hb=out(seg(t,13.3,14.1));
+    var hv=Math.max(1-h,hb);
+    home.style.opacity=hv; home.style.transform='translateY('+(-28*h*(1-hb)+18*(1-hb)*(t>13?1:0))+'px) scale('+(1-.012*pr-.03*h*(1-hb))+')';
+    home.style.filter='blur('+(6*(1-hv)).toFixed(2)+'px)';
+    var ci=back(seg(t,2.8,3.6)), co=io(seg(t,9.7,10.3));
+    card.style.opacity=cl(seg(t,2.8,3.3))*(1-co);
+    card.style.transform='translateY('+(26*(1-ci)-8*co)+'px) scale('+(.95+.05*ci-.03*co)+')';
+    card.style.filter='blur('+(4*co).toFixed(2)+'px)';
+    /* 3. сканирование: луч идёт по линии, проценты растут, статус меняется */
+    var p=io(seg(t,3.5,9.6)), x=X0+(X1-X0)*p;
+    beam.style.transform=glow.style.transform=knob.style.transform='translateX('+x+'px)';
+    lit.style.width=(x-X0)+'px';
+    var sw=.6+.4*Math.sin(t*6); knob.style.boxShadow='0 0 '+(10+8*sw)+'px rgba(170,255,230,'+(.5+.3*sw)+')';
+    pct.textContent=Math.round(p*100); min.textContent=p<.34?3:p<.7?2:1;
+    var ph=p*3;
+    titles.forEach(function(el,k){
+      var a=k===0?1-seg(ph,.9,1.1):k===2?seg(ph,1.9,2.1):seg(ph,.9,1.1)*(1-seg(ph,1.9,2.1));
+      var dir=(k<ph-.5?-1:1); el.style.opacity=a; el.style.filter='blur('+(5*(1-a)).toFixed(2)+'px)';
+      el.style.transform='translateY('+(10*(1-a)*dir)+'px)';
+    });
+    /* 4. результат */
+    var di=back(seg(t,10.0,10.9)), dv=cl(seg(t,10.0,10.5))*(1-io(seg(t,13.2,13.9)));
+    done.style.opacity=dv; done.style.transform='translateY('+(18*(1-di))+'px) scale('+(.94+.06*di)+')';
+    done.style.filter='blur('+(6*(1-cl(seg(t,10,10.6)))).toFixed(2)+'px) brightness('+(1+.25*Math.sin(Math.PI*seg(t,10.4,11.6)))+')';
+  }
+  var t0=null,raf=null,run=false;
+  function loop(now){if(t0===null)t0=now;frame(((now-t0)/1000)%T);raf=requestAnimationFrame(loop)}
+  function play(){if(run||reduce)return;run=true;t0=null;raf=requestAnimationFrame(loop)}
+  function stop(){run=false;cancelAnimationFrame(raf)}
+  frame(reduce?11:0);
+  var panel=f.closest('[role=tabpanel]');if(panel)panel.addEventListener('shown',function(){stop();play()});
+  if('IntersectionObserver' in window)new IntersectionObserver(function(es){es[0].isIntersecting&&!(panel&&panel.hidden)?play():stop()},{threshold:.3}).observe(f);
+  window.__hsFrame=window.__hsFrame||[];window.__hsFrame.push(function(t){stop();frame(t)});
 });
 (function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
