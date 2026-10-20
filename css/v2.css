@@ -92,7 +92,7 @@ p{margin:0}
 /* ---------- блоки «Инструменты» и «Обо мне» ---------- */
 .block{padding:var(--pad)}
 .block h2{margin:0 0 var(--s-4);font:var(--t-h);letter-spacing:-.02em}
-.block p{color:var(--ink-2);max-width:40em}
+.block p{color:var(--ink-2);max-width:none}
 .block p + p{margin-top:var(--s-3)}
 .block .lead{color:var(--ink);font-weight:500}
 .chips{display:flex;flex-wrap:wrap;gap:var(--s-2);margin:var(--s-5) 0}
