@@ -105,7 +105,12 @@
       </div>
       <div class="mode-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
         <p class="mode-desc">Пользователь сообщает о&nbsp;проблеме&nbsp;— агент ведёт диагностику и&nbsp;даёт пошаговую&nbsp;инструкцию.</p>
-        <div class="inner ph"><span>Схема реактивного режима</span></div>
+        <div class="carousel" data-carousel>
+          <div class="track" tabindex="0" aria-label="Шаги реактивного режима"><figure class="slide"><img src="assets/img/giga/case/reactive-1.jpg" alt="Пользователь пишет или говорит, что устройство не работает" loading="lazy"><figcaption>Пользователь пишет или&nbsp;говорит, что&nbsp;устройство не&nbsp;работает</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/reactive-2.jpg" alt="Агент собирает логи и проверяет, в сети ли устройство" loading="lazy"><figcaption>Агент собирает логи и&nbsp;проверяет, в&nbsp;сети&nbsp;ли устройство</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/reactive-3.jpg" alt="ГигаЧат классифицирует проблему: решаемая или нет" loading="lazy"><figcaption>ГигаЧат классифицирует проблему: решаемая или&nbsp;нет</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/reactive-4.jpg" alt="Нерешаемая: инструкция, карта центров, заявка на ремонт" loading="lazy"><figcaption>Нерешаемая: инструкция, карта центров, заявка на&nbsp;ремонт</figcaption></figure></div>
+          <button class="nav nav-prev" aria-label="Назад"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="nav nav-next" aria-label="Дальше"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button>
+          <div class="dots" aria-hidden="true"></div>
+        </div>
       </div>
       <div class="mode-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
         <p class="mode-desc">Если решить нельзя&nbsp;— агент сразу передаёт проблему в&nbsp;поддержку вместе&nbsp;с&nbsp;контекстом.</p>
@@ -255,6 +260,8 @@ document.querySelectorAll('[data-carousel]').forEach(function(c){
   c.querySelector('.nav-next').addEventListener('click',function(){go(idx()+1)});
   tr.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(idx()+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(idx()-1)}});
   tr.addEventListener('scroll',function(){requestAnimationFrame(upd)},{passive:true});upd();
+  function idx(){return tr.clientWidth?Math.round(tr.scrollLeft/tr.clientWidth):0}
+  var pn=c.closest('[role=tabpanel]');if(pn)pn.addEventListener('shown',function(){tr.scrollLeft=0;upd()});
 });
 /* режимы агента: переключение схем */
 document.querySelectorAll('.seg').forEach(function(group){
