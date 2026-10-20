@@ -245,7 +245,7 @@ h1,h2,h3{text-wrap:balance}
 
 /* заголовок «Кратко» с искорками */
 .brief .sec-head h2{display:flex;align-items:center;gap:var(--s-2);margin:0;font:var(--t-h2);letter-spacing:-.02em}
-.brief .sec-head h2 img{width:30px;height:30px;margin:0 var(--s-1) 0 0}
+.brief .sec-head h2 img{width:28px;height:28px;margin:0 -1px 0 0;transform:translateY(-3px)}
 
 /* под схемой режима — две вертикальные картинки или видео */
 .mode-panel .row .inner{aspect-ratio:7/8}
