@@ -71,7 +71,7 @@ p{margin:0}
 .me h1{margin:0;font:var(--t-h);letter-spacing:-.02em}
 .bio{display:flex;flex-direction:column;gap:var(--s-4);margin-top:var(--s-6);color:var(--ink-2);max-width:30em}
 .bio p{font-size:18px;line-height:1.45}
-.bio .lead{color:var(--ink);font-weight:500;font-size:18px;line-height:1.4;letter-spacing:-.01em;text-wrap:balance}
+.bio .lead{color:var(--ink);font-weight:500;font-size:18px;line-height:1.4;letter-spacing:-.01em;text-wrap:wrap}
 .contacts{display:flex;flex-wrap:wrap;gap:var(--s-2) var(--s-5);margin-top:var(--s-6);font:var(--t-small);font-weight:500}
 
 /* ---------- карточка кейса ---------- */
