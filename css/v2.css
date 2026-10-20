@@ -12,7 +12,7 @@
 
 :root{
   --bg:#EBEEF1; --card:#ffffff;
-  --ink:#111111; --ink-2:#555555; --ink-3:#9a9a9a;
+  --ink:#0F1414; --ink-2:#555555; --ink-3:#9a9a9a;
   --chip:#F4F7FA; --wash:#F4F7FA;   /* все серые плашки — один оттенок */ --accent:#ef6a2a;
   --font:"Onest","Helvetica Neue",Arial,sans-serif;
 
@@ -27,13 +27,13 @@
   --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px; --s-5:24px; --s-6:32px; --s-7:48px; --s-8:64px;
 
   --page:var(--s-4);     /* поля страницы */
-  --gap:var(--s-4);      /* между карточками */
+  --gap:var(--s-3);      /* между карточками */
   --pad:var(--s-5);      /* внутри карточки */
-  --r:24px;              /* скругление карточек */
-  --r-in:16px;           /* скругление внутренних картинок */
+  --r:54px;              /* скругление карточек */
+  --r-in:22px;           /* внутренние плашки и картинки: 54 − отступ 32, концентрично */
   color-scheme:light;
 }
-@media (min-width:900px){ :root{ --page:var(--s-6); --gap:var(--s-5); --pad:var(--s-6) } }
+@media (min-width:900px){ :root{ --page:var(--s-6); --gap:var(--s-4); --pad:var(--s-6) } }
 
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
