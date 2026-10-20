@@ -322,5 +322,5 @@ h1,h2,h3{text-wrap:balance}
 .mode-n{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 10px;border-radius:14px;background:var(--chip);
   font:500 16px/1 var(--font);letter-spacing:0;color:var(--sber-ink)}
 .mode-title + .mode-desc{margin-top:calc(var(--s-3) - var(--s-4))}
-/* номер подраздела — яркая плашка в градиенте Сбера, цифра белая */
-.mode-n{background:var(--sber-grad);color:#fff;box-shadow:0 6px 16px rgba(33,160,56,.25)}
+/* номер подраздела — светлая плашка, цифра крупнее */
+.mode-n{min-width:48px;height:48px;border-radius:16px;font-size:20px;letter-spacing:-.01em}
