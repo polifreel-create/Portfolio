@@ -334,7 +334,7 @@ h1,h2,h3{text-wrap:balance}
 .hero .meta div{white-space:nowrap;max-width:none}
 .hero .icon{width:88px;height:88px;border-radius:30px}
 .hero .shot{flex:1 1 auto;min-height:240px;margin:var(--s-5) 0 0;border-radius:var(--r-in);overflow:hidden;background:#0F1414}
-.hero .shot video{width:100%;height:100%;object-fit:cover;object-position:50% 35%;display:block}
+.hero .shot video{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}
 @media (max-width:760px){ .hero{height:auto} .hero .shot{flex:none;aspect-ratio:4/3} .hero .icon{position:static;order:-1;width:64px;height:64px;border-radius:22px;margin-bottom:var(--s-4)} .hero .meta{display:grid;grid-template-columns:1fr 1fr;justify-content:stretch} .hero .meta div{white-space:normal} }
 
 /* ===== тёмный акцентный раздел (03 Решение) — как карточка «Решение» в «Кратко» ===== */
@@ -351,3 +351,7 @@ h1,h2,h3{text-wrap:balance}
 .sec.dark .inner.ph{color:rgba(255,255,255,.4)}
 .sec.dark .carousel .track{background:#0A0E0E;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
 .sec.dark .mode-panel .row .inner.ph,.sec.dark .mode-panel .inner.ph{background:rgba(255,255,255,.05);color:rgba(255,255,255,.4)}
+/* шоурил: видео в своих пропорциях, телефон всегда целиком с полями */
+.hero{height:auto}
+.hero .shot{flex:none;aspect-ratio:1920/820;min-height:0}
+@media (max-width:760px){ .hero .shot{aspect-ratio:10/9} .hero .shot video{object-position:24% 50%} }
