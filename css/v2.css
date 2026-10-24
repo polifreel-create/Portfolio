@@ -349,3 +349,15 @@ body{letter-spacing:-.01em}
   .intro .contacts{margin-top:auto;padding-top:24px}
   .brands{flex:none}
 }
+/* обучение — отдельная карточка, логотип того же размера, что у компаний */
+@media (min-width:761px){
+  .edu-card .edu img{width:60px!important;height:60px!important}
+  .edu-card .edu .f{font-size:18px}
+}
+@media (min-width:761px) and (max-height:880px){
+  .edu-card .edu img{width:52px!important;height:52px!important}
+  .edu-card .edu .f{font-size:16px}
+}
+@media (min-width:761px) and (max-height:760px){
+  .edu-card .edu img{width:46px!important;height:46px!important}
+}
