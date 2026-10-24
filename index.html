@@ -6,7 +6,7 @@
   <title>Полина Ефремова — продуктовый дизайнер</title>
   <meta name="description" content="Портфолио продуктового дизайнера Полины Ефремовой.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/v2.css?v=30">
+  <link rel="stylesheet" href="css/v2.css?v=31">
 </head>
 <body>
 <div class="page">
@@ -141,6 +141,13 @@
     else el.classList.toggle('play',e.isIntersecting&&!reduce);
   })},{threshold:.3});
   document.querySelectorAll('video.autoplay,[data-anim]').forEach(function(el){io.observe(el)});
+})();
+/* мобильный: «Нанять меня» появляется, когда первый блок ушёл за экран */
+(function(){
+  var b=document.querySelector('.hire'),intro=document.querySelector('.intro');if(!b||!intro)return;
+  var mq=matchMedia('(max-width:760px)');
+  function upd(){b.classList.toggle('on',!mq.matches||intro.getBoundingClientRect().bottom<0)}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
 })();
 </script>
 </body>
