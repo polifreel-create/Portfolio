@@ -361,3 +361,26 @@ body{letter-spacing:-.01em}
 @media (min-width:761px) and (max-height:760px){
   .edu-card .edu img{width:46px!important;height:46px!important}
 }
+/* десктоп: левая панель уже */
+@media (min-width:1101px){ .page{grid-template-columns:392px minmax(0,1fr)} }
+@media (min-width:1101px){
+  .intro,.brands{padding-left:28px;padding-right:28px}
+  .intro .contacts{padding-top:16px}
+}
+@media (min-width:761px) and (max-height:800px){ .bio{margin-top:14px} .logos + h2,.logos{margin-top:12px} }
+@media (min-width:1101px){ .bio p:not(.lead){font-size:16px;line-height:1.5} }
+@media (min-width:1101px){
+  .edu-card .edu .f{font-size:16px!important;white-space:nowrap}
+  .edu-card .edu img{width:52px!important;height:52px!important}
+  .edu-card .edu{gap:14px!important}
+}
+@media (min-width:1101px) and (max-height:800px){
+  .edu-card .edu .f{font-size:15px!important}
+  .edu-card .edu img{width:46px!important;height:46px!important}
+}
+@media (min-width:1101px) and (max-height:740px){
+  .bio .lead{font-size:17px}
+  .bio p:not(.lead){font-size:14.5px;line-height:1.45}
+  .me img{width:44px;height:44px}
+  .me h1{font-size:26px}
+}
