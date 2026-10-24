@@ -426,3 +426,34 @@ body{letter-spacing:-.01em}
   .works-list i{grid-column:3}
   .works-list li + li a:before{left:calc(var(--s-3) + 64px + 14px)}
 }
+/* ===== модалка «Другие работы» ===== */
+.wk{position:fixed;inset:0;z-index:120;display:grid;place-items:center;pointer-events:none}
+.wk-scrim{position:absolute;inset:0;background:rgba(15,20,20,.42);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:0;transition:opacity .3s}
+.wk-panel{position:relative;width:min(960px,calc(100vw - 48px));max-height:calc(100svh - 48px);display:flex;flex-direction:column;background:#fff;border-radius:var(--r);overflow:hidden;opacity:0;transform:translateY(24px) scale(.98);transition:opacity .3s,transform .4s cubic-bezier(.2,.8,.2,1)}
+.wk.on{pointer-events:auto}.wk.on .wk-scrim{opacity:1}.wk.on .wk-panel{opacity:1;transform:none}
+.wk-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:32px 32px 0 var(--pad)}
+.wk-head h3{margin:0;font:500 32px/1.15 var(--font);letter-spacing:-.03em;color:var(--ink)}
+.wk-head p{margin:8px 0 0;font:400 16px/1.3 var(--font);color:var(--ink-3)}
+.wk-x{flex:none;width:48px;height:48px;border:0;border-radius:50%;background:var(--chip);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:background .2s}
+.wk-x:hover{background:#E6EAEE}
+.wk-body{overflow:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:16px var(--pad) var(--pad)}
+.wk-d{margin:0 0 24px;max-width:640px;font:400 18px/1.5 var(--font);color:var(--ink-2)}
+.wk-gal{display:flex;flex-direction:column;gap:12px}
+.wk-gal img{display:block;width:100%;height:auto;border-radius:var(--r-in);background:var(--chip)}
+.wk-ph{width:100%!important;height:auto!important;aspect-ratio:16/10;border-radius:var(--r-in)!important;transform:none!important}
+.wk-link{display:flex;align-items:center;justify-content:center;gap:8px;height:56px;margin-top:24px;border-radius:999px;background:var(--ink);color:#fff;font:500 16px/1 var(--font);text-decoration:none}
+.wk-link:after{content:"↗"}
+.wk-link[hidden]{display:none}
+@media (max-width:760px){
+  .wk{place-items:end stretch}
+  .wk-panel{width:100%;max-height:calc(100svh - 12px);border-radius:28px 28px 0 0;transform:translateY(100%);opacity:1}
+  .wk-head{padding:20px 16px 0 24px}
+  .wk-head h3{font-size:24px}
+  .wk-head p{font-size:14px}
+  .wk-x{width:40px;height:40px}
+  .wk-body{padding:12px 24px calc(env(safe-area-inset-bottom) + 24px)}
+  .wk-d{font-size:15px;margin-bottom:16px}
+  .wk-gal{gap:8px}
+  .wk-gal img,.wk-ph{border-radius:20px!important}
+  .wk-ph{aspect-ratio:4/5}
+}
