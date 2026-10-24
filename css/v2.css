@@ -304,3 +304,41 @@ body{letter-spacing:-.01em}
 .media.soon{display:grid;place-items:center;background:radial-gradient(60% 80% at 30% 30%,#F7E7DA,transparent 70%),radial-gradient(60% 80% at 75% 70%,#E3E8F7,transparent 70%),#F4F2EF}
 .media.soon-b{background:radial-gradient(60% 80% at 30% 30%,#FFE0DC,transparent 70%),radial-gradient(60% 80% at 75% 70%,#FDEFD6,transparent 70%),#FBF3EE}
 .media.soon span{height:40px;padding:0 16px;border-radius:999px;display:grid;place-items:center;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);font:500 15px/1 var(--font);color:var(--ink-2)}
+/* десктоп: обучение строкой с полным названием — без пустого места */
+@media (min-width:761px){
+  .logos:has(.edu){grid-template-columns:1fr}
+  .edu{flex-direction:row!important;align-items:center;text-align:left!important;gap:16px!important}
+  .edu .s{display:none}
+  .edu .f{display:block;font:500 16px/1.3 var(--font);color:var(--ink);letter-spacing:-.01em}
+  .edu .f small{display:block;margin-top:4px;font:400 14px/1.4 var(--font);color:var(--ink-3)}
+}
+/* десктоп: левая панель целиком помещается в экран */
+@media (min-width:761px){
+  .side{gap:12px}
+  .intro,.brands{padding:32px}
+  .bio{margin-top:24px}
+  .contacts{margin-top:24px}
+  .logos{margin-top:14px}
+  .logos img{width:60px!important;height:60px!important}
+  .logos + h2{margin-top:22px}
+}
+@media (min-width:761px) and (max-height:880px){
+  .intro,.brands{padding:28px}
+  .me img{width:48px;height:48px}
+  .me h1{font-size:28px}
+  .bio{margin-top:18px;gap:10px}
+  .bio .lead{font-size:18px}
+  .bio p{font-size:16px;line-height:1.45}
+  .contacts{margin-top:18px}
+  .brands h2{font-size:18px}
+  .logos img{width:52px!important;height:52px!important}
+  .logos li{font-size:14px}
+  .logos + h2{margin-top:18px}
+  .edu img{width:48px!important;height:48px!important}
+}
+@media (min-width:761px) and (max-height:760px){
+  .intro,.brands{padding:24px}
+  .bio p:not(.lead){font-size:15px}
+  .logos li{font-size:13px;gap:6px}
+  .logos img{width:46px!important;height:46px!important}
+}
