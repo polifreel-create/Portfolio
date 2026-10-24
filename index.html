@@ -6,7 +6,7 @@
   <title>Полина Ефремова — продуктовый дизайнер</title>
   <meta name="description" content="Портфолио продуктового дизайнера Полины Ефремовой.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/v2.css?v=50">
+  <link rel="stylesheet" href="css/v2.css?v=51">
 </head>
 <body>
 <div class="page">
@@ -106,8 +106,8 @@
       </div>
     </div>
 
-    <section class="block card works" id="works" hidden>
-      <div class="works-h"><h2>Другие работы</h2><a class="works-all" href="https://www.behance.net/" target="_blank" rel="noopener">Behance</a></div>
+    <section class="block card works" id="works">
+      <div class="works-h"><h2>Другие работы</h2><a class="works-all" href="https://www.behance.net/" target="_blank" rel="noopener" hidden>Behance</a></div>
       <ul class="works-list">
         <li><a href="#w1" data-work="w1"><span class="w-th g1"></span><span class="w-t">Редизайн мобильного банка</span><span class="w-k">Концепт · Mobile</span><span class="w-y">2025</span><i aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M5 4h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></li>
         <li><a href="#w2" data-work="w2"><span class="w-th g2"></span><span class="w-t">Лендинг для студии ремонта</span><span class="w-k">Web</span><span class="w-y">2025</span><i aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M5 4h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></li>
@@ -237,10 +237,10 @@
 (function(){
   /* Данные работ: imgs — пути к картинкам (мокапам); link — ссылка на Behance, если есть */
   var W={
-    w1:{t:'Редизайн мобильного банка',m:'Концепт · Mobile · 2025',d:'Короткое описание: задача, что сделала, результат. 1–2 предложения.',imgs:[],g:'g1',link:'https://www.behance.net/'},
-    w2:{t:'Лендинг для студии ремонта',m:'Web · 2025',d:'Короткое описание: задача, что сделала, результат. 1–2 предложения.',imgs:[],g:'g2'},
-    w3:{t:'Дашборд аналитики продаж',m:'B2B · Web · 2024',d:'Короткое описание: задача, что сделала, результат. 1–2 предложения.',imgs:[],g:'g3'},
-    w4:{t:'Приложение для записи к врачу',m:'Mobile · 2024',d:'Короткое описание: задача, что сделала, результат. 1–2 предложения.',imgs:[],g:'g4'}
+    w1:{t:'Редизайн мобильного банка',m:'Концепт · Mobile · 2025',imgs:[],g:'g1'},
+    w2:{t:'Лендинг для студии ремонта',m:'Web · 2025',imgs:[],g:'g2'},
+    w3:{t:'Дашборд аналитики продаж',m:'B2B · Web · 2024',imgs:[],g:'g3'},
+    w4:{t:'Приложение для записи к врачу',m:'Mobile · 2024',imgs:[],g:'g4'}
   };
   var wk=document.getElementById('wk'),G=document.getElementById('wkG'),L=document.getElementById('wkL'),last;
   function open(id){var w=W[id];if(!w)return;

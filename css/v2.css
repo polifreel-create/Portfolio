@@ -457,3 +457,4 @@ body{letter-spacing:-.01em}
   .wk-gal img,.wk-ph{border-radius:20px!important}
   .wk-ph{aspect-ratio:4/5}
 }
+.works-all[hidden]{display:none}
