@@ -510,3 +510,6 @@ h1,h2,h3{text-wrap:balance}
   .brief-arrow svg{transform:rotate(90deg);width:16px;height:16px}
   .brief-cta{height:52px;margin-top:20px}
 }
+/* ховер только у карточки «Решение» */
+.brief-item:not(.accent){cursor:default}
+.brief-item:not(.accent):hover{transform:none!important;box-shadow:none!important}
