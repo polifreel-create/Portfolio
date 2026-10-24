@@ -427,3 +427,83 @@
 .theme-tm .y-persona .mess{background:var(--chip)}
 .theme-tm .tm-job{background:#fff}
 .theme-tm .y-feat .ic{background:#fff!important;color:var(--tm-green-ink)}
+
+/* ===== Решение: место под экраны (заглушки до получения макетов) ===== */
+.tm-fnav{position:sticky;top:10px;z-index:6;display:flex;gap:4px;width:max-content;max-width:100%;overflow-x:auto;scrollbar-width:none;padding:6px;border-radius:999px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 0 0 1px rgba(15,20,20,.06),0 6px 20px rgba(15,20,20,.06)}
+.tm-fnav::-webkit-scrollbar{display:none}
+.tm-fnav a{flex:none;height:44px;padding:0 18px;border-radius:999px;display:inline-flex;align-items:center;font:500 15px/1 var(--font);color:var(--ink-2);text-decoration:none;transition:background .2s,color .2s}
+.tm-fnav a:hover{color:var(--ink)}
+.tm-fnav a.on{background:var(--tm-graph,#34343C);color:#fff}
+
+.tm-chap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--s-4);scroll-margin-top:90px}
+.tm-chap .tm-copy{gap:0}
+.tm-steps{display:flex;flex-direction:column;gap:4px;margin-bottom:20px}
+.tm-step{display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;border:0;border-radius:18px;background:transparent;text-align:left;font:400 16px/1.35 var(--font);color:var(--ink-2);cursor:pointer;transition:background .2s,color .2s}
+.tm-step b{flex:none;width:28px;height:28px;border-radius:50%;background:#fff;display:grid;place-items:center;font:500 13px/1 var(--font);color:var(--ink-3);transition:background .2s,color .2s}
+.tm-step:hover{color:var(--ink)}
+.tm-step.on{background:#fff;color:var(--ink)}
+.tm-step.on b{background:var(--tm-green,#3FB656);color:#fff}
+.tm-mtr{margin-top:auto}
+
+.tm-stage{position:relative;border-radius:var(--r-in);background:var(--chip);min-height:560px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.tm-count{position:absolute;left:20px;top:20px;z-index:2;height:32px;padding:0 12px;border-radius:999px;background:#fff;display:inline-flex;align-items:center;gap:4px;font:500 13px/1 var(--font);color:var(--ink-3)}
+.tm-count b{color:var(--ink);font-weight:500}
+.tm-phones{position:relative;width:240px;aspect-ratio:9/19.5}
+.tm-chap .tm-phone{position:absolute;inset:0;opacity:0;transform:translateX(40px) scale(.96);transition:opacity .45s,transform .55s cubic-bezier(.2,.8,.2,1)}
+.tm-chap .tm-phone.on{opacity:1;transform:none}
+.tm-chap .tm-phone.prev{opacity:0;transform:translateX(-40px) scale(.96)}
+.tm-bars{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:6px}
+.tm-bars i{width:32px;height:4px;border-radius:2px;background:rgba(15,20,20,.12);overflow:hidden;position:relative}
+.tm-bars i::after{content:"";position:absolute;inset:0;background:var(--tm-graph,#34343C);transform:scaleX(0);transform-origin:left}
+.tm-bars i.done::after{transform:scaleX(1)}
+.tm-bars i.run::after{animation:tmBar var(--dur,4s) linear forwards}
+@keyframes tmBar{to{transform:scaleX(1)}}
+
+/* телефон-заглушка: сюда встанут экраны */
+.tm-phone{display:block;border-radius:36px;background:#1C1C22;padding:7px;box-shadow:0 24px 50px rgba(15,20,20,.16)}
+.tm-phone > i{display:grid;place-items:center;width:100%;height:100%;border-radius:29px;background:#F7F8F9;overflow:hidden;font-style:normal}
+.tm-phone > i span{font:500 13px/1 var(--font);color:var(--ink-3)}
+.tm-phone > i img{width:100%;height:100%;object-fit:cover;display:block}
+
+.tm-smalls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-4)}
+.tm-small{background:var(--chip);border-radius:var(--r-in);padding:28px 28px 0;display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:20px;align-items:start;min-height:300px;overflow:hidden;scroll-margin-top:90px}
+.tm-small h4{margin:0 0 8px;font:500 22px/1.15 var(--font);letter-spacing:-.02em;color:var(--ink)}
+.tm-small p{margin:0;font:400 16px/1.5 var(--font);color:var(--ink-2)}
+.tm-small .tm-phone{width:150px;aspect-ratio:9/19.5;border-radius:28px;padding:6px;align-self:start;margin-top:4px;margin-bottom:-120px}
+.tm-small .tm-phone > i{border-radius:22px}
+
+.tm-all{background:var(--tm-graph,#34343C);border-radius:var(--r-in);padding:32px 0 32px;color:#fff;scroll-margin-top:90px;overflow:hidden}
+.tm-all-h{padding:0 32px 24px}
+.tm-all-h h3{margin:0 0 6px;font:500 28px/1.1 var(--font);letter-spacing:-.03em;color:#fff}
+.tm-all-h p{margin:0;font:400 16px/1.45 var(--font);color:rgba(255,255,255,.65)}
+.tm-strip{display:flex;gap:14px;overflow-x:auto;padding:0 32px 6px;scroll-snap-type:x proximity;scrollbar-width:none;cursor:grab}
+.tm-strip::-webkit-scrollbar{display:none}
+.tm-strip .tm-phone{flex:none;width:160px;aspect-ratio:9/19.5;border-radius:28px;padding:6px;box-shadow:none;background:#1C1C22;scroll-snap-align:start}
+.tm-strip .tm-phone > i{border-radius:22px;background:#45454E}
+.tm-strip .tm-phone > i span{color:rgba(255,255,255,.45)}
+
+@media (max-width:760px){
+  .tm-fnav{top:72px;padding:4px}
+  .tm-fnav a{height:38px;padding:0 14px;font-size:14px}
+  .tm-chap{grid-template-columns:1fr;gap:10px}
+  .tm-chap .tm-stage{order:-1;min-height:440px}
+  .tm-phones{width:190px}
+  .tm-step{padding:10px 12px;font-size:15px}
+  .tm-smalls{grid-template-columns:1fr;gap:10px}
+  .tm-small{padding:20px 20px 0;grid-template-columns:minmax(0,1fr) 110px;min-height:220px;gap:14px}
+  .tm-small h4{font-size:18px}.tm-small p{font-size:14px;line-height:1.4}
+  .tm-small .tm-phone{width:110px;border-radius:22px;padding:5px;margin-bottom:-90px}
+  .tm-small .tm-phone > i{border-radius:17px}
+  .tm-all{padding:24px 0}
+  .tm-all-h{padding:0 20px 18px}.tm-all-h h3{font-size:22px}
+  .tm-strip{padding:0 20px 4px;gap:10px}
+  .tm-strip .tm-phone{width:130px;border-radius:24px}
+}
+.tm-chap .tm-copy{background:var(--chip);border-radius:var(--r-in);padding:32px;display:flex;flex-direction:column}
+.tm-chap .tm-stage{min-height:600px;padding:56px 0 64px}
+.tm-phones{width:220px}
+.tm-fnav{top:66px}
+@media (max-width:760px){ .tm-chap .tm-copy{padding:20px} .tm-chap .tm-stage{min-height:0;padding:56px 0 52px} .tm-phones{width:180px} .tm-fnav{top:72px} }
+.tm-strip{padding-left:0!important;padding-right:0!important}
+.tm-strip::before,.tm-strip::after{content:"";flex:0 0 18px}
+@media (max-width:760px){ .tm-strip::before,.tm-strip::after{flex-basis:10px} }
