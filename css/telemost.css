@@ -411,3 +411,19 @@
   .theme-tm .y-price b{font-size:40px}
   .theme-tm .y-final h2{font-size:28px!important}
 }
+/* сегменты: компактные аватарки на светло-зелёном круге */
+.tm-seg{padding:28px;gap:0}
+.tm-seg .ava{width:88px;height:88px;border-radius:50%;background:var(--tm-green-soft,#E8F6EA);object-fit:cover;display:block;margin-bottom:20px}
+.tm-seg .txt{padding:0}
+.tm-seg.off .ava{filter:saturate(.3);opacity:.7}
+.tm-seg:hover .ava{transform:none}
+@media (max-width:760px){
+  .tm-segs{grid-template-columns:1fr}
+  .tm-seg{padding:20px;display:grid;grid-template-columns:64px 1fr;column-gap:16px;align-items:start}
+  .tm-seg .ava{width:64px;height:64px;margin:0}
+}
+/* без светло-зелёного: на серых карточках — только белый */
+.theme-tm .tm-seg .ava{background:#fff}
+.theme-tm .y-persona .mess{background:var(--chip)}
+.theme-tm .tm-job{background:#fff}
+.theme-tm .y-feat .ic{background:#fff!important;color:var(--tm-green-ink)}
