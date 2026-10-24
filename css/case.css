@@ -471,3 +471,21 @@ h1,h2,h3{text-wrap:balance}
   .hero .shot{max-height:max(300px,calc(100svh - 490px))}
   .hero .shot video{object-position:50% 50%}
 }
+
+/* ===== типографика: единая шкала (мобилка 32/24/20/18/16/14/12, вес 500) ===== */
+@media (max-width:760px){
+  :root{ --t-h1:500 32px/1.05 var(--font); --t-h2:500 24px/1.15 var(--font) }
+  .head h1{letter-spacing:-.035em}
+  .brief-item .big,.brief-item .big em{font-size:24px;font-weight:500;line-height:1.2}
+  .next b{font-size:24px;font-weight:500}
+  .stat b{font-size:32px}
+  .tile h3{font-size:18px}
+  .list li,.brief-item p,.meta dd,.crumbs,.stat span,.text p,.sec strong{font-size:16px}
+  .list li,.brief-item p,.meta dd,.text p{line-height:1.5}
+  .stat span{line-height:1.4}
+  .tile p,figcaption{font-size:14px;line-height:1.4}
+  .zoom-chip{font-size:14px}
+  .eyebrow{font-size:12px}
+  .tile .badge{font-size:11px;padding:3px 8px}
+  .mode-n{font-size:16px}
+}
