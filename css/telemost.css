@@ -329,3 +329,85 @@
   .tm-grid:has(.tm-app) .y-out{grid-column:1/-1}
 }
 @media (max-width:760px){ .tm-grid:has(.tm-app){grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px} .tm-app{min-width:0} }
+
+/* ================================================================
+   Телемост v3 — чисто, в стиле лендинга Яндекс Телемоста:
+   светлые серые карточки, один зелёный акцент, графитовые блоки.
+   ================================================================ */
+.theme-tm{
+  --tm-green:#3FB656; --tm-green-2:#5DC86C; --tm-green-ink:#23913A; --tm-green-soft:#E8F6EA;
+  --tm-graph:#34343C; --tm-graph-2:#45454E;
+  --sber:var(--tm-green); --sber-ink:var(--tm-green-ink);
+  --sber-grad:linear-gradient(160deg,#6AD178,#3FB656);
+}
+.theme-tm .y-green{background:linear-gradient(160deg,#6AD178 0%,#3FB656 100%)!important;color:#fff}
+.theme-tm .y-dark{background:var(--tm-graph)!important;color:#fff}
+.theme-tm .y-chip{background:#fff;color:var(--ink)}
+.theme-tm .y-dark .y-chip{background:var(--tm-graph-2);color:#fff}
+.theme-tm .y-green .y-chip{background:rgba(255,255,255,.25);color:#fff}
+
+/* Кратко: два серых + зелёное решение */
+.theme-tm .brief-item:nth-child(1),.theme-tm .brief-item:nth-child(2){background:var(--chip)}
+.theme-tm .brief-item:not(.accent) h3{color:var(--ink-3)}
+.theme-tm .brief-item:not(.accent) p:not(.big){color:var(--ink-2)}
+.theme-tm .brief-item .big em{background:none!important;padding:0;color:var(--tm-green-ink);-webkit-text-fill-color:var(--tm-green-ink)}
+.theme-tm .brief-item.accent{background:linear-gradient(160deg,#6AD178 0%,#3FB656 100%)}
+.theme-tm .brief-item.accent .big,.theme-tm .brief-item.accent .big em{color:#fff;-webkit-text-fill-color:#fff}
+.theme-tm .brief-item.accent h3{color:rgba(255,255,255,.75)}
+.theme-tm .brief-item.accent p{color:rgba(255,255,255,.92)}
+.theme-tm .brief-item.accent:hover{box-shadow:0 18px 40px rgba(63,182,86,.3)}
+.theme-tm .brief-cta{color:var(--tm-graph)}
+
+/* задачи и цифры — серые карточки с зелёными цифрами */
+.theme-tm .y-task{background:var(--chip);min-height:220px}
+.theme-tm .y-task b{font-size:64px;line-height:.9;color:var(--tm-green)}
+.theme-tm .y-task p{color:var(--ink-2)!important;opacity:1}
+.theme-tm .y-stat{background:var(--chip)}
+.theme-tm .y-stat b{font-size:72px;color:var(--tm-green)}
+.theme-tm .y-stat span{color:var(--ink-2);opacity:1;font-weight:400;font-size:16px}
+
+/* цитаты: главный инсайт на графите */
+.theme-tm .y-quote.main{background:var(--tm-graph)}
+.theme-tm .y-quote.main .y-chip{background:var(--tm-green);color:#fff}
+.theme-tm .y-quote.main::after{color:var(--tm-green);opacity:.9}
+.theme-tm .y-quote.main .q{font-size:40px!important}
+
+/* персона: мягкий зелёный фон вместо жёлтого */
+.theme-tm .y-persona .mess{background:var(--tm-green-soft)}
+.theme-tm .y-persona .st{box-shadow:0 4px 14px rgba(15,20,20,.08)}
+.theme-tm .y-say{background:var(--tm-graph)}
+
+/* фичи */
+.theme-tm .tm-job{background:var(--tm-green-soft);transform:none}
+.theme-tm .tm-job span{color:var(--tm-green-ink)}
+.theme-tm .tm-copy li::before{background:var(--tm-green)}
+.theme-tm .mode-n{color:var(--tm-green-ink)}
+.theme-tm .y-feat .ic{background:var(--tm-green-soft)!important;color:var(--tm-green-ink)}
+
+/* метрики и тарифы */
+.theme-tm .y-dot{background:var(--tm-green)!important}
+.theme-tm .tm-tags span{background:#fff}
+.theme-tm .y-price.hot{box-shadow:0 20px 40px rgba(63,182,86,.28)}
+.theme-tm .y-price.hot .y-chip{background:#fff;color:var(--tm-green-ink)}
+.theme-tm .y-price:not(.y-green) b{color:var(--ink)}
+.theme-tm .y-price:not(.y-green) p{color:var(--ink-2)!important;opacity:1}
+.theme-tm .y-price b{font-size:48px}
+.theme-tm .y-price:last-child b{font-size:32px}
+
+/* видение и итог — графит, как блок «доступен на всех устройствах» */
+.theme-tm .y-future h4{color:#fff}
+.theme-tm .y-future p{color:rgba(255,255,255,.75)!important;opacity:1}
+.theme-tm .y-final .eyebrow,.theme-tm .y-final .eyebrow .num{color:rgba(255,255,255,.5)!important}
+.theme-tm .y-final h2{color:#fff;font-size:40px!important}
+.theme-tm .y-final p{color:rgba(255,255,255,.75)!important}
+.theme-tm .next .arrow{background:var(--tm-green)}
+.theme-tm .tm-cell.y-out .k{color:rgba(255,255,255,.75)}
+.theme-tm .read-time svg{color:var(--tm-green)}
+@media (max-width:760px){
+  .theme-tm .y-task b{font-size:44px}
+  .theme-tm .y-stat b{font-size:36px}
+  .theme-tm .y-stat span{font-size:13px}
+  .theme-tm .y-quote.main .q{font-size:28px!important}
+  .theme-tm .y-price b{font-size:40px}
+  .theme-tm .y-final h2{font-size:28px!important}
+}
