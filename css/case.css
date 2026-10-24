@@ -403,3 +403,14 @@ h1,h2,h3{text-wrap:balance}
 .lb-body{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;display:flex;align-items:center}
 .lb-body img{display:block;height:min(100%,78vh);width:auto;max-width:none;margin:0 16px}
 .lb-hint{padding:10px 16px calc(env(safe-area-inset-bottom) + 16px);text-align:center;color:rgba(255,255,255,.55);font:400 13px/1.3 var(--font)}
+@media (max-width:760px){
+  /* цифры — строками: число слева, подпись справа; без пустых мест при любом количестве */
+  .stats{grid-template-columns:1fr !important;gap:8px}
+  .stat{display:flex;align-items:center;gap:16px;padding:16px 20px}
+  .stat b{flex:none;min-width:96px;font-size:34px}
+  .stat span{margin:0;font-size:15px;line-height:1.35}
+}
+@media (max-width:760px){
+  /* кнопки — по центру и на всю ширину */
+  .btn{align-self:stretch;width:100%;justify-content:center}
+}
