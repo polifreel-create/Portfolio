@@ -355,3 +355,13 @@ h1,h2,h3{text-wrap:balance}
 .hero{height:auto}
 .hero .shot{flex:none;aspect-ratio:1920/820;min-height:0}
 @media (max-width:760px){ .hero .shot{aspect-ratio:10/9} .hero .shot video{object-position:50% 50%} }
+
+/* ===== мобильная версия кейса: наборный текст 16 ===== */
+@media (max-width:760px){
+  :root{ --t-read:400 16px/1.5 var(--font) }
+  .sec p,.sec li,.mode-desc,.text p,.head .lead,.hero .lead{font-size:16px;line-height:1.5}
+  .brief-item{min-height:0;padding:24px 20px 20px}
+  .brief-item p,.tile p,.feature p,.stat span,.meta dd{font-size:15px}
+  .stat,.tile{padding:20px}
+  .hero .icon{border-radius:20px}
+}

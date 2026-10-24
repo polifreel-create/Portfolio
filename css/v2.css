@@ -160,3 +160,19 @@ body{letter-spacing:-.01em}
 
 /* главная: от верха экрана — 10 px */
 .page{padding-top:10px}
+
+/* ===== мобильная версия ===== */
+@media (max-width:760px){
+  /* скругления мягче — текст не «прилипает» к краю */
+  :root{ --r:32px; --r-in:20px; --pad:24px }
+  .me img{border-radius:16px}
+  /* наборный текст 16 */
+  .bio p,.block p,.case .desc{font-size:16px;line-height:1.5}
+  .bio .lead{font-size:18px}
+  /* карточка кейса: теги и год — одной строкой над названием */
+  .case .body{grid-template-columns:1fr auto;gap:var(--s-3) var(--s-4);padding:var(--s-5) var(--pad) var(--pad)}
+  .case .tags{order:0;grid-column:1;grid-row:1;justify-self:start;align-self:center}
+  .case .year{grid-column:2;grid-row:1;align-self:center;justify-self:end;font-size:14px}
+  .case .name{grid-column:1 / -1;grid-row:2;margin-top:var(--s-1)}
+  .case .desc{grid-column:1 / -1;grid-row:3}
+}
