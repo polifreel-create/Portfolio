@@ -296,3 +296,11 @@ body{letter-spacing:-.01em}
   .photos::-webkit-scrollbar{display:none}
   .photos img{flex:0 0 78%;aspect-ratio:4/5;border-radius:20px;scroll-snap-align:start}
 }
+
+/* ===== десктоп: широкие экраны и заглушки ===== */
+@media (min-width:761px){
+  .case .media{width:100%;max-height:min(68vh,620px)}
+}
+.media.soon{display:grid;place-items:center;background:radial-gradient(60% 80% at 30% 30%,#F7E7DA,transparent 70%),radial-gradient(60% 80% at 75% 70%,#E3E8F7,transparent 70%),#F4F2EF}
+.media.soon-b{background:radial-gradient(60% 80% at 30% 30%,#FFE0DC,transparent 70%),radial-gradient(60% 80% at 75% 70%,#FDEFD6,transparent 70%),#FBF3EE}
+.media.soon span{height:40px;padding:0 16px;border-radius:999px;display:grid;place-items:center;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);font:500 15px/1 var(--font);color:var(--ink-2)}

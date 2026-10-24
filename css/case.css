@@ -466,3 +466,8 @@ h1,h2,h3{text-wrap:balance}
   .tile.focus h3{padding-right:58px}
   .stat b{flex:0 0 auto;min-width:92px;white-space:nowrap;font-size:28px}
 }
+/* десктоп: первый экран кейса помещается целиком */
+@media (min-width:761px){
+  .hero .shot{max-height:max(300px,calc(100svh - 490px))}
+  .hero .shot video{object-position:50% 50%}
+}
