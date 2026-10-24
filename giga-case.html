@@ -7,7 +7,7 @@
   <meta name="description" content="Агентная архитектура поддержки умных устройств Sber Devices: агент решает поломки раньше, чем пользователь их заметит.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=32">
-  <link rel="stylesheet" href="css/case.css?v=51">
+  <link rel="stylesheet" href="css/case.css?v=52">
 </head>
 <body>
 <div class="wrap">
@@ -219,6 +219,7 @@
   </a>
 
 </div>
+<div class="lb" id="lb" aria-hidden="true"><div class="lb-top"><span id="lbCap"></span><button class="lb-x" type="button" aria-label="Закрыть" id="lbX"><svg width="18" height="18" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div><div class="lb-body" id="lbBody"><img id="lbImg" alt=""></div><div class="lb-hint">Листайте в&nbsp;сторону, чтобы рассмотреть схему</div></div>
 <div class="m-prog" id="mProg"><i></i></div>
 <nav class="m-bar" id="mBar" aria-label="Навигация по кейсу">
   <div class="m-tabs">
@@ -316,6 +317,17 @@ document.querySelectorAll('[data-flow]').forEach(function(f){
   addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
   document.getElementById('mUp').addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
   bar.querySelector('[data-t=solution]').addEventListener('click',function(e){e.preventDefault();var el=document.getElementById('solution');scrollTo({top:el.getBoundingClientRect().top+scrollY-64,behavior:'smooth'})});
+})();
+/* мобильный: схемы и скриншоты открываются на весь экран */
+(function(){
+  var mq=matchMedia('(max-width:760px)'),lb=document.getElementById('lb'),img=document.getElementById('lbImg'),cap=document.getElementById('lbCap'),body=document.getElementById('lbBody');
+  var items=[].slice.call(document.querySelectorAll('.slide, .video-slot'));
+  items.forEach(function(el){var im=el.querySelector('img');if(!im)return;el.classList.add('zoomable');
+    var c=document.createElement('span');c.className='zoom-chip';c.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Открыть';el.appendChild(c);
+    el.addEventListener('click',function(){if(!mq.matches)return;img.src=im.currentSrc||im.src;var f=el.querySelector('figcaption')||el.parentNode.querySelector('figcaption');cap.textContent=f?f.textContent:'';
+      lb.classList.add('on');lb.setAttribute('aria-hidden','false');document.documentElement.style.overflow='hidden';body.scrollLeft=0});});
+  function close(){lb.classList.remove('on');lb.setAttribute('aria-hidden','true');document.documentElement.style.overflow=''}
+  document.getElementById('lbX').addEventListener('click',close);addEventListener('keydown',function(e){if(e.key==='Escape')close()});
 })();
 </script>
 </body>
