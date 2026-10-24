@@ -6,7 +6,7 @@
   <title>Полина Ефремова — продуктовый дизайнер</title>
   <meta name="description" content="Портфолио продуктового дизайнера Полины Ефремовой.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/v2.css?v=31">
+  <link rel="stylesheet" href="css/v2.css?v=32">
 </head>
 <body>
 <div class="page">
@@ -49,6 +49,9 @@
   <!-- Справа: лента карточек -->
   <main class="feed">
 
+    <div class="cases" id="cases">
+      <div class="m-head"><h2>Кейсы</h2><span class="m-count"><b id="caseNum">1</b> / 4</span></div>
+      <div class="cases-track" id="casesTrack">
     <a class="case card" href="giga-case.html">
       <div class="media">
         <video class="autoplay" poster="assets/video/giga-reel-poster.webp?v=9" muted loop playsinline preload="metadata" aria-label="Трейлер Гигасправки: ассистент, сканирование, диагностика, здоровье устройства, проактивный ремонт">
@@ -98,6 +101,9 @@
       </div>
     </a>
 
+      </div>
+    </div>
+
     <section class="block card">
       <h2>Инструменты</h2>
       <p class="lead">Прошла аттестацию по&nbsp;ИИ в&nbsp;Лучах&nbsp;— AI-native&nbsp;компании.</p>
@@ -105,7 +111,7 @@
       <p>Генерирую гипотезы через Claude и&nbsp;ChatGPT, изображения и&nbsp;видео&nbsp;— через Nano Banana, прототипирую в&nbsp;Figma MCP и&nbsp;через вайб-кодинг в&nbsp;Cursor&nbsp;и&nbsp;Claude.</p>
     </section>
 
-    <section class="block card">
+    <section class="block card" id="about">
       <h2>Обо&nbsp;мне</h2>
       <p>Дизайн&nbsp;— это&nbsp;не&nbsp;просто работа, а&nbsp;то, во&nbsp;что&nbsp;я&nbsp;вкладываюсь и&nbsp;продолжаю развивать. Год в&nbsp;Британской высшей школе дизайна был не&nbsp;про&nbsp;«прошла курс», а&nbsp;про&nbsp;полное погружение: я&nbsp;сама проводила интервью, питчила проекты, была активна на&nbsp;защитах и&nbsp;в&nbsp;обсуждениях. С&nbsp;командой защитила результат в&nbsp;офисе Яндекса, Sisley и&nbsp;Сбера. На&nbsp;защите получила хорошую обратную связь от&nbsp;менторов и&nbsp;руководительницы&nbsp;курса.</p>
       <div class="photos">
@@ -118,6 +124,28 @@
   </main>
 </div>
 
+
+<!-- мобильная версия: шапка, таб-бар, контакты -->
+<header class="m-top" id="mTop" aria-hidden="true"><img src="assets/img/hero/avatar-square.webp" alt=""><b>Полина Ефремова</b><span>Продуктовый дизайнер</span></header>
+<nav class="m-bar" id="mBar" aria-label="Разделы">
+  <div class="m-tabs">
+    <a href="#cases" data-t="cases" class="on"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></svg>Кейсы</a>
+    <a href="#about" data-t="about"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Обо мне</a>
+    <button type="button" data-t="contacts" id="openContacts"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Контакты</button>
+  </div>
+  <a class="m-hire" href="https://t.me/" target="_blank" rel="noopener">Нанять</a>
+</nav>
+<div class="m-sheet" id="mSheet" aria-hidden="true">
+  <div class="m-scrim" data-close></div>
+  <div class="m-panel" role="dialog" aria-label="Контакты">
+    <i class="m-grab"></i>
+    <div class="m-who"><img src="assets/img/hero/avatar-square.webp" alt=""><div><b>Полина Ефремова</b><span>Продуктовый дизайнер · Москва</span></div></div>
+    <a class="m-row" href="https://t.me/" target="_blank" rel="noopener"><i style="background:#2AABEE"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M21.5 4.3L2.9 11.5c-1.3.5-1.3 1.2-.2 1.6l4.8 1.5 1.8 5.6c.2.6.1.9.8.9.5 0 .7-.2 1-.5l2.3-2.2 4.8 3.5c.9.5 1.5.2 1.7-.8l3.2-15c.3-1.3-.5-1.9-1.6-1.8z"/></svg></i>Telegram<em>Написать</em></a>
+    <a class="m-row" href="https://www.linkedin.com/" target="_blank" rel="noopener"><i style="background:#0A66C2"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></i>LinkedIn<em>Профиль</em></a>
+    <a class="m-row" href="#"><i style="background:#0F1414"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 7l9 6 9-6"/></svg></i>Почта<em>Написать</em></a>
+    <a class="m-row" href="#"><i style="background:linear-gradient(115deg,#9BDA2E,#3BD16F 50%,#33B6E8)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></i>Резюме (CV)<em>Скачать</em></a>
+  </div>
+</div>
 <a class="hire" href="https://t.me/" target="_blank" rel="noopener">Нанять меня<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
 
 <script>
@@ -148,6 +176,33 @@
   var mq=matchMedia('(max-width:760px)');
   function upd(){b.classList.toggle('on',!mq.matches||intro.getBoundingClientRect().bottom<0)}
   addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+})();
+/* мобильная версия: шапка, таб-бар, карусель кейсов, шторка контактов */
+(function(){
+  var mq=matchMedia('(max-width:760px)');
+  var intro=document.querySelector('.intro'),top=document.getElementById('mTop'),bar=document.getElementById('mBar');
+  var tabs=[].slice.call(bar.querySelectorAll('[data-t]')),about=document.getElementById('about'),cases=document.getElementById('cases');
+  function upd(){
+    var past=intro.getBoundingClientRect().bottom<0;
+    top.classList.toggle('on',mq.matches&&past);bar.classList.toggle('on',mq.matches&&past);
+    var cur=about.getBoundingClientRect().top<innerHeight*.5?'about':'cases';
+    tabs.forEach(function(t){if(t.dataset.t!=='contacts')t.classList.toggle('on',t.dataset.t===cur)});
+  }
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  tabs.forEach(function(t){if(t.tagName==='A')t.addEventListener('click',function(e){e.preventDefault();var el=document.getElementById(t.dataset.t);scrollTo({top:el.getBoundingClientRect().top+scrollY-72,behavior:'smooth'})})});
+  /* карусель */
+  var tr=document.getElementById('casesTrack'),num=document.getElementById('caseNum');
+  tr.addEventListener('scroll',function(){var c=tr.children[0];if(!c)return;var w=c.getBoundingClientRect().width+12;num.textContent=Math.min(tr.children.length,Math.round(tr.scrollLeft/w)+1)},{passive:true});
+  /* шторка контактов */
+  var sh=document.getElementById('mSheet');
+  function open(){sh.classList.add('on');sh.setAttribute('aria-hidden','false')}
+  function close(){sh.classList.remove('on');sh.setAttribute('aria-hidden','true')}
+  document.getElementById('openContacts').addEventListener('click',open);
+  sh.querySelector('[data-close]').addEventListener('click',close);
+  addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  var y0=null,panel=sh.querySelector('.m-panel');
+  panel.addEventListener('touchstart',function(e){y0=e.touches[0].clientY},{passive:true});
+  panel.addEventListener('touchend',function(e){if(y0!==null&&e.changedTouches[0].clientY-y0>60)close();y0=null});
 })();
 </script>
 </body>

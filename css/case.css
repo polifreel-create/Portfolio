@@ -365,3 +365,13 @@ h1,h2,h3{text-wrap:balance}
   .stat,.tile{padding:20px}
   .hero .icon{border-radius:20px}
 }
+
+/* мобильная версия кейса: прогресс чтения + нижний бар (стили бара — в v2.css) */
+.m-prog{display:none}
+@media (max-width:760px){
+  .to-top{display:none}
+  .m-prog{display:block;position:fixed;left:0;right:0;top:0;height:3px;z-index:50;pointer-events:none}
+  .m-prog i{display:block;height:100%;background:linear-gradient(90deg,#9BDA2E,#3BD16F 50%,#33B6E8);transform-origin:0 50%;transform:scaleX(0)}
+  .wrap{padding-bottom:110px}
+  .crumbs{padding-top:calc(env(safe-area-inset-top) + 14px);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(235,238,241,.85);margin:0 calc(-1 * var(--page));padding-left:var(--page);padding-right:var(--page)}
+}

@@ -6,8 +6,8 @@
   <title>Гигасправка — кейс Полины Ефремовой</title>
   <meta name="description" content="Агентная архитектура поддержки умных устройств Sber Devices: агент решает поломки раньше, чем пользователь их заметит.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/v2.css?v=31">
-  <link rel="stylesheet" href="css/case.css?v=50">
+  <link rel="stylesheet" href="css/v2.css?v=32">
+  <link rel="stylesheet" href="css/case.css?v=51">
 </head>
 <body>
 <div class="wrap">
@@ -219,6 +219,15 @@
   </a>
 
 </div>
+<div class="m-prog" id="mProg"><i></i></div>
+<nav class="m-bar" id="mBar" aria-label="Навигация по кейсу">
+  <div class="m-tabs">
+    <a href="index.html" data-t="home"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Главная</a>
+    <a href="#solution" data-t="solution"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg>Решение</a>
+    <button type="button" data-t="top" id="mUp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Наверх</button>
+  </div>
+  <a class="m-hire" href="https://t.me/" target="_blank" rel="noopener">Нанять</a>
+</nav>
 <button class="to-top" type="button" aria-label="Наверх"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 <script>
 /* карусель: свайп, стрелки, точки */
@@ -298,6 +307,15 @@ document.querySelectorAll('[data-flow]').forEach(function(f){
   function upd(){b.classList.toggle('on',scrollY>innerHeight*.8)}
   addEventListener('scroll',upd,{passive:true});upd();
   b.addEventListener('click',function(){var r=matchMedia('(prefers-reduced-motion: reduce)').matches;scrollTo({top:0,behavior:r?'auto':'smooth'})});
+})();
+/* мобильная версия: прогресс чтения и нижний бар */
+(function(){
+  var mq=matchMedia('(max-width:760px)'),bar=document.getElementById('mBar'),pr=document.querySelector('#mProg i'),hero=document.querySelector('.hero')||document.querySelector('.head');
+  function upd(){var h=document.documentElement.scrollHeight-innerHeight;pr.style.transform='scaleX('+(h>0?scrollY/h:0)+')';
+    bar.classList.toggle('on',mq.matches&&hero.getBoundingClientRect().bottom<0)}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  document.getElementById('mUp').addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
+  bar.querySelector('[data-t=solution]').addEventListener('click',function(e){e.preventDefault();var el=document.getElementById('solution');scrollTo({top:el.getBoundingClientRect().top+scrollY-64,behavior:'smooth'})});
 })();
 </script>
 </body>
