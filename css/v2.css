@@ -342,3 +342,10 @@ body{letter-spacing:-.01em}
   .logos li{font-size:13px;gap:6px}
   .logos img{width:46px!important;height:46px!important}
 }
+/* десктоп: левая панель на всю высоту экрана, без пустот */
+@media (min-width:761px){
+  .side{top:10px!important;height:calc(100svh - 20px);min-height:600px}
+  .intro{flex:1 1 auto;min-height:0}
+  .intro .contacts{margin-top:auto;padding-top:24px}
+  .brands{flex:none}
+}
