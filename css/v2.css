@@ -141,9 +141,9 @@ body{letter-spacing:-.01em}
   background:var(--ink);color:#fff;font:500 18px/1 var(--font);letter-spacing:-.01em;
   box-shadow:0 12px 32px rgba(15,20,20,.24);transition:transform .35s cubic-bezier(.16,1,.3,1),background .3s,box-shadow .3s}
 .hire svg{transition:transform .35s cubic-bezier(.16,1,.3,1)}
-.hire:hover{background:#21A038;transform:translateY(-2px);box-shadow:0 16px 36px rgba(33,160,56,.28)}
+.hire:hover{background:#000;transform:translateY(-2px);box-shadow:0 16px 36px rgba(15,20,20,.3)}
 .hire:hover svg{transform:translate(2px,-2px)}
-.hire:focus-visible{outline:2px solid #21A038;outline-offset:3px}
+.hire:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media (max-width:760px){ .hire{height:56px;padding:0 var(--s-5);font-size:16px} .page{padding-bottom:96px} .me h1{font-size:26px} .block h2{font-size:26px} }
 
 /* ===== единая система: межстрочное по размеру ===== */
@@ -222,7 +222,7 @@ body{letter-spacing:-.01em}
     color:rgba(255,255,255,.55);font:500 11px/1 var(--font);letter-spacing:0;cursor:pointer;transition:background .3s,color .3s}
   .m-tabs .on{background:rgba(255,255,255,.12);color:#fff}
   .m-hire{display:grid;place-items:center;height:52px;padding:0 20px;border-radius:999px;color:#fff;font:600 15px/1 var(--font);letter-spacing:-.01em;
-    background:linear-gradient(100deg,#9BDA2E,#3BD16F 45%,#33B6E8)}
+    background:#fff}
   /* шторка контактов */
   .m-sheet{display:block;position:fixed;inset:0;z-index:60;pointer-events:none}
   .m-scrim{position:absolute;inset:0;background:rgba(15,20,20,.45);opacity:0;transition:opacity .35s}
@@ -287,3 +287,6 @@ body{letter-spacing:-.01em}
 .chips span{display:inline-flex;align-items:center;gap:8px;padding-left:12px}
 .chips span img{width:20px;height:20px;flex:none}
 @media (max-width:760px){ .chips span{justify-content:flex-start;padding:10px 12px} }
+
+/* «Нанять» — нейтральный цвет сайта, не зависит от палитры кейса */
+@media (max-width:760px){ .m-hire{background:#fff !important;color:var(--ink) !important} }
