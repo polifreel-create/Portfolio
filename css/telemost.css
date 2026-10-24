@@ -1,0 +1,111 @@
+/* ===== Телемост: своя палитра поверх общей системы кейса ===== */
+.theme-tm{
+  --sber:#6D5BFF;
+  --sber-ink:#5543E0;
+  --sber-grad:linear-gradient(115deg,#6D5BFF 0%,#E0569B 55%,#FF9F4A 100%);
+  --sber-soft:linear-gradient(135deg,#F0EEFF 0%,#FCEFF5 55%,#FFF4E8 100%);
+}
+.theme-tm .brief-item.accent::before{background:radial-gradient(closest-side,rgba(109,91,255,.8),rgba(224,86,155,.3) 60%,transparent)}
+.theme-tm .brief-item.accent .big em{background:linear-gradient(115deg,#A99BFF,#FF8CC0 55%,#FFC27A);-webkit-background-clip:text;background-clip:text}
+.theme-tm .tile.focus::before{background:radial-gradient(closest-side,rgba(109,91,255,.75),rgba(224,86,155,.25) 60%,transparent)}
+.theme-tm .tile.focus .badge{color:#C2B8FF}
+.theme-tm .mode-n{color:var(--sber-ink)}
+
+/* обложка: анимированная композиция, как на главной */
+.tm-hero{position:relative;background:#F3EEE8}
+.tm-hero > img:first-child{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tm-hero{container-type:inline-size}
+.tm-cards,.tm-cluster{position:absolute}
+.tm-cards{left:21.111%;top:64.909%;width:11.111%;animation:tmIn .9s cubic-bezier(.34,1.45,.64,1) .2s both, tmFloat 5.2s ease-in-out 1.1s infinite}
+.tm-cluster{left:62.222%;top:16.227%;width:25.556%;transform-origin:20% 55%;animation:tmPop 1s cubic-bezier(.34,1.45,.64,1) .45s both}
+.tm-cluster img{width:100%;animation:tmFloat 4.4s ease-in-out 1.5s infinite}
+@keyframes tmIn{from{opacity:0;transform:translateY(40%) scale(.7)}to{opacity:1;transform:none}}
+@keyframes tmPop{from{opacity:0;transform:translateX(-6%) scale(.82) rotate(-4deg)}to{opacity:1;transform:none}}
+@keyframes tmFloat{0%,100%{transform:none}50%{transform:translateY(-3.2%)}}
+.hero .shot.tm-hero{aspect-ratio:900/493}
+
+/* визуалы фич 880×1018 */
+.tm-visual{position:relative;container-type:inline-size;aspect-ratio:880/1018;overflow:hidden;border-radius:var(--r-in);background:#E9E4DE}
+.tm-visual > img:first-child{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tm-cal{position:absolute;left:63.636%;top:7.859%;width:22.727%;animation:tmCal 9s cubic-bezier(.16,1,.3,1) infinite}
+@keyframes tmCal{
+  0%{opacity:0;transform:translateY(30%) scale(.6) rotate(-14deg)}
+  9%{opacity:1;transform:translateY(-4%) scale(1.04) rotate(3deg)}
+  14%{transform:none} 40%{transform:translateY(-4%)} 65%{transform:none} 88%{opacity:1;transform:translateY(-4%)}
+  96%,100%{opacity:0;transform:translateY(-10%) scale(.9)}}
+.tm-text{position:absolute;left:39.773%;top:81.532%;width:53.636%;aspect-ratio:472/120}
+.tm-text img{position:absolute;inset:0;width:100%;height:100%}
+.tm-text .l1{clip-path:inset(0 100% 62% 0);animation:tmL1 9s linear infinite}
+.tm-text .l2{clip-path:inset(37% 100% 35% 0);animation:tmL2 9s linear infinite}
+.tm-text .l3{clip-path:inset(65% 100% 0 0);animation:tmL3 9s linear infinite}
+@keyframes tmL1{0%,12%{clip-path:inset(0 100% 62% 0)}22%,92%{clip-path:inset(0 0 62% 0);opacity:1}97%,100%{clip-path:inset(0 0 62% 0);opacity:0}}
+@keyframes tmL2{0%,22%{clip-path:inset(37% 100% 35% 0)}32%,92%{clip-path:inset(37% 0 35% 0);opacity:1}97%,100%{clip-path:inset(37% 0 35% 0);opacity:0}}
+@keyframes tmL3{0%,32%{clip-path:inset(65% 100% 0 0)}42%,92%{clip-path:inset(65% 0 0 0);opacity:1}97%,100%{clip-path:inset(65% 0 0 0);opacity:0}}
+.tm-ring{position:absolute;left:72.44%;top:53.8%;width:14.4%;aspect-ratio:126/104;border-radius:38%;
+  border:.55cqw solid #6bf27c;
+  box-shadow:0 0 1.4cqw #3fe36b,0 0 3.2cqw rgba(63,227,107,.55),inset 0 0 1.2cqw rgba(63,227,107,.55);
+  transform:translate(-50%,-50%) rotate(-28.4deg);animation:tmRing 7.5s cubic-bezier(.6,0,.2,1) infinite}
+@keyframes tmRing{0%,26%{left:72.44%;top:53.8%} 33%,59%{left:83.8%;top:48.87%} 66%,92%{left:62.5%;top:58.94%} 100%{left:72.44%;top:53.8%}}
+@media (prefers-reduced-motion:reduce){ .tm-hero *,.tm-visual *{animation:none!important} .tm-text .l1,.tm-text .l2,.tm-text .l3{clip-path:none} .tm-text .l2,.tm-text .l3{display:none} .tm-cal{opacity:1} }
+
+/* фича: текст + визуал в две колонки */
+.tm-feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-4);align-items:stretch}
+.tm-feature .tm-copy{background:var(--chip);border-radius:var(--r-in);padding:32px;display:flex;flex-direction:column}
+.tm-job{margin:0 0 20px;padding:14px 18px;border-radius:20px;background:#fff;font:500 16px/1.4 var(--font);color:var(--ink)}
+.tm-job span{display:block;margin-bottom:4px;font:500 12px/1.3 var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.tm-copy ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.tm-copy li{position:relative;padding-left:22px;font:400 16px/1.5 var(--font);color:var(--ink-2)}
+.tm-copy li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;background:var(--sber-grad)}
+.tm-feature + .tm-feature{margin-top:var(--s-4)}
+
+/* продукты рынка, фичи-плитки, метрики, тарифы */
+.tm-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-4)}
+.tm-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.tm-cell{background:var(--chip);border-radius:var(--r-in);padding:28px;display:flex;flex-direction:column;gap:10px}
+.tm-cell h4{margin:0;font:500 20px/1.25 var(--font);letter-spacing:-.015em;color:var(--ink)}
+.tm-cell p{margin:0;font:400 16px/1.5 var(--font);color:var(--ink-2)}
+.tm-cell .k{font:500 12px/1.3 var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.tm-cell.dark{background:#0F1414;position:relative;overflow:hidden;isolation:isolate}
+.tm-cell.dark::before{content:"";position:absolute;z-index:-1;width:120%;height:100%;right:-50%;bottom:-50%;background:radial-gradient(closest-side,rgba(109,91,255,.7),rgba(224,86,155,.25) 60%,transparent);filter:blur(20px)}
+.tm-cell.dark h4{color:#fff}.tm-cell.dark p{color:rgba(255,255,255,.66)}.tm-cell.dark .k{color:rgba(255,255,255,.42)}
+.tm-price{font:500 32px/1.1 var(--font);letter-spacing:-.03em;color:var(--ink)}
+.tm-cell.dark .tm-price{background:linear-gradient(115deg,#A99BFF,#FF8CC0 55%,#FFC27A);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tm-cell.muted{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(15,20,20,.08)}
+.tm-cell.muted h4,.tm-cell.muted p{color:var(--ink-3)}
+
+/* связка фича → метрики */
+.tm-metrics{display:flex;flex-direction:column;gap:10px}
+.tm-metric{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:24px;align-items:center;background:var(--chip);border-radius:24px;padding:22px 28px}
+.tm-metric b{font:500 20px/1.25 var(--font);letter-spacing:-.015em;color:var(--ink)}
+.tm-metric b small{display:block;margin-top:4px;font:400 14px/1.3 var(--font);letter-spacing:0;color:var(--ink-3)}
+.tm-tags{display:flex;flex-wrap:wrap;gap:8px}
+.tm-tags span{height:36px;padding:0 14px;border-radius:999px;background:#fff;display:inline-flex;align-items:center;font:500 14px/1 var(--font);color:var(--ink)}
+
+/* персона */
+.tm-persona{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--s-4)}
+.tm-persona .ph{border-radius:var(--r-in);overflow:hidden;min-height:360px;background:#E9E4DE}
+.tm-persona .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block}
+.tm-persona .tm-cell h4{font-size:32px;letter-spacing:-.03em}
+
+/* финал: фото */
+.tm-final{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s-4)}
+
+@media (max-width:760px){
+  .tm-feature,.tm-persona,.tm-grid,.tm-grid.two{grid-template-columns:1fr;gap:10px}
+  .tm-feature .tm-copy{padding:20px}
+  .tm-feature .tm-visual{order:-1}
+  .tm-cell{padding:20px}
+  .tm-cell h4{font-size:18px}
+  .tm-cell p,.tm-copy li{font-size:16px}
+  .tm-persona .ph{min-height:0;aspect-ratio:4/5}
+  .tm-persona .tm-cell h4{font-size:24px}
+  .tm-metric{grid-template-columns:1fr;gap:12px;padding:18px 20px;border-radius:20px}
+  .tm-metric b{font-size:18px}
+  .tm-price{font-size:28px}
+  .tm-feature + .tm-feature{margin-top:10px}
+}
+.tm-persona.one{grid-template-columns:1fr}
+.tm-who{display:flex;align-items:center;gap:16px;margin-bottom:6px}
+.tm-who img{width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none}
+.tm-who h4{margin:0 0 4px}
+.brief .sec-head h2 .spark{width:28px;height:28px;flex:none;transform:translateY(-3px)}
