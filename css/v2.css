@@ -458,3 +458,7 @@ body{letter-spacing:-.01em}
   .wk-ph{aspect-ratio:4/5}
 }
 .works-all[hidden]{display:none}
+/* имя — мельче под узкую панель */
+@media (min-width:1101px){ .me h1{font-size:28px!important} .me img{width:48px!important;height:48px!important;border-radius:16px} }
+@media (min-width:1101px) and (max-height:880px){ .me h1{font-size:26px!important} .me img{width:44px!important;height:44px!important} }
+@media (min-width:1101px) and (max-height:740px){ .me h1{font-size:24px!important} .me img{width:40px!important;height:40px!important;border-radius:14px} }
