@@ -513,3 +513,9 @@ h1,h2,h3{text-wrap:balance}
 /* ховер только у карточки «Решение» */
 .brief-item:not(.accent){cursor:default}
 .brief-item:not(.accent):hover{transform:none!important;box-shadow:none!important}
+/* шаги вместо стрелок */
+.brief-item h3 .step{color:var(--ink);opacity:.9}
+.brief-item.accent h3 .step{color:#fff}
+.brief-item h3 .step:after{content:"·";margin-left:8px;color:var(--ink-3)}
+.brief-item.accent h3 .step:after{color:rgba(255,255,255,.42)}
+@media (max-width:760px){ .brief-grid{gap:10px!important} }
