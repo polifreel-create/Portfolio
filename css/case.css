@@ -489,3 +489,24 @@ h1,h2,h3{text-wrap:balance}
   .tile .badge{font-size:11px;padding:3px 8px}
   .mode-n{font-size:16px}
 }
+
+/* ===== Кратко: история «проблема → инсайт → решение», CTA внутри решения ===== */
+.brief .sec-head{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.read-time{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;background:var(--chip);font:500 14px/1 var(--font);color:var(--ink-2);white-space:nowrap}
+.read-time svg{color:var(--ink-3)}
+.brief-grid{overflow:visible}
+.brief-item{overflow:visible!important}
+.brief-item.accent{overflow:hidden!important}
+.brief-arrow{position:absolute;z-index:3;top:50%;right:-28px;width:40px;height:40px;margin-top:-20px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;box-shadow:0 0 0 6px #fff,0 6px 16px rgba(15,20,20,.08);pointer-events:none}
+.brief-cta{display:flex;align-items:center;justify-content:center;gap:10px;height:56px;margin-top:24px;border-radius:999px;background:#fff;color:var(--ink);font:500 16px/1 var(--font);text-decoration:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.brief-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.brief-cta svg{transition:transform .25s}
+.brief-cta:hover svg{transform:translateY(2px)}
+@media (max-width:760px){
+  .read-time{height:32px;padding:0 12px;font-size:13px;gap:6px}
+  .read-time svg{width:14px;height:14px}
+  .brief-grid{gap:22px!important}
+  .brief-arrow{top:auto;bottom:-27px;right:auto;left:50%;margin:0 0 0 -16px;width:32px;height:32px;box-shadow:0 0 0 4px #fff}
+  .brief-arrow svg{transform:rotate(90deg);width:16px;height:16px}
+  .brief-cta{height:52px;margin-top:20px}
+}
