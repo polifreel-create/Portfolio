@@ -290,3 +290,9 @@ body{letter-spacing:-.01em}
 
 /* «Нанять» — нейтральный цвет сайта, не зависит от палитры кейса */
 @media (max-width:760px){ .m-hire{background:#fff !important;color:var(--ink) !important} }
+/* «Обо мне» на мобильном: крупные фото, листаются свайпом */
+@media (max-width:760px){
+  .photos{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin:20px calc(-1 * var(--pad)) 0;padding:0 var(--pad);scroll-padding:0 var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .photos::-webkit-scrollbar{display:none}
+  .photos img{flex:0 0 78%;aspect-ratio:4/5;border-radius:20px;scroll-snap-align:start}
+}
