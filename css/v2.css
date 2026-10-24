@@ -462,3 +462,14 @@ body{letter-spacing:-.01em}
 @media (min-width:1101px){ .me h1{font-size:28px!important} .me img{width:48px!important;height:48px!important;border-radius:16px} }
 @media (min-width:1101px) and (max-height:880px){ .me h1{font-size:26px!important} .me img{width:44px!important;height:44px!important} }
 @media (min-width:1101px) and (max-height:740px){ .me h1{font-size:24px!important} .me img{width:40px!important;height:40px!important;border-radius:14px} }
+/* инструменты — «надутые» плашки: иконка в белом круге, высокая пилюля */
+.chips{gap:10px}
+.chips span{height:60px;padding:0 24px 0 10px!important;gap:12px;font:500 17px/1 var(--font);letter-spacing:-.01em;color:var(--ink);border-radius:999px;background:var(--chip);transition:transform .25s cubic-bezier(.2,.8,.2,1),background .2s}
+.chips span img{box-sizing:content-box;width:22px!important;height:22px!important;padding:9px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(15,20,20,.06),0 4px 12px rgba(15,20,20,.06)}
+.chips span:hover{transform:translateY(-2px);background:#EDF1F5}
+@media (max-width:760px){
+  .chips{gap:8px}
+  .chips span{height:56px;padding:0 14px 0 8px!important;font-size:15px;gap:10px}
+  .chips span img{width:20px!important;height:20px!important;padding:9px}
+}
+@media (max-width:760px){ .chips span{text-align:left;white-space:nowrap;font-size:14.5px} }
