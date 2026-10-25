@@ -515,3 +515,65 @@
 @media (max-width:760px){
   .theme-tm .tm-chap .tm-job{padding:16px 18px;border-radius:20px;font-size:18px;margin-bottom:16px}
 }
+
+/* ================================================================
+   Мобильная версия Телемоста — по сетке Гигасправки:
+   строки «число/иконка слева — текст справа», без пустых ячеек,
+   в «Решении» сначала название и джоба, потом экраны и шаги
+   ================================================================ */
+@media (max-width:760px){
+  /* Задачи: номер слева, заголовок и текст справа */
+  .theme-tm .y-tasks{gap:8px}
+  .theme-tm .y-task{min-height:0;padding:18px 20px;display:grid;grid-template-columns:36px 1fr;column-gap:14px;row-gap:4px;align-items:start}
+  .theme-tm .y-task b{grid-row:1/3;font-size:32px;line-height:1;letter-spacing:-.04em;margin:0}
+  .theme-tm .y-task h4{margin:2px 0 0;font-size:18px;line-height:1.25}
+  .theme-tm .y-task p{font-size:15px;line-height:1.45}
+
+  /* Цифры исследования: строки, как 82 / 19 / 2 в Гигасправке */
+  .theme-tm .y-stats{grid-template-columns:1fr;gap:8px}
+  .theme-tm .y-stat{flex-direction:row;align-items:center;gap:16px;padding:16px 20px}
+  .theme-tm .y-stat b{flex:0 0 88px;font-size:32px;line-height:1}
+  .theme-tm .y-stat span{font-size:15px;line-height:1.35}
+
+  /* Конкуренты: одна колонка, логотип слева — без пустой ячейки */
+  .theme-tm .tm-grid:has(.tm-app){grid-template-columns:1fr!important;gap:8px}
+  .theme-tm .tm-app{display:grid;grid-template-columns:44px 1fr;column-gap:14px;row-gap:2px;align-items:start;padding:16px}
+  .theme-tm .tm-app .tm-logo{grid-row:1/3;width:44px;height:44px;border-radius:14px;margin:0}
+  .theme-tm .tm-app .tm-logo img{width:24px;height:24px}
+  .theme-tm .tm-app .tm-logo.wide img{width:32px}
+  .theme-tm .tm-app h4{font-size:17px;line-height:1.3}
+  .theme-tm .tm-app p{font-size:14px;line-height:1.4}
+
+  /* Сегменты: компактные карточки, как в Гигасправке */
+  .theme-tm .tm-segs{gap:8px}
+  .theme-tm .tm-seg{padding:16px;grid-template-columns:48px 1fr;column-gap:14px}
+  .theme-tm .tm-seg .ava{width:48px;height:48px}
+  .theme-tm .tm-seg .txt{gap:2px;position:relative}
+  .theme-tm .tm-seg .tm-pill{position:absolute;top:0;right:0;height:22px;padding:0 8px;font-size:10px}
+  .theme-tm .tm-seg h4{font-size:17px;line-height:1.3;padding-right:72px}
+  .theme-tm .tm-seg p{font-size:14px;line-height:1.4}
+
+  /* Решение: одна карточка на фичу — название → джоба → экраны → шаги */
+  .theme-tm .tm-chap{background:var(--chip);border-radius:24px;padding:20px;gap:0;display:flex;flex-direction:column}
+  .theme-tm .tm-chap .tm-copy{display:contents}
+  .theme-tm .tm-chap .mode-title{order:1;margin:0 0 12px}
+  .theme-tm .tm-chap .tm-job{order:2;margin:0 0 16px}
+  .theme-tm .tm-chap .tm-stage{order:3;background:#fff;border-radius:20px;min-height:0;padding:48px 0 36px;margin:0 0 12px}
+  .theme-tm .tm-chap .tm-steps{order:4;margin:0}
+  .theme-tm .tm-phones{width:170px}
+  .theme-tm .tm-chap .tm-step{padding:10px 12px;font-size:15px}
+  .theme-tm .tm-chap .tm-step.on{background:#fff}
+
+  /* Тарифы: «Семья и команда» в одну строку и в размер цены */
+  .theme-tm .y-price:last-child b{font-size:28px;line-height:1.1}
+  .theme-tm .y-price:last-child b br{display:none}
+
+  /* Видение: иллюстрация по центру, без пустоты снизу */
+  .theme-tm .y-future{align-items:stretch}
+  .theme-tm .y-future img{width:56%;margin:4px auto -8px;display:block}
+}
+@media (max-width:760px){
+  .theme-tm .tm-chap .mode-title{align-items:baseline}
+  .theme-tm .tm-metric .tm-tags{gap:6px}
+  .theme-tm .tm-metric .tm-tags span{height:30px;padding:0 10px;font-size:13px}
+}
