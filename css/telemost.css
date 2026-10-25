@@ -698,3 +698,13 @@
   #f-modes .tm-float{right:10px;top:18%}
 }
 @media (prefers-reduced-motion:reduce){ .tm-float{animation:none} }
+
+/* эмодзи-иконки без подложки — как в анимации персоны */
+.tm-persona2 .gl .ic{background:none!important;width:auto;height:auto;font-size:18px;line-height:1}
+.tm-persona2 .ga .ic{width:32px;height:32px}
+.theme-tm .em{font-style:normal;display:inline-block;margin-right:6px;font-size:1.05em;line-height:1;vertical-align:-.08em}
+.theme-tm .y-chip .em{margin-right:5px}
+.theme-tm .tm-metric b .em{font-size:20px;margin-right:10px;vertical-align:-.12em}
+.theme-tm .y-price .k .em{font-size:15px;margin-right:6px;text-transform:none}
+@media (max-width:760px){ .tm-persona2 .gl .ic{font-size:15px} }
+.theme-tm .y-chip .em{font-size:14px;vertical-align:-.15em}
