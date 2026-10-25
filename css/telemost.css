@@ -818,3 +818,34 @@
 #f-summary .tm-phones{aspect-ratio:786/1704}
 #f-summary .tm-phones{width:252px}
 @media (max-width:760px){ #f-summary .tm-phones{width:190px} }
+
+/* ===== Главы фич: ровный телефон, без плашек и полосок, экраны сменяются свайпом ===== */
+.theme-tm .tm-chap .tm-bars{display:none}
+.theme-tm .tm-chap .tm-phones{transform:none;width:268px;aspect-ratio:9/19.3;border-radius:46px;overflow:hidden;isolation:isolate;
+  box-shadow:0 40px 80px rgba(20,60,35,.28)}
+/* рамка поверх экранов — экраны «уезжают» под неё */
+.theme-tm .tm-chap .tm-phones::after{content:"";position:absolute;inset:0;z-index:5;border-radius:46px;border:8px solid #0B0B0E;box-shadow:inset 0 0 0 1px #2A2A30;pointer-events:none}
+.theme-tm .tm-chap .tm-phone{position:absolute;inset:0;padding:8px;border-radius:0;background:#0B0B0E;box-shadow:none;opacity:1;
+  transform:translateX(100%);transition:none}
+.theme-tm .tm-chap .tm-phone.on{transform:none;transition:transform .7s cubic-bezier(.65,0,.35,1)}
+.theme-tm .tm-chap .tm-phone.prev{opacity:1;transform:translateX(-100%);transition:transform .7s cubic-bezier(.65,0,.35,1)}
+.theme-tm .tm-chap .tm-phone .tm-scr{border-radius:38px}
+/* настоящие экраны со своей рамкой */
+.theme-tm .tm-chap .tm-phone.real{padding:0;filter:none;background:#0B0B0E}
+#f-summary .tm-phones{width:252px;aspect-ratio:786/1704;border-radius:44px}
+#f-summary .tm-phones::after{border-width:6px;border-radius:44px}
+@media (max-width:760px){
+  .theme-tm .tm-chap .tm-stage{padding:32px 0}
+  .theme-tm .tm-chap .tm-phones{width:200px;border-radius:36px}
+  .theme-tm .tm-chap .tm-phones::after{border-radius:36px;border-width:6px}
+  .theme-tm .tm-chap .tm-phone{padding:6px}
+  .theme-tm .tm-chap .tm-phone .tm-scr{border-radius:30px}
+  #f-summary .tm-phones{width:190px;border-radius:32px}
+  #f-summary .tm-phones::after{border-radius:32px;border-width:5px}
+}
+@media (prefers-reduced-motion:reduce){ .theme-tm .tm-chap .tm-phone.on,.theme-tm .tm-chap .tm-phone.prev{transition:none} }
+/* бесшовный свайп: экраны вплотную друг к другу внутри рамки */
+.theme-tm .tm-chap .tm-phone:not(.real){inset:8px;padding:0;background:none}
+.theme-tm .tm-chap .tm-phone:not(.real) .tm-scr{border-radius:30px}
+.theme-tm .tm-chap .tm-phones{background:#141418}
+@media (max-width:760px){ .theme-tm .tm-chap .tm-phone:not(.real){inset:6px} .theme-tm .tm-chap .tm-phone:not(.real) .tm-scr{border-radius:26px} }
