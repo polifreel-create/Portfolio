@@ -8,7 +8,7 @@
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=56">
   <link rel="stylesheet" href="css/case.css?v=62">
-  <link rel="stylesheet" href="css/telemost.css?v=21">
+  <link rel="stylesheet" href="css/telemost.css?v=23">
 </head>
 <body class="theme-tm">
 <div class="wrap">
@@ -97,11 +97,12 @@
         <span class="gl g1"><i class="ic">💬</i>12 новых в&nbsp;рабочем чате</span>
         <span class="gl g2"><i class="ic">📞</i>Пропущенный: мама</span>
         <span class="gl g3"><i class="ic">📅</i>Созвон в&nbsp;16:00 пересекается с&nbsp;кружком</span>
-        <span class="pname">Люда, 36&nbsp;лет</span>
+        <span class="gl ga"><img class="ic" src="assets/img/telemost/app-icon.png" alt=""><span><b>Агент Мост</b>Собрал всё в&nbsp;план на&nbsp;день: созвон, мама, 12&nbsp;сообщений</span></span>
       </div>
       <div class="pside">
         <div class="who">
-          <h4>Проджект-менеджер на&nbsp;удалёнке, мама</h4>
+          <h4>Люда, 36&nbsp;лет</h4>
+          <p class="role">Проджект-менеджер на&nbsp;удалёнке, мама</p>
           <div class="y-tagset"><span>Решала и&nbsp;эмпат</span><span>Удалёнка</span><span>Семья</span></div>
           <p>Держит в&nbsp;голове чаты, звонки, календарь и&nbsp;заметки, разбросанные по&nbsp;разным&nbsp;приложениям.</p>
         </div>
@@ -348,6 +349,11 @@ document.querySelectorAll('[data-flow]').forEach(function(f){
     st.addEventListener('mousedown',function(e){d=true;x0=e.pageX;s0=st.scrollLeft;st.style.cursor='grabbing'});
     addEventListener('mouseup',function(){d=false;st.style.cursor=''});
     st.addEventListener('mousemove',function(e){if(!d)return;e.preventDefault();st.scrollLeft=s0-(e.pageX-x0)})}
+})();
+/* Персона: уведомления сыплются, Агент Мост собирает их в одно */
+(function(){var ph=document.querySelector('.tm-persona2 .ph');if(!ph||!('IntersectionObserver' in window))return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){ph.classList.add('done');return}
+  new IntersectionObserver(function(es){var e=es[0];if(e.isIntersecting){ph.classList.remove('play');void ph.offsetWidth;ph.classList.add('play')}else if(e.intersectionRatio===0){ph.classList.remove('play')}},{threshold:[0,.5]}).observe(ph);
 })();
 </script>
 </body>

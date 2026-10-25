@@ -626,3 +626,41 @@
   .tm-persona2 .say{padding:20px;border-radius:24px;font-size:18px}
 }
 @media (prefers-reduced-motion:reduce){ .tm-persona2 .gl{animation:none} }
+
+/* Персона: микро-анимация «хаос → Агент Мост собрал всё» (только transform/opacity) */
+.tm-persona2 .ph img{transform:scale(1.06);transition:transform 1.8s cubic-bezier(.2,.8,.2,1)}
+.tm-persona2 .ph.play img,.tm-persona2 .ph.done img{transform:none}
+.tm-persona2 .gl{opacity:0;transform:translateY(14px) scale(.92);animation:none;will-change:transform,opacity}
+.tm-persona2 .g1{--tx:-140px;--ty:330px}
+.tm-persona2 .g2{--tx:-150px;--ty:260px}
+.tm-persona2 .g3{--tx:24px;--ty:0px}
+.tm-persona2 .ph.play .g1,.tm-persona2 .ph.play .g2,.tm-persona2 .ph.play .g3{animation:glIn .55s cubic-bezier(.34,1.56,.64,1) forwards,glOut .55s cubic-bezier(.6,0,.8,.4) 3.6s forwards}
+.tm-persona2 .ph.play .g1{animation-delay:.35s,3.5s}
+.tm-persona2 .ph.play .g2{animation-delay:.95s,3.6s}
+.tm-persona2 .ph.play .g3{animation-delay:1.55s,3.7s}
+.tm-persona2 .ga{left:20px;bottom:76px;max-width:min(78%,360px);align-items:flex-start;padding:12px 16px 12px 12px;background:rgba(255,255,255,.92);box-shadow:0 0 0 1.5px rgba(63,182,86,.55),0 14px 36px rgba(15,20,20,.18)}
+.tm-persona2 .ga .ic{width:32px;height:32px;border-radius:10px;background:none}
+.tm-persona2 .ga b{display:block;font-weight:500;color:var(--tm-green-ink,#23913A);margin-bottom:2px}
+.tm-persona2 .ph.play .ga{animation:glIn .7s cubic-bezier(.34,1.56,.64,1) 4.15s forwards}
+.tm-persona2 .ph.done .ga{opacity:1;transform:none}
+.tm-persona2 .ph.done .g1,.tm-persona2 .ph.done .g2,.tm-persona2 .ph.done .g3{opacity:0}
+@keyframes glIn{from{opacity:0;transform:translateY(14px) scale(.92)}to{opacity:1;transform:none}}
+@keyframes glOut{from{opacity:1;transform:none}to{opacity:0;transform:translate(var(--tx),var(--ty)) scale(.6)}}
+@media (max-width:760px){
+  .tm-persona2 .g1{--tx:-80px;--ty:250px}
+  .tm-persona2 .g2{--tx:-90px;--ty:200px}
+  .tm-persona2 .ga{left:12px;bottom:62px;padding:8px 12px 8px 8px;max-width:84%}
+  .tm-persona2 .ga .ic{width:26px;height:26px}
+}
+/* персона: фото — только визуал, вся информация в правой карточке */
+.tm-persona2 .ph > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tm-persona2 .ga .ic{position:static;inset:auto;transform:none!important;flex:none;object-fit:contain}
+.tm-persona2 .g3,.tm-persona2 .ga{bottom:20px}
+.tm-persona2 .g3{--ty:0px}
+.tm-persona2 .who h4{font-size:40px;letter-spacing:-.035em}
+.tm-persona2 .who .role{margin:-6px 0 4px;font:500 18px/1.35 var(--font);color:var(--ink)}
+@media (max-width:760px){
+  .tm-persona2 .g3,.tm-persona2 .ga{bottom:12px}
+  .tm-persona2 .who h4{font-size:28px}
+  .tm-persona2 .who .role{font-size:16px;margin:-4px 0 2px}
+}
