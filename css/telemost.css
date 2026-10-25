@@ -595,3 +595,34 @@
   .theme-tm .tm-chap .tm-steps{order:3;margin:0 0 12px}
   .theme-tm .tm-chap .tm-job{order:4;margin:0;padding:14px 16px;font-size:15px;border-radius:16px}
 }
+
+/* Персона в духе лендинга Телемоста: крупное фото + плавающий интерфейс */
+.tm-persona2{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--s-4)}
+.tm-persona2 .ph{position:relative;border-radius:var(--r-in);overflow:hidden;min-height:520px;background:#E9E4DE}
+.tm-persona2 .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% 30%}
+.tm-persona2 .gl{position:absolute;display:inline-flex;align-items:center;gap:10px;max-width:72%;padding:12px 16px 12px 12px;border-radius:18px;background:rgba(255,255,255,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(15,20,20,.14);font:500 15px/1.3 var(--font);color:var(--ink);animation:tmFloat 6s ease-in-out infinite}
+.tm-persona2 .gl .ic{flex:none;width:32px;height:32px;border-radius:10px;background:var(--tm-green,#3FB656);display:grid;place-items:center;font-style:normal;font-size:16px}
+.tm-persona2 .g1{right:20px;top:24px}
+.tm-persona2 .g2{right:28px;top:96px;animation-delay:-2s}
+.tm-persona2 .g3{left:20px;bottom:76px;animation-delay:-4s}
+.tm-persona2 .pname{position:absolute;left:20px;bottom:20px;height:40px;padding:0 16px;border-radius:999px;background:#fff;display:inline-flex;align-items:center;font:500 16px/1 var(--font);color:var(--ink)}
+.tm-persona2 .pside{display:flex;flex-direction:column;gap:var(--s-4)}
+.tm-persona2 .who{flex:1;background:var(--chip);border-radius:var(--r-in);padding:32px;display:flex;flex-direction:column;gap:14px}
+.tm-persona2 .who .k{font:500 12px/1.3 var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.tm-persona2 .who h4{margin:0;font:500 32px/1.12 var(--font);letter-spacing:-.03em;color:var(--ink)}
+.tm-persona2 .who p{margin:auto 0 0;font:400 16px/1.5 var(--font);color:var(--ink-2)}
+.tm-persona2 .say{margin:0;padding:28px 32px;border-radius:var(--r-in);background:var(--tm-green,#3FB656);color:#fff;font:500 22px/1.3 var(--font);letter-spacing:-.015em}
+@media (max-width:760px){
+  .tm-persona2{grid-template-columns:1fr;gap:10px}
+  .tm-persona2 .ph{min-height:0;aspect-ratio:4/5;border-radius:24px}
+  .tm-persona2 .gl{padding:8px 12px 8px 8px;font-size:13px;border-radius:14px;max-width:80%}
+  .tm-persona2 .gl .ic{width:26px;height:26px;border-radius:8px;font-size:13px}
+  .tm-persona2 .g1{right:12px;top:14px}.tm-persona2 .g2{right:16px;top:64px}.tm-persona2 .g3{left:12px;bottom:62px}
+  .tm-persona2 .pname{left:12px;bottom:12px;height:36px;font-size:15px}
+  .tm-persona2 .pside{gap:10px}
+  .tm-persona2 .who{padding:20px;border-radius:24px}
+  .tm-persona2 .who h4{font-size:22px}
+  .tm-persona2 .who p{font-size:15px;margin-top:4px}
+  .tm-persona2 .say{padding:20px;border-radius:24px;font-size:18px}
+}
+@media (prefers-reduced-motion:reduce){ .tm-persona2 .gl{animation:none} }
