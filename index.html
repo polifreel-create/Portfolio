@@ -201,7 +201,7 @@
   var tabs=[].slice.call(bar.querySelectorAll('[data-t]')),about=document.getElementById('about'),cases=document.getElementById('cases');
   function upd(){
     var past=intro.getBoundingClientRect().bottom<0;
-    top.classList.toggle('on',mq.matches&&past);bar.classList.toggle('on',mq.matches&&past);
+    top.classList.toggle('on',mq.matches&&past);bar.classList.toggle('on',mq.matches);
     var cur=about.getBoundingClientRect().top<innerHeight*.5?'about':'cases';
     tabs.forEach(function(t){if(t.dataset.t!=='contacts')t.classList.toggle('on',t.dataset.t===cur)});
   }
