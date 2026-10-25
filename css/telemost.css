@@ -577,3 +577,11 @@
   .theme-tm .tm-metric .tm-tags{gap:6px}
   .theme-tm .tm-metric .tm-tags span{height:30px;padding:0 10px;font-size:13px}
 }
+
+/* Десктоп: в главе фичи джоба прижата к низу карточки — заголовок и шаги сверху */
+@media (min-width:761px){
+  .theme-tm .tm-chap .tm-copy{display:flex;flex-direction:column}
+  .theme-tm .tm-chap .mode-title{order:1;margin-bottom:24px}
+  .theme-tm .tm-chap .tm-steps{order:2;margin:0 0 24px}
+  .theme-tm .tm-chap .tm-job{order:3;margin:auto 0 0}
+}
