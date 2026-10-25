@@ -664,3 +664,37 @@
   .tm-persona2 .who h4{font-size:28px}
   .tm-persona2 .who .role{font-size:16px;margin:-4px 0 2px}
 }
+
+/* 3D-иконки: точечно, рядом с фичей, о которой рассказывают */
+.tm-i3d{display:inline-flex;align-items:center;gap:6px;margin-left:auto;padding-left:12px;flex:none}
+.tm-i3d img{display:block;height:56px;width:auto;filter:drop-shadow(0 6px 10px rgba(15,20,20,.12))}
+.tm-i3d.wide img{height:48px}
+.tm-i3d.pair i{font-style:normal;font:500 18px/1 var(--font);color:var(--ink-3)}
+.tm-chap .mode-title{display:flex;align-items:center;width:100%}
+.tm-chap:hover .tm-i3d img{transform:translateY(-2px) rotate(-3deg)}
+.tm-i3d img{transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.y-task.has-i3d{position:relative}
+.tm-i3d.trio{position:absolute;top:24px;right:24px;margin:0;padding:0;gap:0}
+.tm-i3d.trio img{height:52px}
+.tm-i3d.trio img + img{margin-left:-14px}
+.y-task.has-i3d:hover .tm-i3d.trio img:nth-child(1){transform:translate(-4px,-2px) rotate(-6deg)}
+.y-task.has-i3d:hover .tm-i3d.trio img:nth-child(3){transform:translate(4px,-2px) rotate(6deg)}
+@media (max-width:760px){
+  .tm-i3d img{height:40px}
+  .tm-i3d.wide img{height:34px}
+  .tm-i3d.pair i{font-size:14px}
+  .tm-i3d.trio{top:14px;right:14px}
+  .tm-i3d.trio img{height:36px}
+  .tm-i3d.trio img + img{margin-left:-10px}
+  .theme-tm .y-task.has-i3d h4{padding-right:96px}
+}
+/* широкие 3D-плашки (Агент Мост, режимы) — парят у телефона, как на обложке */
+.tm-float{position:absolute;z-index:3;left:6%;bottom:18%;pointer-events:none;animation:tmFloat 5s ease-in-out infinite}
+.tm-float img{display:block;height:64px;width:auto;filter:drop-shadow(0 14px 22px rgba(15,20,20,.22))}
+#f-modes .tm-float{left:auto;right:6%;top:16%;bottom:auto;animation-delay:-2.5s}
+@media (max-width:760px){
+  .tm-float{left:10px;bottom:22%}
+  .tm-float img{height:44px}
+  #f-modes .tm-float{right:10px;top:18%}
+}
+@media (prefers-reduced-motion:reduce){ .tm-float{animation:none} }
