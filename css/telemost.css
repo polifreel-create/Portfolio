@@ -708,3 +708,13 @@
 .theme-tm .y-price .k .em{font-size:15px;margin-right:6px;text-transform:none}
 @media (max-width:760px){ .tm-persona2 .gl .ic{font-size:15px} }
 .theme-tm .y-chip .em{font-size:14px;vertical-align:-.15em}
+
+/* Сегменты: аватарки на одинаковом зелёном круге, «Фокус» — зелёный, вне фокуса — приглушён */
+.theme-tm .tm-seg .ava{background:linear-gradient(160deg,#5FD177,#3FB656)!important;box-shadow:none}
+.theme-tm .tm-seg .tm-pill.on{background:var(--tm-green,#3FB656);color:#fff}
+.theme-tm .tm-seg:not(.off){background:#fff;box-shadow:inset 0 0 0 1.5px rgba(63,182,86,.35)}
+.theme-tm .tm-seg.off{background:var(--chip)}
+.theme-tm .tm-seg.off .ava{background:#D9DEE2!important;filter:grayscale(1);opacity:.75}
+.theme-tm .tm-seg.off .tm-pill{background:#fff;color:var(--ink-3)}
+.theme-tm .tm-seg.off h4{color:var(--ink-2)}
+.theme-tm .tm-seg.off p{color:var(--ink-3)}
