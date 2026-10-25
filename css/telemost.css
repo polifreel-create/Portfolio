@@ -718,3 +718,97 @@
 .theme-tm .tm-seg.off .tm-pill{background:#fff;color:var(--ink-3)}
 .theme-tm .tm-seg.off h4{color:var(--ink-2)}
 .theme-tm .tm-seg.off p{color:var(--ink-3)}
+
+/* ================================================================
+   Главы фич: сцена на стеклянном фоне + нарисованные экраны Телемоста
+   ================================================================ */
+.theme-tm .tm-chap .tm-stage{background:#E8F3EA url(../assets/img/telemost/stage-bg.webp) center/cover no-repeat;min-height:640px;padding:0}
+.theme-tm .tm-count{display:none}
+.theme-tm .tm-chap .tm-bars{left:28px;right:28px;top:22px;bottom:auto;transform:none;z-index:4}
+.theme-tm .tm-chap .tm-bars i{flex:1;width:auto}
+.theme-tm .tm-chap .tm-phones{width:270px;aspect-ratio:9/19.3;transform:rotate(-4deg)}
+.theme-tm .tm-chap .tm-phone{padding:8px;border-radius:44px;background:#0B0B0E;box-shadow:0 40px 80px rgba(20,60,35,.3),inset 0 0 0 2px #2A2A30}
+/* парящие уведомления */
+.tm-note{position:absolute;z-index:4;display:flex;align-items:center;gap:10px;padding:12px 16px 12px 14px;border-radius:18px;font:500 14.5px/1.3 var(--font);color:var(--ink);
+  background:rgba(255,255,255,.74);backdrop-filter:blur(20px) saturate(1.6);-webkit-backdrop-filter:blur(20px) saturate(1.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 10px 30px rgba(30,90,50,.14);
+  animation:tmFloat 6s ease-in-out infinite}
+.tm-note em{font-style:normal;font-size:18px}
+.tm-note.n1{left:28px;top:96px;rotate:-3deg}
+.tm-note.n2{right:24px;top:220px;rotate:3deg;animation-delay:-2s}
+.tm-note.n3{left:40px;bottom:80px;rotate:2deg;animation-delay:-4s}
+.tm-chap:nth-of-type(even) .tm-note.n2{top:auto;bottom:120px}
+@media (prefers-reduced-motion:reduce){ .tm-note{animation:none} }
+
+/* экран */
+.tm-scr{width:100%;height:100%;border-radius:36px;background:#141418;overflow:hidden;color:#fff;padding:12px 12px 0;font-family:var(--font);display:flex;flex-direction:column;gap:8px;text-align:left}
+.tm-scr.light{background:#F4F5F7;color:var(--ink)}
+.s-sb{display:flex;justify-content:space-between;align-items:center;font:600 11px/1 var(--font);padding:4px 10px 6px}
+.s-ic{width:34px;height:9px;border-radius:3px;background:currentColor;opacity:.85;-webkit-mask:linear-gradient(90deg,#000 70%,transparent 70% 76%,#000 76%)}
+.s-h{font:600 19px/1.15 var(--font);letter-spacing:-.02em;margin:2px 4px 0}
+.s-sub{margin:-4px 4px 2px;font:400 11.5px/1.3 var(--font);color:rgba(255,255,255,.55)}
+.light .s-sub{color:var(--ink-3)}
+.s-card{border-radius:18px;background:linear-gradient(160deg,#2C2C34,#222228);padding:4px 12px}
+.s-ct{display:flex;align-items:center;gap:8px;font:600 12px/1 var(--font);padding:9px 0 4px}
+.s-ct i{width:20px;height:20px;border-radius:6px;background:#3FB656;display:grid;place-items:center;font-style:normal;font-size:11px}
+.s-it{display:flex;align-items:center;gap:9px;padding:8px 0;font:500 12px/1.25 var(--font)}
+.s-it + .s-it,.s-ct + .s-it{border-top:1px solid rgba(255,255,255,.07)}
+.s-it em{font-style:normal;font-size:15px;flex:none}
+.s-it small{display:block;font:400 10.5px/1.3 var(--font);color:rgba(255,255,255,.5)}
+.s-r{margin-left:auto;font:500 11px/1 var(--font);color:rgba(255,255,255,.55);white-space:nowrap;padding-left:6px}
+.s-warn{border-radius:16px;background:rgba(255,170,60,.14);box-shadow:inset 0 0 0 1px rgba(255,170,60,.35);padding:10px 12px;font:500 11.5px/1.35 var(--font);color:#FFC57A}
+.s-ok{border-radius:16px;background:rgba(63,182,86,.16);box-shadow:inset 0 0 0 1px rgba(63,182,86,.4);padding:10px 12px;font:500 11.5px/1.35 var(--font);color:#7DE59A}
+.light .s-ok{color:#23913A}
+.s-btn{height:40px;border-radius:14px;background:#3FB656;display:grid;place-items:center;font:600 12.5px/1 var(--font);color:#fff}
+.s-btn.sec{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8)}
+.s-search{height:38px;border-radius:12px;background:rgba(255,255,255,.08);display:flex;align-items:center;gap:6px;padding:0 12px;font:500 12.5px/1 var(--font)}
+.s-caret{width:1.5px;height:14px;background:#3FB656;margin-left:-2px}
+.s-l{font:500 10px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);margin:4px 4px -2px}
+.s-seg{display:flex;gap:4px;padding:3px;border-radius:12px;background:rgba(255,255,255,.07)}
+.s-seg span{flex:1;height:30px;border-radius:9px;display:grid;place-items:center;font:500 11px/1 var(--font);color:rgba(255,255,255,.6);white-space:nowrap}
+.s-seg span.on{background:#fff;color:var(--ink)}
+.s-chats{display:flex;flex-direction:column}
+.s-c{display:flex;align-items:center;gap:10px;padding:7px 2px;font:500 12.5px/1.2 var(--font)}
+.s-c b{width:32px;height:32px;border-radius:50%;flex:none;background:linear-gradient(140deg,#4A4A55,#33333C);display:grid;place-items:center;font:600 12px/1 var(--font)}
+.s-c small{display:block;color:rgba(255,255,255,.45);font:400 10.5px/1.3 var(--font);margin-top:2px}
+.s-c i{margin-left:auto;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:#3FB656;font:600 10px/18px var(--font);font-style:normal;text-align:center}
+.s-call{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.s-call span{aspect-ratio:1/1;border-radius:14px;background:linear-gradient(150deg,#3A3A44,#26262D);display:grid;place-items:center;font:600 14px/1 var(--font);color:rgba(255,255,255,.7)}
+.s-call.sm span{aspect-ratio:16/10}
+.s-url{margin:0 -12px;padding:8px 12px;background:#E6E8EB;font:500 11px/1 var(--font);color:var(--ink-2);text-align:center}
+.s-input{height:40px;border-radius:12px;background:#fff;box-shadow:inset 0 0 0 1.5px #3FB656;display:flex;align-items:center;padding:0 12px;font:500 13px/1 var(--font)}
+.light .s-h{color:var(--ink)}
+.s-b{max-width:82%;padding:9px 12px;border-radius:16px 16px 16px 6px;background:#fff;font:400 12px/1.35 var(--font);color:var(--ink);box-shadow:0 1px 2px rgba(15,20,20,.06)}
+.tm-scr:not(.light) .s-b{background:#2C2C34;color:#fff}
+.s-b.me{align-self:flex-end;border-radius:16px 16px 6px 16px;background:#3FB656!important;color:#fff!important}
+.s-act{align-self:flex-start;height:34px;padding:0 12px;border-radius:12px;background:rgba(255,255,255,.1);display:flex;align-items:center;font:500 11.5px/1 var(--font)}
+.s-doc{border-radius:16px;background:#fff;color:var(--ink);padding:14px;font:400 11.5px/1.45 var(--font)}
+.s-doc b{display:block;font:600 12.5px/1.2 var(--font);margin:2px 0 4px}.s-doc p{margin:0 0 10px;color:var(--ink-2)}
+
+@media (max-width:760px){
+  .theme-tm .tm-chap .tm-stage{min-height:0;padding:56px 0 40px;background-color:#E8F3EA}
+  .theme-tm .tm-chap .tm-phones{width:200px}
+  .theme-tm .tm-chap .tm-bars{left:16px;right:16px;top:16px}
+  .tm-note{padding:8px 11px 8px 9px;font-size:12px;border-radius:14px;gap:7px}
+  .tm-note em{font-size:14px}
+  .tm-note.n1{left:10px;top:64px}.tm-note.n2{right:10px;top:auto;bottom:110px}.tm-note.n3{left:14px;bottom:28px}
+  .tm-scr{border-radius:28px;padding:9px 9px 0;gap:6px}
+  .s-h{font-size:15px}.s-sub{font-size:10px}
+  .s-it{font-size:10.5px;padding:6px 0}.s-it small{font-size:9px}.s-it em{font-size:12px}.s-r{font-size:9.5px}
+  .s-warn,.s-ok{font-size:10px;padding:8px 9px;border-radius:12px}
+  .s-btn{height:32px;font-size:10.5px;border-radius:11px}
+  .s-c{font-size:10.5px}.s-c b{width:26px;height:26px}.s-c small{font-size:9px}
+  .s-seg span{height:24px;font-size:9px}
+  .s-b,.s-doc{font-size:10px}.s-search{height:30px;font-size:10.5px}
+}
+/* уведомления — по краям телефона, не перекрывая заголовок экрана */
+.tm-note.n1{left:auto;right:22px;top:150px;bottom:auto;rotate:3deg}
+.tm-note.n2{right:auto;left:22px;top:340px;bottom:auto;rotate:-3deg}
+.tm-note.n3{left:auto;right:30px;top:auto;bottom:64px;rotate:2deg}
+.tm-chap:nth-of-type(even) .tm-note.n2{top:340px;bottom:auto}
+@media (max-width:760px){
+  .tm-note.n1{right:8px;top:150px}.tm-note.n2{left:8px;top:auto;bottom:120px}.tm-note.n3{right:10px;bottom:22px}
+  .tm-chap:nth-of-type(even) .tm-note.n2{top:auto;bottom:120px}
+}
+.theme-tm .tm-scr .s-sub{font:400 11.5px/1.3 var(--font)!important;max-width:none;margin:-4px 4px 2px!important}
+.theme-tm .tm-scr .s-doc p{font:400 11.5px/1.45 var(--font)!important;max-width:none}
+@media (max-width:760px){ .theme-tm .tm-scr .s-sub{font-size:10px!important} .theme-tm .tm-scr .s-doc p{font-size:10px!important} }
