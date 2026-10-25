@@ -539,3 +539,15 @@ body{letter-spacing:-.01em}
   .cases-track .tm-cluster{left:auto;right:2%;top:10%;width:44%}
 }
 @media (max-width:760px){ .side .brands:not(.edu-card) .logos li.co{margin-left:-14px} .side .brands:not(.edu-card) .logos li.co:first-child{margin-left:0} }
+.m-edu-h{display:none}
+@media (max-width:760px){
+  /* обучение — отдельный подраздел со своим заголовком, как «Работала с компаниями» */
+  .m-edu-h{display:block;margin:20px 0 0!important;padding-top:20px;border-top:1px solid rgba(15,20,20,.07)}
+  .m-edu{margin-top:12px;padding-top:0;border-top:0}
+
+  /* карточки кейсов — светло-серые, теги белые */
+  .cases-track > .case{background:var(--chip,#F4F7FA);border-radius:24px;overflow:hidden}
+  .cases-track > .case .media{border-radius:0}
+  .cases-track > .case .body{padding:16px 16px 18px}
+  .cases-track > .case .tags span{background:#fff}
+}
