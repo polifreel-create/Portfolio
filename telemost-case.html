@@ -341,7 +341,7 @@ document.querySelectorAll('[data-flow]').forEach(function(f){
       bars.forEach(function(b,k){b.classList.remove('run');b.classList.toggle('done',k<i)});
       if(cnt)cnt.textContent=i+1;
       if(t)clearTimeout(t);
-      if(vis&&!reduce){var b=bars[i];void b.offsetWidth;b.style.setProperty('--dur',DUR+'ms');b.classList.add('run');t=setTimeout(function(){show(i+1)},DUR)}}
+      if(vis&&!reduce){var b=bars[i];if(b){void b.offsetWidth;b.style.setProperty('--dur',DUR+'ms');b.classList.add('run')}t=setTimeout(function(){show(i+1)},DUR)}}
     steps.forEach(function(s,k){s.addEventListener('click',function(){show(k)})});
     if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;show(i)},{threshold:.4}).observe(ch);
     show(0);
