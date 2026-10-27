@@ -888,3 +888,10 @@
   .theme-tm .sec .y-task p,.theme-tm .sec .tm-cell p,.theme-tm .sec .y-quote p:not(.q),.theme-tm .sec .tm-seg p,.theme-tm .sec .who p,
   .theme-tm .sec .y-price p,.theme-tm .sec .y-valid p,.theme-tm .sec .y-future p,.theme-tm .sec .tm-all-h p,.theme-tm .tm-chap .tm-job{font-size:14px!important;line-height:1.4!important}
 }
+/* главы с настоящими экранами (рамка уже на картинке) */
+.theme-tm .tm-chap .tm-phones.real-set{width:252px;aspect-ratio:786/1704;border-radius:44px;background:#0B0B0E}
+.theme-tm .tm-chap .tm-phones.real-set::after{border-width:6px;border-radius:44px}
+@media (max-width:760px){
+  .theme-tm .tm-chap .tm-phones.real-set{width:190px;border-radius:32px}
+  .theme-tm .tm-chap .tm-phones.real-set::after{border-radius:32px;border-width:5px}
+}
