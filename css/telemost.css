@@ -849,3 +849,15 @@
 .theme-tm .tm-chap .tm-phone:not(.real) .tm-scr{border-radius:30px}
 .theme-tm .tm-chap .tm-phones{background:#141418}
 @media (max-width:760px){ .theme-tm .tm-chap .tm-phone:not(.real){inset:6px} .theme-tm .tm-chap .tm-phone:not(.real) .tm-scr{border-radius:26px} }
+
+/* ===== Типографика как в Гигасправке =====
+   H2 секции 32/24 · H3 главы 24/20 · заголовки карточек 20/18 */
+.theme-tm .y-final h2{font:500 32px/1.1 var(--font)!important;letter-spacing:-.03em!important}
+.theme-tm .tm-all-h h3,.theme-tm .tm-persona2 .who h4{font:500 24px/1.2 var(--font)!important;letter-spacing:-.025em!important}
+.theme-tm .y-task h4,.theme-tm .tm-seg h4,.theme-tm .tm-cell h4,.theme-tm .y-valid h4,.theme-tm .y-future h4,.theme-tm .y-quote .q{font:500 20px/1.3 var(--font)!important;letter-spacing:-.015em!important}
+.theme-tm .y-quote.main .q{font:500 24px/1.2 var(--font)!important;letter-spacing:-.025em!important}
+@media (max-width:760px){
+  .theme-tm .y-final h2{font-size:24px!important;line-height:1.15!important}
+  .theme-tm .tm-all-h h3,.theme-tm .tm-persona2 .who h4,.theme-tm .y-quote.main .q{font-size:20px!important}
+  .theme-tm .y-task h4,.theme-tm .tm-seg h4,.theme-tm .tm-cell h4,.theme-tm .y-valid h4,.theme-tm .y-future h4,.theme-tm .y-quote .q{font-size:18px!important}
+}
