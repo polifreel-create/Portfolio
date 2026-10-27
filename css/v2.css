@@ -656,3 +656,8 @@ body{letter-spacing:-.01em}
   .edu-card .edu .f small{font-size:14px!important}
 }
 @media (min-width:761px){ .side .intro{flex:none!important;min-height:0!important} .bio{margin-top:20px!important} }
+/* десктоп: под жирным текстом — короткий обычный абзац, кегль как в описаниях кейсов */
+@media (min-width:761px){
+  .bio{gap:12px!important}
+  .bio p:not(.lead){display:block!important;font-size:18px!important;line-height:1.5!important;color:var(--ink-2)}
+}
