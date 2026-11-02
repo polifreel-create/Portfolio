@@ -1,0 +1,102 @@
+/* =========================================================
+   Лучи — страница из нескольких коротких задач (не один длинный кейс)
+   Подключается после v2.css и case.css. Акцент — коралловый цвет Лучей.
+   Шаблон задачи: .lu-task → шапка, «Задача / Решение», крупный визуал, цифры.
+   ========================================================= */
+
+.theme-lu{
+  --lu:#FF7377; --lu-ink:#E0484E; --lu-soft:#FFF1F1;
+  --lu-grad:linear-gradient(135deg,#FF9A8B 0%,#FF7377 55%,#F2556A 100%);
+  --sber:var(--lu); --sber-ink:var(--lu-ink); --sber-grad:var(--lu-grad);
+}
+.theme-lu .next .arrow{background:var(--lu)}
+.theme-lu .crumbs a:hover{color:var(--lu-ink)}
+
+/* ---------- оглавление задач ---------- */
+.lu-index{padding:var(--pad);display:flex;flex-direction:column;gap:var(--s-5)}
+.lu-index h2{margin:0;font:var(--t-h2);letter-spacing:-.02em}
+.lu-index ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
+.lu-index a{display:flex;flex-direction:column;gap:var(--s-3);height:100%;padding:var(--s-5);border-radius:var(--r-in);background:var(--chip);
+  transition:transform .35s cubic-bezier(.16,1,.3,1),background .25s}
+.lu-index a:hover{transform:translateY(-3px);background:var(--lu-soft)}
+.lu-index .n{font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--lu-ink)}
+.lu-index b{font:500 20px/1.25 var(--font);letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
+.lu-index span:last-child{margin-top:auto;font:400 15px/1.45 var(--font);color:var(--ink-3)}
+
+/* ---------- задача ---------- */
+.lu-task{padding:var(--pad);display:flex;flex-direction:column;gap:var(--s-6);scroll-margin-top:64px}
+.lu-task > header{display:flex;flex-direction:column;gap:var(--s-3)}
+.lu-task .top{display:flex;align-items:center;justify-content:space-between;gap:var(--s-4);flex-wrap:wrap}
+.lu-task .eyebrow .num{color:var(--lu-ink)}
+.lu-task .tags{display:flex;gap:var(--s-1)}
+.lu-task h2{margin:0;font:var(--t-h1);font-size:clamp(30px,3.4vw,44px);letter-spacing:-.03em;max-width:18em;text-wrap:balance}
+
+/* задача / решение — две колонки, коротко */
+.lu-tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-4)}
+.lu-tr > div{padding:var(--s-5);border-radius:var(--r-in);background:var(--chip);display:flex;flex-direction:column;gap:var(--s-3)}
+.lu-tr h3{margin:0;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.lu-tr p,.lu-tr li{margin:0;font:400 17px/1.5 var(--font);color:var(--ink)}
+.lu-tr ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:var(--s-2)}
+.lu-tr li{position:relative;padding-left:20px}
+.lu-tr li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--lu)}
+.lu-tr .sol{background:var(--lu-soft)}
+.lu-tr .sol h3{color:var(--lu-ink)}
+
+/* ---------- крупный визуал ---------- */
+.lu-shot{position:relative;overflow:hidden;border-radius:var(--r-in);background:var(--wash);aspect-ratio:16/10}
+.lu-shot img,.lu-shot video{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.lu-shot + figcaption,.lu-ba + figcaption{margin-top:calc(var(--s-3) - var(--s-6))}
+
+/* заглушка, пока нет скриншота: видно, какой кадр сюда нужен */
+.lu-ph{position:absolute;inset:0;display:grid;place-items:center;padding:var(--s-5);text-align:center;
+  background:radial-gradient(120% 90% at 85% 10%,rgba(255,115,119,.22),transparent 60%),linear-gradient(160deg,#FBF4F4,#F4F7FA);
+  font:500 15px/1.4 var(--font);color:var(--ink-3)}
+.lu-ph.alt{background:radial-gradient(120% 90% at 15% 90%,rgba(255,115,119,.30),transparent 60%),linear-gradient(200deg,#FFF1F1,#F4F7FA)}
+.lu-ph span{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.8);backdrop-filter:blur(8px)}
+
+/* до / после — тянем разделитель */
+.lu-ba{--p:50%;position:relative;overflow:hidden;border-radius:var(--r-in);background:var(--wash);aspect-ratio:16/10;
+  touch-action:pan-y;user-select:none;-webkit-user-select:none;cursor:ew-resize}
+.lu-ba > .layer{position:absolute;inset:0}
+.lu-ba > .layer img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center;pointer-events:none}
+.lu-ba > .before{clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.lu-ba .line{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 0 1px rgba(15,20,20,.06);pointer-events:none}
+.lu-ba .knob{position:absolute;top:50%;left:50%;width:48px;height:48px;margin:-24px 0 0 -24px;border-radius:50%;background:#fff;color:var(--ink);
+  display:grid;place-items:center;box-shadow:0 8px 24px rgba(15,20,20,.18);transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.lu-ba:hover .knob,.lu-ba.drag .knob{transform:scale(1.08)}
+.lu-ba .lab{position:absolute;top:var(--s-4);padding:6px 12px;border-radius:999px;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;pointer-events:none;
+  background:rgba(15,20,20,.72);color:#fff;backdrop-filter:blur(8px)}
+.lu-ba .lab.l{left:var(--s-4)}
+.lu-ba .lab.r{right:var(--s-4);background:var(--lu)}
+.lu-ba input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+.lu-ba:has(input:focus-visible){outline:2px solid var(--lu);outline-offset:3px}
+
+/* ---------- цифры ---------- */
+.lu-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--s-3)}
+.lu-stat{padding:var(--s-5);border-radius:var(--r-in);background:var(--chip);display:flex;flex-direction:column;gap:var(--s-2)}
+.lu-stat b{font:var(--t-stat);letter-spacing:-.03em;color:var(--ink)}
+.lu-stat b small{font-size:.5em;letter-spacing:0;margin-left:4px;color:var(--ink-3)}
+.lu-stat span{font:400 15px/1.45 var(--font);color:var(--ink-2)}
+.lu-stat.hot{background:var(--lu-grad)}
+.lu-stat.hot b,.lu-stat.hot b small{color:#fff}
+.lu-stat.hot span{color:rgba(255,255,255,.85)}
+.lu-note{margin:calc(var(--s-3) - var(--s-6)) 0 0;font:400 15px/1.45 var(--font);color:var(--ink-3)}
+
+@media (max-width:760px){
+  .lu-index ol{grid-template-columns:1fr}
+  .lu-index a{padding:var(--s-4) var(--s-5)}
+  .lu-index span:last-child{display:none}
+  .lu-task{gap:var(--s-5)}
+  .lu-task h2{font-size:28px}
+  .lu-tr{grid-template-columns:1fr;gap:var(--s-3)}
+  .lu-tr p,.lu-tr li{font-size:16px}
+  .lu-shot,.lu-ba{aspect-ratio:4/3}
+  .lu-ba .knob{width:40px;height:40px;margin:-20px 0 0 -20px}
+  .lu-stats{grid-template-columns:1fr 1fr}
+  .lu-stat{padding:var(--s-4)}
+  .lu-stat b{font-size:32px}
+  .lu-stat span{font-size:13px}
+}
+/* в «было / стало» подписи заглушек — в нижних углах, чтобы не прятались под ручкой */
+.lu-ba .before .lu-ph{place-items:end start}
+.lu-ba .after .lu-ph{place-items:end end}

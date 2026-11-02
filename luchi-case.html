@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Лучи — задачи Полины Ефремовой</title>
+  <meta name="description" content="Реальные задачи в Лучах: HR-кабинет, форма заявки на ДМС, карьерный лендинг. Коротко: задача, решение, результат.">
+  <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/v2.css?v=73">
+  <link rel="stylesheet" href="css/case.css?v=62">
+  <link rel="stylesheet" href="css/luchi.css?v=1">
+</head>
+<body class="theme-lu">
+<div class="wrap">
+
+  <nav class="crumbs" aria-label="Навигация">
+    <a href="index.html" onclick="if(document.referrer&&new URL(document.referrer).origin===location.origin){history.back();return false}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Главная</a>
+    <span class="sep">/</span><span>Лучи</span>
+  </nav>
+
+  <!-- Шапка -->
+  <header class="head hero card">
+    <div class="top"><div class="tags"><span>Web</span><span>B2B</span><span>Медтех</span></div></div>
+    <img class="icon" src="assets/img/luchi/app-icon.png" alt="" width="104" height="104">
+    <h1>Лучи</h1>
+    <p class="lead">Онлайн-страхование и&nbsp;медтех. Отвечаю за&nbsp;все продукты компании: сайт, личные кабинеты и&nbsp;HR-кабинет. Здесь не&nbsp;один большой кейс, а&nbsp;несколько реальных задач: что&nbsp;было, что&nbsp;сделала и&nbsp;что&nbsp;изменилось.</p>
+    <dl class="meta">
+      <div><dt>Роль</dt><dd>Продуктовый дизайнер</dd></div>
+      <div><dt>Продукты</dt><dd>Сайт, личные кабинеты, <br>HR-кабинет</dd></div>
+      <div><dt>Формат</dt><dd>In-house, <br>продуктовая команда</dd></div>
+      <div><dt>Год</dt><dd>2026</dd></div>
+    </dl>
+  </header>
+
+  <!-- Оглавление -->
+  <nav class="lu-index card" aria-labelledby="idx-title" id="tasks">
+    <h2 id="idx-title">Задачи</h2>
+    <ol>
+      <li><a href="#t1"><span class="n">01 · HR-кабинет</span><b>Почему клиенты не&nbsp;прикрепляют сотрудников сами</b><span>Исследование и&nbsp;UX</span></a></li>
+      <li><a href="#t2"><span class="n">02 · Сайт</span><b>Форма заявки на&nbsp;ДМС, которая помещается на&nbsp;экран</b><span>Форма и&nbsp;конверсия</span></a></li>
+      <li><a href="#t3"><span class="n">03 · Сайт</span><b>Карьерный лендинг на&nbsp;дизайн-системе</b><span>Лендинг и&nbsp;дизайн-система</span></a></li>
+    </ol>
+  </nav>
+
+  <!--
+    ШАБЛОН ЗАДАЧИ — копируйте <article class="lu-task"> целиком и меняйте:
+    1) id="t4", номер в eyebrow и пункт в оглавлении выше;
+    2) заголовок — результат, а не название раздела;
+    3) «Задача» — 1–2 предложения, «Решение» — 2–4 пункта;
+    4) визуал: один экран (.lu-shot) или «было / стало» (.lu-ba с data-ba);
+       вместо <div class="lu-ph"> вставьте <img src="assets/img/luchi/...webp" alt="...">;
+    5) цифры: 2–3 карточки .lu-stat, первая можно с классом hot. Если цифр нет — уберите блок.
+  -->
+
+  <!-- 01 HR-кабинет -->
+  <article class="lu-task card" id="t1">
+    <header>
+      <div class="top"><span class="eyebrow"><span class="num">01</span>&nbsp;· HR-кабинет</span><div class="tags"><span>B2B</span><span>Research</span></div></div>
+      <h2>Нашла, почему крупные клиенты не&nbsp;прикрепляют сотрудников сами</h2>
+    </header>
+    <div class="lu-tr">
+      <div><h3>Задача</h3><p>В&nbsp;HR-кабинете клиенты прикрепляют сотрудников к&nbsp;ДМС, но&nbsp;часть этой работы всё равно уходит аккаунт-менеджерам вручную. Нужно было понять, где&nbsp;кабинет мешает, и&nbsp;решить, что&nbsp;чинить в&nbsp;первую очередь.</p></div>
+      <div class="sol"><h3>Решение</h3><ul>
+        <li>Провела интервью с&nbsp;HR клиентов и&nbsp;поддержкой, свела проблемы в&nbsp;один список.</li>
+        <li>Ранжировала их не&nbsp;по&nbsp;«неудобству», а&nbsp;по&nbsp;деньгам: стоимость доработки против ручной работы аккаунтов.</li>
+        <li>Главная находка: при&nbsp;выборе нескольких юрлиц кнопка «Прикрепить» пропадает, и&nbsp;HR не&nbsp;знают, что&nbsp;могут прикреплять&nbsp;сами.</li>
+        <li>Вынесла действие на&nbsp;видное место с&nbsp;подсказкой и&nbsp;переделала флоу прикрепления.</li>
+      </ul></div>
+    </div>
+    <figure class="lu-ba" data-ba>
+      <div class="layer after"><div class="lu-ph alt"><span>Стало: экран списка сотрудников</span></div></div>
+      <div class="layer before"><div class="lu-ph"><span>Было: экран списка сотрудников</span></div></div>
+      <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+      <span class="lab l">Было</span><span class="lab r">Стало</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Сравнить экран до и после">
+    </figure>
+    <div class="lu-stats">
+      <div class="lu-stat hot"><b>16</b><span>интервью с&nbsp;HR клиентов и&nbsp;поддержкой</span></div>
+      <div class="lu-stat"><b>2</b><span>критичные проблемы, из-за&nbsp;которых компания теряла деньги</span></div>
+      <div class="lu-stat"><b>3</b><span>задачи сразу ушли в&nbsp;дизайн после груминга</span></div>
+    </div>
+  </article>
+
+  <!-- 02 Форма заявки -->
+  <article class="lu-task card" id="t2">
+    <header>
+      <div class="top"><span class="eyebrow"><span class="num">02</span>&nbsp;· Сайт · ДМС для&nbsp;бизнеса</span><div class="tags"><span>Web</span><span>Form UX</span></div></div>
+      <h2>Сократила форму заявки на&nbsp;ДМС, и&nbsp;она снова помещается на&nbsp;экран</h2>
+    </header>
+    <div class="lu-tr">
+      <div><h3>Задача</h3><p>В&nbsp;попап заявки постепенно добавляли поля и&nbsp;пояснения, и&nbsp;он перестал помещаться на&nbsp;экран. До&nbsp;кнопки приходилось листать.</p></div>
+      <div class="sol"><h3>Решение</h3><ul>
+        <li>Убрала поле ИНН: компания подтягивается по&nbsp;названию через DaData.</li>
+        <li>Блок про&nbsp;тарифы «до&nbsp;25 / от&nbsp;25 сотрудников» превратила в&nbsp;подсказку под&nbsp;счётчиком сотрудников, которая меняется вместе с&nbsp;числом.</li>
+        <li>Поставила имя и&nbsp;телефон в&nbsp;одну строку и&nbsp;сжала отступы.</li>
+      </ul></div>
+    </div>
+    <figure class="lu-ba" data-ba>
+      <div class="layer after"><div class="lu-ph alt"><span>Стало: компактный попап</span></div></div>
+      <div class="layer before"><div class="lu-ph"><span>Было: попап с&nbsp;прокруткой</span></div></div>
+      <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+      <span class="lab l">Было</span><span class="lab r">Стало</span>
+      <input type="range" min="0" max="100" value="50" aria-label="Сравнить попап до и после">
+    </figure>
+    <div class="lu-stats">
+      <div class="lu-stat hot"><b>1<small>экран</small></b><span>форма целиком видна без&nbsp;прокрутки</span></div>
+      <div class="lu-stat"><b>−1<small>поле</small></b><span>ИНН заполняется автоматически</span></div>
+    </div>
+  </article>
+
+  <!-- 03 Карьерный лендинг -->
+  <article class="lu-task card" id="t3">
+    <header>
+      <div class="top"><span class="eyebrow"><span class="num">03</span>&nbsp;· Сайт · Карьера</span><div class="tags"><span>Web</span><span>Design System</span></div></div>
+      <h2>Собрала карьерный лендинг на&nbsp;дизайн-системе</h2>
+    </header>
+    <div class="lu-tr">
+      <div><h3>Задача</h3><p>Компании нужна страница для&nbsp;кандидатов. В&nbsp;черновике отступы и&nbsp;скругления были разными, а&nbsp;тексты обращались к&nbsp;читателю по-разному.</p></div>
+      <div class="sol"><h3>Решение</h3><ul>
+        <li>Пересобрала страницу на&nbsp;токенах и&nbsp;компонентах дизайн-системы.</li>
+        <li>Привела тексты к&nbsp;одному обращению на&nbsp;«вы».</li>
+        <li>Добавила открытые вакансии со&nbsp;ссылкой на&nbsp;hh.ru и&nbsp;сценарий «Нет подходящей вакансии?» с&nbsp;контактом HR.</li>
+        <li>Макеты по&nbsp;дизайн-системе собирала через Figma MCP.</li>
+      </ul></div>
+    </div>
+    <figure class="lu-shot">
+      <div class="lu-ph alt"><span>Главный экран лендинга, 1440</span></div>
+    </figure>
+  </article>
+
+  <!-- Следующий кейс -->
+  <a class="next card" href="giga-case.html">
+    <div><span class="eyebrow">Следующий кейс</span><b>Гигасправка</b></div>
+    <span class="arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+  </a>
+
+</div>
+<div class="m-prog" id="mProg"><i></i></div>
+<nav class="m-bar" id="mBar" aria-label="Навигация по странице">
+  <div class="m-tabs">
+    <a href="index.html" data-t="home"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Главная</a>
+    <a href="#tasks" data-t="tasks"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Задачи</a>
+    <button type="button" data-t="top" id="mUp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Наверх</button>
+  </div>
+  <a class="m-hire" href="https://t.me/" target="_blank" rel="noopener">Нанять</a>
+</nav>
+<button class="to-top" type="button" aria-label="Наверх"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+<script>
+/* было / стало: тянем разделитель мышью, пальцем или стрелками */
+document.querySelectorAll('[data-ba]').forEach(function(f){
+  var inp=f.querySelector('input'),drag=false;
+  function set(p){p=Math.max(0,Math.min(100,p));f.style.setProperty('--p',p+'%');inp.value=Math.round(p)}
+  function at(x){var r=f.getBoundingClientRect();set((x-r.left)/r.width*100)}
+  f.addEventListener('pointerdown',function(e){drag=true;f.classList.add('drag');at(e.clientX);inp.focus({preventScroll:true});
+    if(e.pointerType==='mouse')f.setPointerCapture(e.pointerId)});
+  f.addEventListener('pointermove',function(e){if(drag)at(e.clientX)});
+  ['pointerup','pointercancel','pointerleave'].forEach(function(ev){f.addEventListener(ev,function(){drag=false;f.classList.remove('drag')})});
+  inp.addEventListener('input',function(){set(+inp.value)});
+  /* подсказка при первом показе: разделитель плавно качнётся */
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){if(!es[0].isIntersecting)return;io.disconnect();
+      var t0=null;function step(t){if(!t0)t0=t;var k=(t-t0)/1400;if(k>=1||drag){if(!drag)set(50);return}
+        set(50+Math.sin(k*Math.PI*2)*14);requestAnimationFrame(step)}requestAnimationFrame(step)},{threshold:.6});
+    io.observe(f);
+  }
+});
+/* кнопка «наверх»: появляется после первого экрана */
+(function(){
+  var b=document.querySelector('.to-top');if(!b)return;
+  function upd(){b.classList.toggle('on',scrollY>innerHeight*.8)}
+  addEventListener('scroll',upd,{passive:true});upd();
+  b.addEventListener('click',function(){var r=matchMedia('(prefers-reduced-motion: reduce)').matches;scrollTo({top:0,behavior:r?'auto':'smooth'})});
+})();
+/* мобильная версия: прогресс чтения и нижний бар */
+(function(){
+  var mq=matchMedia('(max-width:760px)'),bar=document.getElementById('mBar'),pr=document.querySelector('#mProg i'),hero=document.querySelector('.hero');
+  function upd(){var h=document.documentElement.scrollHeight-innerHeight;pr.style.transform='scaleX('+(h>0?scrollY/h:0)+')';
+    bar.classList.toggle('on',mq.matches&&hero.getBoundingClientRect().bottom<0)}
+  addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
+  document.getElementById('mUp').addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
+  bar.querySelector('[data-t=tasks]').addEventListener('click',function(e){e.preventDefault();var el=document.getElementById('tasks');scrollTo({top:el.getBoundingClientRect().top+scrollY-64,behavior:'smooth'})});
+})();
+</script>
+</body>
+</html>
