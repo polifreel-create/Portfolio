@@ -957,3 +957,7 @@
 .theme-tm .tm-step.on.run::after{animation:tmStep var(--dur,2800ms) linear forwards}
 @keyframes tmStep{to{transform:scaleX(1)}}
 @media (prefers-reduced-motion:reduce){ .theme-tm .tm-step.on::after{display:none} }
+/* обложка кейса — видео */
+.hero .shot.tm-hero{background:#DCEFE3}
+.hero .shot.tm-hero video{width:100%;height:100%;object-fit:cover;object-position:48% 55%;display:block}
+@media (max-width:760px){ .hero .shot.tm-hero video{object-position:47% 60%} }

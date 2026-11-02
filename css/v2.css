@@ -661,3 +661,7 @@ body{letter-spacing:-.01em}
   .bio{gap:12px!important}
   .bio p:not(.lead){display:block!important;font-size:18px!important;line-height:1.5!important;color:var(--ink-2)}
 }
+/* обложка Телемоста — видео */
+.case .media.tm-media{background:#DCEFE3}
+.case .media.tm-media > video{object-position:48% 55%}
+@media (max-width:760px){ .cases-track .case .media.tm-media > video{object-position:47% 60%} }
