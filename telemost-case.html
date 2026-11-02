@@ -8,7 +8,7 @@
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=62">
   <link rel="stylesheet" href="css/case.css?v=62">
-  <link rel="stylesheet" href="css/telemost.css?v=42">
+  <link rel="stylesheet" href="css/telemost.css?v=43">
 </head>
 <body class="theme-tm">
 <div class="wrap">
@@ -101,10 +101,20 @@
       </div>
       <div class="pside">
         <div class="who">
-          <h4>Люда, 36&nbsp;лет</h4>
-          <p class="role">Проджект-менеджер на&nbsp;удалёнке, мама</p>
-          <div class="y-tagset"><span>Решала и&nbsp;эмпат</span><span>Удалёнка</span><span>Семья</span></div>
-          <p>Держит в&nbsp;голове чаты, звонки, календарь и&nbsp;заметки, разбросанные по&nbsp;разным&nbsp;приложениям.</p>
+          <div class="who-top">
+            <h4>Люда, 36&nbsp;лет</h4>
+            <p class="role">Проджект-менеджер на&nbsp;удалёнке, мама</p>
+            <div class="y-tagset"><span>Решала и&nbsp;эмпат</span><span>Удалёнка</span><span>Семья</span></div>
+          </div>
+          <div class="pains">
+            <span class="k">Что мешает</span>
+            <ul>
+              <li><i class="em">🧩</i>Чаты, звонки, календарь и&nbsp;заметки&nbsp;— в&nbsp;разных приложениях</li>
+              <li><i class="em">📌</i>Договорённости из&nbsp;переписки переносит в&nbsp;календарь вручную</li>
+              <li><i class="em">🔀</i>Рабочее и&nbsp;личное перемешаны в&nbsp;одном списке&nbsp;чатов</li>
+            </ul>
+          </div>
+          <div class="want"><span class="k">Чего хочет</span><p>Одно место, где&nbsp;всё уже собрано за&nbsp;неё</p></div>
         </div>
         <blockquote class="say">«Трачу больше сил на&nbsp;то, чтобы собрать всё по&nbsp;кускам, чем&nbsp;на&nbsp;само&nbsp;общение»</blockquote>
       </div>
@@ -331,19 +341,20 @@ document.querySelectorAll('[data-flow]').forEach(function(f){
 })();
 /* Телемост: главы фич — шаги переключают экраны, как сторис */
 (function(){
-  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,DUR=4000;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,DUR=2800;
   document.querySelectorAll('[data-chap]').forEach(function(ch){
     var steps=[].slice.call(ch.querySelectorAll('.tm-step')),ph=[].slice.call(ch.querySelectorAll('.tm-chap .tm-phone, .tm-phone')),bars=[].slice.call(ch.querySelectorAll('.tm-bars i')),cnt=ch.querySelector('.tm-count b'),i=0,t=null,vis=false;
     ph=[].slice.call(ch.querySelectorAll('.tm-phones .tm-phone'));
     function show(n){var prev=i;i=(n+ph.length)%ph.length;
       ph.forEach(function(p,k){p.classList.toggle('on',k===i);p.classList.toggle('prev',k===prev&&k!==i)});
-      steps.forEach(function(s,k){s.classList.toggle('on',k===i)});
+      steps.forEach(function(s,k){s.classList.toggle('on',k===i);s.classList.remove('run')});
+      if(vis&&!reduce&&steps[i]){void steps[i].offsetWidth;steps[i].style.setProperty('--dur',DUR+'ms');steps[i].classList.add('run')}
       bars.forEach(function(b,k){b.classList.remove('run');b.classList.toggle('done',k<i)});
       if(cnt)cnt.textContent=i+1;
       if(t)clearTimeout(t);
       if(vis&&!reduce){var b=bars[i];if(b){void b.offsetWidth;b.style.setProperty('--dur',DUR+'ms');b.classList.add('run')}t=setTimeout(function(){show(i+1)},DUR)}}
     steps.forEach(function(s,k){s.addEventListener('click',function(){show(k)})});
-    if('IntersectionObserver' in window)new IntersectionObserver(function(es){vis=es[0].isIntersecting;show(i)},{threshold:.4}).observe(ch);
+    if('IntersectionObserver' in window)new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v!==vis){vis=v;show(i)}},{threshold:.25}).observe(ch);
     show(0);
   });
   /* навигация по фичам: подсветка текущей */

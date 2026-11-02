@@ -912,3 +912,48 @@
   .theme-tm .tm-chap .tm-phones.real-set::after,#f-summary .tm-phones.real-set::after{border-radius:calc(15px + var(--bz))}
   .theme-tm .tm-chap .tm-phones.real-set .tm-phone img{border-radius:15px}
 }
+
+/* ===== Ноябрь: подбиваем под лендинг Телемоста ===== */
+/* Сегменты: ровные серые карточки без обводок, аватарки без зелёной подложки */
+.theme-tm .tm-seg,.theme-tm .tm-seg:not(.off),.theme-tm .tm-seg.off{background:var(--chip);box-shadow:none}
+.theme-tm .tm-seg .ava,.theme-tm .tm-seg.off .ava{background:#fff!important}
+.theme-tm .tm-seg.off .ava{filter:grayscale(1);opacity:.6}
+.theme-tm .tm-seg.off .tm-pill{background:#fff;color:var(--ink-3)}
+
+/* Персона: одна плотная карточка — кто она → что мешает → чего хочет */
+.tm-persona2 .who{gap:24px!important;justify-content:space-between}
+.tm-persona2 .who-top{display:flex;flex-direction:column;gap:10px}
+.tm-persona2 .who-top .role{margin:0!important}
+.tm-persona2 .who .k{display:block;margin-bottom:12px}
+.tm-persona2 .pains ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.tm-persona2 .pains li{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;border-radius:18px;background:#fff;font:400 16px/1.4 var(--font);color:var(--ink)}
+.tm-persona2 .pains li .em{flex:none;margin:0;font-size:18px;line-height:1.25}
+.tm-persona2 .want p{margin:0!important;font:500 20px/1.3 var(--font)!important;letter-spacing:-.015em;color:var(--tm-green-ink,#23913A)!important}
+.tm-persona2 .say{font:500 20px/1.35 var(--font)!important}
+@media (max-width:760px){
+  .tm-persona2 .who{gap:18px!important}
+  .tm-persona2 .pains li{padding:12px 14px;border-radius:14px;font-size:14px;gap:10px}
+  .tm-persona2 .pains li .em{font-size:16px}
+  .tm-persona2 .want p{font-size:17px!important}
+  .tm-persona2 .say{font-size:17px!important}
+}
+
+/* Главы: джоба сразу под заголовком, зелёная — главное, что читается в главе */
+.theme-tm .tm-chap .tm-job{background:var(--tm-green,#3FB656)!important;color:#fff!important;font:500 19px/1.35 var(--font)!important;letter-spacing:-.01em!important;padding:20px 22px!important;border-radius:22px!important}
+.theme-tm .tm-chap .tm-job span{color:rgba(255,255,255,.78)!important;font:500 12px/1.3 var(--font)!important;letter-spacing:.08em!important;margin-bottom:8px}
+@media (min-width:761px){
+  .theme-tm .tm-chap .tm-job{order:2!important;margin:0 0 24px!important}
+  .theme-tm .tm-chap .tm-steps{order:3!important;margin:0!important}
+}
+@media (max-width:760px){
+  .theme-tm .tm-chap .tm-job{order:2!important;margin:0 0 12px!important;font-size:16px!important;padding:14px 16px!important;border-radius:16px!important}
+  .theme-tm .tm-chap .tm-stage{order:3!important}
+  .theme-tm .tm-chap .tm-steps{order:4!important;margin:0!important}
+}
+
+/* Шаги: активный шаг показывает, сколько осталось до смены экрана */
+.theme-tm .tm-step{position:relative;overflow:hidden}
+.theme-tm .tm-step.on::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;background:var(--tm-green,#3FB656);transform:scaleX(0);transform-origin:left}
+.theme-tm .tm-step.on.run::after{animation:tmStep var(--dur,2800ms) linear forwards}
+@keyframes tmStep{to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){ .theme-tm .tm-step.on::after{display:none} }
