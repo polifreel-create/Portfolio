@@ -293,12 +293,53 @@
 .ne-slides figure::after{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,rgba(43,35,29,.6))}
 .ne-slides figcaption{position:absolute;left:var(--s-5);bottom:var(--s-5);z-index:1;margin:0;display:flex;flex-direction:column;gap:2px;font:400 15px/1.3 var(--font);color:rgba(255,255,255,.8)}
 .ne-slides figcaption b{font:500 clamp(24px,2.6vw,34px)/1.1 var(--font);letter-spacing:-.025em;color:#fff}
-.ne-slides .dots{position:absolute;right:var(--s-5);bottom:var(--s-5);z-index:2;display:flex;gap:6px}
-.ne-slides .dots button{all:unset;cursor:pointer;width:40px;height:20px;display:grid;align-items:center}
-.ne-slides .dots i{display:block;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden;position:relative}
-.ne-slides .dots i::after{content:"";position:absolute;inset:0;width:0;background:#fff}
-.ne-slides .dots .on i::after{width:100%}
-.ne-slides .dots .run i::after{width:0;animation:neBar 4500ms linear forwards}
-.ne-slides .dots button:focus-visible{outline:2px solid #fff;outline-offset:2px}
-@media (max-width:760px){ .ne-slides{aspect-ratio:4/5} .ne-slides figcaption{left:var(--s-4);bottom:var(--s-4)} .ne-slides .dots{right:var(--s-4);bottom:var(--s-4)} }
+.ne-slides .ne-dots{position:absolute;right:var(--s-5);bottom:var(--s-5);z-index:2;display:flex;gap:6px}
+.ne-slides .ne-dots button{all:unset;cursor:pointer;width:40px;height:20px;display:grid;align-items:center}
+.ne-slides .ne-dots i{display:block;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden;position:relative}
+.ne-slides .ne-dots i::after{content:"";position:absolute;inset:0;width:0;background:#fff}
+.ne-slides .ne-dots .on i::after{width:100%}
+.ne-slides .ne-dots .run i::after{width:0;animation:neBar 4500ms linear forwards}
+.ne-slides .ne-dots button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+@media (max-width:760px){ .ne-slides{aspect-ratio:4/5} .ne-slides figcaption{left:var(--s-4);bottom:var(--s-4)} .ne-slides .ne-dots{right:var(--s-4);bottom:var(--s-4)} }
 @media (prefers-reduced-motion:reduce){ .ne-slides figure,.ne-slides img{transition:none} }
+
+/* приложение: компактно — вкладки сценариев и ряд экранов */
+.ne-app{display:flex;flex-direction:column;gap:var(--s-4);padding:var(--s-5);border-radius:var(--r-in);background:var(--ne-beige)}
+.ne-seg{display:flex;gap:4px;align-self:flex-start;padding:4px;border-radius:999px;background:#fff;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.ne-seg::-webkit-scrollbar{display:none}
+.ne-seg button{all:unset;cursor:pointer;flex:none;height:40px;padding:0 18px;border-radius:999px;font:500 15px/40px var(--font);color:var(--ink-2);transition:background .2s,color .2s}
+.ne-seg button[aria-selected="true"]{background:var(--ne-brown);color:#fff}
+.ne-seg button:focus-visible{outline:2px solid var(--ne-brown);outline-offset:2px}
+.ne-panel{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-4);animation:neIn .4s ease}
+.ne-panel[hidden]{display:none}
+.ne-panel figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:var(--s-2)}
+.ne-panel img{display:block;width:100%;max-width:220px;height:auto;filter:drop-shadow(0 16px 26px rgba(43,35,29,.16))}
+.ne-panel figcaption{margin:0;font:400 14px/1.3 var(--font);color:var(--ink-2);text-align:center}
+@keyframes neIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* идеи: одинаковая высота текста */
+.ne-idea b{min-height:1.2em;white-space:nowrap}
+.ne-idea span{min-height:2.8em;max-width:15em}
+
+/* итог: фото по две, листаются */
+.ne-gallery{display:flex;flex-direction:column;gap:var(--s-3)}
+.ne-gallery .track{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - var(--s-3)) / 2);gap:var(--s-3);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.ne-gallery .track::-webkit-scrollbar{display:none}
+.ne-gallery .track > *{scroll-snap-align:start;aspect-ratio:4/3;min-height:0;margin:0;border-radius:var(--r-in);overflow:hidden}
+.ne-gallery .track img{width:100%;height:100%;object-fit:cover}
+.ne-gallery .nav{display:flex;gap:var(--s-2);justify-content:flex-end}
+.ne-gallery .nav button{all:unset;cursor:pointer;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--ne-beige);color:var(--ink);transition:background .2s,opacity .2s}
+.ne-gallery .nav button:hover{background:var(--ne-beige-2)}
+.ne-gallery .nav button:disabled{opacity:.35;cursor:default}
+.ne-gallery .nav button:focus-visible{outline:2px solid var(--ne-brown);outline-offset:2px}
+
+@media (max-width:1000px){ .ne-panel{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:760px){
+  .ne-app{padding:var(--s-4) 0;gap:var(--s-3)}
+  .ne-seg{margin:0 var(--s-4)}
+  .ne-panel{display:flex;gap:var(--s-3);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 var(--s-4)}
+  .ne-panel::-webkit-scrollbar{display:none}
+  .ne-panel figure{flex:0 0 46%;scroll-snap-align:start}
+  .ne-idea b{white-space:normal}
+  .ne-gallery .track{grid-auto-columns:86%}
+}
