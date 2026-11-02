@@ -142,13 +142,11 @@
 .ne-browser .bar{display:flex;align-items:center;gap:6px;height:40px;padding:0 16px;background:var(--ne-beige)}
 .ne-browser .bar i{width:10px;height:10px;border-radius:50%;background:rgba(43,35,29,.18)}
 .ne-browser .bar span{margin-left:12px;padding:5px 14px;border-radius:999px;background:#fff;font:400 12px/1 var(--font);color:var(--ink-3)}
-.ne-view{position:relative;aspect-ratio:16/9;overflow:hidden;container-type:size}
-.ne-page{display:flex;flex-direction:column;will-change:transform}
+.ne-view{position:relative;aspect-ratio:1920/1051;overflow:hidden;background:#fff}
+.ne-page{display:flex;flex-direction:column;will-change:transform;transition:transform 1.6s cubic-bezier(.65,0,.35,1)}
 .ne-page > img{display:block;width:100%;height:auto}
 .ne-page > .ne-ph{border-radius:0;aspect-ratio:16/9;min-height:0}
 .ne-page > .ne-ph:nth-child(odd){background:var(--ne-beige)}
-.ne-view.play .ne-page{animation:neScroll 20s cubic-bezier(.65,0,.35,1) infinite alternate}
-@keyframes neScroll{0%,8%{transform:translateY(0)}92%,100%{transform:translateY(calc(-100% + 100cqh))}}
 
 /* NA3: видео + три пункта */
 .ne-tech{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s-3)}
@@ -245,8 +243,6 @@
   .ne-collage .c,.ne-collage .d{grid-column:span 1}
   .ne-chap{gap:var(--s-4)}
   .ne-stage{order:-1;aspect-ratio:1/1.05}
-  .ne-view{aspect-ratio:4/5}
-  .ne-page > .ne-ph{aspect-ratio:4/5}
   .ne-bar{grid-template-columns:110px 1fr}
   .ne-events{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(var(--s-4) * -1);padding:0 var(--s-4)}
   .ne-events::-webkit-scrollbar{display:none}
@@ -257,7 +253,7 @@
   .ne-goals{grid-template-columns:repeat(2,minmax(0,1fr))}
   .ne-theses span{font-size:14px;min-height:38px;padding:8px 14px}
 }
-@media (prefers-reduced-motion:reduce){ .ne-view.play .ne-page{animation:none} .ne-bar div i,.ne-stage .ph img{transition:none} }
+@media (prefers-reduced-motion:reduce){ .ne-page{transition:none} .ne-bar div i,.ne-stage .ph img{transition:none} }
 
 /* цитата Шлюнкина: фото + подпись */
 .ne-bq footer{display:flex;align-items:center;gap:var(--s-3)}
@@ -343,3 +339,10 @@
   .ne-idea b{white-space:normal}
   .ne-gallery .track{grid-auto-columns:86%}
 }
+
+/* лендинг: точки-экраны под окном */
+.ne-lsteps{display:flex;justify-content:center;gap:6px;padding:12px 0 14px;background:var(--ne-beige)}
+.ne-lsteps button{all:unset;cursor:pointer;width:28px;height:16px;display:grid;align-items:center}
+.ne-lsteps i{display:block;height:3px;border-radius:2px;background:rgba(43,35,29,.18);transition:background .3s}
+.ne-lsteps .on i{background:var(--ne-brown)}
+.ne-lsteps button:focus-visible{outline:2px solid var(--ne-brown);outline-offset:2px}
