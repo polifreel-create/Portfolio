@@ -1,168 +1,112 @@
 /* =========================================================
-   NEURAE — мини-лендинг кейса. Подключается после v2.css и case.css.
-   Палитра — редакционная, как у лендинга бренда: кремовый, глубокий
-   сливовый, приглушённая лиловая роза. Четыре линейки настроений —
-   свои мягкие цвета (Harmonie, Joie, Énergie, Sérénité).
-   Заглушки .ne-ph показывают, какой визуал нужен на этом месте.
+   NEURAE — тема кейса. Подключается после v2.css и case.css.
+   Палитра редакционная, как у лендинга бренда: кремовый, глубокий сливовый,
+   приглушённая лиловая роза. Четыре линейки настроений — свои мягкие цвета.
    ========================================================= */
 
 .theme-ne{
   --ne:#9A6B8F; --ne-ink:#7A4E70; --ne-soft:#F5EDF2;
-  --ne-cream:#F4EEE6; --ne-plum:#2A2129; --ne-plum-2:#3A2F39;
+  --ne-cream:#F4EEE6; --ne-plum:#2A2129;
   --ne-harm:#C9B6D9; --ne-joie:#F2C7A8; --ne-ener:#E8D47E; --ne-sere:#A9C8CF;
   --ne-grad:linear-gradient(115deg,#7A4E70 0%,#B47B95 55%,#D9A88A 100%);
-  /* общие переменные кейса → палитра NEURAE */
+  --ne-mood:linear-gradient(135deg,var(--ne-harm),var(--ne-sere) 35%,var(--ne-joie) 68%,var(--ne-ener));
   --sber:var(--ne); --sber-ink:var(--ne-ink); --sber-grad:var(--ne-grad);
-  --sber-soft:linear-gradient(135deg,#F5EDF2,#F4EEE6);
 }
 .theme-ne .crumbs a:hover{color:var(--ne-ink)}
 .theme-ne .next .arrow{background:var(--ne-plum)}
-.theme-ne .eyebrow .num,.theme-ne .mode-n{color:var(--ne-ink)}
+.theme-ne .read-time svg{color:var(--ne)}
 
-/* ---------- шапка ---------- */
-.ne-mark{position:absolute;top:var(--pad);right:var(--pad);width:104px;height:104px;border-radius:34px;display:grid;place-items:center;
-  background:var(--ne-plum);color:var(--ne-cream);font:500 15px/1 var(--font);letter-spacing:.18em;box-shadow:0 10px 30px rgba(42,33,41,.2)}
-@media (max-width:760px){ .ne-mark{position:static;order:-1;width:64px;height:64px;border-radius:18px;font-size:10px;margin-bottom:var(--s-4)} }
-.hero .shot.ne-hero{position:relative;background:var(--ne-plum)}
+/* иконка бренда в шапке (своей иконки приложения нет) */
+.ne-icon{position:absolute;top:var(--pad);right:var(--pad);width:104px;height:104px;border-radius:34px;overflow:hidden;
+  display:grid;place-items:center;background:var(--ne-plum);box-shadow:0 10px 30px rgba(15,20,20,.12);isolation:isolate}
+.ne-icon::before{content:"";position:absolute;inset:-30%;z-index:-1;background:var(--ne-mood);filter:blur(18px);opacity:.55}
+.ne-icon b{font:500 15px/1 var(--font);letter-spacing:.18em;color:var(--ne-cream)}
+@media (max-width:760px){ .ne-icon{width:64px;height:64px;border-radius:18px} .ne-icon b{font-size:11px} }
 
-/* ---------- заглушка визуала ---------- */
-.ne-ph{position:relative;overflow:hidden;border-radius:var(--r-in);display:grid;place-items:center;padding:var(--s-5);text-align:center;
-  aspect-ratio:16/10;min-height:220px;
-  background:radial-gradient(110% 90% at 85% 10%,rgba(180,123,149,.28),transparent 60%),radial-gradient(90% 80% at 10% 95%,rgba(217,168,138,.26),transparent 60%),var(--ne-cream)}
-.ne-ph.dark{background:radial-gradient(110% 90% at 80% 15%,rgba(180,123,149,.35),transparent 60%),var(--ne-plum)}
-.ne-ph.phone{aspect-ratio:9/16;min-height:0;max-height:560px}
-.ne-ph.wide{aspect-ratio:1920/820}
-.ne-ph span{display:inline-flex;align-items:center;gap:8px;max-width:28em;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.82);
-  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);font:500 14px/1.35 var(--font);color:var(--ink-2);text-wrap:balance}
-.ne-ph.dark span{background:rgba(255,255,255,.1);color:rgba(255,255,255,.8)}
-.hero .shot.ne-hero .ne-ph{position:absolute;inset:0;aspect-ratio:auto;border-radius:0}
+/* обложка в шапке: четыре настроения мягкими пятнами */
+.ne-hero{position:relative;overflow:hidden;margin-top:var(--s-6);border-radius:var(--r-in);aspect-ratio:1920/900;background:var(--ne-plum);isolation:isolate}
+.ne-hero i{position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;z-index:-1;animation:ne-float 14s ease-in-out infinite alternate}
+.ne-hero i:nth-child(1){width:46%;height:80%;left:-6%;top:-20%;background:var(--ne-harm)}
+.ne-hero i:nth-child(2){width:40%;height:75%;left:28%;top:30%;background:var(--ne-sere);animation-delay:-4s}
+.ne-hero i:nth-child(3){width:38%;height:70%;right:8%;top:-25%;background:var(--ne-joie);animation-delay:-8s}
+.ne-hero i:nth-child(4){width:34%;height:65%;right:-8%;bottom:-25%;background:var(--ne-ener);animation-delay:-2s}
+.ne-hero .mark{position:absolute;inset:0;display:grid;place-items:center;font:500 clamp(40px,7vw,96px)/1 var(--font);letter-spacing:.12em;color:var(--ne-cream);opacity:.9}
+.ne-hero .moods{position:absolute;left:var(--s-5);right:var(--s-5);bottom:var(--s-5);display:flex;gap:var(--s-2);flex-wrap:wrap}
+.ne-hero .moods span{padding:8px 14px;border-radius:999px;font:500 14px/1 var(--font);color:#fff;background:rgba(255,255,255,.14);backdrop-filter:blur(10px)}
+@keyframes ne-float{to{transform:translate(6%,8%) scale(1.08)}}
+@media (prefers-reduced-motion:reduce){ .ne-hero i{animation:none} }
+@media (max-width:760px){ .ne-hero{aspect-ratio:4/3} .ne-hero .moods span{font-size:12px;padding:6px 10px} }
 
-/* ---------- Кратко ---------- */
-.theme-ne .brief-item:nth-child(1){background:var(--ne-cream)}
-.theme-ne .brief-item:nth-child(2){background:var(--ne-soft)}
-.theme-ne .brief-item.accent{background:var(--ne-plum)}
-.theme-ne .brief-item.accent::before{background:radial-gradient(closest-side,rgba(180,123,149,.8),rgba(217,168,138,.3) 60%,transparent)}
-.theme-ne .brief-item.accent .big em{background:linear-gradient(115deg,#E7C3D6,#F2C7A8 60%,#F1DDA0);-webkit-background-clip:text;background-clip:text}
+/* «Кратко»: тёмная карточка решения — свечение в цветах бренда */
+.theme-ne .brief-item.accent::before{background:radial-gradient(closest-side,rgba(154,107,143,.85),rgba(217,168,138,.3) 60%,transparent)}
+.theme-ne .brief-item.accent .big em{background:linear-gradient(115deg,#E7CFE0,#F2C7A8 55%,#E8D47E);-webkit-background-clip:text;background-clip:text}
 
-/* ---------- ограничения рынка ---------- */
-.ne-limits{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-4)}
-.ne-limit{border-radius:var(--r-in);padding:var(--s-5);background:var(--ne-cream);display:flex;flex-direction:column;gap:var(--s-2);min-height:200px}
-.ne-limit .x{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:var(--ne-plum);color:var(--ne-cream);margin-bottom:auto}
-.ne-limit h4{margin:var(--s-5) 0 0;font:500 18px/1.25 var(--font);letter-spacing:-.01em;color:var(--ink)}
-.ne-limit p{margin:0;font:var(--t-small);color:var(--ink-2)}
+/* карточки-фокусы и бейджи */
+.theme-ne .tile.focus::before{background:radial-gradient(closest-side,rgba(154,107,143,.8),rgba(217,168,138,.25) 60%,transparent)}
+.theme-ne .tile.focus .badge{color:var(--ne-joie)}
+.ne-tile-n{font:500 14px/1 var(--font);color:var(--ne)}
 
-/* цели заказчика */
-.ne-goals{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s-3)}
-.ne-goal{border-radius:var(--r-in);padding:var(--s-5) var(--s-4);background:var(--ne-soft)}
-.ne-goal b{display:block;font:var(--t-stat);font-size:clamp(28px,2.8vw,40px);letter-spacing:-.03em;background:var(--ne-grad);-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content}
-.ne-goal span{display:block;margin-top:var(--s-2);font:var(--t-small);color:var(--ink-2)}
+/* цитата эксперта */
+.ne-quote{margin:0;padding:var(--s-6) var(--s-5);border-radius:var(--r-in);background:var(--ne-soft);display:flex;flex-direction:column;gap:var(--s-3)}
+.ne-quote p{margin:0;font:500 24px/1.3 var(--font)!important;letter-spacing:-.015em;color:var(--ink)!important;max-width:30em;text-wrap:balance}
+.ne-quote cite{font:var(--t-small);font-style:normal;color:var(--ink-3)}
 
-/* ---------- майндсеты на осях ---------- */
-.ne-axes{position:relative;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:var(--s-3);padding:44px 0 44px 0}
-.ne-axes::before,.ne-axes::after{content:"";position:absolute;background:rgba(42,33,41,.14);pointer-events:none}
-.ne-axes::before{left:50%;top:28px;bottom:28px;width:1px}
-.ne-axes::after{top:50%;left:0;right:0;height:1px}
-.ne-ax{position:absolute;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
-.ne-ax.t{top:0;left:50%;transform:translateX(-50%)}
-.ne-ax.b{bottom:0;left:50%;transform:translateX(-50%)}
-.ne-ax.l{left:0;bottom:0}
-.ne-ax.r{right:0;bottom:0}
-.ne-ax.l::before{content:"← "}
-.ne-ax.r::after{content:" →"}
-.ne-mind{position:relative;z-index:1;border-radius:var(--r-in);padding:var(--s-5);background:var(--ne-cream);display:flex;flex-direction:column;gap:var(--s-2)}
-.ne-mind.focus{background:var(--ne-plum)}
-.ne-mind.focus h4{color:#fff}
-.ne-mind.focus p{color:rgba(255,255,255,.72)}
-.ne-mind h4{margin:0;font:500 20px/1.25 var(--font);letter-spacing:-.015em;color:var(--ink)}
-.ne-mind p{margin:0;font:var(--t-small);color:var(--ink-2)}
-.ne-pill{align-self:flex-start;display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:999px;background:rgba(42,33,41,.08);
-  font:500 11px/1 var(--font);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
-.ne-mind.focus .ne-pill{background:rgba(255,255,255,.14);color:#F2C7A8}
+/* экраны приложения — три телефона */
+.ne-screens{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-4)}
+.ne-screens figure{margin:0;display:flex;flex-direction:column;gap:var(--s-3)}
+.ne-screens .inner{aspect-ratio:390/844;position:relative;box-shadow:0 0 0 1px rgba(0,0,0,.06)}
+.ne-screens figcaption{margin:0;font:500 16px/1.3 var(--font);color:var(--ink)}
+.ne-screens figcaption span{display:block;margin-top:4px;font:400 15px/1.4 var(--font);color:var(--ink-3)}
 
-/* цитаты и инсайты */
-.ne-quotes{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--s-4)}
-.ne-quote{border-radius:var(--r-in);padding:var(--s-5);background:var(--ne-cream);display:flex;flex-direction:column;gap:var(--s-3)}
-.ne-quote.main{background:var(--ne-soft)}
-.ne-quote .q{margin:0;font:500 22px/1.25 var(--font);letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
-.ne-quote.main .q{font-size:clamp(24px,2.4vw,30px)}
-.ne-quote p:not(.q){margin:0;font:var(--t-small);color:var(--ink-2)}
+/* заглушка, пока нет картинки */
+.ne-ph{position:absolute;inset:0;display:grid;place-items:center;padding:var(--s-4);text-align:center;
+  background:radial-gradient(90% 60% at 80% 10%,rgba(201,182,217,.7),transparent 60%),radial-gradient(90% 60% at 10% 90%,rgba(242,199,168,.6),transparent 60%),var(--ne-cream);
+  font:500 14px/1.4 var(--font);color:var(--ink-3)}
+.ne-ph span{padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.8)}
 
-/* ---------- решение: навигация по частям ---------- */
-.ne-fnav{position:sticky;top:10px;z-index:6;display:flex;gap:4px;width:max-content;max-width:100%;overflow-x:auto;scrollbar-width:none;padding:6px;border-radius:999px;
-  background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 0 0 1px rgba(15,20,20,.06),0 6px 20px rgba(15,20,20,.06)}
-.ne-fnav::-webkit-scrollbar{display:none}
-.ne-fnav a{flex:none;height:44px;padding:0 18px;border-radius:999px;display:inline-flex;align-items:center;font:500 15px/1 var(--font);color:var(--ink-2);text-decoration:none;transition:background .2s,color .2s}
-.ne-fnav a:hover{color:var(--ink)}
-.ne-fnav a.on{background:var(--ne-plum);color:#fff}
+/* лендинг — крупный экран */
+.ne-land{position:relative;overflow:hidden;border-radius:var(--r-in);aspect-ratio:16/10;background:var(--wash)}
+.ne-land img{width:100%;height:100%;object-fit:cover;object-position:top center}
 
-/* часть решения: текст слева, визуал справа */
-.ne-chap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s-6);align-items:start;scroll-margin-top:80px}
-.ne-chap + .ne-chap{padding-top:var(--s-6);border-top:1px solid rgba(15,20,20,.08)}
-.ne-copy{display:flex;flex-direction:column;gap:var(--s-4)}
-.ne-copy p{margin:0}
-.ne-job{margin:0;padding:var(--s-4);border-radius:20px;background:var(--ne-soft);font:400 16px/1.45 var(--font)!important;color:var(--ink)!important}
-.ne-job span{display:block;margin-bottom:4px;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ne-ink)}
-.ne-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:var(--s-2)}
-.ne-list li{position:relative;padding-left:20px;font:400 16px/1.45 var(--font)!important}
-.ne-list li::before{content:"";position:absolute;left:2px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--ne)}
-.ne-visual{display:flex;flex-direction:column;gap:var(--s-3)}
-.ne-pair{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-3)}
+/* метрики — пять строк: цифра и что она значит */
+.ne-kpi{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s-4)}
+.ne-kpi li{grid-column:span 2}
+.ne-kpi li:nth-child(n+4){grid-column:span 3}
+/* ограничения — ровная сетка 3×2 */
+.tiles.ne-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.ne-kpi li{background:var(--chip);border-radius:var(--r-in);padding:28px;display:flex;flex-direction:column;gap:var(--s-2)}
+.ne-kpi b{font:var(--t-stat);letter-spacing:-.04em;background:var(--ne-grad);-webkit-background-clip:text;background-clip:text;color:transparent;width:fit-content}
+.ne-kpi span{font:400 16px/1.45 var(--font);color:var(--ink-2)}
 
-/* 7 зон карты лица — список-заглушка */
-.ne-zones{display:flex;flex-wrap:wrap;gap:6px}
-.ne-zones span{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:999px;background:var(--ne-cream);font:500 13px/1 var(--font);color:var(--ink-2)}
-.ne-zones b{font-weight:500;color:var(--ne-ink)}
+/* рефлексия — тёмная секция с отзывом заказчика */
+.theme-ne .sec.dark{background:var(--ne-plum)}
+.theme-ne .sec.dark::before{background:radial-gradient(closest-side,rgba(154,107,143,.6),rgba(201,182,217,.18) 60%,transparent)}
+.theme-ne .sec.dark::after{background:radial-gradient(closest-side,rgba(242,199,168,.3),rgba(232,212,126,.08) 60%,transparent)}
+.ne-review{margin:0;padding:var(--s-6) var(--s-5);border-radius:var(--r-in);background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08);display:flex;flex-direction:column;gap:var(--s-4)}
+.ne-review p{margin:0;font:400 20px/1.5 var(--font)!important;color:#fff!important;max-width:36em}
+.ne-review cite{font:var(--t-small);font-style:normal;color:rgba(255,255,255,.5)}
+.ne-learn{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-4)}
+.ne-learn > div{padding:var(--s-5);border-radius:var(--r-in);background:rgba(255,255,255,.06);display:flex;flex-direction:column;gap:var(--s-3)}
+.ne-learn h3{margin:0;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.45)!important}
+.ne-learn p{margin:0;font:400 16px/1.5 var(--font)!important}
 
-/* линейки настроений */
-.ne-lines{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-3)}
-.ne-line{border-radius:var(--r-in);padding:var(--s-5) var(--s-4);min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:var(--s-3)}
-.ne-line b{font:500 20px/1.1 var(--font);letter-spacing:-.01em;color:var(--ne-plum)}
-.ne-line span{font:var(--t-small);color:rgba(42,33,41,.72)}
-.ne-line.h{background:var(--ne-harm)} .ne-line.j{background:var(--ne-joie)} .ne-line.e{background:var(--ne-ener)} .ne-line.s{background:var(--ne-sere)}
-
-/* вкладки приложения */
-.ne-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-2)}
-.ne-tab{border-radius:20px;padding:var(--s-4);background:var(--ne-cream)}
-.ne-tab b{display:block;font:500 16px/1.2 var(--font);color:var(--ink)}
-.ne-tab span{display:block;margin-top:4px;font:400 14px/1.4 var(--font);color:var(--ink-2)}
-
-/* ---------- защита: критика → вывод → доработка ---------- */
-.ne-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-4);counter-reset:f}
-.ne-step{position:relative;border-radius:var(--r-in);padding:var(--s-5);background:var(--ne-cream);display:flex;flex-direction:column;gap:var(--s-3)}
-.ne-step:nth-child(2){background:var(--ne-soft)}
-.ne-step:nth-child(3){background:var(--ne-plum)}
-.ne-step:nth-child(3) h4{color:#fff}
-.ne-step:nth-child(3) p,.ne-step:nth-child(3) li{color:rgba(255,255,255,.78)!important}
-.ne-step:nth-child(3) .ne-pill{background:rgba(255,255,255,.14);color:#F2C7A8}
-.ne-step h4{margin:0;font:500 20px/1.25 var(--font);letter-spacing:-.015em;color:var(--ink);text-wrap:balance}
-.ne-step p{margin:0;font:var(--t-small)!important;color:var(--ink-2)}
-.ne-step .ne-list li{font:var(--t-small)!important}
-.ne-step:nth-child(3) .ne-list li::before{background:#F2C7A8}
-
-/* итог */
-.ne-final{background:var(--ne-plum)!important;color:#fff}
-.ne-final h2{color:#fff}
-.ne-final p{color:rgba(255,255,255,.78)!important;max-width:var(--measure);margin:0}
-.ne-final .eyebrow{color:rgba(255,255,255,.55)}
-.ne-final .eyebrow .num{color:#F2C7A8}
-
-/* ---------- мобильная версия ---------- */
-@media (max-width:1000px){
-  .ne-limits{grid-template-columns:1fr 1fr}
-  .ne-goals{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .ne-chap{grid-template-columns:1fr;gap:var(--s-5)}
-}
 @media (max-width:760px){
-  .ne-limits,.ne-quotes,.ne-flow{grid-template-columns:1fr}
-  .ne-limit{min-height:0}
-  .ne-limit h4{margin-top:var(--s-4)}
-  .ne-goals{grid-template-columns:1fr 1fr}
-  .ne-axes{grid-template-columns:1fr;padding:0}
-  .ne-axes::before,.ne-axes::after,.ne-ax{display:none}
-  .ne-lines,.ne-tabs{grid-template-columns:1fr 1fr}
-  .ne-fnav{top:72px;padding:4px}
-  .ne-fnav a{height:40px;padding:0 14px;font-size:14px}
-  .ne-ph{aspect-ratio:4/3;min-height:0}
-  .ne-ph.phone{aspect-ratio:9/14}
-  .ne-quote .q{font-size:20px}
+  .ne-quote p{font-size:19px!important}
+  .ne-screens{grid-template-columns:repeat(3,72%);overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1 * var(--pad));padding:0 var(--pad);scrollbar-width:none}
+  .ne-screens::-webkit-scrollbar{display:none}
+  .ne-screens figure{scroll-snap-align:center}
+  .ne-land{aspect-ratio:4/3}
+  .ne-kpi{grid-template-columns:1fr}
+  .ne-kpi li,.ne-kpi li:nth-child(n+4){grid-column:auto}
+  .tiles.ne-3{grid-template-columns:1fr}
+  /* у NEURAE в карточках нет аватарок — заголовок и текст идут столбиком */
+  .theme-ne .tile{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:4px;padding:16px 18px}
+  .theme-ne .tile h3{padding-right:0}
+  .theme-ne .tile:has(.badge) h3{padding-right:84px}
+  .theme-ne .tile:not(.focus) .badge{display:inline-block}
+  .ne-kpi li{flex-direction:row;align-items:center;gap:16px;padding:16px 20px}
+  .ne-kpi b{flex:0 0 112px;font-size:30px}
+  .ne-kpi span{font-size:14px;line-height:1.35}
+  .ne-review p{font-size:17px!important}
+  .ne-learn{grid-template-columns:1fr}
 }
