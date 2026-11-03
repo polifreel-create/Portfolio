@@ -394,3 +394,6 @@
   .ne-seg{max-width:calc(100% - 2 * var(--s-4))}
   .ne-seg button{padding:0 12px;font-size:14px}
 }
+/* единые полоски: коллаборации и итог */
+.ne-gallery{position:relative}
+.ne-gallery .sbars{left:var(--s-4);right:var(--s-4);top:var(--s-4)}

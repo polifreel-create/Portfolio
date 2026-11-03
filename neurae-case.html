@@ -7,8 +7,8 @@
   <meta name="description" content="Запуск нейрокосметики NEURAE от Sisley Group в России: блогеры, лендинг и приложение для ритуалов ухода.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=62">
-  <link rel="stylesheet" href="css/case.css?v=62">
-  <link rel="stylesheet" href="css/neurae.css?v=14">
+  <link rel="stylesheet" href="css/case.css?v=70">
+  <link rel="stylesheet" href="css/neurae.css?v=15">
 </head>
 <body class="theme-ne">
 <div class="wrap">
@@ -106,7 +106,7 @@
       <figure><img src="assets/img/neurae/collab-solovyi.webp" alt="Баня «Соловьи»: банная шапка, кувшин и полотенце" loading="lazy" width="1200" height="1350"><figcaption><b>Соловьи</b>Парение в&nbsp;бане</figcaption></figure>
       <figure><img src="assets/img/neurae/collab-smstretching.webp" alt="Студия SMStretching: зал с реформерами для пилатеса" loading="lazy" width="1600" height="1538"><figcaption><b>SMStretching</b>Студия растяжки и&nbsp;пилатеса</figcaption></figure>
       <figure><img src="assets/img/neurae/collab-dinner.webp" alt="Закатный бранч: сервированный стол среди подсолнухов" loading="lazy" width="1600" height="1350"><figcaption><b>Закатный бранч</b>Вечер о&nbsp;ритуалах и&nbsp;уходе за&nbsp;собой</figcaption></figure>
-      <div class="ne-dots" role="group" aria-label="Слайды"><button type="button" aria-label="Сила Ветра" class="on"><i></i></button><button type="button" aria-label="Соловьи"><i></i></button><button type="button" aria-label="SMStretching"><i></i></button><button type="button" aria-label="Закатный бранч"><i></i></button></div>
+      <div class="sbars" role="group" aria-label="Слайды"><button type="button" aria-label="Сила Ветра" class="on"><i></i></button><button type="button" aria-label="Соловьи"><i></i></button><button type="button" aria-label="SMStretching"><i></i></button><button type="button" aria-label="Закатный бранч"><i></i></button></div>
     </div>
   </section>
 
@@ -187,7 +187,6 @@
         <figure><img src="assets/img/neurae/final-7.webp" alt="Команду поздравляют после защиты" loading="lazy" width="1400" height="934" style="object-position:50% 45%"></figure>
         <figure><img src="assets/img/neurae/final-8.webp" alt="Логотип NEURAE на экране презентации" loading="lazy" width="1400" height="934" style="object-position:50% 50%"></figure>
       </div>
-      <div class="ne-gnav"><button type="button" class="prev" aria-label="Назад"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button><button type="button" class="next-b" aria-label="Вперёд"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></button></div>
     </div>
   </section>
 
@@ -241,24 +240,30 @@ document.querySelectorAll('[data-tabs]').forEach(function(g){
   function sel(x,f){t.forEach(function(y){var on=y===x;y.setAttribute('aria-selected',on);y.tabIndex=on?0:-1;document.getElementById(y.getAttribute('aria-controls')).hidden=!on});if(f)x.focus()}
   t.forEach(function(x,i){x.addEventListener('click',function(){sel(x)});x.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(d){e.preventDefault();sel(t[(i+d+t.length)%t.length],true)}})});
 });
-/* итог: фото листаются по две */
+/* итог: фото листаются по две (на телефоне по одной), полоски как сторис */
 document.querySelectorAll('[data-gallery]').forEach(function(g){
-  var tr=g.querySelector('.track'),p=g.querySelector('.ne-gnav .prev'),n=g.querySelector('.ne-gnav .next-b');
-  function step(){return tr.clientWidth/ (matchMedia('(max-width:760px)').matches?1:2)}
-  function upd(){p.disabled=tr.scrollLeft<4;n.disabled=tr.scrollLeft+tr.clientWidth>=tr.scrollWidth-4}
-  p.addEventListener('click',function(){tr.scrollBy({left:-step(),behavior:'smooth'})});
-  n.addEventListener('click',function(){tr.scrollBy({left:step(),behavior:'smooth'})});
-  tr.addEventListener('scroll',function(){requestAnimationFrame(upd)},{passive:true});upd();
+  var tr=g.querySelector('.track'),n=tr.children.length,DUR=4500,i=0,t=null,vis=false,bar=document.createElement('div');
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,mq=matchMedia('(max-width:760px)');
+  bar.className='sbars';bar.setAttribute('role','group');bar.setAttribute('aria-label','Фото');g.appendChild(bar);
+  function per(){return mq.matches?1:2}function pages(){return Math.ceil(n/per())}
+  function build(){bar.innerHTML='';for(var k=0;k<pages();k++){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Фото '+(k*per()+1));b.innerHTML='<i></i>';(function(k){b.addEventListener('click',function(){show(k)})})(k);bar.appendChild(b)}}
+  function show(k,scroll){var P=pages();i=(k+P)%P;var bs=[].slice.call(bar.children),go=vis&&!reduce;
+    if(scroll!==false){var el=tr.children[i*per()];tr.scrollTo({left:el.offsetLeft-tr.firstElementChild.offsetLeft,behavior:'smooth'})}
+    bs.forEach(function(b,j){b.classList.toggle('done',j<i);b.classList.toggle('on',j===i&&!go);b.classList.remove('run')});
+    clearTimeout(t);if(go){void bs[i].offsetWidth;bs[i].style.setProperty('--dur',DUR+'ms');bs[i].classList.add('run');t=setTimeout(function(){show(i+1)},DUR)}}
+  var st=null;tr.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(function(){var w=tr.children[0].offsetWidth+parseFloat(getComputedStyle(tr).columnGap||0),k=Math.round(tr.scrollLeft/(w*per()));if(k!==i)show(k,false)},140)},{passive:true});
+  mq.addEventListener('change',function(){build();show(0)});
+  build();new IntersectionObserver(function(e){vis=e[0].isIntersecting;show(i,false)},{threshold:.4}).observe(g);
 });
-/* коллаборации: фото листаются сами */
+/* коллаборации: фото листаются сами, полоски как сторис */
 document.querySelectorAll('[data-slides]').forEach(function(box){
-  var f=[].slice.call(box.querySelectorAll('figure')),d=[].slice.call(box.querySelectorAll('.ne-dots button')),i=0,t=null,DUR=4500;
+  var f=[].slice.call(box.querySelectorAll('figure')),d=[].slice.call(box.querySelectorAll('.sbars button')),i=0,t=null,vis=false,DUR=4500;
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function show(n,go){i=(n+f.length)%f.length;f.forEach(function(x,k){x.classList.toggle('on',k===i)});
-    d.forEach(function(x,k){x.classList.toggle('on',k===i);x.classList.remove('run')});clearTimeout(t);
-    if(go&&!reduce){void d[i].offsetWidth;d[i].classList.add('run');t=setTimeout(function(){show(i+1,true)},DUR)}}
-  d.forEach(function(x,k){x.addEventListener('click',function(){show(k,vis)})});
-  var vis=false;new IntersectionObserver(function(e){vis=e[0].isIntersecting;show(i,vis)},{threshold:.4}).observe(box);
+  function show(n){i=(n+f.length)%f.length;f.forEach(function(x,k){x.classList.toggle('on',k===i)});
+    var go=vis&&!reduce;d.forEach(function(x,k){x.classList.toggle('done',k<i);x.classList.toggle('on',k===i&&!go);x.classList.remove('run')});
+    clearTimeout(t);if(go){void d[i].offsetWidth;d[i].style.setProperty('--dur',DUR+'ms');d[i].classList.add('run');t=setTimeout(function(){show(i+1)},DUR)}}
+  d.forEach(function(x,k){x.addEventListener('click',function(){show(k)})});
+  new IntersectionObserver(function(e){vis=e[0].isIntersecting;show(i)},{threshold:.4}).observe(box);
 });
 /* лендинг: страница листается по экранам с паузой, пока окно видно */
 document.querySelectorAll('[data-scroll]').forEach(function(v){

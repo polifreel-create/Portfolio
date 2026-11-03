@@ -519,3 +519,23 @@ h1,h2,h3{text-wrap:balance}
 .brief-item h3 .step:after{content:"·";margin-left:8px;color:var(--ink-3)}
 .brief-item.accent h3 .step:after{color:rgba(255,255,255,.42)}
 @media (max-width:760px){ .brief-grid{gap:10px!important} }
+
+/* =========================================================
+   Единые полоски-переключатели для всех слайдеров сайта (как сторис):
+   сверху кадра на всю ширину, текущая медленно заполняется.
+   Разметка: <div class="sbars"><button><i></i></button>…</div>
+   Состояния: .done — пройдена, .run — идёт сейчас.
+   ========================================================= */
+.sbars{position:absolute;z-index:4;left:var(--s-4);right:var(--s-4);top:var(--s-4);display:flex;gap:6px}
+.sbars button{all:unset;cursor:pointer;flex:1;height:16px;display:grid;align-items:center}
+.sbars i{display:block;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden;position:relative}
+.sbars i::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left}
+.sbars .done i::after,.sbars .on i::after{transform:scaleX(1)}
+.sbars .run i::after{transform:scaleX(0);animation:sBar var(--dur,4500ms) linear forwards}
+.sbars button:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:2px}
+@keyframes sBar{to{transform:scaleX(1)}}
+@media (prefers-reduced-motion:reduce){ .sbars .run i::after{animation:none;transform:scaleX(1)} }
+/* Гигасправка: старые стрелки и точки больше не нужны, подпись слайда — снизу */
+.carousel .nav,.carousel .dots{display:none}
+.carousel .slide figcaption{top:auto;bottom:var(--s-4)}
+.sbars i{box-shadow:0 0 6px rgba(0,0,0,.25)}

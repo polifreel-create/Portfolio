@@ -7,7 +7,7 @@
   <meta name="description" content="Стратегия вывода Яндекс Телемоста в B2C: единое пространство для общения и дел с Агентом Мостом.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=75">
-  <link rel="stylesheet" href="css/case.css?v=62">
+  <link rel="stylesheet" href="css/case.css?v=70">
   <link rel="stylesheet" href="css/telemost.css?v=54">
 </head>
 <body class="theme-tm">
@@ -241,20 +241,23 @@
 </nav>
 <button class="to-top" type="button" aria-label="Наверх"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 <script>
-/* карусель: свайп, стрелки, точки */
+/* слайдеры: полоски как сторис — медленно заполняются и переключают слайд */
 document.querySelectorAll('[data-carousel]').forEach(function(c){
-  var tr=c.querySelector('.track'),sl=[].slice.call(tr.children),dots=c.querySelector('.dots');
-  sl.forEach(function(_,i){var b=document.createElement('button');b.addEventListener('click',function(){go(i)});dots.appendChild(b)});
-  var db=[].slice.call(dots.children);
-  function idx(){return Math.round(tr.scrollLeft/tr.clientWidth)}
-  function go(i){i=Math.max(0,Math.min(sl.length-1,i));tr.scrollTo({left:i*tr.clientWidth,behavior:'smooth'})}
-  function upd(){var i=idx();db.forEach(function(d,k){d.classList.toggle('on',k===i)});c.querySelector('.nav-prev').disabled=i===0;c.querySelector('.nav-next').disabled=i===sl.length-1}
-  c.querySelector('.nav-prev').addEventListener('click',function(){go(idx()-1)});
-  c.querySelector('.nav-next').addEventListener('click',function(){go(idx()+1)});
-  tr.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(idx()+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(idx()-1)}});
-  tr.addEventListener('scroll',function(){requestAnimationFrame(upd)},{passive:true});upd();
-  function idx(){return tr.clientWidth?Math.round(tr.scrollLeft/tr.clientWidth):0}
-  var pn=c.closest('[role=tabpanel]');if(pn)pn.addEventListener('shown',function(){tr.scrollLeft=0;upd()});
+  var tr=c.querySelector('.track'),sl=[].slice.call(tr.children),DUR=4500,i=0,t=null,vis=false;
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var bar=document.createElement('div');bar.className='sbars';bar.setAttribute('role','group');bar.setAttribute('aria-label','Слайды');
+  sl.forEach(function(_,k){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Слайд '+(k+1));b.innerHTML='<i></i>';b.addEventListener('click',function(){show(k,true)});bar.appendChild(b)});
+  c.appendChild(bar);var bs=[].slice.call(bar.children);
+  var pn=c.closest('[role=tabpanel]');
+  function active(){return vis&&!(pn&&pn.hidden)&&!reduce}
+  function paint(){bs.forEach(function(b,k){b.classList.toggle('done',k<i);b.classList.toggle('on',k===i&&!active());b.classList.remove('run')});
+    if(active()){void bs[i].offsetWidth;bs[i].style.setProperty('--dur',DUR+'ms');bs[i].classList.add('run')}}
+  function show(n,scroll){i=(n+sl.length)%sl.length;if(scroll!==false)tr.scrollTo({left:i*tr.clientWidth,behavior:'smooth'});paint();
+    clearTimeout(t);if(active())t=setTimeout(function(){show(i+1)},DUR)}
+  var st=null;tr.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(function(){var k=tr.clientWidth?Math.round(tr.scrollLeft/tr.clientWidth):0;if(k!==i)show(k,false)},120)},{passive:true});
+  tr.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();show(i+1)}if(e.key==='ArrowLeft'){e.preventDefault();show(i-1)}});
+  new IntersectionObserver(function(e){vis=e[0].isIntersecting;show(i,false)},{threshold:.4}).observe(c);
+  if(pn)pn.addEventListener('shown',function(){tr.scrollLeft=0;show(0,false)});
 });
 /* режимы агента: переключение схем */
 document.querySelectorAll('.seg').forEach(function(group){
