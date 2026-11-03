@@ -678,3 +678,6 @@ body{letter-spacing:-.01em}
 @keyframes tmIcFloat{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(0,-4%,0) rotate(var(--r,1.4deg))}}
 @media (max-width:760px){ .tm-cv-in{left:48%} }
 @media (prefers-reduced-motion:reduce){ .tm-cv .ic{animation:none} }
+/* слой обложки Телемоста всегда «cover» без искажений: ширина = max(контейнер, высота × пропорцию) */
+.tm-cv{container-type:size}
+.tm-cv-in{height:auto!important;min-width:0!important;width:max(100cqw, calc(100cqh * 2804 / 1536));aspect-ratio:2804/1536}

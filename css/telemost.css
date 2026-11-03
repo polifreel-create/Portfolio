@@ -963,3 +963,6 @@
 @media (max-width:760px){ .hero .shot.tm-hero video{object-position:47% 60%} }
 /* обложка кейса: на мобилке — как у Гигасправки, крупнее */
 @media (max-width:760px){ .hero .shot.tm-hero{aspect-ratio:10/9} }
+/* обложка кейса всегда на всю ширину карточки (max-height не сжимает её по ширине) */
+.hero .shot.tm-hero{width:100%;align-self:stretch}
+@media (min-width:761px){ .hero .shot.tm-hero{max-height:none;aspect-ratio:900/493} }
