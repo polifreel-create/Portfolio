@@ -7,7 +7,7 @@
   <meta name="description" content="Реальные задачи в Лучах: HR‑кабинет, форма заявки на ДМС, карьерный лендинг. Коротко: задача, решение, результат.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=77">
-  <link rel="stylesheet" href="css/case.css?v=71">
+  <link rel="stylesheet" href="css/case.css?v=72">
   <link rel="stylesheet" href="css/luchi.css?v=17">
 </head>
 <body class="theme-lu">
@@ -157,11 +157,11 @@
     </figure>
   </article>
 
-  <!-- Следующий кейс -->
-  <a class="next card" href="giga-case.html">
-    <div><span class="eyebrow">Следующий кейс</span><b>Гигасправка</b></div>
-    <span class="arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-  </a>
+  <!-- Соседние кейсы: назад и вперёд по кругу -->
+  <nav class="case-nav" aria-label="Другие кейсы">
+    <a class="cn prev card" href="neurae-case.html"><span class="arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></span><span class="ic" aria-hidden="true"><span class="cn-ne">NEURAE</span></span><span class="t"><span class="eyebrow">Предыдущий кейс</span><b>NEURAE</b></span></a>
+    <a class="cn nxt card" href="giga-case.html"><span class="t"><span class="eyebrow">Следующий кейс</span><b>Гигасправка</b></span><span class="ic" aria-hidden="true"><img src="assets/img/giga/app-icon.png" alt=""></span><span class="arrow" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </nav>
 
 </div>
 <div class="m-prog" id="mProg"><i></i></div>
