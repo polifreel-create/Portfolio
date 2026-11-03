@@ -961,3 +961,5 @@
 .hero .shot.tm-hero{background:#DCEFE3}
 .hero .shot.tm-hero video{width:100%;height:100%;object-fit:cover;object-position:48% 55%;display:block}
 @media (max-width:760px){ .hero .shot.tm-hero video{object-position:47% 60%} }
+/* обложка кейса: на мобилке — как у Гигасправки, крупнее */
+@media (max-width:760px){ .hero .shot.tm-hero{aspect-ratio:10/9} }
