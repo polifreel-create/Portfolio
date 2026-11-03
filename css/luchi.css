@@ -40,6 +40,7 @@
 .lu-tr li{position:relative;padding-left:20px}
 .lu-tr li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--lu)}
 .lu-tr .sol{background:var(--lu-soft)}
+.lu-tr.lu-tr3{grid-template-columns:repeat(3,minmax(0,1fr))}
 .lu-tr .sol h3{color:var(--ink-3)}
 
 /* ---------- крупный визуал ---------- */
