@@ -99,3 +99,43 @@
 /* в «было / стало» подписи заглушек — в нижних углах, чтобы не прятались под ручкой */
 .lu-ba .before .lu-ph{place-items:end start}
 .lu-ba .after .lu-ph{place-items:end end}
+
+/* ---------- HR-кабинет: процесс, находки, груминг ---------- */
+.lu-sub{margin:var(--s-3) 0 calc(var(--s-3) - var(--s-6));font:500 24px/1.2 var(--font);letter-spacing:-.02em;color:var(--ink)}
+.lu-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
+.lu-steps li{padding:var(--s-5);border-radius:var(--r-in);background:var(--chip);display:flex;flex-direction:column;gap:var(--s-2)}
+.lu-steps .n{font:var(--t-caption);letter-spacing:.06em;color:var(--ink-3)}
+.lu-steps h4,.lu-prob h4,.lu-prio h4{margin:0;font:500 20px/1.25 var(--font);letter-spacing:-.015em;color:var(--ink)}
+.lu-steps p,.lu-prob p{margin:0;font:400 16px/1.45 var(--font);color:var(--ink-2)}
+
+.lu-probs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-3)}
+.lu-prob{padding:var(--s-5);border-radius:var(--r-in);background:var(--chip);display:flex;flex-direction:column;gap:var(--s-2)}
+.lu-prob .k{align-self:flex-start;margin-bottom:var(--s-1);padding:5px 10px;border-radius:10px;background:#fff;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.lu-prob.hot{background:var(--lu-soft)}
+.lu-prob.hot .k{color:var(--lu-ink)}
+
+.lu-prio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
+.lu-prio > div{padding:var(--s-5);border-radius:var(--r-in);background:var(--chip);display:flex;flex-direction:column;gap:var(--s-3)}
+.lu-prio > .go{background:var(--lu-grad)}
+.lu-prio > .go h4,.lu-prio > .go li{color:#fff}
+.lu-prio > .go li::before{background:#fff}
+.lu-prio ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:var(--s-2)}
+.lu-prio li{position:relative;padding-left:18px;font:400 16px/1.45 var(--font);color:var(--ink-2)}
+.lu-prio li::before{content:"";position:absolute;left:2px;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--ink-3)}
+
+.lu-nda{position:relative;overflow:hidden;isolation:isolate;display:flex;align-items:center;gap:var(--s-4);padding:var(--s-6) var(--s-5);border-radius:var(--r-in);background:#0F1414;color:#fff}
+.lu-nda::before{content:"";position:absolute;z-index:-1;width:60%;height:200%;right:-15%;top:-50%;background:radial-gradient(closest-side,rgba(255,115,119,.55),transparent);filter:blur(30px)}
+.lu-nda .ico{flex:none;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1)}
+.lu-nda b{display:block;font:500 24px/1.2 var(--font);letter-spacing:-.02em}
+.lu-nda p{margin:6px 0 0;font:400 16px/1.45 var(--font);color:rgba(255,255,255,.7)}
+
+@media (max-width:760px){
+  .lu-sub{font-size:20px}
+  .lu-steps,.lu-probs,.lu-prio{grid-template-columns:1fr}
+  .lu-steps li,.lu-prob,.lu-prio > div{padding:var(--s-4) var(--s-5)}
+  .lu-steps h4,.lu-prob h4,.lu-prio h4{font-size:18px}
+  .lu-steps p,.lu-prob p,.lu-prio li{font-size:15px}
+  .lu-nda{padding:var(--s-5);align-items:flex-start}
+  .lu-nda .ico{width:44px;height:44px}
+  .lu-nda b{font-size:20px}
+}

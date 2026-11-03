@@ -8,7 +8,7 @@
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=73">
   <link rel="stylesheet" href="css/case.css?v=62">
-  <link rel="stylesheet" href="css/luchi.css?v=4">
+  <link rel="stylesheet" href="css/luchi.css?v=5">
 </head>
 <body class="theme-lu">
 <div class="wrap">
@@ -42,30 +42,56 @@
     5) цифры: 2–3 карточки .lu-stat, Если цифр нет — уберите блок.
   -->
 
-  <!-- 01 HR-кабинет -->
+  <!-- 01 HR-кабинет — полноценный кейс про процесс; макеты пока под NDA -->
   <article class="lu-task card" id="t1">
     <header>
       <div class="top"><span class="eyebrow"><span class="num">01</span>&nbsp;· HR-кабинет</span><div class="tags"><span>B2B</span><span>Research</span></div></div>
-      <h2>Нашла, почему крупные клиенты не&nbsp;прикрепляют сотрудников сами</h2>
+      <h2>Разобралась, на&nbsp;что&nbsp;жалуются клиенты HR-кабинета, и&nbsp;собрала план редизайна</h2>
     </header>
     <div class="lu-tr">
-      <div><h3>Задача</h3><p>В&nbsp;HR-кабинете клиенты прикрепляют сотрудников к&nbsp;ДМС, но&nbsp;часть этой работы всё равно уходит аккаунт‑менеджерам вручную. Нужно было понять, где&nbsp;кабинет мешает, и&nbsp;решить, что&nbsp;чинить в&nbsp;первую очередь.</p></div>
+      <div><h3>Задача</h3><p>Я&nbsp;хотела расти в&nbsp;сторону сеньора и&nbsp;попросила задачу посложнее. Мне&nbsp;рассказали, что&nbsp;в&nbsp;HR-кабинет приходит много жалоб, но&nbsp;никто не&nbsp;разбирался, какие они и&nbsp;почему повторяются. Я&nbsp;взялась выяснить это&nbsp;сама.</p><p>HR-кабинет&nbsp;— сервис, где&nbsp;HR клиентов прикрепляют сотрудников к&nbsp;ДМС, открепляют их и&nbsp;работают с&nbsp;документами.</p></div>
       <div class="sol"><h3>Решение</h3><ul>
-        <li>Нашла причину: при&nbsp;выборе нескольких юрлиц кнопка «Прикрепить» пропадает. HR не&nbsp;знают, что&nbsp;могут прикреплять сами, и&nbsp;каждый месяц отправляют Excel аккаунт‑менеджеру.</li>
-        <li>Вынесла действие на&nbsp;видное место с&nbsp;подсказкой и&nbsp;переделала флоу прикрепления.</li>
-        <li>Первыми в&nbsp;работу взяла проблемы, из‑за&nbsp;которых компания теряет деньги.</li>
+        <li>Прошла путь от&nbsp;разработки и&nbsp;доски поддержки до&nbsp;интервью с&nbsp;HR и&nbsp;аккаунт‑менеджерами.</li>
+        <li>Нашла проблемы, из‑за&nbsp;которых компания теряет деньги и&nbsp;время поддержки, и&nbsp;проверила каждую на&nbsp;нескольких источниках.</li>
+        <li>Разложила их по&nbsp;приоритету и&nbsp;принесла на&nbsp;груминг: что&nbsp;рисуем сразу, что&nbsp;отдаём в&nbsp;аналитику, что&nbsp;откладываем.</li>
       </ul></div>
     </div>
-    <figure class="lu-ba" data-ba>
-      <div class="layer after"><div class="lu-ph alt"><span>Стало: экран списка сотрудников</span></div></div>
-      <div class="layer before"><div class="lu-ph"><span>Было: экран списка сотрудников</span></div></div>
-      <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
-      <span class="lab l">Было</span><span class="lab r">Стало</span>
-      <input type="range" min="0" max="100" value="50" aria-label="Сравнить экран до и после">
-    </figure>
     <div class="lu-stats">
-      <div class="lu-stat"><b>1<small>подсказка</small></b><span>вместо ежемесячной ручной загрузки через&nbsp;аккаунт‑менеджера</span></div>
-      <div class="lu-stat"><b>2</b><span>проблемы с&nbsp;прямой потерей выручки ушли в&nbsp;работу первыми</span></div>
+      <div class="lu-stat"><b>7</b><span>интервью с&nbsp;HR клиентов</span></div>
+      <div class="lu-stat"><b>5</b><span>интервью с&nbsp;поддержкой и&nbsp;аккаунт‑менеджерами</span></div>
+      <div class="lu-stat"><b>16</b><span>проблем в&nbsp;бэклоге, 3&nbsp;сразу ушли в&nbsp;дизайн</span></div>
+    </div>
+
+    <h3 class="lu-sub">Как шла работа</h3>
+    <ol class="lu-steps">
+      <li><span class="n">01</span><h4>Разговор с&nbsp;разработкой</h4><p>Узнала у&nbsp;разработчиков, какие проблемы повторяются чаще всего и&nbsp;почему они возникают.</p></li>
+      <li><span class="n">02</span><h4>Доска поддержки</h4><p>Разобрала обращения, которые падают в&nbsp;Яндекс Трекер, и&nbsp;разложила их на&nbsp;частые проблемы, баги и&nbsp;ошибки пользователей.</p></li>
+      <li><span class="n">03</span><h4>Гайд интервью</h4><p>Собрала вопросы из&nbsp;найденных проблем. Спрашивала не&nbsp;«что&nbsp;неудобно», а&nbsp;«вспомните последний раз и&nbsp;расскажите по&nbsp;шагам»: пользователи привыкли к&nbsp;кабинету и&nbsp;сами неудобства не&nbsp;замечают.</p></li>
+      <li><span class="n">04</span><h4>Интервью</h4><p>Поговорила с&nbsp;7&nbsp;HR из&nbsp;компаний-клиентов и&nbsp;с&nbsp;5&nbsp;сотрудниками нашей поддержки и&nbsp;аккаунт‑менеджерами.</p></li>
+      <li><span class="n">05</span><h4>Конкуренты</h4><p>Посмотрела HR-кабинеты ВСК, СОГАЗ, Zetta и&nbsp;Альфы. Готовых решений наших проблем там нет, поэтому ответы искала в&nbsp;своих данных.</p></li>
+      <li><span class="n">06</span><h4>Валидация и&nbsp;приоритеты</h4><p>Сверила проблемы между источниками и&nbsp;оценила по&nbsp;деньгам: стоимость доработки против ручной работы аккаунтов и&nbsp;потерь выручки.</p></li>
+    </ol>
+
+    <h3 class="lu-sub">Что нашла</h3>
+    <div class="lu-probs">
+      <div class="lu-prob hot"><span class="k">Выручка</span><h4>Возрастные коэффициенты не&nbsp;проверяются</h4><p>При&nbsp;прикреплении сотрудника система не&nbsp;сверяет возраст с&nbsp;тарифом, и&nbsp;компания недополучает страховую премию.</p></div>
+      <div class="lu-prob hot"><span class="k">Юридический риск</span><h4>Изменения в&nbsp;запретный период</h4><p>Перед окончанием договора состав менять нельзя, но&nbsp;кабинет это пропускает. Каждый случай разбирают юристы.</p></div>
+      <div class="lu-prob"><span class="k">Ручная работа</span><h4>Кнопка «Прикрепить» прячется</h4><p>Если выбрано несколько юрлиц, кнопки нет. Крупные клиенты не&nbsp;знают, что&nbsp;могут прикреплять сами, и&nbsp;каждый месяц присылают Excel аккаунту.</p></div>
+      <div class="lu-prob"><span class="k">Ручная работа</span><h4>«Номер занят»</h4><p>Сотрудника, который уже был в&nbsp;Лучах, не&nbsp;прикрепить повторно. Это&nbsp;самый частый повод написать аккаунт‑менеджеру.</p></div>
+      <div class="lu-prob"><span class="k">Ручная работа</span><h4>Excel без&nbsp;понятных ошибок</h4><p>Загрузка не&nbsp;показывает, в&nbsp;какой строке ошибка, и&nbsp;клиенты бросают её после первой неудачи.</p></div>
+      <div class="lu-prob"><span class="k">Ручная работа</span><h4>Нет отмены действия</h4><p>Ошибочно открепленного сотрудника возвращает только поддержка, такие обращения приходят почти каждый день.</p></div>
+    </div>
+
+    <h3 class="lu-sub">Что принесла на&nbsp;груминг</h3>
+    <div class="lu-prio">
+      <div class="go"><h4>Рисуем сейчас</h4><ul><li>Видимая кнопка «Прикрепить» с&nbsp;подсказкой</li><li>Прикрепление сразу к&nbsp;нескольким продуктам</li><li>Экран ошибок Excel-загрузки</li></ul></div>
+      <div><h4>Отдаём в&nbsp;аналитику</h4><ul><li>Запретный период перед концом договора</li><li>Повторное прикрепление и&nbsp;дубли</li><li>Логи Excel-загрузки</li><li>Отмена действий</li><li>Перевод сотрудника между юрлицами</li></ul></div>
+      <div><h4>Откладываем</h4><ul><li>Выгрузка финансов по&nbsp;всем юрлицам: ею занимается другая команда</li><li>Обратная связь из&nbsp;кабинета: у&nbsp;клиентов уже есть рабочий канал с&nbsp;аккаунтом</li><li>Ролевая модель доступа</li></ul></div>
+    </div>
+
+    <div class="lu-nda">
+      <span class="ico" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="3"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+      <div><b>Редизайн в&nbsp;работе</b><p>Макеты пока в&nbsp;процессе и&nbsp;под&nbsp;NDA. Интерфейс покажу на&nbsp;встрече.</p></div>
     </div>
   </article>
 
