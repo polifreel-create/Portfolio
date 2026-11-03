@@ -681,3 +681,10 @@ body{letter-spacing:-.01em}
 /* слой обложки Телемоста всегда «cover» без искажений: ширина = max(контейнер, высота × пропорцию) */
 .tm-cv{container-type:size}
 .tm-cv-in{height:auto!important;min-width:0!important;width:max(100cqw, calc(100cqh * 2804 / 1536));aspect-ratio:2804/1536}
+/* главная, мобильная: полоски короткие, по центру над подписью кейса */
+@media (max-width:760px){
+  .m-bars{left:auto;right:16px;top:24px;bottom:auto;transform:none;gap:6px}
+  .m-bars i{flex:none;width:22px}
+  .m-tags{top:16px}
+  .m-bars{top:28px}
+}

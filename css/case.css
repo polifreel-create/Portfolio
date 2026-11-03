@@ -539,3 +539,11 @@ h1,h2,h3{text-wrap:balance}
 .carousel .nav,.carousel .dots{display:none}
 .carousel .slide figcaption{top:auto;bottom:var(--s-4)}
 .sbars i{box-shadow:0 0 6px rgba(0,0,0,.25)}
+/* полоски: короткие, внизу справа (переопределяет вариант на всю ширину) */
+.sbars{left:auto;top:auto;right:var(--s-5);bottom:var(--s-5);gap:6px}
+.sbars button{flex:none;width:28px}
+@media (max-width:760px){
+  .sbars{right:var(--s-4);bottom:var(--s-4)}
+  .sbars button{width:22px}
+  .zoom-chip{bottom:auto;top:12px}
+}
