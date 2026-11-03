@@ -665,3 +665,16 @@ body{letter-spacing:-.01em}
 .case .media.tm-media{background:#DCEFE3}
 .case .media.tm-media > video{object-position:48% 55%}
 @media (max-width:760px){ .cases-track .case .media.tm-media > video{object-position:47% 60%} }
+
+/* ===== обложка Телемоста: статичный фон + парящие иконки (слои, без видео) ===== */
+.tm-cv{position:absolute;inset:0;overflow:hidden;background:#DCEFE3}
+.tm-cv-in{position:absolute;top:50%;left:50%;height:100%;aspect-ratio:2804/1536;min-width:100%;transform:translate(-50%,-50%)}
+.tm-cv .bg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.tm-cv .ic{position:absolute;display:block;height:auto;will-change:transform;animation:tmIcFloat 6s ease-in-out infinite}
+.tm-cv .ic-cal {left:26.391%;top:11.719%;width:15.335%;animation-duration:6.2s;animation-delay:-1.1s}
+.tm-cv .ic-docs{left:22.825%;top:46.875%;width:16.049%;animation-duration:5.6s;animation-delay:-3.4s;--r:-1.4deg}
+.tm-cv .ic-cam {left:65.264%;top:12.370%;width:15.157%;animation-duration:6.8s;animation-delay:-2.2s;--r:-1.2deg}
+.tm-cv .ic-env {left:63.481%;top:51.432%;width:15.157%;animation-duration:5.9s;animation-delay:-4.6s}
+@keyframes tmIcFloat{0%,100%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(0,-4%,0) rotate(var(--r,1.4deg))}}
+@media (max-width:760px){ .tm-cv-in{left:48%} }
+@media (prefers-reduced-motion:reduce){ .tm-cv .ic{animation:none} }
