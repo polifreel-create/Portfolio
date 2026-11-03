@@ -1,0 +1,130 @@
+/* =========================================================
+   NEURAE v2 — переработанная подача кейса.
+   Подключается после v2.css, case.css и neurae.css.
+   Акцент на личном вкладе: лендинг, приложение, презентация.
+   ========================================================= */
+
+/* ---------- шапка: моя роль отдельно от команды ---------- */
+.n2-role{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-3)}
+.n2-role-item{display:flex;flex-direction:column;gap:var(--s-2);padding:var(--s-5);border-radius:var(--r-in);background:var(--ne-beige);min-height:170px}
+.n2-role-item .n{margin-bottom:auto;font:500 14px/1 var(--font);letter-spacing:.06em;color:var(--ne-brown)}
+.n2-role-item b{font:500 20px/1.2 var(--font);letter-spacing:-.015em;color:var(--ink)}
+.n2-role-item span:last-child{font:400 15px/1.4 var(--font);color:var(--ink-2)}
+.n2-team{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s-2) var(--s-3);padding:var(--s-4) var(--s-5);border-radius:var(--r-in);border:1px solid var(--ne-line)}
+.n2-team > b{font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.n2-team > span{font:400 15px/1.4 var(--font);color:var(--ink-2)}
+
+/* ---------- задача: ограничения, которые повлияли на дизайн ---------- */
+.n2-impact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
+.n2-impact > div{display:flex;flex-direction:column;gap:var(--s-2);padding:var(--s-5);border-radius:var(--r-in);background:var(--ne-beige)}
+.n2-impact .lim{font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ne-brown)}
+.n2-impact b{font:500 19px/1.25 var(--font);letter-spacing:-.015em;color:var(--ink)}
+.n2-impact span:last-child{font:400 15px/1.4 var(--font);color:var(--ink-2)}
+.n2-goals-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:var(--s-2)}
+.n2-goals-head h3{margin:0;font:500 20px/1.2 var(--font);letter-spacing:-.015em;color:var(--ink)}
+.n2-goals-head small{font:400 14px/1.4 var(--font);color:var(--ink-3)}
+.n2-goals .ne-goal{background:transparent;border:1px solid var(--ne-line)}
+.n2-goals .ne-goal b{color:var(--ink)}
+
+/* ---------- решения с пояснением: картинка + текст ---------- */
+.n2-dec{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s-5);align-items:center}
+.n2-dec + .n2-dec{padding-top:var(--s-6);border-top:1px solid var(--ne-line)}
+.n2-dec figure{margin:0;border-radius:var(--r-in);overflow:hidden;background:var(--ne-beige-2)}
+.n2-dec figure img{display:block;width:100%;height:auto}
+.n2-dec .copy{display:flex;flex-direction:column;gap:var(--s-3)}
+.n2-dec .copy .n{display:inline-grid;place-items:center;align-self:flex-start;min-width:44px;height:44px;border-radius:15px;background:var(--ne-beige);font:500 17px/1 var(--font);color:var(--ne-brown)}
+.n2-dec h3{margin:0;font:500 24px/1.2 var(--font);letter-spacing:-.025em;color:var(--ink)}
+.n2-dec p{margin:0;font:400 16px/1.5 var(--font)!important;color:var(--ink-2)}
+.n2-why{margin:0;padding:var(--s-4);border-radius:20px;background:var(--ne-beige);font:400 15px/1.45 var(--font)!important;color:var(--ink)!important}
+.n2-why span{display:block;margin-bottom:4px;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ne-brown)}
+
+/* ---------- приложение: гипотеза ---------- */
+.n2-hyp{position:relative;overflow:hidden;padding:var(--s-6) var(--s-5);border-radius:var(--r-in);background:var(--ne-dark);display:flex;flex-direction:column;gap:var(--s-3)}
+.n2-hyp .ne-pill{background:rgba(255,255,255,.12);color:#D9BFA6}
+.n2-hyp p{margin:0;max-width:34em;font:500 clamp(20px,2.1vw,28px)/1.3 var(--font)!important;letter-spacing:-.02em;color:#fff!important}
+.n2-hyp p em{font-style:normal;color:#D9BFA6}
+
+/* ---------- приложение: один сквозной сценарий ---------- */
+.n2-flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-3);counter-reset:f}
+.n2-step{display:flex;flex-direction:column;gap:var(--s-3);counter-increment:f}
+.n2-step .ph{position:relative;border-radius:var(--r-in);background:var(--ne-beige);aspect-ratio:4/5.4;display:grid;place-items:center;overflow:hidden}
+.n2-step .ph img{height:90%;width:auto;filter:drop-shadow(0 20px 32px rgba(43,35,29,.16))}
+.n2-step .ph::after{content:"";position:absolute;top:50%;right:calc(var(--s-3) * -1 - 6px);width:12px;height:12px;border-radius:50%;background:var(--ne-brown);transform:translateY(-50%);z-index:2}
+.n2-step:last-child .ph::after{display:none}
+.n2-step h4{display:flex;gap:var(--s-2);margin:0;font:500 18px/1.25 var(--font);letter-spacing:-.015em;color:var(--ink)}
+.n2-step h4::before{content:"0" counter(f);flex:none;font-weight:500;color:var(--ne-brown)}
+.n2-step p{margin:0;font:400 15px/1.45 var(--font)!important;color:var(--ink-2)}
+.n2-step .as{margin-top:auto;padding-top:var(--s-2);border-top:1px dashed var(--ne-line);font:400 14px/1.4 var(--font);color:var(--ink-3)}
+.n2-step .as b{font-weight:500;color:var(--ink-2)}
+
+/* ---------- приложение: границы проработки ---------- */
+.n2-open{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s-3)}
+.n2-q{padding:var(--s-5);border-radius:var(--r-in);border:1px solid var(--ne-line);display:flex;flex-direction:column;gap:var(--s-3)}
+.n2-q ol{margin:0;padding:0;list-style:none;counter-reset:q;display:flex;flex-direction:column}
+.n2-q li{counter-increment:q;display:flex;gap:var(--s-3);padding:var(--s-3) 0;border-top:1px solid var(--ne-line);font:400 16px/1.4 var(--font);color:var(--ink)}
+.n2-q li::before{content:"0" counter(q);flex:none;width:24px;font:500 14px/1.6 var(--font);color:var(--ne-brown)}
+.n2-next{padding:var(--s-5);border-radius:var(--r-in);background:var(--ne-beige);display:flex;flex-direction:column;gap:var(--s-3)}
+.n2-next h4,.n2-q h4{margin:0;font:500 20px/1.25 var(--font);letter-spacing:-.015em;color:var(--ink)}
+.n2-next p{margin:0;font:400 15px/1.45 var(--font)!important;color:var(--ink-2)}
+
+/* ---------- визуальный язык ---------- */
+.n2-vis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
+.n2-vis > div{padding:var(--s-5);border-radius:var(--r-in);background:var(--ne-beige);display:flex;flex-direction:column;gap:var(--s-3)}
+.n2-vis h4{margin:0;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ne-brown)}
+.n2-vis p{margin:0;font:400 15px/1.45 var(--font)!important;color:var(--ink-2)}
+.n2-sw{display:flex;gap:var(--s-2)}
+.n2-sw i{flex:1;height:72px;border-radius:16px;box-shadow:inset 0 0 0 1px rgba(43,35,29,.08)}
+.n2-type .mono{font:400 clamp(28px,2.6vw,36px)/1 ui-monospace,"IBM Plex Mono","SFMono-Regular",Menlo,monospace;letter-spacing:.02em;text-transform:uppercase;color:var(--ink)}
+.n2-type .serif{font:italic 400 18px/1.35 Georgia,"Times New Roman",serif;color:var(--ink-2)}
+.n2-src{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-3)}
+.n2-src > div{padding:var(--s-4) var(--s-5);border-radius:var(--r-in);border:1px solid var(--ne-line);display:flex;flex-direction:column;gap:6px}
+.n2-src b{font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.n2-src > div:last-child b{color:var(--ne-brown)}
+.n2-src span{font:400 15px/1.45 var(--font);color:var(--ink)}
+
+/* ---------- презентация: заглушка под развороты ---------- */
+.n2-deck{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
+.n2-deck .ne-ph{aspect-ratio:16/9;min-height:0}
+.n2-pitch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
+.n2-pitch > div{padding:var(--s-5);border-radius:var(--r-in);background:var(--ne-beige);display:flex;flex-direction:column;gap:var(--s-2)}
+.n2-pitch b{font:500 19px/1.25 var(--font);letter-spacing:-.015em;color:var(--ink)}
+.n2-pitch span{font:400 15px/1.4 var(--font);color:var(--ink-2)}
+
+/* ---------- итог: сделано / реакция / открыто ---------- */
+.n2-out{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
+.n2-out > div{padding:var(--s-5);border-radius:var(--r-in);background:var(--ne-beige);display:flex;flex-direction:column;gap:var(--s-3)}
+.n2-out > div:last-child{background:transparent;border:1px solid var(--ne-line)}
+.n2-out ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:var(--s-2)}
+.n2-out li{position:relative;padding-left:18px;font:400 15px/1.45 var(--font);color:var(--ink)}
+.n2-out li::before{content:"";position:absolute;left:0;top:.6em;width:6px;height:6px;border-radius:50%;background:var(--ne-brown)}
+.n2-out > div:last-child li::before{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ne-brown)}
+.n2-takeaway{padding:var(--s-6) var(--s-5);border-radius:var(--r-in);background:var(--ne-dark);display:flex;flex-direction:column;gap:var(--s-3)}
+.n2-takeaway .ne-pill{background:rgba(255,255,255,.12);color:#D9BFA6}
+.n2-takeaway p{margin:0;max-width:36em;font:500 clamp(20px,2vw,26px)/1.35 var(--font)!important;letter-spacing:-.02em;color:#fff!important}
+.n2-takeaway small{max-width:44em;font:400 16px/1.5 var(--font);color:rgba(255,255,255,.7)}
+.n2-dir{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-3)}
+
+/* ---------- адаптив ---------- */
+@media (max-width:1000px){
+  .n2-role,.n2-flow{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .n2-step:nth-child(2) .ph::after{display:none}
+  .n2-dec,.n2-open{grid-template-columns:minmax(0,1fr)}
+  .n2-vis,.n2-deck,.n2-pitch,.n2-out,.n2-impact{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .n2-role{gap:var(--s-2)}
+  .n2-role-item{min-height:0;padding:var(--s-4)}
+  .n2-role-item .n{margin-bottom:var(--s-3)}
+  .n2-role-item b{font-size:17px}
+  .n2-role-item span:last-child{font-size:14px}
+  .n2-flow{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin:0 calc(var(--s-4) * -1);padding:0 var(--s-4);gap:var(--s-3)}
+  .n2-flow::-webkit-scrollbar{display:none}
+  .n2-step{flex:0 0 78%;scroll-snap-align:start}
+  .n2-step .ph::after{display:none}
+  .n2-dec h3{font-size:20px}
+  .n2-src,.n2-dir{grid-template-columns:minmax(0,1fr)}
+  .n2-hyp,.n2-takeaway{padding:var(--s-5) var(--s-4)}
+}
+
+/* плашки-ярлыки не растягиваются в колонках */
+.n2-hyp .ne-pill,.n2-next .ne-pill,.n2-out .ne-pill,.n2-takeaway .ne-pill{align-self:flex-start}
