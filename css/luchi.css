@@ -108,18 +108,18 @@
 /* контекст и проблема */
 .theme-lu{--lu-azure:#025164;--lu-venus:#EDEBCC}
 .lu-intro{display:grid;grid-template-columns:1fr 1.25fr;gap:var(--s-3)}
-.lu-intro > div{position:relative;overflow:hidden;border-radius:var(--r-in);padding:40px;display:flex;flex-direction:column;gap:var(--s-3);min-height:360px}
+.lu-intro > div{position:relative;overflow:hidden;border-radius:var(--r-in);padding:40px;display:flex;flex-direction:column;gap:var(--s-3);min-height:460px}
 .lu-intro .k{font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase}
 .lu-intro p{margin:0;font:400 20px/1.4 var(--font);max-width:22em}
 .lu-intro .ctx{background:var(--chip)}
 .lu-intro .ctx .k{color:var(--ink-3)}
 .lu-intro .ctx p{color:var(--ink)}
-.lu-intro .ctx img{margin-top:auto;align-self:flex-end;width:180px;height:180px;margin-right:-12px;margin-bottom:-16px}
 .lu-intro .pain{background:var(--lu-azure);color:#fff}
 .lu-intro .pain .k{color:rgba(255,255,255,.6)}
 .lu-intro .pain b{margin-top:var(--s-3);font:500 80px/1 var(--font);letter-spacing:-.05em;color:var(--lu-venus);white-space:nowrap}
-.lu-intro .pain p{margin-top:0;color:rgba(255,255,255,.85);font-size:18px;max-width:calc(100% - 180px)}
-.lu-intro .pain img{position:absolute;right:20px;bottom:16px;width:180px;height:180px}
+.lu-intro .pain p{margin-top:0;color:rgba(255,255,255,.85);font-size:18px;max-width:24em}
+/* девушка с деньгами крупно, развёрнута и обрезана по пояс нижним краем карточки */
+.lu-intro .pain img{position:absolute;right:-30px;bottom:-200px;width:400px;height:400px;transform:scaleX(-1);pointer-events:none}
 
 /* цифры моей работы: одна высота, две строки подписи */
 .lu-kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
@@ -133,7 +133,7 @@
 /* шаги: сетка 3×2, третья ячейка — иллюстрация; крупно и «пухло» */
 .lu-flow{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
 .lu-flow li{padding:32px;border-radius:var(--r-in);background:var(--chip);display:flex;flex-direction:column;gap:var(--s-4);min-height:240px}
-.lu-flow .n{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--lu);font:500 20px/1 var(--font);color:var(--lu-venus)}
+.lu-flow .n{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#fff;font:500 15px/1 var(--font);color:var(--ink-3)}
 .lu-flow b{font:500 28px/1.15 var(--font);letter-spacing:-.025em;color:var(--ink)}
 .lu-flow li.pic{padding:0;background:var(--lu-soft);display:grid;place-items:center}
 .lu-flow li.pic img{width:78%;height:auto}
@@ -171,9 +171,8 @@
   .lu-intro{grid-template-columns:1fr}
   .lu-intro > div{padding:24px;min-height:0}
   .lu-intro p{font-size:16px}
-  .lu-intro .ctx img{width:120px;height:120px;margin:-8px -8px -12px 0}
-  .lu-intro .pain{padding:24px 24px 24px 24px}
-  .lu-intro .pain img{position:static;transform:none;width:150px;height:150px;align-self:center;order:-1}
+  .lu-intro .pain{padding:24px 24px 150px}
+  .lu-intro .pain img{right:-30px;bottom:-130px;width:280px;height:280px}
   .lu-intro .pain b{margin-top:var(--s-2);font-size:52px}
   .lu-intro .pain p{font-size:15px;max-width:none;margin-top:0}
   .lu-kpis{grid-template-columns:1fr;gap:8px}
@@ -183,7 +182,7 @@
   .lu-flow{grid-template-columns:1fr;gap:8px}
   .lu-flow li{min-height:0;padding:20px;gap:var(--s-3)}
   .lu-flow li.pic{display:none}
-  .lu-flow .n{width:36px;height:36px;font-size:17px}
+  .lu-flow .n{width:32px;height:32px;font-size:14px}
   .lu-flow b{font-size:22px}
   .lu-chips span{font-size:14px;padding:8px 13px}
   .lu-probs,.lu-prio{grid-template-columns:1fr}
