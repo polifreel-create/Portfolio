@@ -256,3 +256,53 @@
 .n2-v2 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .n2-v2 .chips span{display:inline-flex;align-items:center;min-height:34px;padding:6px 12px;border-radius:999px;background:#fff;font:500 14px/1.2 var(--font);color:var(--ink)}
 .n2-role-item .n{margin-bottom:var(--s-4)}
+
+/* =========== v4: причёсанная версия =========== */
+/* общий вид ровных карточек: номер сверху, заголовок, текст */
+.n2-find,.n2-path,.n2-v2{display:grid;gap:var(--s-3)}
+.n2-find{grid-template-columns:repeat(3,minmax(0,1fr))}
+.n2-path,.n2-v2{grid-template-columns:repeat(4,minmax(0,1fr))}
+.n2-find > div,.n2-path > div,.n2-v2 > div{position:relative;display:flex;flex-direction:column;gap:var(--s-2);padding:var(--s-5);border-radius:var(--r-in);background:var(--ne-beige);border:0;min-height:0}
+.n2-find .n,.n2-path .n,.n2-v2 .n{margin-bottom:var(--s-4);font:500 14px/1 var(--font);letter-spacing:.06em;color:var(--ne-brown)}
+.n2-find b,.n2-path b,.n2-v2 b{font:500 20px/1.25 var(--font);letter-spacing:-.015em;color:var(--ink)}
+.n2-path > div > span:last-child,.n2-v2 > div > span:last-child{font:400 15px/1.5 var(--font);color:var(--ink-2)}
+.n2-path > div:not(:last-child)::after{content:"→";position:absolute;right:calc(var(--s-3) * -1);top:50%;transform:translate(50%,-50%);z-index:2;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--ne-line);font:500 15px/1 var(--font);color:var(--ne-brown)}
+.n2-res{grid-template-columns:1fr 1fr}
+
+/* подложка с экранами — ровный ряд, как в Гигасправке */
+.mode-panel .inner.n2-sub{aspect-ratio:auto;background:var(--ne-beige);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s-5);padding:var(--s-7) var(--s-6);align-items:center}
+.mode-panel .inner.n2-sub.dark{background:var(--ne-dark)}
+.mode-panel .inner.n2-sub img{width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 20px 36px rgba(43,35,29,.16))}
+.mode-panel .inner.n2-sub.dark img{filter:drop-shadow(0 20px 36px rgba(0,0,0,.4))}
+.theme-ne .mode-n{background:var(--ne-beige);color:var(--ne-brown)}
+.theme-ne .mode-panel + .mode-panel{border-top-color:var(--ne-line)}
+.n2-ph-phone{display:grid;place-items:center;aspect-ratio:560/1142;border-radius:28px;border:1.5px dashed rgba(131,69,48,.4);background:rgba(255,255,255,.5);font:500 14px/1 var(--font);color:var(--ne-brown)}
+.n2-wip{margin-left:var(--s-2);align-self:center}
+
+/* рефлексия: обе карточки одного вида */
+.ne-flow .ne-step:nth-child(2){background:var(--ne-beige)}
+.ne-flow .ne-step:nth-child(2) h4{color:var(--ink)}
+.ne-flow .ne-step:nth-child(2) p{color:var(--ink-2)!important}
+.ne-flow .ne-step:nth-child(2) .ne-pill{background:rgba(43,35,29,.07);color:var(--ink-2)}
+.ne-flow .ne-step .ne-pill{align-self:flex-start}
+
+@media (max-width:1000px){
+  .n2-find{grid-template-columns:minmax(0,1fr)}
+  .n2-path,.n2-v2{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .n2-path > div::after{display:none!important}
+}
+@media (max-width:760px){
+  .n2-path,.n2-v2{grid-template-columns:minmax(0,1fr)}
+  .n2-find > div,.n2-path > div,.n2-v2 > div{padding:var(--s-4)}
+  .n2-find .n,.n2-path .n,.n2-v2 .n{margin-bottom:var(--s-3)}
+  .n2-find b,.n2-path b,.n2-v2 b{font-size:18px}
+  .mode-panel .inner.n2-sub{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:var(--s-5) var(--s-4);gap:var(--s-3)}
+  .mode-panel .inner.n2-sub::-webkit-scrollbar{display:none}
+  .mode-panel .inner.n2-sub > *{flex:0 0 58%;scroll-snap-align:center}
+  .n2-wip{margin-left:0}
+}
+.n2-v2 + .mode-panel{margin-top:var(--s-3);padding-top:var(--s-6);border-top:1px solid var(--ne-line)}
+@media (max-width:760px){
+  .mode-panel .inner.n2-sub{display:flex!important;aspect-ratio:auto!important}
+  .mode-panel .inner.n2-sub > img,.mode-panel .inner.n2-sub > span{flex:0 0 58%!important;width:58%!important;height:auto!important;min-width:0}
+}
