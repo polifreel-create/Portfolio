@@ -966,3 +966,9 @@
 /* обложка кейса всегда на всю ширину карточки (max-height не сжимает её по ширине) */
 .hero .shot.tm-hero{width:100%;align-self:stretch}
 @media (min-width:761px){ .hero .shot.tm-hero{max-height:none;aspect-ratio:900/493} }
+
+/* навигация по фичам — на всю ширину секции, пункты распределены равномерно */
+@media (min-width:761px){
+  .tm-fnav{width:100%!important;max-width:none;justify-content:space-between;padding:6px}
+  .tm-fnav a{flex:1 1 0;justify-content:center;padding:0 12px}
+}
