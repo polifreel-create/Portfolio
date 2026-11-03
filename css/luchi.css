@@ -236,3 +236,18 @@
   .lu-prio h4 b{font-size:28px}
   .lu-nda p{font-size:14px}
 }
+
+/* шаги: номер — просто аккуратная цифра, теги — «пухлые», с круглыми монограммами компаний */
+.lu-flow .n{width:auto;height:auto;border-radius:0;background:none;display:block;font:var(--t-caption);letter-spacing:.06em;color:var(--ink-3)}
+.lu-flow li{gap:var(--s-2)}
+.lu-flow b{margin-bottom:var(--s-3)}
+.lu-chips{display:flex;flex-direction:row;flex-wrap:wrap;align-items:flex-start;gap:8px}
+.lu-chips span{display:inline-flex;align-items:center;height:44px;padding:0 18px;font:500 16px/1 var(--font);color:var(--ink)}
+.lu-chips span.lg{padding:0 18px 0 6px;gap:10px}
+.lu-chips span.lg i{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:600 14px/1 var(--font);font-style:normal}
+@media (max-width:760px){
+  .lu-chips span{height:36px;padding:0 14px;font-size:14px}
+  .lu-chips span.lg{padding:0 14px 0 4px;gap:8px}
+  .lu-chips span.lg i{width:28px;height:28px;font-size:12px}
+  .lu-flow li{display:flex;flex-direction:column}
+}
