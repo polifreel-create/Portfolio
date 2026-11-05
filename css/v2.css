@@ -735,3 +735,13 @@ body{letter-spacing:-.01em}
   .logos.xp li.co{padding:0!important;display:block!important}
   .logos.xp li.co + li.co:before{left:70px}
 }
+/* компании и обучение: без серой подложки и стрелок — строки прямо на карточке */
+.logos.xp,.edu-card .logos{background:none!important;border-radius:0!important;padding:0!important;margin-top:12px!important}
+.logos.xp li > a,.logos.xp li > div,.edu-card .logos li.edu{padding:12px 0!important;border-radius:0!important;background:none!important}
+.logos.xp li + li:before{left:62px!important;right:0!important}
+.logos.xp li > a .f{transition:color .2s}
+@media (hover:hover){ .logos.xp li > a:hover .f{color:#FF7A30} }
+@media (max-width:760px){
+  .logos.xp li + li:before{left:56px!important}
+  .m-brands .k{margin-bottom:2px!important}
+}
