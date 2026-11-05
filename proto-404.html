@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Страница потерялась — Полина Ефремова</title>
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/v2.css?v=78">
+  <link rel="stylesheet" href="css/theme.css?v=8">
+  <link rel="stylesheet" href="css/proto.css?v=1">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}})()</script>
+  <style>
+    body{min-height:100svh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .nf{width:min(720px,100%);background:var(--card);border-radius:var(--r);padding:48px 40px 40px;text-align:center;position:relative;overflow:hidden;isolation:isolate}
+    .nf::before{content:"";position:absolute;inset:-20% -10% auto;height:80%;z-index:-1;
+      background:radial-gradient(40% 50% at 35% 50%,rgba(255,122,48,.16),transparent 70%),radial-gradient(40% 50% at 65% 50%,rgba(63,214,140,.16),transparent 70%)}
+    .code{font:600 132px/1 var(--font);letter-spacing:-.06em;display:flex;justify-content:center;align-items:center;gap:6px;margin:0 0 8px;color:var(--ink)}
+    .code .z{display:inline-grid;place-items:center;width:118px;height:118px;cursor:pointer}
+    h1{margin:0 0 10px;font:500 32px/1.1 var(--font);letter-spacing:-.03em}
+    p{margin:0 auto 28px;max-width:30em;font:400 18px/1.5 var(--font);color:var(--ink-2)}
+    .acts{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+    .acts a{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 22px;border-radius:999px;background:var(--chip);color:var(--ink);text-decoration:none;font:500 16px/1 var(--font);
+      transition:transform .35s cubic-bezier(.34,1.56,.64,1),background .25s,color .25s}
+    .acts a.main{background:var(--ink);color:var(--card)}
+    .acts a:hover{transform:translateY(-3px)}.acts a.main:hover{background:#FF7A30;color:#fff}
+    .acts img{width:22px;height:22px;border-radius:7px}
+    .hint{margin-top:22px;font:400 14px/1.4 var(--font);color:var(--ink-3)}
+    /* маскот вместо нуля */
+    .pet{position:relative;width:104px;height:96px;transform-origin:50% 100%;animation:breathe 3.2s ease-in-out infinite}
+    @keyframes breathe{50%{transform:scale(1.03,.97)}}
+    .pet .body{position:absolute;inset:0;border-radius:52% 48% 46% 54%/60% 58% 42% 40%;background:radial-gradient(70% 60% at 35% 28%,#FFD2B0,#FF8A45 45%,#E2551A 90%);
+      box-shadow:inset -8px -12px 20px rgba(120,30,0,.3),inset 6px 8px 14px rgba(255,255,255,.5),0 18px 30px -12px rgba(200,80,20,.55)}
+    .pet .eye{position:absolute;top:38%;width:14px;height:20px;border-radius:50%;background:#0F1414;overflow:hidden;transition:height .12s,top .12s}
+    .pet .eye::after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;left:var(--ex,5px);top:var(--ey,6px)}
+    .pet .eye.l{left:28%}.pet .eye.r{left:58%}
+    .pet.blink .eye{height:3px;top:46%}
+    .pet .q{position:absolute;right:-14px;top:-16px;font:700 26px/1 var(--font);color:var(--ink-3);animation:qbob 2.4s ease-in-out infinite}
+    @keyframes qbob{50%{transform:translateY(-5px) rotate(10deg)}}
+    .z:hover .pet{animation:hop .9s cubic-bezier(.34,1.56,.64,1)}
+    @keyframes hop{0%{transform:none}25%{transform:scale(1.12,.86)}55%{transform:translateY(-22px) scale(.94,1.08)}80%{transform:scale(1.06,.95)}100%{transform:none}}
+    .sp{position:fixed;font-size:16px;pointer-events:none;z-index:9;animation:fly .9s cubic-bezier(.2,.8,.2,1) forwards}
+    @keyframes fly{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r));opacity:0}}
+    @media (max-width:760px){.nf{padding:36px 20px 28px;border-radius:32px}.code{font-size:96px}.code .z{width:90px;height:90px}.pet{transform:scale(.85)}h1{font-size:26px}p{font-size:16px}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+  </style>
+</head>
+<body>
+  <main class="nf">
+    <div class="code" aria-label="404">4<span class="z" id="z" title="Погладить"><span class="pet" id="pet"><span class="body"></span><i class="eye l"></i><i class="eye r"></i><span class="q">?</span></span></span>4</div>
+    <h1>Такой страницы нет</h1>
+    <p>Похоже, ссылка устарела или в&nbsp;адресе опечатка. Зато кейсы на&nbsp;месте&nbsp;— можно начать с&nbsp;любого.</p>
+    <div class="acts">
+      <a class="main" href="proto.html">На&nbsp;главную</a>
+      <a href="giga-case.html"><img src="assets/img/giga/app-icon.png" alt="">Гигасправка</a>
+      <a href="telemost-case.html"><img src="assets/img/telemost/app-icon.png" alt="">Телемост</a>
+    </div>
+    <div class="hint">Погладьте человечка в&nbsp;нуле&nbsp;— ему одиноко</div>
+  </main>
+  <script>
+    var pet=document.getElementById('pet'),z=document.getElementById('z');
+    addEventListener('pointermove',function(e){pet.querySelectorAll('.eye').forEach(function(ey){var r=ey.getBoundingClientRect(),a=Math.atan2(e.clientY-(r.top+r.height/2),e.clientX-(r.left+r.width/2));
+      ey.style.setProperty('--ex',4.5+Math.cos(a)*4+'px');ey.style.setProperty('--ey',7+Math.sin(a)*6+'px')})});
+    (function bl(){setTimeout(function(){pet.classList.add('blink');setTimeout(function(){pet.classList.remove('blink');bl()},140)},2200+Math.random()*2600)})();
+    z.addEventListener('click',function(e){['✨','🧡','✦','⭐️','✨'].forEach(function(t,i){var s=document.createElement('span');s.className='sp';s.textContent=t;
+      s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';var a=-Math.PI/2+(i-2)*.6;s.style.setProperty('--dx',Math.cos(a)*80+'px');s.style.setProperty('--dy',Math.sin(a)*80+'px');s.style.setProperty('--r',(i*50-100)+'deg');
+      document.body.appendChild(s);setTimeout(function(){s.remove()},950)})});
+  </script>
+  <script src="js/delight.js?v=3" defer></script>
+</body>
+</html>

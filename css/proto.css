@@ -1,0 +1,70 @@
+/* =========================================================
+   ПРОТОТИП «уровень UI»: иерархия, детали, финал страницы, переходы
+   подключается только на proto.html и proto-404.html
+   ========================================================= */
+@view-transition{navigation:auto}
+::view-transition-group(*){animation-duration:.55s;animation-timing-function:cubic-bezier(.65,0,.35,1)}
+
+/* 1. иерархия: имя — главный объект колонки */
+.me h1{font-size:32px!important;line-height:1.05;letter-spacing:-.035em}
+.bio p:not(.lead){font-size:16px!important;line-height:1.5!important}
+/* 2. единая шкала: 13→14, 15→16 */
+.util .u-time{font-size:16px!important}
+.live .chip,.m-status{font-size:14px!important}
+/* 3. контраст тегов */
+.tags span{color:#5E676A!important;background:var(--chip)!important}
+:root[data-theme=dark] .tags span{color:#A7AFB2!important}
+/* 4. подписи компаний в одну строку */
+.co .s br{display:none}
+.logos li.co .s{white-space:nowrap;font-size:14px}
+
+/* 5. результат в карточке кейса */
+.case .result{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:8px 12px;border-radius:12px;background:var(--chip);
+  font:500 14px/1.2 var(--font);color:var(--ink)}
+.case .result b{color:#E8641E;font-weight:600}
+:root[data-theme=dark] .case .result b{color:#FF9A5C}
+.case .body{grid-template-areas:none}
+@media (max-width:760px){ .case .result{display:none} }
+
+/* 6. финал страницы */
+.finale{padding:56px var(--pad) 40px;display:flex;flex-direction:column;gap:28px;position:relative;overflow:hidden;isolation:isolate}
+.finale::before{content:"";position:absolute;inset:auto -10% -60% -10%;height:120%;z-index:-1;
+  background:radial-gradient(50% 50% at 30% 50%,rgba(255,122,48,.18),transparent 70%),radial-gradient(40% 50% at 75% 60%,rgba(63,214,140,.16),transparent 70%)}
+.finale .k{font:500 12px/1 var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.finale h2{margin:0!important;font:500 56px/1!important;letter-spacing:-.045em!important;max-width:12em}
+.finale h2 em{font-style:normal;color:var(--ink-3)}
+.finale .acts{display:flex;flex-wrap:wrap;gap:10px}
+.finale .acts a{display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 22px;border-radius:999px;background:var(--chip);color:var(--ink);text-decoration:none;
+  font:500 16px/1 var(--font);transition:transform .35s cubic-bezier(.34,1.56,.64,1),background .25s,color .25s}
+.finale .acts a:first-child{background:var(--ink);color:var(--card)}
+.finale .acts a:hover{transform:translateY(-3px)}
+.finale .acts a:first-child:hover{background:#FF7A30;color:#fff}
+.finale .acts a span{opacity:.55;font-weight:400}
+.colophon{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:24px;border-top:1px solid color-mix(in srgb,var(--ink) 8%,transparent);
+  font:400 14px/1.4 var(--font);color:var(--ink-3)}
+.colophon .tg{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 10px;border-radius:999px;background:var(--chip);color:var(--ink-2);font-weight:500}
+.colophon .tg img{width:14px;height:14px}
+.colophon .upd{margin-left:auto;display:inline-flex;align-items:center;gap:7px}
+.colophon .upd i{width:7px;height:7px;border-radius:50%;background:#2FCB6B;animation:liveDot 2.4s ease-out infinite}
+@media (max-width:760px){
+  .finale{padding:32px 20px 24px;gap:20px}
+  .finale h2{font-size:34px!important}
+  .finale .acts a{height:48px;padding:0 18px;font-size:15px;flex:1 1 auto;justify-content:center}
+  .colophon .upd{margin-left:0;width:100%}
+}
+
+/* 7. детали */
+::selection{background:rgba(255,122,48,.28);color:inherit}
+:focus-visible{outline:2px solid #FF7A30!important;outline-offset:3px;border-radius:12px}
+html{scrollbar-width:thin;scrollbar-color:color-mix(in srgb,var(--ink) 22%,transparent) transparent;scroll-behavior:smooth}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-thumb{background:color-mix(in srgb,var(--ink) 18%,transparent);border-radius:10px;border:3px solid var(--bg)}
+/* картинки проявляются мягко, без рывка */
+img.bu{opacity:0;filter:blur(14px);transform:scale(1.02);transition:opacity .7s ease,filter .9s ease,transform .9s cubic-bezier(.16,1,.3,1)}
+img.bu.in{opacity:1;filter:none;transform:none}
+@media (prefers-reduced-motion:reduce){img.bu{opacity:1;filter:none;transform:none;transition:none}}
+/* мобилка: короткий статус в одну строку */
+@media (max-width:760px){ .m-status{white-space:nowrap} }
+
+/* 8. общий элемент для перехода «карточка → кейс» */
+.vt-giga{view-transition-name:cover-giga}
+.vt-tm{view-transition-name:cover-tm}
