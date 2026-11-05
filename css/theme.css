@@ -75,3 +75,26 @@
 :root[data-theme=dark] .m-status{background:rgba(47,203,107,.14);color:#6FE39A}
 :root[data-theme=dark] .status{background:rgba(47,203,107,.14);color:#6FE39A}
 :root[data-theme=dark] .feed .case.card::before{background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(255,122,48,.2),transparent 60%)}
+
+/* ===== десктоп: служебная капсула (город · время · тема) над карточкой с информацией ===== */
+.util{display:none}
+@media (min-width:761px){
+  .util{display:flex;align-items:center;justify-content:space-between;flex:none;height:60px;padding:0 10px 0 var(--pad);border-radius:999px}
+  .util .u-time{display:flex;align-items:center;gap:10px;font:500 15px/1 var(--font);color:var(--ink-2);font-variant-numeric:tabular-nums}
+  .util .u-time b{color:var(--ink);font-weight:500}
+  .util .sep{width:4px;height:4px;border-radius:50%;background:var(--ink-3)}
+  .util .theme-btn{width:40px;height:40px}
+  /* в карточке с информацией — только имя, статус, текст и контакты */
+  .intro .me .theme-btn,.intro .live{display:none!important}
+  .me-t{display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+  .m-status{display:inline-flex!important;align-items:center;gap:7px;height:28px;padding:0 12px;border-radius:999px;background:#E9F8EF;font:500 13px/1 var(--font);color:#1E8E4C}
+  .m-status::before{content:"";width:7px;height:7px;border-radius:50%;background:#2FCB6B;animation:liveDot 2.4s ease-out infinite}
+}
+:root[data-theme=dark] .m-status{background:rgba(47,203,107,.14);color:#6FE39A}
+/* левая колонка с капсулой: по содержимому; если не влезает по высоте — тихо прокручивается внутри */
+@media (min-width:761px){
+  .side{height:auto!important;max-height:calc(100svh - 20px);overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain;border-radius:var(--r)}
+  .side::-webkit-scrollbar{display:none}
+  .side .intro{flex:none}
+  .intro .contacts{margin-top:0;padding-top:24px}
+}

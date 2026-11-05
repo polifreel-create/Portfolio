@@ -15,8 +15,13 @@
   }
   function makeBtn(){var b=document.createElement('button');b.type='button';b.className='theme-btn';b.innerHTML='<span class="ic">'+SUN+MOON+'</span>';label(b);b.addEventListener('click',toggle);return b}
   // кнопка темы: на главной — в карточке «о себе», в кейсах — в строке крошек
-  var me=document.querySelector('.intro .me'),cr=document.querySelector('.crumbs');
+  var me=document.querySelector('.intro .me'),cr=document.querySelector('.crumbs'),side=document.querySelector('.side');
   if(me)me.appendChild(makeBtn()); if(cr)cr.appendChild(makeBtn());
+  // десктоп: отдельная служебная капсула над карточкой с информацией — город, время, тема
+  var util=null;
+  if(side){util=document.createElement('div');util.className='util card';
+    util.innerHTML='<div class="u-time"><b>Москва</b><i class="sep"></i><span class="clk">--:--:--</span></div>';
+    util.appendChild(makeBtn());side.insertBefore(util,side.firstElementChild)}
   // живой статус с часами — на главной под текстом
   var bio=document.querySelector('.intro .bio');
   if(bio){
@@ -27,6 +32,8 @@
     var tick=function(){var d=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Moscow'})),p=function(n){return(n<10?'0':'')+n},h=d.getHours();
       clk.textContent=p(h)+':'+p(d.getMinutes())+':'+p(d.getSeconds());
       var night=h>=23||h<8;st.classList.toggle('night',night);tx.textContent=night?'Сплю, отвечу утром':'Открыта к предложениям'};
+    var uclk=util&&util.querySelector('.clk');
+    var t0=tick;tick=function(){t0();if(uclk)uclk.textContent=clk.textContent};
     tick();setInterval(tick,1000);
   }
   // карточки кейсов: подсветка за курсором + наклон + блик
