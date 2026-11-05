@@ -13,7 +13,7 @@
     document.startViewTransition(apply).ready.then(function(){
       root.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+R+'px at '+x+'px '+y+'px)']},{duration:650,easing:'cubic-bezier(.65,0,.35,1)',pseudoElement:'::view-transition-new(root)'})});
   }
-  function makeBtn(){var b=document.createElement('button');b.type='button';b.className='theme-btn';b.innerHTML='<span class="ic">'+SUN+MOON+'</span>';label(b);b.addEventListener('click',toggle);return b}
+  function makeBtn(){var b=document.createElement('button');b.type='button';b.className='theme-btn';b.innerHTML='<span class="ic">'+SUN+MOON+'</span><i class="star s1"></i><i class="star s2"></i><i class="star s3"></i>';label(b);b.addEventListener('click',toggle);return b}
   // кнопка темы: на главной — в карточке «о себе», в кейсах — в строке крошек
   var me=document.querySelector('.intro .me'),cr=document.querySelector('.crumbs'),side=document.querySelector('.side');
   if(me)me.appendChild(makeBtn()); if(cr)cr.appendChild(makeBtn());
@@ -36,6 +36,8 @@
     var t0=tick;tick=function(){t0();if(uclk)uclk.textContent=clk.textContent};
     tick();setInterval(tick,1000);
   }
+  // «Другие работы»: свечение за курсором
+  document.querySelectorAll('.works-list a').forEach(function(a){a.addEventListener('pointermove',function(e){var r=a.getBoundingClientRect();a.style.setProperty('--mx',e.clientX-r.left+'px');a.style.setProperty('--my',e.clientY-r.top+'px')})});
   // карточки кейсов: подсветка за курсором + наклон + блик
   if(!matchMedia('(hover:hover) and (min-width:761px)').matches)return;
   document.querySelectorAll('.feed .case.card').forEach(function(c){
