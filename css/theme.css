@@ -1,0 +1,77 @@
+/* =========================================================
+   Тёмная тема · живой статус · переключатель · подсветка и наклон карточек кейсов
+   ========================================================= */
+:root[data-theme=dark]{
+  --bg:#0C0F10; --card:#15191B; --ink:#EEF1F2; --ink-2:#A7AFB2; --ink-3:#6F787C;
+  --chip:#1E2427; --wash:#1E2427; color-scheme:dark;
+  --tm-graph:#22282C;
+}
+:root[data-theme=dark] body{background:var(--bg)}
+:root[data-theme=dark] img:not([src$=".svg"]):not(.ava):not(.icon){filter:none}
+/* мягкие светлые подложки и обводки, которые в тёмной теме были бы «дырами» */
+:root[data-theme=dark] .card,:root[data-theme=dark] .sec{box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
+:root[data-theme=dark] .tags span{background:var(--chip);color:var(--ink-3)}
+:root[data-theme=dark] .hire{background:#F2F4F5;color:#0F1414;box-shadow:0 12px 32px rgba(0,0,0,.5)}
+:root[data-theme=dark] .hire:hover{background:#fff}
+:root[data-theme=dark] .logos img.light{box-shadow:0 0 0 1px rgba(255,255,255,.12)}
+:root[data-theme=dark] .m-top{background:rgba(12,15,16,.78);border-bottom-color:rgba(255,255,255,.06)}
+
+/* плавная смена цветов, когда браузер не умеет view-transition */
+.theme-anim,.theme-anim *{transition:background-color .45s ease,color .45s ease,border-color .45s ease,box-shadow .45s ease!important}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+
+/* ---------- статус + часы + переключатель ---------- */
+.live{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:var(--s-5)}
+.live .chip{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px;border-radius:999px;background:var(--chip);
+  font:500 13px/1 var(--font);color:var(--ink-2);font-variant-numeric:tabular-nums;white-space:nowrap}
+.live .chip b{color:var(--ink);font-weight:500}
+.live .dot{width:8px;height:8px;border-radius:50%;background:#2FCB6B;box-shadow:0 0 0 0 rgba(47,203,107,.5);animation:liveDot 2.4s ease-out infinite;flex:none}
+.live .night .dot{background:#8A9BFF;animation:none}
+@keyframes liveDot{0%{box-shadow:0 0 0 0 rgba(47,203,107,.5)}70%,100%{box-shadow:0 0 0 7px rgba(47,203,107,0)}}
+.theme-btn{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;border:0;padding:0;cursor:pointer;flex:none;
+  background:var(--chip);color:var(--ink);transition:transform .35s cubic-bezier(.34,1.56,.64,1),background .3s}
+.theme-btn:hover{transform:rotate(-14deg) scale(1.06)}
+.theme-btn:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.theme-btn .ic{position:relative;width:20px;height:20px}
+.theme-btn svg{position:absolute;inset:0;transition:transform .5s cubic-bezier(.65,0,.35,1),opacity .3s}
+:root[data-theme=dark] .theme-btn .sun{transform:rotate(90deg) scale(0);opacity:0}
+:root:not([data-theme=dark]) .theme-btn .moon{transform:rotate(-90deg) scale(0);opacity:0}
+.me{position:relative}
+.me .theme-btn{margin-left:auto}
+/* в кейсах — кнопка темы в строке хлебных крошек */
+.crumbs{display:flex;align-items:center}
+.crumbs .theme-btn{margin-left:auto;width:36px;height:36px}
+@media (max-width:760px){
+  .live{margin-top:16px}
+  .live .chip{height:30px;font-size:12.5px}
+}
+
+/* ---------- карточки кейсов: оранжевая подсветка за курсором + наклон + блик ---------- */
+@media (hover:hover) and (min-width:761px){
+  .feed .case.card{position:relative;transform-style:preserve-3d;will-change:transform;
+    transition:transform .6s cubic-bezier(.16,1,.3,1),box-shadow .6s cubic-bezier(.16,1,.3,1)}
+  .feed .case.card .media{transform:translateZ(0)}
+  /* оранжевое свечение по карточке */
+  .feed .case.card::before{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .4s;
+    background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(255,122,48,.22),rgba(255,122,48,.06) 35%,transparent 60%);mix-blend-mode:normal}
+  /* оранжевая кромка там, где курсор */
+  .feed .case.card::after{content:"";position:absolute;inset:0;z-index:4;pointer-events:none;border-radius:inherit;opacity:0;transition:opacity .4s;padding:2px;
+    background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(255,128,40,1),rgba(255,128,40,.25) 45%,transparent 70%);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+  /* блик по стеклу обложки */
+  .feed .case.card .media::after{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;opacity:0;transition:opacity .4s;mix-blend-mode:soft-light;
+    background:radial-gradient(460px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.55),rgba(255,255,255,.12) 40%,transparent 65%)}
+  .feed .case.card.is-hover{box-shadow:0 34px 70px -28px rgba(15,20,20,.35)}
+  .feed .case.card.is-hover::before,.feed .case.card.is-hover::after,.feed .case.card.is-hover .media::after{opacity:1}
+  :root[data-theme=dark] .feed .case.card.is-hover{box-shadow:0 34px 70px -28px rgba(0,0,0,.8)}
+}
+@media (prefers-reduced-motion:reduce){
+  .live .dot{animation:none}
+  .feed .case.card{transform:none!important}
+}
+
+/* мобилка: статус уже есть под именем — в живой строке оставляем только часы */
+@media (max-width:760px){ .live .st{display:none} }
+:root[data-theme=dark] .m-status{background:rgba(47,203,107,.14);color:#6FE39A}
+:root[data-theme=dark] .status{background:rgba(47,203,107,.14);color:#6FE39A}
+:root[data-theme=dark] .feed .case.card::before{background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(255,122,48,.2),transparent 60%)}

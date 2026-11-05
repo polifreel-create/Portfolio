@@ -152,7 +152,7 @@ html{scroll-behavior:smooth}
 
 /* единые акценты: номер раздела и бейджи — зелёным, всё остальное чёрно-серое */
 .eyebrow .num{color:inherit;font-weight:inherit}
-.tile .badge{color:var(--ink-3);background:#fff}
+.tile .badge{color:var(--ink-3);background:var(--card)}
 .crumbs a:hover{color:var(--sber-ink)}
 .next .arrow{background:var(--sber-grad)}
 
@@ -200,12 +200,12 @@ h1,h2,h3{text-wrap:balance}
 .slide figcaption{position:absolute;left:var(--s-4);top:var(--s-4);margin:0;max-width:calc(100% - 2*var(--s-4));
   font:500 14px/1.3 var(--font);color:#fff;background:rgba(0,0,0,.45);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:var(--s-2) var(--s-3);border-radius:999px}
 .nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;padding:0;border-radius:50%;border:0;cursor:pointer;
-  background:rgba(255,255,255,.92);color:var(--ink);display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:opacity .3s}
+  background:color-mix(in srgb,var(--card) 88%,transparent);color:var(--ink);display:grid;place-items:center;box-shadow:0 4px 14px rgba(0,0,0,.18);transition:opacity .3s}
 .nav.nav-prev{left:var(--s-4)} .nav.nav-next{right:var(--s-4)}
 .nav:disabled{opacity:0;pointer-events:none}
 .dots{position:absolute;left:50%;bottom:var(--s-4);transform:translateX(-50%);display:flex;gap:var(--s-2);padding:var(--s-2) var(--s-3);border-radius:999px;background:rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
 .dots button{width:8px;height:8px;border-radius:999px;border:0;padding:0;background:rgba(255,255,255,.5);cursor:pointer;transition:width .3s,background .3s}
-.dots button.on{width:24px;background:#fff}
+.dots button.on{width:24px;background:var(--card)}
 @media (max-width:760px){ .nav{display:none} }
 
 /* сценарий фичи: телефон по центру, экраны плавно сменяются */
@@ -497,8 +497,8 @@ h1,h2,h3{text-wrap:balance}
 .brief-grid{overflow:visible}
 .brief-item{overflow:visible!important}
 .brief-item.accent{overflow:hidden!important}
-.brief-arrow{position:absolute;z-index:3;top:50%;right:-28px;width:40px;height:40px;margin-top:-20px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;box-shadow:0 0 0 6px #fff,0 6px 16px rgba(15,20,20,.08);pointer-events:none}
-.brief-cta{display:flex;align-items:center;justify-content:center;gap:10px;height:56px;margin-top:24px;border-radius:999px;background:#fff;color:var(--ink);font:500 16px/1 var(--font);text-decoration:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
+.brief-arrow{position:absolute;z-index:3;top:50%;right:-28px;width:40px;height:40px;margin-top:-20px;border-radius:50%;background:var(--card);color:var(--ink);display:grid;place-items:center;box-shadow:0 0 0 6px #fff,0 6px 16px rgba(15,20,20,.08);pointer-events:none}
+.brief-cta{display:flex;align-items:center;justify-content:center;gap:10px;height:56px;margin-top:24px;border-radius:999px;background:var(--card);color:var(--ink);font:500 16px/1 var(--font);text-decoration:none;transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s}
 .brief-cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
 .brief-cta svg{transition:transform .25s}
 .brief-cta:hover svg{transform:translateY(2px)}
@@ -529,7 +529,7 @@ h1,h2,h3{text-wrap:balance}
 .sbars{position:absolute;z-index:4;left:var(--s-4);right:var(--s-4);top:var(--s-4);display:flex;gap:6px}
 .sbars button{all:unset;cursor:pointer;flex:1;height:16px;display:grid;align-items:center}
 .sbars i{display:block;height:3px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden;position:relative}
-.sbars i::after{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:left}
+.sbars i::after{content:"";position:absolute;inset:0;background:var(--card);transform:scaleX(0);transform-origin:left}
 .sbars .done i::after,.sbars .on i::after{transform:scaleX(1)}
 .sbars .run i::after{transform:scaleX(0);animation:sBar var(--dur,4500ms) linear forwards}
 .sbars button:focus-visible{outline:2px solid #fff;outline-offset:2px;border-radius:2px}

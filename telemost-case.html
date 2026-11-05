@@ -6,9 +6,11 @@
   <title>Телемост — кейс Полины Ефремовой</title>
   <meta name="description" content="Стратегия вывода Яндекс Телемоста в B2C: единое пространство для общения и дел с Агентом Мостом.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/v2.css?v=77">
-  <link rel="stylesheet" href="css/case.css?v=73">
-  <link rel="stylesheet" href="css/telemost.css?v=54">
+  <link rel="stylesheet" href="css/v2.css?v=78">
+  <link rel="stylesheet" href="css/case.css?v=74">
+  <link rel="stylesheet" href="css/telemost.css?v=55">
+  <link rel="stylesheet" href="css/theme.css?v=3">
+  <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}})()</script>
 </head>
 <body class="theme-tm">
 <div class="wrap">
@@ -378,5 +380,6 @@ document.querySelectorAll('[data-flow]').forEach(function(f){
   new IntersectionObserver(function(es){var e=es[0];if(e.isIntersecting){ph.classList.remove('play');void ph.offsetWidth;ph.classList.add('play')}else if(e.intersectionRatio===0){ph.classList.remove('play')}},{threshold:[0,.5]}).observe(ph);
 })();
 </script>
+<script src="js/delight.js?v=1" defer></script>
 </body>
 </html>
