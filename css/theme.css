@@ -93,7 +93,7 @@
 :root[data-theme=dark] .m-status{background:rgba(47,203,107,.14);color:#6FE39A}
 /* левая колонка с капсулой: по содержимому; если не влезает по высоте — тихо прокручивается внутри */
 @media (min-width:761px){
-  .side{height:auto!important;max-height:calc(100svh - 20px);overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain;border-radius:var(--r)}
+  .side{height:auto!important;max-height:calc(100svh - 20px);overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain;border-radius:0}
   .side::-webkit-scrollbar{display:none}
   .side .intro{flex:none}
   .intro .contacts{margin-top:0;padding-top:24px}
