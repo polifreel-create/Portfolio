@@ -75,6 +75,15 @@
 :root[data-theme=dark] .m-status{background:rgba(47,203,107,.14);color:#6FE39A}
 :root[data-theme=dark] .status{background:rgba(47,203,107,.14);color:#6FE39A}
 :root[data-theme=dark] .feed .case.card::before{background:radial-gradient(520px circle at var(--mx,50%) var(--my,50%),rgba(255,122,48,.2),transparent 60%)}
+/* светлая тема: без оранжевой заливки — чистый подъём, мягкая многослойная тень и тонкая графитовая кромка за курсором */
+@media (hover:hover) and (min-width:761px){
+  :root:not([data-theme=dark]) .feed .case.card::before{display:none}
+  :root:not([data-theme=dark]) .feed .case.card::after{padding:1px;
+    background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(15,20,20,.22),rgba(15,20,20,.06) 50%,transparent 75%)}
+  :root:not([data-theme=dark]) .feed .case.card.is-hover{box-shadow:0 1px 2px rgba(15,20,20,.04),0 12px 24px -12px rgba(15,20,20,.10),0 40px 80px -32px rgba(15,20,20,.18)}
+  :root:not([data-theme=dark]) .feed .case.card .media::after{mix-blend-mode:overlay;
+    background:radial-gradient(420px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.35),rgba(255,255,255,.08) 40%,transparent 65%)}
+}
 
 /* ===== десктоп: служебная капсула (город · время · тема) над карточкой с информацией ===== */
 .util{display:none}
