@@ -329,3 +329,7 @@ img.bu.in{opacity:1;filter:none;transform:none}
   .finale .k{padding-right:124px;min-height:84px}
   .fpet-say{font-size:13px;padding:8px 12px;top:78px}
 }
+/* облачко «Погладь меня» — мягко покачивается */
+.fpet-say.idle.on{animation:fpBob 2.4s ease-in-out infinite}
+@keyframes fpBob{50%{transform:translateY(-4px)}}
+@media (prefers-reduced-motion:reduce){ .fpet-say.idle.on{animation:none} }

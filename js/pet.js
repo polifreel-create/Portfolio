@@ -11,7 +11,12 @@
     ey.style.setProperty('--ex',(w/2-2.5)+Math.cos(a)*(w/2-3)+'px');ey.style.setProperty('--ey',(r.height/2-2.5)+Math.sin(a)*(r.height/2-4)+'px')})},{passive:true});
   /* моргание */
   (function bl(){setTimeout(function(){if(!btn.classList.contains('happy')){btn.classList.add('blink');setTimeout(function(){btn.classList.remove('blink')},140)}bl()},2200+Math.random()*2600)})();
-  function speak(t){say.textContent=t;say.classList.add('on');clearTimeout(sayT);sayT=setTimeout(function(){say.classList.remove('on')},1800)}
+  /* облачко-приглашение: висит, пока человечка не трогают */
+  var idle=['Погладь меня 🧡','Ну погладь…','Я тут, погладь меня'],ii=0,idleT;
+  function hint(){say.textContent=idle[ii++%idle.length];say.classList.add('on','idle')}
+  function speak(t){say.classList.remove('idle');say.textContent=t;say.classList.add('on');clearTimeout(sayT);clearTimeout(idleT);
+    sayT=setTimeout(function(){say.classList.remove('on');idleT=setTimeout(hint,3500)},1800)}
+  if('IntersectionObserver' in window){var shown=false;new IntersectionObserver(function(es){if(es[0].isIntersecting&&!shown){shown=true;setTimeout(hint,600)}},{threshold:.4}).observe(btn)}else hint();
   function burst(x,y,set,n,dist){if(reduce)return;for(var i=0;i<n;i++){var s=document.createElement('span');s.className='fpet-h';s.textContent=set[i%set.length];
     s.style.left=x+'px';s.style.top=y+'px';var a=-Math.PI/2+(i-(n-1)/2)*.55+(Math.random()-.5)*.3;
     s.style.setProperty('--dx',Math.cos(a)*dist+'px');s.style.setProperty('--dy',Math.sin(a)*dist+'px');s.style.setProperty('--r',(Math.random()*80-40)+'deg');
