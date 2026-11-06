@@ -229,3 +229,10 @@ img.bu.in{opacity:1;filter:none;transform:none}
 @media (max-width:1100px){ .cc-main .w{display:none} }
 @media (min-width:761px) and (max-height:780px){ .cc-slot{width:44px;height:44px} }
 .cc-main svg{flex:none;width:18px;height:18px}
+/* все четыре — круги; раскрываются вправо поверх соседей */
+.cc-slot .cc-ic{left:0;right:auto}
+.cc-ic i svg{width:18px;height:18px}
+/* места хватает — круг раскрывается в строке, соседи плавно отъезжают */
+.cc-slot{width:auto!important;height:auto!important}
+.cc-slot .cc-ic{position:relative!important;left:auto;right:auto}
+.cc-slot .cc-ic:hover,.cc-slot .cc-ic:focus-visible{box-shadow:none}
