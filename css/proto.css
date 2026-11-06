@@ -135,3 +135,14 @@ img.bu.in{opacity:1;filter:none;transform:none}
   .intro .me .theme-btn{display:none!important}
   .intro .contacts .theme-btn.in-contacts{display:inline-grid!important;margin-left:auto;width:36px;height:36px}
 }
+/* Британка — в той же карточке, что и компании */
+.brands h2.sub{margin-top:16px!important}
+.logos.edu-x img{border-radius:50%}
+.m-brands .k2{margin-top:18px!important}
+@media (min-width:761px) and (max-height:820px){
+  .brands h2.sub{margin-top:10px!important}
+  .bio p:not(.lead){font-size:16px!important}
+  .brands{padding:24px 28px 14px!important}
+}
+/* совсем низкие экраны: строку про AI прячем — она раскрыта в «Обо мне» */
+@media (min-width:761px) and (max-height:780px){ .intro .bio p:not(.lead){display:none!important} }
