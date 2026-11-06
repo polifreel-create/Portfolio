@@ -14,11 +14,11 @@
     if(m<1)txt='обновлён только что';else if(m<60)txt='обновлён '+m+' мин назад';else if(m<60*24)txt='обновлён '+Math.round(m/60)+' ч назад';else txt='обновлён '+Math.round(m/1440)+' дн назад';
     el.textContent=txt}).catch(function(){});
 })();
-/* десктоп: кнопка темы — в конец строки контактов, чтобы не теснить имя */
+/* десктоп: кнопка темы — отдельно, в правом нижнем углу экрана */
 addEventListener('load',function(){
   if(!matchMedia('(min-width:761px)').matches)return;
-  var b=document.querySelector('.intro .me .theme-btn'),c=document.querySelector('.intro .contacts');
-  if(b&&c){b.classList.add('in-contacts');c.appendChild(b)}
+  var b=document.querySelector('.intro .me .theme-btn');
+  if(b){b.classList.add('floating');document.body.appendChild(b)}
 });
 /* время в Москве под именем */
 (function(){var els=document.querySelectorAll('.mclk');if(!els.length)return;
