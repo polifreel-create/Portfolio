@@ -271,3 +271,42 @@ img.bu.in{opacity:1;filter:none;transform:none}
   :root:not([data-theme=dark]) .m-top{background:rgba(245,245,247,.82)!important}
   :root:not([data-theme=dark]) .cases-track > .case{background:var(--card)!important}
 }
+/* ===== финал: без пастельного свечения + маскот, которого можно погладить ===== */
+:root:not([data-theme=dark]) .finale::before{display:none}
+.fpet{position:absolute;right:56px;top:44px;width:112px;height:104px;padding:0;border:0;background:none;cursor:grab;z-index:2;-webkit-tap-highlight-color:transparent;touch-action:none}
+.fpet:focus-visible{outline:2px solid var(--ink);outline-offset:6px;border-radius:24px}
+.fpet .pet{position:absolute;inset:4px;display:block;transform-origin:50% 100%;animation:fpBreathe 3.2s ease-in-out infinite}
+.fpet .body{position:absolute;inset:0;border-radius:52% 48% 46% 54%/60% 58% 42% 40%;background:radial-gradient(70% 60% at 35% 28%,#FFD2B0,#FF8A45 45%,#E2551A 90%);
+  box-shadow:inset -8px -12px 20px rgba(120,30,0,.3),inset 6px 8px 14px rgba(255,255,255,.5),0 18px 30px -12px rgba(200,80,20,.55)}
+.fpet .eye{position:absolute;top:38%;width:14px;height:20px;border-radius:50%;background:#0F1414;overflow:hidden;transition:height .12s,top .12s,border-radius .12s}
+.fpet .eye::after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#fff;left:var(--ex,5px);top:var(--ey,6px)}
+.fpet .eye.l{left:28%}.fpet .eye.r{left:58%}
+.fpet .ch{position:absolute;top:56%;width:16px;height:9px;border-radius:50%;background:#FF4F6D;opacity:0;filter:blur(1.5px);transition:opacity .3s}
+.fpet .ch.l{left:16%}.fpet .ch.r{left:68%}
+.fpet.blink .eye{height:3px;top:46%}
+/* довольный: глазки-дужки и румянец */
+.fpet.happy .eye{height:8px;top:44%;background:transparent;border:3.5px solid #0F1414;border-bottom:0;border-radius:12px 12px 0 0;width:15px}
+.fpet.happy .eye::after{display:none}
+.fpet.happy .ch{opacity:.75}
+.fpet.happy .pet{animation:fpPurr .28s ease-in-out infinite}
+.fpet.hop .pet{animation:fpHop .9s cubic-bezier(.34,1.56,.64,1)}
+.fpet:hover:not(.happy):not(.hop) .pet{animation:fpLean 1.6s ease-in-out infinite}
+@keyframes fpBreathe{50%{transform:scale(1.03,.97)}}
+@keyframes fpLean{50%{transform:rotate(-4deg) scale(1.02,.98)}}
+@keyframes fpPurr{50%{transform:scale(1.05,.94) rotate(1.5deg)}}
+@keyframes fpHop{0%{transform:none}25%{transform:scale(1.12,.86)}55%{transform:translateY(-22px) scale(.94,1.08)}80%{transform:scale(1.06,.95)}100%{transform:none}}
+/* реплика */
+.fpet-say{position:absolute;right:calc(100% - 18px);bottom:calc(100% - 6px);white-space:nowrap;padding:9px 14px;border-radius:16px 16px 4px 16px;background:var(--ink);color:var(--card);
+  font:500 14px/1.2 var(--font);opacity:0;transform:translateY(6px) scale(.9);transform-origin:100% 100%;transition:opacity .25s,transform .35s cubic-bezier(.34,1.56,.64,1);pointer-events:none}
+.fpet-say.on{opacity:1;transform:none}
+.fpet-h{position:fixed;pointer-events:none;z-index:40;font-size:18px;line-height:1;animation:fpFly 1s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes fpFly{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r)) scale(.6);opacity:0}}
+@media (max-width:760px){
+  .fpet{right:14px;top:16px;width:80px;height:74px}
+  .fpet .eye{width:10px;height:15px}.fpet .eye::after{width:4px;height:4px}
+  .fpet.happy .eye{width:11px;height:6px;border-width:3px}
+  .fpet .ch{width:12px;height:7px}
+  .finale .k{display:block;padding-right:96px;min-height:58px}
+  .fpet-say{font-size:13px;padding:8px 12px;bottom:auto;top:58px;right:calc(100% - 10px);border-radius:16px 4px 16px 16px;transform-origin:100% 0}
+}
+@media (prefers-reduced-motion:reduce){ .fpet .pet,.fpet.happy .pet,.fpet.hop .pet,.fpet:hover .pet{animation:none!important} }
