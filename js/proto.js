@@ -20,3 +20,8 @@ addEventListener('load',function(){
   var b=document.querySelector('.intro .me .theme-btn'),c=document.querySelector('.intro .contacts');
   if(b&&c){b.classList.add('in-contacts');c.appendChild(b)}
 });
+/* время в Москве под именем */
+(function(){var els=document.querySelectorAll('.mclk');if(!els.length)return;
+  function t(){var d=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Moscow'})),p=function(n){return(n<10?'0':'')+n};
+    var v=p(d.getHours())+':'+p(d.getMinutes());els.forEach(function(e){e.textContent=v})}
+  t();setInterval(t,10000)})();
