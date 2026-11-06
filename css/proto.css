@@ -255,19 +255,19 @@ img.bu.in{opacity:1;filter:none;transform:none}
 @media (max-width:760px){ .cases-track .case .media.lu-media > img{object-position:58% 50%} }
 /* «Другие работы»: превью-картинка вместо градиента */
 .works-list .w-th.w-ph{background-size:cover!important;background-position:center!important}
-/* ===== палитра 1: белый фон, светло-серые карточки, без пастельных градиентов ===== */
+/* ===== палитра: нейтральный серый фон, белые карточки, без пастельных градиентов ===== */
 :root:not([data-theme=dark]){
-  --bg:#FFFFFF; --card:#F5F5F7;
+  --bg:#F5F5F7; --card:#FFFFFF;
   --ink:#0B0B0C; --ink-2:#515154; --ink-3:#86868B;
-  --chip:#FFFFFF; --wash:#E8E8ED; --accent:#FF5A1F;
+  --chip:#F5F5F7; --wash:#EDEDF0; --accent:#FF5A1F;
 }
-:root:not([data-theme=dark]) body{background:#FFFFFF}
+:root:not([data-theme=dark]) body{background:#F5F5F7}
 /* плоские заглушки вместо пастельных пятен */
 :root:not([data-theme=dark]) .w-th.g1,:root:not([data-theme=dark]) .w-th.g2,
-:root:not([data-theme=dark]) .w-th.g3,:root:not([data-theme=dark]) .w-th.g4{background-image:none!important;background-color:#E8E8ED!important}
-:root:not([data-theme=dark]) .media.soon,:root:not([data-theme=dark]) .media.soon-b{background:#E8E8ED!important}
+:root:not([data-theme=dark]) .w-th.g3,:root:not([data-theme=dark]) .w-th.g4{background-image:none!important;background-color:#EDEDF0!important}
+:root:not([data-theme=dark]) .media.soon,:root:not([data-theme=dark]) .media.soon-b{background:#EDEDF0!important}
 /* мобилка: шапка и карточки кейсов на белом */
 @media (max-width:760px){
-  :root:not([data-theme=dark]) .m-top{background:rgba(255,255,255,.82)!important}
+  :root:not([data-theme=dark]) .m-top{background:rgba(245,245,247,.82)!important}
   :root:not([data-theme=dark]) .cases-track > .case{background:var(--card)!important}
 }
