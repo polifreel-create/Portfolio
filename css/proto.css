@@ -194,3 +194,11 @@ img.bu.in{opacity:1;filter:none;transform:none}
 .cpop a:hover,.cpop a:focus-visible{background:var(--chip);outline:0}
 .cpop a:hover i,.cpop a:focus-visible i{background:#FF7A30;color:#fff}
 @media (max-width:760px){ .cbtn-wrap,.cpop{display:none!important} }
+/* «Контакты» спокойнее: светлая плашка, без оранжевого */
+.cbtn{background:var(--chip);color:var(--ink)}
+@media (hover:hover){ .cbtn:hover{background:var(--line-h,#E6EAEE);color:var(--ink)} }
+:root[data-theme=dark] .cbtn:hover{background:#262D31}
+.cbtn[aria-expanded=true]{background:#E6EAEE}
+:root[data-theme=dark] .cbtn[aria-expanded=true]{background:#262D31}
+.cbtn:focus-visible{outline-color:var(--ink)}
+.cpop a:hover i,.cpop a:focus-visible i{background:var(--ink);color:var(--card)}
