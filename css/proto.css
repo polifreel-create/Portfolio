@@ -333,3 +333,11 @@ img.bu.in{opacity:1;filter:none;transform:none}
 .fpet-say.idle.on{animation:fpBob 2.4s ease-in-out infinite}
 @keyframes fpBob{50%{transform:translateY(-4px)}}
 @media (prefers-reduced-motion:reduce){ .fpet-say.idle.on{animation:none} }
+/* маскот стоит на одной линии с кнопками контактов */
+@media (min-width:761px){
+  .finale .acts{position:relative;padding-right:200px}
+  .finale .acts .fpet{top:auto;bottom:-4px;right:-8px}
+}
+@media (max-width:760px){ .finale .acts{position:static} }
+.finale .acts a:first-of-type{background:var(--ink);color:var(--card)}
+.finale .acts a:first-of-type:hover{background:#FF7A30;color:#fff}
