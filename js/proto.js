@@ -25,3 +25,16 @@ addEventListener('load',function(){
   function t(){var d=new Date(new Date().toLocaleString('en-US',{timeZone:'Europe/Moscow'})),p=function(n){return(n<10?'0':'')+n};
     var v=p(d.getHours())+':'+p(d.getMinutes());els.forEach(function(e){e.textContent=v})}
   t();setInterval(t,10000)})();
+/* одна кнопка «Контакты» — открывает попап с каналами */
+(function(){var b=document.getElementById('cbtn'),pop=document.getElementById('cpop');if(!b||!pop)return;
+  document.body.appendChild(pop);
+  function place(){var r=b.getBoundingClientRect();pop.style.left=r.left+'px';pop.style.top=(r.bottom+8)+'px';pop.style.minWidth=Math.max(r.width,280)+'px'}
+  function open(){place();pop.hidden=false;requestAnimationFrame(function(){pop.classList.add('on')});b.setAttribute('aria-expanded','true')}
+  function close(){pop.classList.remove('on');b.setAttribute('aria-expanded','false');setTimeout(function(){if(!pop.classList.contains('on'))pop.hidden=true},200)}
+  b.addEventListener('click',function(e){e.stopPropagation();pop.hidden?open():close()});
+  document.addEventListener('click',function(e){if(!pop.hidden&&!pop.contains(e.target))close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!pop.hidden){close();b.focus()}});
+  addEventListener('resize',function(){if(!pop.hidden)place()});
+  var side=document.querySelector('.side');if(side)side.addEventListener('scroll',function(){if(!pop.hidden)close()});
+  addEventListener('scroll',function(){if(!pop.hidden)place()},{passive:true});
+})();
