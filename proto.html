@@ -14,7 +14,7 @@
   <meta property="og:description" content="Проектирую цифровые продукты — от исследований до интерфейсов. Сбер, Яндекс, Sisley, Лучи.">
   <meta property="og:image" content="https://polifreel-create.github.io/Portfolio/assets/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="css/proto.css?v=22">
+  <link rel="stylesheet" href="css/proto.css?v=23">
 </head>
 <body>
 <div class="page">
@@ -27,8 +27,9 @@
       <div class="me-t"><h1>Ефремова&nbsp;Полина</h1><span class="where"><span>Москва</span><i class="sep" aria-hidden="true"></i><span class="mclk" aria-label="Время в Москве">--:--</span></span></div>
     </div>
     <div class="bio">
-      <p class="lead">Продуктовый дизайнер с&nbsp;4+&nbsp;годами опыта. Проектирую цифровые продукты&nbsp;— от&nbsp;исследований до&nbsp;интерфейсов.</p>
-      <p>Использую AI для&nbsp;дизайна, визуальных концепций и&nbsp;интерактивных прототипов.</p>
+      <p class="lead">Продуктовый дизайнер, 4+&nbsp;года в&nbsp;B2C и&nbsp;B2B. Сейчас в&nbsp;Лучах отвечаю за&nbsp;сайт и&nbsp;личные кабинеты в&nbsp;страховании и&nbsp;медтехе.</p>
+      <p>Сама провожу интервью с&nbsp;пользователями, проектирую и&nbsp;довожу решения до&nbsp;разработки.</p>
+      <p class="b-ai">С&nbsp;AI собираю прототипы в&nbsp;коде и&nbsp;макеты по&nbsp;дизайн-системе в&nbsp;Figma.</p>
     </div>
     <div class="m-brands"><span class="k">Работала с&nbsp;компаниями</span><ul class="logos xp m-xp">
       <li class="co"><a href="giga-case.html?from=proto"><img src="assets/img/logos/sber.webp" alt="" width="48" height="48"><span class="s">Сбер<br>Девайс</span><span class="f">СберДевайсы<small>Умные устройства Сбера</small></span></a></li>
@@ -193,7 +194,7 @@
   function fit(){
     var pad=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--page'))||16;
     var h=side.offsetHeight, vh=innerHeight;
-    var top=10;side.style.top=(h+top+pad>vh ? (vh-h-pad) : top)+'px';
+    var top=10;side.style.top=(h+top*2>vh ? (vh-h-top) : top)+'px';
   }
   addEventListener('resize',fit); if(document.fonts)document.fonts.ready.then(fit); fit();
 })();
