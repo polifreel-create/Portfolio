@@ -6,7 +6,7 @@
 ::view-transition-group(*){animation-duration:.55s;animation-timing-function:cubic-bezier(.65,0,.35,1)}
 
 /* 1. иерархия: имя — главный объект колонки */
-.me h1{font-size:32px!important;line-height:1.05;letter-spacing:-.035em}
+@media (min-width:761px){ .me h1{font-size:32px!important;line-height:1.05;letter-spacing:-.035em} }
 .bio p:not(.lead){font-size:16px!important;line-height:1.5!important}
 /* 2. единая шкала: 13→14, 15→16 */
 .util .u-time{font-size:16px!important}
@@ -98,4 +98,40 @@ img.bu.in{opacity:1;filter:none;transform:none}
   .logos.xp img,.edu-card .logos img{width:44px!important;height:44px!important}
   .logos.xp li > a,.logos.xp li > div,.edu-card .logos li.edu{padding:12px 14px;gap:12px!important}
   .logos.xp li + li:before{left:70px}
+}
+
+/* ===== чистый вариант: левая колонка в один экран ===== */
+.st-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.st-row .city{font:500 14px/1 var(--font);color:var(--ink-2)}
+@media (max-width:760px){ .st-row .city{display:none} }
+@media (min-width:761px){
+  /* капсулу «город · время · тема» убираем: город — рядом со статусом, тема — кнопкой в углу карточки */
+  .side .util{display:none!important}
+  .intro .me .theme-btn{display:inline-grid!important;align-self:flex-start;margin-left:auto}
+  .intro .live{display:none!important}
+  /* плотнее, чтобы колонка влезала в экран */
+  .intro{padding:32px!important}
+  .bio{margin-top:20px!important;gap:10px!important}
+  .contacts{margin-top:20px!important}
+  .brands{padding:28px 32px 20px!important}
+  .logos.xp{margin-top:8px!important}
+  .logos.xp li > a,.logos.xp li > div{padding:10px 0!important}
+  .logos.xp img{width:44px!important;height:44px!important}
+  .logos.xp li + li:before{left:58px!important}
+  .hire{display:none!important}
+}
+@media (min-width:761px) and (max-height:820px){
+  .intro{padding:28px!important}
+  .bio .lead{font-size:18px!important}
+  .logos.xp li > a,.logos.xp li > div{padding:8px 0!important}
+  .logos.xp img{width:40px!important;height:40px!important}
+  .logos.xp li + li:before{left:54px!important}
+}
+/* «Обо мне»: чипы между текстом и фото */
+#about .chips{margin-top:20px}
+#about .photos{margin-top:24px}
+@media (min-width:761px){
+  .intro .contacts{padding-top:0!important;align-items:center}
+  .intro .me .theme-btn{display:none!important}
+  .intro .contacts .theme-btn.in-contacts{display:inline-grid!important;margin-left:auto;width:36px;height:36px}
 }
