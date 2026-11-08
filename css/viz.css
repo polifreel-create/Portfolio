@@ -190,3 +190,19 @@
 .vz-st .msg.out{background:#E7F4EA}
 .vz-st .menu div.on,.vz-st .num{background:#F1F4F6}
 .vz-st .b{background:#E4EAEE}
+
+/* Аватары в сценах */
+.vz-st .who{display:flex;align-items:center;gap:6px;margin:16px 0 0 -2px;background:#fff;border-radius:999px;padding:4px 12px 4px 4px;font:500 12px/1 var(--font);color:var(--sber-ink);box-shadow:0 6px 18px rgba(15,20,20,.08);white-space:nowrap}
+.vz-st .who img{width:24px;height:24px;border-radius:50%;object-fit:cover}
+.vz-st .uava{width:24px;height:24px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 2px #fff}
+
+/* Карточка «сцена + текст» — единый белый блок с лёгкой тенью */
+.vz-card{background:#fff;border-radius:calc(var(--r-in) + 8px);padding:10px 10px 22px;gap:6px;box-shadow:0 0 0 1px rgba(15,20,20,.05),0 12px 32px rgba(15,20,20,.06)}
+.vz-card .vz-st{border-radius:var(--r-in);margin-bottom:12px}
+.vz-card h3,.vz-card p,.vz-lab{margin-left:12px;margin-right:12px}
+.vz-card h3{font-size:19px}
+.vz-card .big{font-size:22px}
+.vz-card .brief-cta{margin:auto 12px 0;padding-top:0}
+.vz-card > p:last-child,.vz-card > p{margin-bottom:0}
+.vz-grid{align-items:stretch}
+@media (min-width:1001px){ .brief .vz-card h3{min-height:calc(3 * 1.2em)} }

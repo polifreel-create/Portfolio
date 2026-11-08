@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/v2.css?v=78">
   <link rel="stylesheet" href="css/case.css?v=74">
   <link rel="stylesheet" href="css/theme.css?v=9">
-  <link rel="stylesheet" href="css/viz.css?v=7">
+  <link rel="stylesheet" href="css/viz.css?v=9">
   <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}})()</script>
   <script>if(/[?&]from=proto/.test(location.search)){var st=document.createElement('style');st.textContent='@view-transition{navigation:auto}::view-transition-group(*){animation-duration:.55s;animation-timing-function:cubic-bezier(.65,0,.35,1)}.hero .shot{view-transition-name:'+(location.pathname.indexOf('telemost')>-1?'cover-tm':'cover-giga')+'}';document.head.appendChild(st)}</script>
 </head>
@@ -26,7 +26,7 @@
     <div class="top"><div class="tags"><span>Mobile</span><span>Agent UX</span><span>Sber Devices</span></div></div>
     <img class="icon" src="assets/img/giga/app-icon.png" alt="" width="104" height="104">
     <h1>Гигасправка</h1>
-    <p class="lead">AI-агент поддержки умных устройств Sber. Чинит поломки раньше, чем&nbsp;вы&nbsp;их&nbsp;заметите.</p>
+    <p class="lead">Агентная архитектура поддержки для&nbsp;150&nbsp;тысяч пользователей умных устройств Sber. Агент решает поломки раньше, чем пользователь успевает&nbsp;их&nbsp;заметить.</p>
     <dl class="meta">
       <div><dt>Роль</dt><dd>Исследование, концепция, <br><span style="white-space:nowrap">UX-флоу</span>,&nbsp;UI</dd></div>
       <div><dt>Команда</dt><dd>5&nbsp;человек</dd></div>
@@ -50,22 +50,30 @@
 <div class="vz-card"><div class="vz-st"><div class="vz-comp"><div class="f row" style="left:14px;right:14px;top:10px;opacity:.5"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 21h8"/></svg></div><div style="flex:1"><span class="b" style="width:70%"></span><span class="b" style="width:40%"></span></div></div>
 <div class="f row" style="left:0;right:0;top:64px;z-index:2"><div class="ic" style="color:var(--ink-3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M4 4l16 16M8.5 8.5A5 5 0 0 0 9 15v1h6v-1"/><path d="M12 4a5 5 0 0 1 5 5c0 1.2-.4 2.2-1 3"/></svg></div><div style="flex:1"><div class="t1">Лампа «Кухня»</div><div class="t2">Не в сети · 3 дня</div></div><span style="color:var(--ink-3);letter-spacing:2px">•••</span></div>
 <div class="f menu" style="right:0;top:126px;width:168px;z-index:3"><div>Настройки</div><div class="on">Удалить устройство</div></div>
-<div class="cur" style="left:74px;top:160px"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 3l19 7.2-8.6 2.4L11 21.5z" fill="#fff" stroke="url(#sg)" stroke-width="2.2" stroke-linejoin="round"/></svg></div></div></div><span class="vz-lab">Проблема</span><h3><span class="big"><span class="gt">4%</span> просто бросают сломавшееся устройство</span></h3><p>150&nbsp;000 поломок в&nbsp;месяц, треть&nbsp;— в&nbsp;поддержку.</p></div>
-<div class="vz-card"><div class="vz-st"><div class="vz-comp"><div class="f bub" style="left:6px;top:14px;width:170px;border-radius:16px 16px 16px 4px;opacity:.5"><span class="b" style="width:90%"></span><span class="b" style="width:60%"></span></div>
-<div class="f bub" style="right:6px;top:66px;width:120px;border-radius:16px 16px 4px 16px;opacity:.4"><span class="b"></span></div>
-<div class="pillbtn" style="left:50%;top:120px;transform:translateX(-50%);z-index:2"><span style="width:18px;height:18px;display:flex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3l7.5-7.5"/></svg></span>Починить</div>
-<div class="cur" style="left:178px;top:150px"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 3l19 7.2-8.6 2.4L11 21.5z" fill="#fff" stroke="url(#sg)" stroke-width="2.2" stroke-linejoin="round"/></svg><i>Новичок</i></div></div></div><span class="vz-lab">Инсайт</span><h3><span class="big">«Мне нужна <span class="gt">простая кнопка</span>»</span></h3><p>Новички не&nbsp;доверяют ботам. Им&nbsp;нужен результат.</p></div>
+<div class="cur" style="right:14px;top:166px"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 3l19 7.2-8.6 2.4L11 21.5z" fill="#fff" stroke="url(#sg)" stroke-width="2.2" stroke-linejoin="round"/></svg></div></div></div><span class="vz-lab">Проблема</span><h3><span class="big"><span class="gt">4%</span> людей просто бросают сломавшееся устройство</span></h3><p>150&nbsp;тысяч поломок в&nbsp;месяц. Треть пользователей идёт в&nbsp;поддержку.</p></div>
+<div class="vz-card"><div class="vz-st"><div class="vz-comp"><div class="f" style="left:22px;right:22px;top:4px;padding:12px 14px;opacity:.55">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px"><span class="b" style="width:52%"></span><span style="width:26px;height:14px;border-radius:7px;background:#E4EAEE"></span></div>
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:9px"><span class="b" style="width:38%"></span><span style="width:26px;height:14px;border-radius:7px;background:#E4EAEE"></span></div>
+<div style="display:flex;justify-content:space-between;align-items:center"><span class="b" style="width:60%"></span><span style="width:26px;height:14px;border-radius:7px;background:#E4EAEE"></span></div></div>
+<div class="f" style="left:50%;top:100px;transform:translateX(-50%);display:flex;align-items:center;gap:10px;padding:8px 22px 8px 8px;border-radius:999px;z-index:2;white-space:nowrap">
+<span style="width:36px;height:36px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center"><span style="width:20px;height:20px;display:flex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 10h3V7L6.5 3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1-3 3l-6-6a6 6 0 0 1-8-8z"/></svg></span></span>
+<span style="font:500 16px/1 var(--font);color:var(--ink)">Починить</span></div>
+<div class="cur" style="left:160px;top:130px"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 3l19 7.2-8.6 2.4L11 21.5z" fill="#fff" stroke="url(#sg)" stroke-width="2.2" stroke-linejoin="round"/></svg>
+<span class="who"><img src="assets/img/giga/case/seg-novice.webp" alt="">Новичок</span></div></div></div><span class="vz-lab">Инсайт</span><h3><span class="big">«Мне нужна <span class="gt">простая кнопка</span>, после которой всё работает»</span></h3><p>Новички не&nbsp;доверяют чат-ботам и&nbsp;не&nbsp;хотят копаться в&nbsp;настройках.</p></div>
 <div class="vz-card"><div class="vz-st soft"><div class="vz-comp"><div class="f" style="left:24px;right:24px;top:30px;height:56px;opacity:.5"></div>
 <div class="f" style="left:12px;right:12px;top:42px;height:56px;opacity:.75"></div>
 <div class="f row" style="left:0;right:0;top:56px;z-index:2"><div class="ic" style="background:var(--grad);color:#fff"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="stroke-width:2.4"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div><div><div class="t1">Проблема устранена</div><div class="t2">Агент переподключил лампу</div></div></div>
-<span class="chip g" style="left:50%;transform:translateX(-50%);top:140px;display:flex;gap:6px;align-items:center"><span style="width:14px;height:14px;display:flex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span>AI-агент · 2 сек назад</span></div></div><span class="vz-lab">Решение</span><h3><span class="big"><span class="gt">AI-агент</span> чинит раньше, чем вы&nbsp;заметите поломку</span></h3><p>Пользователь узнаёт о&nbsp;сбое, когда он&nbsp;уже решён.</p><a class="brief-cta" href="#solution">Смотреть решение <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a></div>
+<span class="chip g" style="left:50%;transform:translateX(-50%);top:140px;display:flex;gap:6px;align-items:center"><span style="width:14px;height:14px;display:flex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/></svg></span>AI-агент · 2 сек назад</span></div></div><span class="vz-lab">Решение</span><h3><span class="big"><span class="gt">AI-агент</span> чинит раньше, чем вы&nbsp;заметите поломку</span></h3><p>Агент сам замечает сбой и&nbsp;чинит. Вы&nbsp;узнаёте, когда всё уже решено.</p><a class="brief-cta" href="#solution">Смотреть решение <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg></a></div>
 </div>
 </section>
 
   <!-- 01 Контекст -->
   <section class="sec card">
-    <header><span class="eyebrow"><span class="num">01</span>&nbsp;· Контекст и&nbsp;проблема</span><h2>150&nbsp;000 поломок умных устройств каждый&nbsp;месяц</h2></header>
-    <div class="text"><p class="vz-accent">Брошенное устройство&nbsp;— <em>потерянный пользователь</em> экосистемы: минус CSI, NPS и&nbsp;MAU.</p></div>
+    <header><span class="eyebrow"><span class="num">01</span>&nbsp;· Контекст и&nbsp;проблема</span><h2>Каждый месяц 150&nbsp;тысяч пользователей сталкиваются с&nbsp;поломками умных&nbsp;устройств</h2></header>
+    <div class="text">
+      <p>Колонка не&nbsp;видит лампочку, телевизор не&nbsp;подключается к&nbsp;сети&nbsp;— и&nbsp;пользователь остаётся с&nbsp;проблемой один на&nbsp;один. Часть людей разбирается сама, часть идёт в&nbsp;поддержку, а&nbsp;часть просто перестаёт пользоваться&nbsp;устройством.</p>
+      <p>Это&nbsp;напрямую бьёт по <strong>CSI и&nbsp;NPS</strong> и&nbsp;ведёт к&nbsp;оттоку: брошенное устройство&nbsp;— потерянный пользователь&nbsp;экосистемы.</p>
+    </div>
     <div class="vz vz-grid vz-21">
 <div class="vz-card"><div class="vz-st"><div class="vz-comp wide"><div class="f" style="left:0;right:0;top:6px;padding:18px 20px">
 <div style="display:flex;justify-content:space-between;font:400 12px/1 var(--font);color:var(--ink-3);margin-bottom:12px"><span>150&nbsp;000 поломок в&nbsp;месяц</span><span>100%</span></div>
@@ -73,19 +81,19 @@
 <div style="display:flex;gap:18px;margin-top:14px;font:400 12px/1 var(--font);color:var(--ink-2);white-space:nowrap"><span><b style="font-weight:500;color:var(--ink)">63%</b> чинят сами</span><span><b style="font-weight:500;color:var(--ink)">33%</b> идут в&nbsp;поддержку</span></div></div>
 <div class="f" style="right:0;top:146px;padding:12px 16px;z-index:3"><div class="gt" style="font:500 26px/1 var(--font);width:fit-content">4%</div><div class="t2" style="margin-top:4px;color:var(--ink-2)">бросают устройство</div></div>
 <div class="cur" style="right:-4px;top:52px"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 3l19 7.2-8.6 2.4L11 21.5z" fill="#fff" stroke="url(#sg)" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
-<div style="position:absolute;left:14px;top:160px;width:46%"><span class="b" style="width:80%"></span><span class="b" style="width:55%"></span></div></div></div><h3>Треть идёт в&nbsp;поддержку, 4%&nbsp;сдаются</h3><p>Брошенное устройство&nbsp;— минус CSI, NPS и&nbsp;пользователь экосистемы</p></div>
+<div style="position:absolute;left:14px;top:160px;width:46%"><span class="b" style="width:80%"></span><span class="b" style="width:55%"></span></div></div></div><h3>Треть идёт в&nbsp;поддержку, 4%&nbsp;сдаются</h3><p>Брошенное устройство&nbsp;— минус CSI и&nbsp;NPS</p></div>
 <div class="vz-card"><div class="vz-st"><div class="vz-comp"><div class="f" style="left:0;right:0;top:0;overflow:hidden">
 <div class="chat-hd"><div class="ava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="3"/><circle cx="12" cy="14" r="3"/><circle cx="12" cy="7" r=".6"/></svg></div><div><div class="t1" style="font-size:13px">Салют</div><div class="t2" style="font-size:11px">колонка SberBoom</div></div></div>
 <div class="chat"><div class="msg out">Салют, включи свет на&nbsp;кухне</div><div class="msg in">Не&nbsp;нашла такое устройство</div></div></div>
-<div class="f row" style="left:22px;right:22px;top:158px;padding:10px 12px;z-index:2"><div class="ic" style="width:30px;height:30px;color:var(--ink-3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M4 4l16 16M8.5 8.5A5 5 0 0 0 9 15v1h6v-1"/><path d="M12 4a5 5 0 0 1 5 5c0 1.2-.4 2.2-1 3"/></svg></div><div style="flex:1"><div class="t1" style="font-size:13px">Лампа «Кухня»</div><div class="t2" style="font-size:11px;display:flex;align-items:center;gap:5px"><span class="dot"></span>Не&nbsp;в&nbsp;сети</div></div></div></div></div><h3>Колонка не&nbsp;видит лампу</h3><p>И&nbsp;человек остаётся с&nbsp;проблемой один на&nbsp;один</p></div>
+<div class="f row" style="left:22px;right:22px;top:158px;padding:10px 12px;z-index:2"><div class="ic" style="width:30px;height:30px;color:var(--ink-3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4M4 4l16 16M8.5 8.5A5 5 0 0 0 9 15v1h6v-1"/><path d="M12 4a5 5 0 0 1 5 5c0 1.2-.4 2.2-1 3"/></svg></div><div style="flex:1"><div class="t1" style="font-size:13px">Лампа «Кухня»</div><div class="t2" style="font-size:11px;display:flex;align-items:center;gap:5px"><span class="dot"></span>Не&nbsp;в&nbsp;сети</div></div></div></div></div><h3>Колонка не&nbsp;видит лампу</h3><p>Человек остаётся один на&nbsp;один</p></div>
 </div>
   </section>
 
   <!-- 02 Исследование -->
   <section class="sec card">
-    <header><span class="eyebrow"><span class="num">02</span>&nbsp;· Исследование</span><h2>Прошли путь пользователя сами и&nbsp;поговорили с&nbsp;сотней людей</h2></header>
+    <header><span class="eyebrow"><span class="num">02</span>&nbsp;· Исследование</span><h2>Прожили путь пользователя сами и&nbsp;поговорили с&nbsp;сотней&nbsp;людей</h2></header>
     <div class="text">
-      <p>Покупали и&nbsp;настраивали устройства, ломали сценарии, звонили на&nbsp;900.</p>
+      <p>Мы&nbsp;покупали и&nbsp;настраивали устройства, ломали сценарии и&nbsp;звонили на&nbsp;900, чтобы пройти путь пользователя от&nbsp;первой ошибки до&nbsp;решения. Параллельно провели&nbsp;интервью.</p>
     </div>
     <div class="stats">
       <div class="stat"><b>82</b><span>количественных интервью</span></div>
@@ -95,42 +103,44 @@
     <figure>
       <div class="inner photo-slot"><img src="assets/img/giga/case/research.webp" alt="Команда тестирует умные устройства Sber в шоуруме: колонки и лампы на столе" loading="lazy"></div>
     </figure>
-    <h3 class="sub">Три сегмента&nbsp;— и&nbsp;осознанный выбор фокуса</h3>
+    <h3 class="sub">Три сегмента аудитории&nbsp;— и&nbsp;осознанный выбор, на&nbsp;кого делать&nbsp;решение</h3>
     <div class="tiles">
       <div class="tile"><div class="seg-top"><img class="ava" src="assets/img/giga/case/seg-tech.webp" alt="" width="56" height="56"><span class="badge">Сегмент</span></div><h3>Техногики</h3><p>Разбираются сами, поддержка им почти&nbsp;не&nbsp;нужна.</p></div>
       <div class="tile"><div class="seg-top"><img class="ava" src="assets/img/giga/case/seg-confident.webp" alt="" width="56" height="56"><span class="badge">Сегмент</span></div><h3>Уверенные&nbsp;пользователи</h3><p>Справляются, если подсказать, где&nbsp;искать.</p></div>
       <div class="tile focus"><div class="seg-top"><img class="ava" src="assets/img/giga/case/seg-novice.webp" alt="" width="56" height="56"><span class="badge">Фокус</span></div><h3>Технофобы-новички</h3><p>Теряются при&nbsp;первой ошибке&nbsp;— для&nbsp;них решение важнее&nbsp;всего.</p></div>
     </div>
-    <h3 class="sub">Инсайты, которые определили решение</h3>
+    <h3 class="sub">Ключевые инсайты, которые определили&nbsp;решение</h3>
     <div class="vz vz-grid vz-2">
 <div class="vz-card"><div class="vz-st"><div class="vz-comp"><div class="f" style="left:0;right:0;top:-4px;bottom:-60px;overflow:hidden">
 <div class="chat-hd"><div class="ava"><span style="font:500 10px/1 var(--font)">AI</span></div><div style="flex:1"><div class="t1" style="font-size:13px">Бот поддержки</div><div class="t2" style="font-size:11px">отвечает автоматически</div></div></div>
 <div class="chat"><div class="msg in">Выберите тему обращения</div><div class="qr"><span>Подключение</span><span>Оплата</span><span>Другое</span></div>
-<div class="msg out">Лампа не&nbsp;подключается к&nbsp;колонке</div>
-<div style="display:flex;align-items:center;gap:6px"><div class="msg in">Выберите тему обращения</div><span style="font:500 11px/1 var(--font);color:var(--sber-ink);white-space:nowrap">↻ по&nbsp;кругу</span></div></div></div></div></div><h3>Не&nbsp;доверяют чат-ботам</h3><p>Переписка с&nbsp;ботом воспринимается как&nbsp;отписка, а&nbsp;не&nbsp;помощь.</p></div>
+<div style="display:flex;align-items:flex-end;gap:6px;align-self:flex-end;max-width:90%"><div class="msg out" style="max-width:none">Лампа не&nbsp;подключается к&nbsp;колонке</div><img class="uava" src="assets/img/giga/case/seg-novice.webp" alt=""></div>
+<div style="display:flex;align-items:center;gap:6px"><div class="msg in">Выберите тему обращения</div><span style="font:500 11px/1 var(--font);color:var(--sber-ink);white-space:nowrap">↻ по&nbsp;кругу</span></div></div></div></div></div><h3>Не&nbsp;доверяют чат-ботам</h3><p>Переписка с&nbsp;ботом&nbsp;— отписка, а&nbsp;не&nbsp;помощь</p></div>
 <div class="vz-card"><div class="vz-st soft"><div class="vz-comp"><div class="f" style="left:10px;right:10px;top:4px;padding:14px;opacity:.55">
 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><span class="b" style="width:50%"></span><span style="width:28px;height:15px;border-radius:8px;background:var(--sk)"></span></div><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px"><span class="b" style="width:40%"></span><span style="width:28px;height:15px;border-radius:8px;background:var(--sk)"></span></div><div style="display:flex;justify-content:space-between;align-items:center;"><span class="b" style="width:60%"></span><span style="width:28px;height:15px;border-radius:8px;background:var(--sk)"></span></div></div>
 <div style="position:absolute;left:50%;top:96px;transform:translateX(-50%);width:84px;height:84px;border-radius:50%;padding:8px;background:rgba(255,255,255,.75);z-index:2"><div style="width:100%;height:100%;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 12px 28px rgba(33,160,56,.28)"><span style="width:28px;height:28px;display:flex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="stroke-width:2.4"><path d="M12 3v9"/><path d="M6.5 7a8 8 0 1 0 11 0"/></svg></span></div></div>
-<div class="cur" style="left:168px;top:146px"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 3l19 7.2-8.6 2.4L11 21.5z" fill="#fff" stroke="url(#sg)" stroke-width="2.2" stroke-linejoin="round"/></svg></div></div></div><h3>Хотят «простую кнопку»</h3><p>Не&nbsp;разбираться в&nbsp;настройках, а&nbsp;нажать&nbsp;— и&nbsp;чтобы заработало.</p></div>
+<div class="cur" style="left:168px;top:146px"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 3l19 7.2-8.6 2.4L11 21.5z" fill="#fff" stroke="url(#sg)" stroke-width="2.2" stroke-linejoin="round"/></svg></div></div></div><h3>Хотят «простую кнопку»</h3><p>Нажать&nbsp;— и&nbsp;чтобы всё заработало</p></div>
 <div class="vz-card"><div class="vz-st"><div class="vz-comp"><div class="f" style="left:50%;transform:translateX(-50%);top:4px;width:180px;padding:18px;text-align:center">
 <div class="ic" style="width:48px;height:48px;border-radius:50%;margin:0 auto 10px"><span style="width:22px;height:22px;display:flex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/></svg></span></div>
 <div class="t1">Поддержка · 900</div><div class="t2" style="margin:2px 0 14px">Вызов…</div>
 <div style="display:flex;justify-content:center;gap:20px"><span style="width:34px;height:34px;border-radius:50%;background:var(--soft);color:var(--sber-ink);display:flex;align-items:center;justify-content:center"><span style="width:20px;height:20px;display:flex"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 15.5c4.5-4 11.5-4 16 0l-2 2.5-3-1.2v-2.3a10 10 0 0 0-6 0v2.3L6 18z"/></svg></span></span><span style="width:34px;height:34px;border-radius:50%;background:var(--sk)"></span></div></div>
-<div class="cur" style="left:96px;top:166px"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 3l19 7.2-8.6 2.4L11 21.5z" fill="#fff" stroke="url(#sg)" stroke-width="2.2" stroke-linejoin="round"/></svg><i>«а вдруг это глупый вопрос?»</i></div></div></div><h3>Боятся выглядеть смешно</h3><p>Неловко звонить в&nbsp;поддержку с&nbsp;«глупым» вопросом.</p></div>
+<div class="cur" style="left:96px;top:166px"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M3 3l19 7.2-8.6 2.4L11 21.5z" fill="#fff" stroke="url(#sg)" stroke-width="2.2" stroke-linejoin="round"/></svg><i>«а вдруг это глупый вопрос?»</i></div></div></div><h3>Боятся выглядеть смешно</h3><p>Неловко звонить с&nbsp;«глупым» вопросом</p></div>
 <div class="vz-card"><div class="vz-st"><div class="vz-comp"><div class="f row" style="left:0;right:0;top:4px;padding:11px 14px;font:400 13px/1 var(--font);color:var(--ink-2)"><span style="width:16px;height:16px;display:flex;color:var(--ink-3)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg></span>Инструкция для&nbsp;колонки</div>
 <div class="f menu" style="left:0;right:36px;top:56px;z-index:2"><div style="color:var(--ink-2)">SberBoom SBDV-00004</div><div class="on">SberBoom SBDV-00004W</div><div style="color:var(--ink-2)">SberBoom Mini SBDV-00095</div><div>SberBoom Mini 2 SBDV-…</div></div>
-<span class="chip d" style="right:0;top:166px;z-index:3">какая из&nbsp;них моя?</span></div></div><h3>Не&nbsp;знают модель своего устройства</h3><p>А&nbsp;без&nbsp;неё не&nbsp;найти нужную инструкцию.</p></div>
+<span class="chip d" style="right:0;top:166px;z-index:3">какая из&nbsp;них моя?</span></div></div><h3>Не&nbsp;знают модель устройства</h3><p>А&nbsp;без&nbsp;неё не&nbsp;найти инструкцию</p></div>
 </div>
   </section>
 
   <!-- 03 Решение -->
   <section class="sec card" id="solution">
-    <header><span class="eyebrow"><span class="num">03</span>&nbsp;· Решение</span><h2>Агент сам замечает и&nbsp;чинит поломку</h2></header>
-    <div class="text"><p class="vz-accent">Пользователь узнаёт о&nbsp;проблеме, <em>когда она уже решена</em>.</p></div>
+    <header><span class="eyebrow"><span class="num">03</span>&nbsp;· Решение</span><h2>Агент, который замечает и&nbsp;чинит проблему без&nbsp;участия&nbsp;пользователя</h2></header>
+    <div class="text">
+      <p>Вместо того чтобы ждать, пока человек сам найдёт инструкцию, агент следит за&nbsp;состоянием устройств, спрашивает ГигаЧат, находит решение в&nbsp;базе инструкций и&nbsp;чинит. Пользователь узнаёт о&nbsp;проблеме, когда она уже&nbsp;решена.</p>
+    </div>
     <div class="modes">
       <div class="mode-panel" id="panel-1">
         <h3 class="mode-title"><span class="mode-n">01</span>Проактивный режим</h3>
-        <p class="mode-desc">Агент сам замечает сбой и&nbsp;чинит&nbsp;— до&nbsp;того, как&nbsp;вы&nbsp;заметите.</p>
+        <p class="mode-desc">Агент сам замечает сбой и&nbsp;устраняет его&nbsp;до&nbsp;того, как&nbsp;пользователь что-то&nbsp;заметит.</p>
         <div class="carousel" data-carousel>
           <div class="track" tabindex="0" aria-label="Шаги проактивного режима"><figure class="slide"><img src="assets/img/giga/case/proactive-1.webp" alt="Общая схема агента" loading="lazy"><figcaption>Общая схема агента</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-2.webp" alt="Устройства и умный хаб передают данные агенту" loading="lazy"><figcaption>Устройства и умный хаб передают данные агенту</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-3.webp" alt="Агент спрашивает ГигаЧат о проблеме" loading="lazy"><figcaption>Агент спрашивает ГигаЧат о проблеме</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-4.webp" alt="Решаемая проблема: агент пробует починить устройство сам" loading="lazy"><figcaption>Решаемая проблема: агент пробует починить устройство сам</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-5.webp" alt="Нерешаемая: инструкция, карта центров, заявка на возврат" loading="lazy"><figcaption>Нерешаемая: инструкция, карта центров, заявка на возврат</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/proactive-6.webp" alt="Пользователь получает пуш «Проблема устранена»" loading="lazy"><figcaption>Пользователь получает пуш «Проблема устранена»</figcaption></figure></div>
         </div>
@@ -142,7 +152,7 @@
       </div>
       <div class="mode-panel" id="panel-2">
         <h3 class="mode-title"><span class="mode-n">02</span>Реактивный режим</h3>
-        <p class="mode-desc">Вы&nbsp;спрашиваете голосом или&nbsp;текстом&nbsp;— ассистент проверяет и&nbsp;ведёт за&nbsp;руку.</p>
+        <p class="mode-desc">Пользователь сам обращается к&nbsp;ассистенту голосом или&nbsp;текстом. Ассистент проверяет устройство, объясняет, что случилось, и&nbsp;ведёт за&nbsp;руку&nbsp;— открывает короткую инструкцию с&nbsp;иллюстрациями, без&nbsp;поиска модели и&nbsp;переписки с&nbsp;ботом.</p>
         <div class="carousel" data-carousel>
           <div class="track" tabindex="0" aria-label="Шаги реактивного режима"><figure class="slide"><img src="assets/img/giga/case/reactive-1.webp" alt="Пользователь пишет или говорит, что устройство не работает" loading="lazy"><figcaption>Пользователь пишет или&nbsp;говорит, что&nbsp;устройство не&nbsp;работает</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/reactive-2.webp" alt="Агент собирает логи и проверяет, в сети ли устройство" loading="lazy"><figcaption>Агент собирает логи и&nbsp;проверяет, в&nbsp;сети&nbsp;ли устройство</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/reactive-3.webp" alt="ГигаЧат классифицирует проблему: решаемая или нет" loading="lazy"><figcaption>ГигаЧат классифицирует проблему: решаемая или&nbsp;нет</figcaption></figure><figure class="slide"><img src="assets/img/giga/case/reactive-4.webp" alt="Нерешаемая: инструкция, карта центров, заявка на ремонт" loading="lazy"><figcaption>Нерешаемая: инструкция, карта центров, заявка на&nbsp;ремонт</figcaption></figure></div>
         </div>
@@ -158,32 +168,38 @@
   <!-- 04 Валидация -->
   <section class="sec card">
     <header><span class="eyebrow"><span class="num">04</span>&nbsp;· Валидация</span><h2>Проверили гипотезу на&nbsp;реальном MVP, а&nbsp;не&nbsp;только&nbsp;на&nbsp;макетах</h2></header>
-    <div class="text"><p>С&nbsp;разработчиком ГигаЧата собрали рабочего агента на&nbsp;реальных логах устройств. Он&nbsp;верно классифицировал проблемы и&nbsp;находил инструкции.</p><p class="vz-accent">Решение&nbsp;— не&nbsp;фантазия дизайнера, а&nbsp;<em>проверенная концепция</em>.</p></div>
+    <div class="text">
+      <p>Вместе с&nbsp;разработчиком ГигаЧата мы&nbsp;собрали работающий прототип агента: подключили реальные токены, загрузили базу инструкций Гигасправки и&nbsp;прогнали тестовые логи устройств. Агент правильно классифицировал проблемы и&nbsp;находил нужные&nbsp;инструкции.</p>
+      <p>Это&nbsp;главный аргумент, что&nbsp;решение&nbsp;— не&nbsp;фантазия дизайнера, а&nbsp;проверенная&nbsp;концепция.</p>
+    </div>
     <figure>
       <div class="inner video-slot"><img src="assets/img/giga/case/mvp-n8n.webp" alt="Рабочий прототип агента в n8n: обработка ошибки устройства из MQTT, классификация проблемы и поиск инструкции в векторной базе Qdrant" loading="lazy" style="object-position:50% 0"></div>
-      <figcaption>Ошибка из&nbsp;MQTT → ГигаЧат классифицирует → агент ищет инструкцию в&nbsp;векторной базе</figcaption>
+      <figcaption>Рабочий прототип агента: ошибка устройства приходит из&nbsp;MQTT, ГигаЧат классифицирует проблему, агент ищет инструкцию в&nbsp;векторной базе</figcaption>
     </figure>
   </section>
 
   <!-- 05 Другие функции -->
   <section class="sec card">
-    <header><span class="eyebrow"><span class="num">05</span>&nbsp;· Другие функции</span><h2>Когда агент не&nbsp;справился сам</h2></header>
+    <header><span class="eyebrow"><span class="num">05</span>&nbsp;· Другие функции</span><h2>Помогаем и&nbsp;тогда, когда агент не&nbsp;может починить устройство&nbsp;сам</h2></header>
+    <div class="text">
+      <p>Агент закрывает большую часть сбоев, но&nbsp;не&nbsp;все. Для&nbsp;остальных случаев мы&nbsp;спроектировали сценарии, в&nbsp;которых пользователь не&nbsp;остаётся с&nbsp;проблемой&nbsp;один.</p>
+    </div>
     <div class="modes">
       <div class="mode-panel" id="fpanel-health">
         <h3 class="mode-title"><span class="mode-n">01</span>Здоровье устройств</h3>
-        <p class="mode-desc">Все устройства дома на&nbsp;одном экране: что работает, а&nbsp;что агент уже починил.</p>
+        <p class="mode-desc">Состояние всех устройств дома на&nbsp;одном экране: что работает, что требует внимания и&nbsp;что агент уже починил.</p>
         <div class="inner feat-video"><video class="autoplay" poster="assets/video/giga-health-poster.webp?v=9" muted loop playsinline preload="none" aria-label="Здоровье устройств: нажатие «Починить неисправность», шкала сканирует колонку по шагам, здоровье растёт с 67 до 87%">
           <source src="assets/video/giga-health.webm?v=9" type='video/webm; codecs="vp9"'><source src="assets/video/giga-health.mp4?v=9" type="video/mp4"></video></div>
       </div>
       <div class="mode-panel" id="fpanel-share">
         <h3 class="mode-title"><span class="mode-n">02</span>Поделиться с близким</h3>
-        <p class="mode-desc">Проблему можно в&nbsp;один тап отправить близкому&nbsp;— он&nbsp;поможет удалённо.</p>
+        <p class="mode-desc">Если не&nbsp;получается разобраться самому, проблему можно в&nbsp;один тап отправить родственнику&nbsp;— он&nbsp;увидит, что случилось, и&nbsp;поможет удалённо.</p>
         <div class="inner feat-video"><video class="autoplay" poster="assets/video/giga-share-poster.webp" muted loop playsinline preload="none" aria-label="Поделиться с близким: выбор «Позвать близкого на помощь», выбор устройства, отправка ссылки в Telegram, «Ссылка направлена»">
           <source src="assets/video/giga-share.webm" type='video/webm; codecs="vp9"'><source src="assets/video/giga-share.mp4" type="video/mp4"></video></div>
             </div>
       <div class="mode-panel" id="fpanel-warranty">
         <h3 class="mode-title"><span class="mode-n">03</span>Возврат по гарантии</h3>
-        <p class="mode-desc">Возврат прямо из&nbsp;диагностики&nbsp;— без&nbsp;звонков и&nbsp;чеков.</p>
+        <p class="mode-desc">Если устройство неисправно, возврат оформляется прямо из&nbsp;сценария диагностики&nbsp;— без&nbsp;звонков и&nbsp;поиска чеков.</p>
         <div class="inner feat-video"><video class="autoplay" poster="assets/video/giga-warranty-poster.webp?v=9" muted loop playsinline preload="none" aria-label="Возврат по гарантии: диагностика лампочки с помощью пользователя, вывод «Лампочка неисправна», уведомление и вызов курьера">
           <source src="assets/video/giga-warranty.webm?v=9" type='video/webm; codecs="vp9"'><source src="assets/video/giga-warranty.mp4?v=9" type="video/mp4"></video></div>
       </div>
@@ -192,28 +208,30 @@
 
   <!-- 06 Эффект -->
   <section class="sec card">
-    <header><span class="eyebrow"><span class="num">06</span>&nbsp;· Эффект для&nbsp;бизнеса</span><h2>Даже простая самопомощь уже работает</h2></header>
+    <header><span class="eyebrow"><span class="num">06</span>&nbsp;· Эффект для&nbsp;бизнеса</span><h2>Даже простая версия самопомощи уже даёт&nbsp;результат</h2></header>
     <div class="vz vz-grid vz-3">
 <div class="vz-card"><div class="vz-st soft"><div class="vz-comp"><div class="f" style="left:12px;right:-80px;top:34px;bottom:-60px;padding:16px">
 <div style="display:flex;gap:5px;align-items:center;margin-bottom:14px"><span style="width:7px;height:7px;border-radius:50%;background:var(--sk)"></span><span style="width:7px;height:7px;border-radius:50%;background:var(--sk)"></span><span class="b" style="width:56px;margin-left:6px"></span></div>
 <div style="display:flex;align-items:flex-end;gap:7px;height:130px;padding-right:60px"><div style="flex:1;height:8%;background:var(--sk);opacity:1;border-radius:5px"></div><div style="flex:1;height:11%;background:var(--sk);opacity:1;border-radius:5px"></div><div style="flex:1;height:9%;background:var(--sk);opacity:1;border-radius:5px"></div><div style="flex:1;height:13%;background:var(--sk);opacity:1;border-radius:5px"></div><div style="flex:1;height:55%;background:var(--grad);opacity:0.45;border-radius:5px"></div><div style="flex:1;height:78%;background:var(--grad);opacity:0.75;border-radius:5px"></div><div style="flex:1;height:100%;background:var(--grad);opacity:1;border-radius:5px"></div></div></div>
-<span class="chip w m" style="left:4px;top:62px"><span class="gt">+1500%</span></span></div></div><h3><span class="gt">+1500%</span> чтений статей-инструкций</h3><p>Инструкции встроили прямо в&nbsp;интерфейс</p></div>
+<span class="chip w m" style="left:4px;top:62px"><span class="gt">+1500%</span></span></div></div><h3><span class="gt">+1500%</span> чтений инструкций</h3><p>Статьи прямо в&nbsp;интерфейсе</p></div>
 <div class="vz-card"><div class="vz-st"><div class="vz-comp"><div class="f" style="left:16px;right:16px;top:30px;padding:16px;opacity:.55"><span class="b" style="width:70%"></span><span class="b" style="width:45%"></span></div>
 <div class="f" style="left:6px;right:6px;top:72px;padding:16px;z-index:2"><div class="t2" style="margin-bottom:10px">Помогла ли инструкция?</div><div style="display:flex;gap:4px"><span style="width:24px;height:24px;display:flex"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="url(#sg)"/></svg></span><span style="width:24px;height:24px;display:flex"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="url(#sg)"/></svg></span><span style="width:24px;height:24px;display:flex"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="url(#sg)"/></svg></span><span style="width:24px;height:24px;display:flex"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="url(#sg)"/></svg></span><span style="width:24px;height:24px;display:flex"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z" fill="url(#sg)"/></svg></span></div></div>
-<span class="chip w m" style="right:6px;top:162px;z-index:3">CSAT <span class="gt">96%</span></span></div></div><h3><span class="gt">96%</span> CSAT</h3><p>Пользователи довольны самопомощью</p></div>
+<span class="chip w m" style="right:6px;top:162px;z-index:3">CSAT <span class="gt">96%</span></span></div></div><h3><span class="gt">96%</span> CSAT</h3><p>Довольны самопомощью</p></div>
 <div class="vz-card"><div class="vz-st"><div class="vz-comp"><div class="f" style="left:0;right:0;top:72px;padding:20px 16px 14px">
 <div style="position:relative;height:10px;border-radius:5px;background:var(--wash)"><div style="position:absolute;left:30%;width:20%;top:0;bottom:0;background:var(--grad);border-radius:5px"></div><span style="position:absolute;left:30%;top:-8px;width:26px;height:26px;margin-left:-13px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(15,20,20,.2)"></span><span style="position:absolute;left:50%;top:-8px;width:26px;height:26px;margin-left:-13px;border-radius:50%;background:#fff;box-shadow:0 2px 10px rgba(15,20,20,.2)"></span></div>
 <div style="display:flex;justify-content:space-between;font:400 11px/1 var(--font);color:var(--ink-3);margin-top:14px"><span>0</span><span>+1</span></div></div>
 <span class="chip w m" style="left:24%;top:24px">CSI <span class="gt">+0,3–0,5</span></span>
-<span class="chip w" style="left:0;top:172px;color:var(--ink-2)">MAU ↑</span><span class="chip w" style="left:74px;top:172px;color:var(--ink-2)">PR · нет аналогов</span></div></div><span class="vz-lab">Что ожидаем от агента</span><h3>CSI +0,3–0,5 — прогноз</h3><p>Устройства не&nbsp;забрасывают, аналогов на&nbsp;рынке умного дома&nbsp;нет</p></div>
+<span class="chip w" style="left:0;top:172px;color:var(--ink-2)">MAU ↑</span><span class="chip w" style="left:74px;top:172px;color:var(--ink-2)">PR · нет аналогов</span></div></div><h3><span class="gt">+0,3–0,5</span> CSI</h3><p>Прогноз для&nbsp;агента</p></div>
 </div>
-    <p class="note">Данные MVP Sber Devices с&nbsp;инструкциями в&nbsp;интерфейсе&nbsp;— не&nbsp;результат нашего агента, а&nbsp;опора для&nbsp;гипотезы.</p>
+    <p class="note">Данные существующего MVP Sber Devices со&nbsp;встраиванием инструкций в&nbsp;интерфейс&nbsp;— не&nbsp;результат нашего агента. Мы&nbsp;опирались на&nbsp;них как&nbsp;на&nbsp;подтверждение&nbsp;гипотезы.</p>
   </section>
 
   <!-- 07 Автопилот на коробке -->
   <section class="sec card">
     <header><span class="eyebrow"><span class="num">07</span>&nbsp;· Наша инициатива</span><h2>«Умный дом с&nbsp;автопилотом» прямо&nbsp;на&nbsp;упаковке</h2></header>
-    <div class="text"><p>Этого не&nbsp;было в&nbsp;задаче&nbsp;— упаковку придумали и&nbsp;сделали сами.</p><p class="vz-accent">О&nbsp;самопочинке человек узнаёт <em>ещё в&nbsp;магазине</em>&nbsp;— и&nbsp;это аргумент для&nbsp;покупки.</p></div>
+    <div class="text">
+      <p>Этого не&nbsp;было в&nbsp;задаче&nbsp;— мы&nbsp;придумали и&nbsp;сами сделали дизайн упаковки. Пользователь узнаёт, что&nbsp;устройство умеет чинить себя само, ещё в&nbsp;магазине&nbsp;— и&nbsp;это становится аргументом&nbsp;для&nbsp;покупки.</p>
+    </div>
     <figure>
       <div class="inner box-shot"><img src="assets/img/giga/shot-box.webp" alt="Упаковка SberBoom Mini 2 с плашкой «Умный дом с автопилотом»" loading="lazy"></div>
     </figure>
@@ -222,7 +240,9 @@
   <!-- 08 Итог -->
   <section class="sec card">
     <header><span class="eyebrow"><span class="num">08</span>&nbsp;· Итог</span><h2>Проект был принят заказчиком</h2></header>
-    <div class="text"><p class="vz-accent">Глубокое исследование и&nbsp;техническая валидация&nbsp;— это <em>рабочее решение</em>, а&nbsp;не&nbsp;красивая презентация.</p></div>
+    <div class="text">
+      <p>Sber Devices остались довольны результатом и&nbsp;подходом к&nbsp;решению задачи. Это стало подтверждением того, что&nbsp;глубокое исследование и&nbsp;доведение решения до&nbsp;реальной технической валидации&nbsp;— то, что&nbsp;отличает рабочее решение от&nbsp;красивой&nbsp;презентации.</p>
+    </div>
     <div class="defense">
       <figure><div class="inner"><img src="assets/img/giga/case/defense-team.webp" alt="Наша команда после защиты проекта" loading="lazy"></div><figcaption>Наша команда</figcaption></figure>
       <figure><div class="inner"><img src="assets/img/giga/case/defense-group.webp" alt="Участники и менторы на защите проектов в Британской высшей школе дизайна" loading="lazy"></div><figcaption>Защита проектов</figcaption></figure>
