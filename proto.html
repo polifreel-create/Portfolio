@@ -14,7 +14,7 @@
   <meta property="og:description" content="Проектирую цифровые продукты — от исследований до интерфейсов. Сбер, Яндекс, Sisley, Лучи.">
   <meta property="og:image" content="https://polifreel-create.github.io/Portfolio/assets/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="css/proto.css?v=41">
+  <link rel="stylesheet" href="css/proto.css?v=42">
 </head>
 <body>
 <div class="page">
@@ -279,9 +279,27 @@
 </div>
 <script>
 (function(){
-  /* Данные работ: imgs — пути к картинкам (мокапам); link — ссылка на Behance, если есть */
+  /* Данные работ: link — ссылка на Behance, если есть.
+     Показ работы — бенто как на Behance: bento:[ {плитка}, … ] (если bento нет — imgs столбиком).
+     Плитка: s — размер: 'full' (на всю ширину, 3:2) · 'wide' (2/3 ширины) + 'narrow' (1/3) · 'half' + 'half' · 'third' ×3
+             src — картинка; fit:'contain' — мокап на прозрачном фоне с отступами (иначе заполняет плитку)
+             bg — фон плитки ('#E8EEF5', градиент), dark:true — тёмная плитка; pos — object-position; cap — подпись-чип
+             r — своя высота в рядах (по умолчанию full 4, остальные 3); hint — текст пустой плитки-заготовки
+     Ритм: full (устройство) → half+half (крупный фрагмент + мобилка) → wide+narrow (лента/иконки) → third×3 → full (финал).
+     Экспорт: full 2400×1600, half 1200×1200, wide 1600×1200, narrow 800×1200, third 800×800 (webp, ~80%). */
   var W={
-    w5:{t:'Лендинг «Семейный врач»',m:'Лучи · Web · 2026',d:'Премиальная страница допродукта Лучей: личный врач для всей семьи. Тёмная бирюзовая гамма и стеклянные иконки.',imgs:['assets/img/luchi/cover/doc-landing.webp']},
+    w5:{t:'Лендинг «Семейный врач»',m:'Лучи · Web · 2026',d:'Премиальная страница допродукта Лучей: личный врач для всей семьи. Тёмная бирюзовая гамма и стеклянные иконки.',imgs:['assets/img/luchi/cover/doc-landing.webp'],
+      bento:[
+        {s:'full',src:'assets/img/luchi/cover/doc-landing.webp',alt:'Лендинг «Семейный врач» в ноутбуке'},
+        {s:'half',hint:'Крупный фрагмент: карточка врача',bg:'#E8EEF1'},
+        {s:'half',hint:'Мобильная версия в телефоне',bg:'#0B3B40',dark:true},
+        {s:'wide',hint:'Лента блоков страницы',bg:'#EEF1F3'},
+        {s:'narrow',hint:'Пак стеклянных иконок',bg:'#123F45',dark:true},
+        {s:'third',hint:'Кнопки и состояния',bg:'#EEF1F3'},
+        {s:'third',hint:'Типографика',bg:'#EEF1F3'},
+        {s:'third',hint:'Цвета',bg:'#EEF1F3'},
+        {s:'full',hint:'Финальный кадр: устройство в окружении',bg:'#0B3B40',dark:true}
+      ]},
     w1:{t:'Редизайн мобильного банка',m:'Концепт · Mobile · 2025',imgs:[],g:'g1'},
     w2:{t:'Лендинг для студии ремонта',m:'Web · 2025',imgs:[],g:'g2'},
     w3:{t:'Дашборд аналитики продаж',m:'B2B · Web · 2024',imgs:[],g:'g3'},
@@ -291,7 +309,15 @@
   function open(id){var w=W[id];if(!w)return;
     document.getElementById('wkT').textContent=w.t;document.getElementById('wkM').textContent=w.m;document.getElementById('wkD').textContent=w.d||'';
     G.innerHTML='';
-    if(w.imgs.length){w.imgs.forEach(function(src){var i=new Image();i.src=src;i.alt=w.t;i.loading='lazy';G.appendChild(i)})}
+    G.classList.toggle('bt',!!w.bento);
+    if(w.bento){var g=document.createElement('div');g.className='bt-grid';
+      w.bento.forEach(function(b,n){var c=document.createElement('figure');c.className='bt-c bt-'+(b.s||'half')+(b.dark?' dk':'')+(b.fit==='contain'?' fit':'');
+        if(b.r)c.style.setProperty('--r',b.r);if(b.bg)c.style.background=b.bg;c.style.setProperty('--i',n);
+        if(b.src){var i=new Image();i.src=b.src;i.alt=b.alt||w.t;i.loading=n?'lazy':'eager';i.decoding='async';if(b.pos)i.style.objectPosition=b.pos;c.appendChild(i)}
+        else if(b.hint){c.classList.add('ph');var h=document.createElement('span');h.textContent=b.hint;c.appendChild(h)}
+        if(b.cap){var f=document.createElement('figcaption');f.textContent=b.cap;c.appendChild(f)}
+        g.appendChild(c)});G.appendChild(g)}
+    else if(w.imgs.length){w.imgs.forEach(function(src){var i=new Image();i.src=src;i.alt=w.t;i.loading='lazy';G.appendChild(i)})}
     else{for(var k=0;k<3;k++){var d=document.createElement('div');d.className='wk-ph w-th '+w.g;G.appendChild(d)}}
     if(w.link){L.href=w.link;L.hidden=false}else{L.hidden=true}
     wk.querySelector('.wk-body').scrollTop=0;
