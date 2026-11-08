@@ -206,3 +206,4 @@
 .vz-card > p:last-child,.vz-card > p{margin-bottom:0}
 .vz-grid{align-items:stretch}
 @media (min-width:1001px){ .brief .vz-card h3{min-height:calc(3 * 1.2em)} }
+.vz-card{box-shadow:0 12px 32px rgba(15,20,20,.06),0 2px 6px rgba(15,20,20,.03)}
