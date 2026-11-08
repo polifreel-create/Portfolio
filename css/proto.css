@@ -397,3 +397,5 @@ img.bu.in{opacity:1;filter:none;transform:none}
 .case.is-soon{cursor:default}
 .case.is-soon:hover{transform:none}
 .case.is-soon:hover .media > *{transform:none}
+.wk-gal.bt .bt-c > img{background:none;border-radius:0;height:100%}
+.wk-gal.bt .bt-c.fit > img{height:84%}
