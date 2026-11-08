@@ -357,3 +357,13 @@ img.bu.in{opacity:1;filter:none;transform:none}
   .fpet .nose{width:9px;height:6px;margin-left:-4.5px}
   .fpet .nose::before,.fpet .nose::after{top:5px;width:6px;height:4px;border-width:2px}
 }
+
+/* Лучи · HR‑кабинет: размытая обложка + плашка «Кейс оформляется» */
+.case .media.lu-media.lu-hr{background:#5BB8F5}
+.case .media.lu-hr > img{object-position:50% 50%}
+.case .media.lu-hr .lu-soon{position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:2;height:44px;padding:0 20px;border-radius:999px;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 6px 24px rgba(16,40,70,.12);font:500 16px/1 var(--font);letter-spacing:-.01em;color:#0F1414;white-space:nowrap}
+.case .media.lu-hr .lu-soon::before{content:"";width:8px;height:8px;border-radius:50%;background:#FF5A4E;box-shadow:0 0 0 4px rgba(255,90,78,.18);animation:luPulse 1.8s ease-in-out infinite}
+@keyframes luPulse{50%{box-shadow:0 0 0 7px rgba(255,90,78,0)}}
+.case:hover .media.lu-hr .lu-soon{transform:none}
+@media (max-width:760px){ .cases-track .case .media.lu-media.lu-hr > img{object-position:40% 50%} .case .media.lu-hr .lu-soon{height:38px;padding:0 16px;font-size:14px} }
+@media (prefers-reduced-motion:reduce){ .case .media.lu-hr .lu-soon::before{animation:none} }
