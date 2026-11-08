@@ -1,0 +1,119 @@
+/* Сцены v6 — по референсам: мягкий фон, белые фрагменты UI, короткие подписи,
+   залитые иконки одного набора, пухлый залитый курсор, один градиентный акцент */
+.vz-st{display:flex;align-items:center;justify-content:center;height:280px;padding:28px 30px 34px;overflow:hidden;
+  background:radial-gradient(120% 90% at 85% 0%,rgba(155,218,46,.10),transparent 55%),radial-gradient(110% 90% at 0% 100%,rgba(15,168,224,.08),transparent 55%),#F5F7F8}
+.s6{position:relative;width:100%;max-width:280px;display:flex;flex-direction:column;gap:0;
+  --tx:#1D2629;--sub:#7A868C;--tile:#F1F4F6;--icn:#7E8B92;--g:var(--sber-grad);--gi:#15803D}
+.s6.wide{max-width:420px}
+
+/* Карточка-фрагмент */
+.s6-card{position:relative;background:#fff;border-radius:16px;padding:12px;box-shadow:0 12px 32px rgba(16,24,40,.08),0 1px 3px rgba(16,24,40,.05);display:flex;flex-direction:column;gap:12px;z-index:1}
+.s6-card.ghost{position:absolute;left:14px;right:14px;top:-10px;height:52px;opacity:.55;z-index:0;box-shadow:0 6px 16px rgba(16,24,40,.05)}
+
+/* Иконки: один набор, залитые, одинаковые плитки */
+.vz-st .s6 svg{display:block}
+.s6-ti{width:38px;height:38px;border-radius:12px;background:var(--tile);color:var(--icn);display:flex;align-items:center;justify-content:center;flex:none}
+.vz-st .s6 .s6-ti svg{width:20px!important;height:20px!important}
+.s6-ti.acc{background:var(--g);color:#fff}
+.s6-ti.round{width:34px;height:34px;border-radius:50%;margin-left:auto}
+.vz-st .s6 .s6-ti.round svg{width:18px!important;height:18px!important}
+
+/* Строка: иконка + заголовок + подпись */
+.s6-row{display:flex;align-items:center;gap:10px;min-width:0}
+.s6-tx{display:flex;flex-direction:column;gap:3px;min-width:0}
+.s6-tx b{font:500 13px/1.2 var(--font);color:var(--tx);white-space:nowrap}
+.s6-tx span{display:flex;align-items:center;gap:6px;font:400 12px/1.2 var(--font);color:var(--sub);white-space:nowrap}
+.s6-tx .dot{width:6px;height:6px;border-radius:50%;background:#B8C2C7;display:inline-block}
+
+/* Курсор — пухлый, залитый, всегда одного размера */
+.s6-cur{position:absolute;z-index:5;display:flex;align-items:flex-start;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(33,160,56,.22))}
+.vz-st .s6 svg.s6-arrow{width:24px!important;height:24px!important}
+.s6-tag{margin:18px 0 0 -4px;display:flex;align-items:center;gap:6px;background:var(--g);color:#fff;border-radius:999px;padding:5px 10px;font:500 12px/1 var(--font);white-space:nowrap}
+.s6-tag.av{padding:3px 10px 3px 3px}
+.s6-tag img{width:20px;height:20px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1.5px #fff}
+
+/* Плашка — одна на сцену */
+.s6-pill{position:absolute;z-index:4;display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--tx);border-radius:999px;padding:7px 12px;font:500 12px/1 var(--font);white-space:nowrap;box-shadow:0 8px 20px rgba(16,24,40,.10)}
+.vz-st .s6 .s6-pill svg{width:14px!important;height:14px!important;flex:none}
+.s6-pill.acc{background:var(--g);color:#fff;box-shadow:0 8px 20px rgba(33,160,56,.25)}
+.s6-pill.mid{position:static;flex:none;color:var(--sub)}
+
+/* Меню */
+.s6-menu{padding:6px;gap:2px}
+.s6-menu div{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;font:400 13px/1 var(--font);color:var(--sub)}
+.vz-st .s6 .s6-menu svg{width:16px!important;height:16px!important;color:var(--icn)}
+.s6-menu div.on{background:var(--tile);color:var(--tx)}
+
+/* Кнопка */
+.s6-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--g);color:#fff;border-radius:12px;padding:11px 14px;font:500 14px/1 var(--font);box-shadow:0 8px 20px rgba(33,160,56,.22)}
+.vz-st .s6 .s6-btn svg{width:18px!important;height:18px!important}
+.s6-btn.float{position:absolute;left:50%;bottom:6px;transform:translateX(-50%);z-index:3;padding:12px 22px;border-radius:999px}
+
+/* Распределение */
+.s6-stats{padding:16px;gap:12px}
+.s6-cap{font:500 12px/1 var(--font);color:var(--sub)}
+.s6-cap.row{display:flex;justify-content:space-between;font-weight:400}
+.s6-stat{display:grid;grid-template-columns:86px 1fr 40px;align-items:center;gap:10px;font:400 13px/1 var(--font);color:var(--tx)}
+.s6-track{height:8px;border-radius:4px;background:var(--tile);overflow:hidden}
+.s6-track i{display:block;height:100%;border-radius:4px;background:#C9D2D7}
+.s6-track i.acc{background:var(--g)}
+.s6-stat b{font:500 13px/1 var(--font);text-align:right}
+.s6 .gt{background:var(--g);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Связь устройств */
+.s6-link{display:flex;align-items:center;justify-content:center}
+.s6-dev{align-items:center;gap:8px;padding:14px 12px;width:82px;flex:none}
+.s6-dev span{font:500 12px/1 var(--font);color:var(--tx)}
+.s6-dev.off .s6-ti{opacity:.5}
+.s6-dash{flex:1;min-width:10px;border-top:2px dashed #CDD5DA}
+
+/* Чат */
+.s6-chat{gap:8px;padding:10px 12px 14px}
+.s6-chat-h{display:flex;align-items:center;gap:8px;padding-bottom:8px;border-bottom:1px solid #EEF1F3}
+.s6-chat-h .s6-ti{width:30px;height:30px;border-radius:10px}
+.vz-st .s6 .s6-chat-h .s6-ti svg{width:16px!important;height:16px!important}
+.s6-chat-h b{font:500 13px/1 var(--font);color:var(--tx)}
+.s6-chat .m{max-width:80%;font:400 12px/1.3 var(--font);padding:7px 11px;border-radius:12px;color:var(--tx)}
+.s6-chat .m.in{align-self:flex-start;background:var(--tile);border-bottom-left-radius:4px}
+.s6-chat .m.in + .m.out + .m.in{opacity:.6}
+.s6-chat .m.out{align-self:flex-end;background:#E6F4EA;border-bottom-right-radius:4px;display:flex;align-items:center;gap:8px;padding-right:5px}
+.s6-av{width:22px;height:22px;border-radius:50%;object-fit:cover;flex:none}
+
+/* Настройки */
+.s6-set{padding:8px 12px;gap:0;opacity:.75;margin-bottom:28px}
+.s6-setr{display:flex;align-items:center;gap:10px;padding:8px 0;font:400 13px/1 var(--font);color:var(--sub)}
+.s6-setr + .s6-setr{border-top:1px solid #EEF1F3}
+.vz-st .s6 .s6-setr svg{width:16px!important;height:16px!important;color:var(--icn)}
+.s6-setr .tg{margin-left:auto;width:28px;height:16px;border-radius:8px;background:#DCE3E7;position:relative}
+.s6-setr .tg::after{content:"";position:absolute;left:2px;top:2px;width:12px;height:12px;border-radius:50%;background:#fff}
+
+/* Звонок */
+.s6-think{display:flex;align-items:flex-end;gap:8px;margin:12px 0 0 6px}
+.s6-think .s6-av{width:30px;height:30px;box-shadow:0 0 0 2px #fff,0 4px 12px rgba(16,24,40,.12)}
+.s6-bub{background:#fff;border-radius:14px 14px 14px 4px;padding:8px 12px;font:400 12px/1.3 var(--font);color:var(--tx);box-shadow:0 8px 20px rgba(16,24,40,.08)}
+
+/* Поиск и список */
+.s6-search{display:flex;align-items:center;gap:8px;background:var(--tile);border-radius:10px;padding:9px 10px;font:400 12px/1 var(--font);color:var(--sub)}
+.vz-st .s6 .s6-search svg{width:16px!important;height:16px!important;color:var(--icn)}
+.s6-list{display:flex;flex-direction:column;gap:2px;margin-bottom:4px}
+.s6-list div{display:flex;align-items:center;gap:8px;padding:7px 8px;border-radius:9px;font:400 12px/1 var(--font);color:var(--sub)}
+.vz-st .s6 .s6-list svg{width:16px!important;height:16px!important;color:var(--icn)}
+.s6-list div.on{background:var(--tile);color:var(--tx)}
+
+/* График, звёзды, диапазон */
+.s6-bars{display:flex;align-items:flex-end;gap:6px;height:70px;padding:0 2px 6px}
+.s6-bars i{flex:1;border-radius:5px;background:#DCE3E7}
+.s6-bars i.acc{background:var(--g)}
+.s6-stars{display:flex;gap:6px;padding:0 2px 8px}
+.s6-star{width:22px;height:22px;color:#21A038}
+.vz-st .s6 .s6-star svg{width:22px!important;height:22px!important;fill:url(#sg)}
+.s6-range{position:relative;height:8px;border-radius:4px;background:var(--tile);margin:6px 4px 0}
+.s6-range i{position:absolute;left:40%;width:22%;top:0;bottom:0;border-radius:4px;background:var(--g)}
+.s6-range b{position:absolute;top:-6px;width:20px;height:20px;margin-left:-10px;border-radius:50%;background:#fff;box-shadow:0 2px 8px rgba(16,24,40,.18)}
+.s6-card > .s6-cap.row{padding:0 2px 8px}
+
+@media (max-width:760px){ .vz-st{height:250px;padding:24px 22px 30px} }
+.s6.has-pill .s6-card:not(.ghost){padding-bottom:24px}
+.s6.wide{max-width:440px}
+.s6-cur.flip{flex-direction:row-reverse}
+.s6-cur.flip .s6-tag{margin:18px -4px 0 0}
