@@ -392,3 +392,8 @@ img.bu.in{opacity:1;filter:none;transform:none}
   .bt-c{border-radius:20px}
 }
 @media (prefers-reduced-motion:reduce){ .bt-c{opacity:1;transform:none;transition:none} }
+
+/* кейс без страницы (Лучи пока не открывается) */
+.case.is-soon{cursor:default}
+.case.is-soon:hover{transform:none}
+.case.is-soon:hover .media > *{transform:none}
