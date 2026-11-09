@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/v2.css?v=85">
   <link rel="stylesheet" href="css/theme.css?v=9">
   <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}})()</script>
-  <link rel="stylesheet" href="css/proto.css?v=45">
+  <link rel="stylesheet" href="css/proto.css?v=47">
 </head>
 <body>
 <div class="page">
@@ -293,7 +293,7 @@
       bento:[
         {s:'full',src:'assets/img/luchi/cover/doc-studio.webp',alt:'Лендинг «Семейный врач» в ноутбуке на светлом подиуме'},
         {s:'half',src:'assets/img/luchi/cover/dms-poster.webp',alt:'Постер «Премиальный ДМС» Лучей в тёмном интерьере'},
-        {s:'half',hint:'3 · половина'},
+        {s:'half',phone:'doc',alt:'Мобильная версия: карточки «Личный врач для вас и ваших близких» раскрываются по очереди'},
         {s:'full',hint:'4 · на всю ширину'},
         {s:'full',hint:'5 · на всю ширину'}
       ]},
@@ -306,6 +306,36 @@
       ]},
     w6:{t:'SCDOMA — архитектурное бюро полного цикла',m:'Web',imgs:['assets/img/scdoma/cover.webp'],link:'https://www.behance.net/gallery/225054977/SCDOMA-full-cycle-architectural-bureau'},
   };
+  /* телефон с живым экраном: карточки «Личный врач…» раскрываются по очереди, как будто по ним нажимают */
+  function docPhone(c,b){
+    var cards=[['Врач для любых вопросов о здоровье','Составит персональный план по поддержанию здоровья, напомнит о важных шагах и поможет дойти до результата'],
+      ['Свой человек в мире медицины','Знает врачей и клиники под ваш случай, организует запись и скоординирует лечение'],
+      ['Забота о здоровье станет привычкой','При любой ситуации первый шаг всегда один — обратиться к своему врачу. Он знает историю вашей семьи, поэтому решение нового вопроса не нужно начинать с нуля'],
+      ['Спокойствие за себя, детей и родителей','Если заболеет ребёнок или потребуется помощь родителям, вы знаете, к кому обратиться']];
+    c.classList.add('dp');c.setAttribute('role','img');c.setAttribute('aria-label',b.alt||'');
+    var h='<img class="dp-bg" src="assets/img/luchi/doc-phone/bg.webp" alt="" decoding="async"><div class="dp-win"><div class="dp-scr"><i class="dp-isl"></i><div class="dp-in">'+
+      '<img class="dp-hdr" src="assets/img/luchi/doc-phone/hdr.webp" alt=""><img class="dp-ttl" src="assets/img/luchi/doc-phone/title.webp" alt=""><div class="dp-list">';
+    cards.forEach(function(k,i){var w=0;h+='<div class="dp-card"><div class="dp-h"><i class="dp-ic" style="background-position:'+(-54*i)+'px 0"></i><span class="dp-t">'+k[0]+'</span>'+
+      '<svg class="dp-ch" viewBox="0 0 22 13" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l9 9 9-9"/></svg></div>'+
+      '<div class="dp-b"><div><p>'+k[1].split(' ').map(function(x){return '<span style="--w:'+(w++)+'">'+x+'</span>'}).join(' ')+'</p></div></div></div>'});
+    h+='</div></div><i class="dp-tap"></i><i class="dp-fade"></i></div></div>';
+    c.innerHTML=h;
+    var win=c.querySelector('.dp-win'),scr=c.querySelector('.dp-scr'),inn=c.querySelector('.dp-in'),tap=c.querySelector('.dp-tap'),list=c.querySelector('.dp-list'),el=[].slice.call(c.querySelectorAll('.dp-card'));
+    function fit(){var s=win.clientWidth/375;scr.style.transform='scale('+s+')'}
+    fit();if('ResizeObserver' in window)new ResizeObserver(fit).observe(win);else addEventListener('resize',fit);
+    function open(i){el.forEach(function(e,k){e.classList.toggle('on',k===i)})}
+    function scroll(){var y=0;var on=el.filter(function(e){return e.classList.contains('on')})[0];
+      if(on){var bottom=list.offsetTop+on.offsetTop+on.offsetHeight+28;if(bottom>802)y=bottom-802}inn.style.transform='translateY('+(-y)+'px)'}
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){open(0);return}
+    var step=0,seq=[0,1,2];
+    function tick(){if(!c.isConnected)return;
+      if(step<seq.length){var i=seq[step++],cd=el[i],y=parseFloat((inn.style.transform.match(/-?[\d.]+/)||[0])[0]);
+        tap.style.left=(16+343-90)+'px';tap.style.top=(list.offsetTop+cd.offsetTop+48+y)+'px';
+        tap.classList.remove('go');void tap.offsetWidth;tap.classList.add('go');
+        setTimeout(function(){open(i);setTimeout(scroll,650)},260);setTimeout(tick,3400)}
+      else{open(-1);inn.style.transform='';step=0;setTimeout(tick,1800)}}
+    setTimeout(tick,1100);
+  }
   /* плитка «до / после»: ручку можно тянуть мышью, пальцем или стрелками; если картинки ещё нет — серая заготовка */
   function ba(c,b){
     c.classList.add('bt-ba');c.tabIndex=0;c.setAttribute('role','slider');c.setAttribute('aria-label',(b.alt||'Экран')+': до и после');
@@ -333,7 +363,8 @@
     if(w.bento){var g=document.createElement('div');g.className='bt-grid';
       w.bento.forEach(function(b,n){var c=document.createElement('figure');c.className='bt-c bt-'+(b.s||'half')+(b.dark?' dk':'')+(b.fit==='contain'?' fit':'');
         if(b.r)c.style.setProperty('--r',b.r);if(b.bg)c.style.background=b.bg;c.style.setProperty('--i',n);
-        if(b.ba){ba(c,b);}
+        if(b.phone){docPhone(c,b);}
+        else if(b.ba){ba(c,b);}
         else if(b.src){var i=new Image();i.src=b.src;i.alt=b.alt||w.t;i.loading=n?'lazy':'eager';i.decoding='async';if(b.pos)i.style.objectPosition=b.pos;i.onerror=function(){i.remove();c.classList.add('ph');var h=document.createElement('span');h.textContent='Сюда — '+(b.alt||'картинка').toLowerCase();c.appendChild(h)};c.appendChild(i)}
         else if(b.hint){c.classList.add('ph');var h=document.createElement('span');h.textContent=b.hint;c.appendChild(h)}
         if(b.cap){var f=document.createElement('figcaption');f.textContent=b.cap;c.appendChild(f)}
