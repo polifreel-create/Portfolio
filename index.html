@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/v2.css?v=85">
   <link rel="stylesheet" href="css/theme.css?v=9">
   <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}})()</script>
-  <link rel="stylesheet" href="css/proto.css?v=48">
+  <link rel="stylesheet" href="css/proto.css?v=50">
 </head>
 <body>
 <div class="page">
@@ -294,7 +294,7 @@
         {s:'full',src:'assets/img/luchi/cover/doc-studio.webp',alt:'Лендинг «Семейный врач» в ноутбуке на светлом подиуме'},
         {s:'half',src:'assets/img/luchi/cover/dms-poster.webp',alt:'Постер «Премиальный ДМС» Лучей в тёмном интерьере'},
         {s:'half',phone:'doc',alt:'Мобильная версия: карточки «Личный врач для вас и ваших близких» раскрываются по очереди'},
-        {s:'full',hint:'4 · на всю ширину'},
+        {s:'full',tablet:'doc',alt:'Планшет: блок «Как семейный врач ведёт здоровье всей семьи», этапы раскрываются по очереди'},
         {s:'full',hint:'5 · на всю ширину'}
       ]},
     w7:{t:'Редизайн главной Лучей',m:'Лучи · Web',d:'Главная страница luchi.ru до\u00a0и\u00a0после редизайна. Потяните ползунок, чтобы сравнить.',imgs:[],
@@ -306,6 +306,27 @@
       ]},
     w6:{t:'SCDOMA — архитектурное бюро полного цикла',m:'Web',imgs:['assets/img/scdoma/cover.webp'],link:'https://www.behance.net/gallery/225054977/SCDOMA-full-cycle-architectural-bureau'},
   };
+  /* планшет с живым экраном: этапы по очереди — нажали на свёрнутый, он раскрывается, открытый сжимается, слово «Этап» поворачивается */
+  function docTablet(c,b){
+    c.classList.add('dt');c.setAttribute('role','img');c.setAttribute('aria-label',b.alt||'');
+    var h='<div class="dt-win"><div class="dt-dev"><div class="dt-scr"><img class="dt-ttl" src="assets/img/luchi/doc-tab/title.png" alt=""><div class="dt-row">';
+    for(var i=1;i<=4;i++)h+='<div class="dt-p'+(i===1?' on':'')+'"><img src="assets/img/luchi/doc-tab/s'+i+'.webp" alt="" decoding="async"><span class="dt-l">ЭТАП '+i+'</span></div>';
+    h+='</div><i class="dt-tap"></i></div></div></div>';c.innerHTML=h;
+    var win=c.querySelector('.dt-win'),dev=c.querySelector('.dt-dev'),tap=c.querySelector('.dt-tap'),ps=[].slice.call(c.querySelectorAll('.dt-p'));
+    function fit(){dev.style.transform='scale('+(win.clientWidth/1376)+')'}
+    fit();if('ResizeObserver' in window)new ResizeObserver(fit).observe(win);else addEventListener('resize',fit);
+    function lw(){ps.forEach(function(p){var l=p.querySelector('.dt-l');l.style.setProperty('--lw',l.offsetWidth+'px')})}
+    lw();if(document.fonts)document.fonts.ready.then(lw);
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+    var cur=0;
+    function tick(){if(!c.isConnected)return;var nx=(cur+1)%4,p=ps[nx];
+      /* точка касания — по центру свёрнутой колонки */
+      tap.style.left=(38+p.offsetLeft+42)+'px';tap.style.top=(189+300)+'px';
+      tap.classList.remove('go');void tap.offsetWidth;tap.classList.add('go');
+      setTimeout(function(){ps.forEach(function(q,k){q.classList.toggle('on',k===nx)});cur=nx},380);
+      setTimeout(tick,4600)}
+    setTimeout(tick,3200);
+  }
   /* телефон с живым экраном: карточки «Личный врач…» раскрываются по очереди, как будто по ним нажимают */
   function docPhone(c,b){
     var cards=[['Врач для любых вопросов о здоровье','Составит персональный план по поддержанию здоровья, напомнит о важных шагах и поможет дойти до результата'],
@@ -362,7 +383,8 @@
     if(w.bento){var g=document.createElement('div');g.className='bt-grid';
       w.bento.forEach(function(b,n){var c=document.createElement('figure');c.className='bt-c bt-'+(b.s||'half')+(b.dark?' dk':'')+(b.fit==='contain'?' fit':'');
         if(b.r)c.style.setProperty('--r',b.r);if(b.bg)c.style.background=b.bg;c.style.setProperty('--i',n);
-        if(b.phone){docPhone(c,b);}
+        if(b.tablet){docTablet(c,b);}
+        else if(b.phone){docPhone(c,b);}
         else if(b.ba){ba(c,b);}
         else if(b.src){var i=new Image();i.src=b.src;i.alt=b.alt||w.t;i.loading=n?'lazy':'eager';i.decoding='async';if(b.pos)i.style.objectPosition=b.pos;i.onerror=function(){i.remove();c.classList.add('ph');var h=document.createElement('span');h.textContent='Сюда — '+(b.alt||'картинка').toLowerCase();c.appendChild(h)};c.appendChild(i)}
         else if(b.hint){c.classList.add('ph');var h=document.createElement('span');h.textContent=b.hint;c.appendChild(h)}
