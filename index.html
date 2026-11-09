@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/v2.css?v=85">
   <link rel="stylesheet" href="css/theme.css?v=9">
   <script>(function(){try{var t=localStorage.getItem("theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.dataset.theme=t}catch(e){}})()</script>
-  <link rel="stylesheet" href="css/proto.css?v=50">
+  <link rel="stylesheet" href="css/proto.css?v=52">
 </head>
 <body>
 <div class="page">
@@ -125,7 +125,7 @@
       <ul class="works-list">
         <li><a href="#w5" data-work="w5"><span class="w-th w-ph" style="background-image:url(assets/img/luchi/cover/doc-landing-th.webp)"></span><span class="w-t">Лендинг «Семейный врач»</span><span class="w-k">Лучи · Web</span><span class="w-y">2026</span><i aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M5 4h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></li>
         <li><a href="https://www.behance.net/gallery/225054977/SCDOMA-full-cycle-architectural-bureau" target="_blank" rel="noopener"><span class="w-th w-ph" style="background-image:url(assets/img/scdoma/cover-th.webp)"></span><span class="w-t">SCDOMA&nbsp;— архитектурное бюро полного цикла</span><span class="w-k">Web</span><span class="w-y"></span><i aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M5 4h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></li>
-        <li hidden><!-- появится, когда будут картинки в assets/img/luchi/main/ --><a href="#w7" data-work="w7"><span class="w-th w-ph" style="background-image:url(assets/img/luchi/main/th.webp)"></span><span class="w-t">Редизайн главной Лучей</span><span class="w-k">Лучи · Web</span><span class="w-y"></span><i aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M5 4h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></li>
+        <li><a href="#w7" data-work="w7"><span class="w-th w-ph" style="background-image:url(assets/img/luchi/main/th.webp)"></span><span class="w-t">Редизайн главной Лучей</span><span class="w-k">Лучи · Web</span><span class="w-y"></span><i aria-hidden="true"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M4 10L10 4M5 4h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i></a></li>
       </ul>
     </section>
 
@@ -297,12 +297,10 @@
         {s:'half',src:'assets/img/luchi/cover/doc-icons.webp',alt:'Набор стеклянных иконок Лучей'},
         {s:'half',src:'assets/img/luchi/cover/doc-man.webp',alt:'Мужчина у окна смотрит в телефон'}
       ]},
-    w7:{t:'Редизайн главной Лучей',m:'Лучи · Web',d:'Главная страница luchi.ru до\u00a0и\u00a0после редизайна. Потяните ползунок, чтобы сравнить.',imgs:[],
+    w7:{t:'Редизайн главной Лучей',m:'Лучи · Web',d:'Раньше главная была набором несвязанных лендингов, и\u00a0путь к\u00a0продуктам был неочевиден. После редизайна блоки связаны между собой: сразу под\u00a0первым экраном\u00a0— входы в\u00a0ключевые продукты, и\u00a0пользователь понятным маршрутом попадает к\u00a0нужному. Потяните ползунок, чтобы сравнить.',imgs:[],
       link:'https://luchi.ru/',linkText:'Смотреть на\u00a0сайте',
       bento:[
-        {s:'full',ba:['assets/img/luchi/main/before-desktop.webp','assets/img/luchi/main/after-desktop.webp'],alt:'Главная Лучей на десктопе'},
-        {s:'half',ba:['assets/img/luchi/main/before-mobile.webp','assets/img/luchi/main/after-mobile.webp'],alt:'Главная Лучей на телефоне'},
-        {s:'half',src:'assets/img/luchi/main/detail.webp',alt:'Фрагмент новой главной Лучей'}
+        {s:'full',rd:8,rmb:5,ba:['assets/img/luchi/main/before.webp','assets/img/luchi/main/after.webp'],alt:'Главная Лучей, первый экран'}
       ]},
     w6:{t:'SCDOMA — архитектурное бюро полного цикла',m:'Web',imgs:['assets/img/scdoma/cover.webp'],link:'https://www.behance.net/gallery/225054977/SCDOMA-full-cycle-architectural-bureau'},
   };
@@ -382,7 +380,7 @@
     G.classList.toggle('bt',!!w.bento);
     if(w.bento){var g=document.createElement('div');g.className='bt-grid';
       w.bento.forEach(function(b,n){var c=document.createElement('figure');c.className='bt-c bt-'+(b.s||'half')+(b.dark?' dk':'')+(b.fit==='contain'?' fit':'');
-        if(b.r)c.style.setProperty('--r',b.r);if(b.bg)c.style.background=b.bg;c.style.setProperty('--i',n);
+        if(b.r)c.style.setProperty('--r',b.r);if(b.rd){c.classList.add('tall');c.style.setProperty('--rd',b.rd);c.style.setProperty('--rmb',b.rmb||b.rd)}if(b.bg)c.style.background=b.bg;c.style.setProperty('--i',n);
         if(b.tablet){docTablet(c,b);}
         else if(b.phone){docPhone(c,b);}
         else if(b.ba){ba(c,b);}
