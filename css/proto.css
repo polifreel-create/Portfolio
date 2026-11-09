@@ -470,3 +470,4 @@ img.bu.in{opacity:1;filter:none;transform:none}
 /* высокая плитка (например, страница сайта целиком): своя высота в рядах для десктопа и телефона */
 .bt-c.tall{grid-row:span var(--rd)}
 @media (max-width:760px){ .bt-c.tall{grid-row:span var(--rmb)} }
+#about .photos{grid-template-columns:repeat(4,minmax(0,1fr))}
