@@ -382,3 +382,7 @@
   .lu-kpi b small{font-size:16px;margin-left:4px}
   .lu-also{font-size:14px}
 }
+
+/* страница «Главная Лучей»: обе страницы целиком в одном масштабе */
+.lu-whole-pic{margin:0;border-radius:var(--r-in);overflow:hidden;background:#F4F7FA}
+.lu-whole-pic img{display:block;width:100%;height:auto;max-width:900px;margin:0 auto}
