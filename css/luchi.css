@@ -318,3 +318,33 @@
 .lu-loop.lu-loop3{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media (max-width:1100px) and (min-width:761px){ .lu-index ol{grid-template-columns:repeat(2,minmax(0,1fr))} }
 @media (max-width:760px){ .lu-index ol,.lu-loop.lu-loop3{grid-template-columns:1fr} }
+
+/* =========================================================
+   Задача 02 · «Главная: что изменилось» — цифры + карточки «было → стало»
+   ========================================================= */
+.lu-kpi b small{margin-left:6px;font-size:28px;letter-spacing:-.02em}
+.lu-chg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
+.lu-c{padding:28px;border-radius:var(--r-in);background:var(--chip);display:flex;flex-direction:column;gap:var(--s-2)}
+.lu-c .k{align-self:flex-start;margin-bottom:var(--s-2);padding:5px 10px;border-radius:10px;background:#fff;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.lu-c h4{margin:0 0 var(--s-3);font:500 20px/1.3 var(--font);letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
+.lu-c.hot{background:var(--lu-soft)}
+.lu-c.hot .k{color:var(--lu-ink)}
+.lu-c dl{margin:auto 0 0;display:flex;flex-direction:column}
+.lu-c dl > div{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:baseline;padding:12px 0;border-top:1px solid rgba(15,20,20,.07)}
+.lu-c dt{font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.lu-c dd{margin:0;font:400 15px/1.4 var(--font);color:var(--ink-3)}
+.lu-c .now dt{color:var(--lu-ink)}
+.lu-c .now dd{color:var(--ink);font-weight:500}
+.lu-c dl > div:last-child{padding-bottom:0}
+.lu-also{margin:0;padding:0 4px;font:400 15px/1.5 var(--font);color:var(--ink-3)}
+.lu-also b{font-weight:500;color:var(--ink-2)}
+@media (max-width:1100px) and (min-width:761px){ .lu-chg{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:760px){
+  .lu-chg{grid-template-columns:1fr;gap:8px}
+  .lu-c{padding:20px}
+  .lu-c h4{font-size:18px;margin-bottom:var(--s-2)}
+  .lu-c dd{font-size:14px}
+  .lu-c dl > div{padding:10px 0}
+  .lu-kpi b small{font-size:16px;margin-left:4px}
+  .lu-also{font-size:14px}
+}
