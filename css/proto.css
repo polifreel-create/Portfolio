@@ -471,3 +471,9 @@ img.bu.in{opacity:1;filter:none;transform:none}
 .bt-c.tall{grid-row:span var(--rd)}
 @media (max-width:760px){ .bt-c.tall{grid-row:span var(--rmb)} }
 #about .photos{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+/* мобильная версия: под лидом — строка про AI; контакты сверху убраны (они есть в нижнем таб-баре) */
+@media (max-width:760px){
+  .intro .bio p.b-ai{display:block!important;margin-top:8px;font-size:15px!important;line-height:1.45!important;color:var(--ink-2)}
+  .intro .contacts{display:none!important}
+}
