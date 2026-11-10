@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Лучи — задачи Полины Ефремовой</title>
-  <meta name="description" content="Реальные задачи в Лучах: HR‑кабинет, форма заявки на ДМС, карьерный лендинг. Коротко: задача, решение, результат.">
+  <title>Лучи — кейс Полины Ефремовой</title>
+  <meta name="description" content="Три большие задачи в Лучах: исследование и редизайн HR‑кабинета, ключевые страницы сайта и их развитие через гипотезы.">
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=77">
   <link rel="stylesheet" href="css/case.css?v=73">
-  <link rel="stylesheet" href="css/luchi.css?v=17">
+  <link rel="stylesheet" href="css/luchi.css?v=18">
 </head>
 <body class="theme-lu">
 <div class="wrap">
@@ -23,14 +23,24 @@
     <div class="top"><div class="tags"><span>Web</span><span>B2B</span><span>Медтех</span></div></div>
     <img class="icon" src="assets/img/luchi/app-icon.png" alt="" width="104" height="104">
     <h1>Лучи</h1>
-    <p class="lead">Онлайн-страхование и&nbsp;медтех. Отвечаю за&nbsp;все продукты компании: сайт, личные кабинеты и&nbsp;HR‑кабинет. Здесь не&nbsp;один большой кейс, а&nbsp;несколько реальных задач: что&nbsp;было, что&nbsp;сделала и&nbsp;что&nbsp;изменилось.</p>
+    <p class="lead">Онлайн-страхование и&nbsp;медтех. Почти два года отвечаю за&nbsp;все продукты компании: сайт, личные кабинеты и&nbsp;HR‑кабинет. Здесь не&nbsp;один кейс, а&nbsp;три большие задачи&nbsp;— можно сразу перейти к&nbsp;нужной.</p>
     <dl class="meta">
       <div><dt>Роль</dt><dd>Продуктовый дизайнер</dd></div>
       <div><dt>Продукты</dt><dd>Сайт, личные кабинеты, <br>HR‑кабинет</dd></div>
       <div><dt>Формат</dt><dd>In-house, <br>продуктовая команда</dd></div>
-      <div><dt>Год</dt><dd>2026</dd></div>
+      <div><dt>Годы</dt><dd>2025–2026</dd></div>
     </dl>
   </header>
+
+  <!-- Что внутри: три задачи, переход по клику -->
+  <section class="lu-index card" id="idx" aria-label="Что внутри">
+    <h2>Что внутри</h2>
+    <ol>
+      <li><a href="#t1"><span class="n">01 · HR‑кабинет</span><b>Исследование и&nbsp;редизайн кабинета для&nbsp;HR</b><span>12&nbsp;интервью, 16&nbsp;проблем в&nbsp;бэклоге, план редизайна</span></a></li>
+      <li><a href="#t2"><span class="n">02 · Сайт</span><b>Запустила ключевые страницы сайта</b><span>Главная, лендинги ДМС для&nbsp;бизнеса, «Карта здоровья», блог</span></a></li>
+      <li><a href="#t3"><span class="n">03 · Рост</span><b>Развиваю страницы через гипотезы</b><span>Отзывы, видеоотзывы, блоки и&nbsp;формы&nbsp;— проверяем на&nbsp;конверсии</span></a></li>
+    </ol>
+  </section>
 
   <!--
     ШАБЛОН ЗАДАЧИ — копируйте <article class="lu-task"> целиком и меняйте:
@@ -104,57 +114,108 @@
       </div>
     </div>
 
-    <div class="lu-nda">
-      <img src="assets/img/luchi/hr-docs.webp" alt="" width="400" height="400" loading="lazy">
-      <div><b>Редизайн в&nbsp;работе</b><p>Макеты пока в&nbsp;процессе и&nbsp;под&nbsp;NDA. Интерфейс покажу на&nbsp;встрече.</p></div>
+    <!-- было / стало: макеты под NDA, поэтому размыто -->
+    <div class="lu-block">
+      <div class="lu-block-h"><h3 class="lu-sub">Было / стало</h3></div>
+      <figure class="lu-ba lu-ba-nda" data-ba>
+        <div class="layer after"><div class="lu-skel new" aria-hidden="true"><i class="sb"></i><div class="mn"><i class="hd"></i><i class="fl"></i><i class="rw"></i><i class="rw"></i><i class="rw"></i><i class="rw"></i><i class="rw"></i><i class="rw"></i><i class="rw"></i></div></div></div>
+        <div class="layer before"><img src="assets/img/luchi/cover/hr-cover-blur.webp" alt="" loading="lazy" decoding="async"></div>
+        <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+        <span class="lab l">Было</span><span class="lab r">Стало</span>
+        <span class="lu-lock"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>NDA · покажу на&nbsp;встрече</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Сравнить HR‑кабинет до и после (размыто, под NDA)">
+      </figure>
     </div>
   </article>
 
-  <!-- 02 Форма заявки -->
+  <!-- 02 Сайт: что запустила -->
   <article class="lu-task card" id="t2">
     <header>
-      <div class="top"><span class="eyebrow"><span class="num">02</span>&nbsp;· Сайт · ДМС для&nbsp;бизнеса</span><div class="tags"><span>Web</span><span>Form UX</span></div></div>
-      <h2>Сократила форму заявки на&nbsp;ДМС, и&nbsp;она снова помещается на&nbsp;экран</h2>
+      <div class="top"><span class="eyebrow"><span class="num">02</span>&nbsp;· Сайт</span><div class="tags"><span>Web</span><span>B2B</span><span>B2C</span></div></div>
+      <h2>Запустила ключевые страницы сайта, через&nbsp;которые компания продаёт</h2>
     </header>
     <div class="lu-tr">
-      <div><h3>Задача</h3><p>В&nbsp;попап заявки постепенно добавляли поля и&nbsp;пояснения, и&nbsp;он перестал помещаться на&nbsp;экран. До&nbsp;кнопки приходилось листать.</p></div>
-      <div class="sol"><h3>Решение</h3><ul>
+      <div><h3>Задача</h3><p>Главная выглядела набором несвязанных блоков и&nbsp;не&nbsp;вызывала доверия у&nbsp;бизнеса. Новым продуктам нужны были свои страницы продаж.</p></div>
+      <div class="sol"><h3>Что сделала</h3><ul>
+        <li>Редизайн главной: цельная и&nbsp;серьёзная витрина страховой компании.</li>
+        <li>Лендинги ДМС для&nbsp;малого бизнеса и&nbsp;разводящая страница, которая ведёт к&nbsp;нужному продукту.</li>
+        <li>Лендинг «Карты здоровья» с&nbsp;калькулятором покупки.</li>
+        <li>Блог компании: структура и&nbsp;шаблоны статей.</li>
+      </ul></div>
+    </div>
+
+    <div class="lu-block">
+      <div class="lu-block-h"><h3 class="lu-sub">Главная: было / стало</h3></div>
+      <figure class="lu-ba lu-ba-tall" data-ba>
+        <div class="layer after"><img src="assets/img/luchi/main/after.webp" alt="Главная Лучей после редизайна" loading="lazy" decoding="async"></div>
+        <div class="layer before"><img src="assets/img/luchi/main/before.webp" alt="Главная Лучей до редизайна" loading="lazy" decoding="async"></div>
+        <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+        <span class="lab l">Было</span><span class="lab r">Стало</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Сравнить главную до и после">
+      </figure>
+    </div>
+
+    <div class="lu-block">
+      <div class="lu-block-h"><h3 class="lu-sub">Страницы продуктов</h3></div>
+      <div class="lu-pages">
+        <figure class="lu-page"><div class="lu-ph"><span>Лендинг «ДМС для&nbsp;бизнеса»</span></div><figcaption><b>ДМС для&nbsp;малого бизнеса</b><span>Лендинги и&nbsp;разводящая</span></figcaption></figure>
+        <figure class="lu-page"><div class="lu-ph alt"><span>Лендинг с&nbsp;калькулятором</span></div><figcaption><b>«Карта здоровья»</b><span>Калькулятор покупки</span></figcaption></figure>
+        <figure class="lu-page"><img src="assets/img/luchi/cover/doc-landing.webp" alt="Лендинг «Семейный врач» в ноутбуке" loading="lazy" decoding="async"><figcaption><b>«Семейный врач»</b><span>Премиальный допродукт</span></figcaption></figure>
+        <figure class="lu-page"><div class="lu-ph"><span>Блог: список и&nbsp;статья</span></div><figcaption><b>Блог компании</b><span>Структура и&nbsp;шаблоны статей</span></figcaption></figure>
+      </div>
+      <a class="lu-live" href="https://luchi.ru/" target="_blank" rel="noopener">Все страницы живые&nbsp;— смотреть на&nbsp;luchi.ru<svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M4 10L10 4M5 4h5v5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </article>
+
+  <!-- 03 Рост: страницы как продукт -->
+  <article class="lu-task card" id="t3">
+    <header>
+      <div class="top"><span class="eyebrow"><span class="num">03</span>&nbsp;· Рост</span><div class="tags"><span>Web</span><span>Гипотезы</span><span>A/B</span></div></div>
+      <h2>Развиваю страницы после запуска: каждая правка&nbsp;— гипотеза с&nbsp;метрикой</h2>
+    </header>
+
+    <div class="lu-block">
+      <div class="lu-block-h"><h3 class="lu-sub">Как работаем</h3></div>
+      <ol class="lu-loop">
+        <li><span class="n">01</span><b>Гипотеза</b><p>Что мешает дойти до&nbsp;заявки или покупки</p></li>
+        <li><span class="n">02</span><b>Изменение</b><p>Добавляем, убираем или&nbsp;переставляем блок</p></li>
+        <li><span class="n">03</span><b>Проверка</b><p>A/B‑тест или&nbsp;сравнение периодов</p></li>
+        <li class="go"><span class="n">04</span><b>Решение</b><p>Сработало&nbsp;— оставляем, нет&nbsp;— откатываем</p></li>
+      </ol>
+    </div>
+
+    <div class="lu-block">
+      <div class="lu-block-h"><h3 class="lu-sub">Что проверяли</h3></div>
+      <div class="lu-probs">
+        <div class="lu-prob hot"><span class="k">Доверие</span><h4>Отзывы клиентов</h4><p>Бизнесу важно видеть, что&nbsp;с&nbsp;нами уже работают.</p></div>
+        <div class="lu-prob hot"><span class="k">Доверие</span><h4>Видеоотзывы</h4><p>Живой человек убедительнее текста.</p></div>
+        <div class="lu-prob"><span class="k">Путь до&nbsp;заявки</span><h4>Лишние блоки</h4><p>Убирали то, что&nbsp;отвлекает от&nbsp;главного действия.</p></div>
+        <div class="lu-prob"><span class="k">Путь до&nbsp;заявки</span><h4>Короткая форма</h4><p>Меньше полей&nbsp;— больше дошедших до&nbsp;кнопки.</p></div>
+      </div>
+    </div>
+
+    <div class="lu-block">
+      <div class="lu-block-h"><h3 class="lu-sub">Пример: форма заявки на&nbsp;ДМС</h3></div>
+      <div class="lu-tr">
+        <div><h3>Задача</h3><p>В&nbsp;попап заявки постепенно добавляли поля и&nbsp;пояснения, и&nbsp;он перестал помещаться на&nbsp;экран. До&nbsp;кнопки приходилось листать.</p></div>
+        <div class="sol"><h3>Решение</h3><ul>
         <li>Убрала поле ИНН: компания подтягивается по&nbsp;названию через DaData.</li>
         <li>Блок про&nbsp;тарифы «до&nbsp;25 / от&nbsp;25 сотрудников» превратила в&nbsp;подсказку под&nbsp;счётчиком сотрудников, которая меняется вместе с&nbsp;числом.</li>
         <li>Поставила имя и&nbsp;телефон в&nbsp;одну строку и&nbsp;сжала отступы.</li>
       </ul></div>
-    </div>
-    <figure class="lu-ba" data-ba>
-      <div class="layer after"><div class="lu-ph alt"><span>Стало: компактный попап</span></div></div>
-      <div class="layer before"><div class="lu-ph"><span>Было: попап с&nbsp;прокруткой</span></div></div>
-      <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
-      <span class="lab l">Было</span><span class="lab r">Стало</span>
-      <input type="range" min="0" max="100" value="50" aria-label="Сравнить попап до и после">
-    </figure>
+      </div>
+      <figure class="lu-ba" data-ba>
+        <div class="layer after"><div class="lu-ph alt"><span>Стало: компактный попап</span></div></div>
+        <div class="layer before"><div class="lu-ph"><span>Было: попап с&nbsp;прокруткой</span></div></div>
+        <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+        <span class="lab l">Было</span><span class="lab r">Стало</span>
+        <input type="range" min="0" max="100" value="50" aria-label="Сравнить попап до и после">
+      </figure>
     <div class="lu-stats">
-      <div class="lu-stat"><b>1<small>экран</small></b><span>форма целиком видна без&nbsp;прокрутки</span></div>
-      <div class="lu-stat"><b>−1<small>поле</small></b><span>ИНН заполняется автоматически</span></div>
+        <div class="lu-stat"><b>1<small>экран</small></b><span>форма целиком видна без&nbsp;прокрутки</span></div>
+        <div class="lu-stat"><b>−1<small>поле</small></b><span>ИНН заполняется автоматически</span></div>
+      </div>
     </div>
-  </article>
-
-  <!-- 03 Карьерный лендинг -->
-  <article class="lu-task card" id="t3">
-    <header>
-      <div class="top"><span class="eyebrow"><span class="num">03</span>&nbsp;· Сайт · Карьера</span><div class="tags"><span>Web</span><span>Design System</span></div></div>
-      <h2>Собрала карьерный лендинг на&nbsp;дизайн-системе</h2>
-    </header>
-    <div class="lu-tr">
-      <div><h3>Задача</h3><p>Компании нужна страница для&nbsp;кандидатов. В&nbsp;черновике отступы и&nbsp;скругления были разными, а&nbsp;тексты обращались к&nbsp;читателю по-разному.</p></div>
-      <div class="sol"><h3>Решение</h3><ul>
-        <li>Пересобрала страницу на&nbsp;токенах и&nbsp;компонентах дизайн-системы.</li>
-        <li>Привела тексты к&nbsp;одному обращению на&nbsp;«вы».</li>
-        <li>Добавила открытые вакансии со&nbsp;ссылкой на&nbsp;hh.ru и&nbsp;сценарий «Нет подходящей вакансии?» с&nbsp;контактом HR.</li>
-        <li>Макеты по&nbsp;дизайн-системе собирала через Figma MCP.</li>
-      </ul></div>
-    </div>
-    <figure class="lu-shot">
-      <div class="lu-ph alt"><span>Главный экран лендинга, 1440</span></div>
-    </figure>
   </article>
 
   <!-- Соседние кейсы: назад и вперёд по кругу -->
@@ -168,7 +229,7 @@
 <nav class="m-bar" id="mBar" aria-label="Навигация по странице">
   <div class="m-tabs">
     <a href="index.html" data-t="home"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Главная</a>
-    <a href="#t1" data-t="tasks"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Задачи</a>
+    <a href="#idx" data-t="tasks"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg>Задачи</a>
     <button type="button" data-t="top" id="mUp"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>Наверх</button>
   </div>
   <a class="m-hire" href="https://t.me/polly_uiux" target="_blank" rel="noopener">Нанять</a>
@@ -207,7 +268,7 @@ document.querySelectorAll('[data-ba]').forEach(function(f){
     bar.classList.toggle('on',mq.matches&&hero.getBoundingClientRect().bottom<0)}
   addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();
   document.getElementById('mUp').addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
-  bar.querySelector('[data-t=tasks]').addEventListener('click',function(e){e.preventDefault();var el=document.getElementById('t1');scrollTo({top:el.getBoundingClientRect().top+scrollY-64,behavior:'smooth'})});
+  bar.querySelector('[data-t=tasks]').addEventListener('click',function(e){e.preventDefault();var el=document.getElementById('idx');scrollTo({top:el.getBoundingClientRect().top+scrollY-64,behavior:'smooth'})});
 })();
 </script>
 </body>
