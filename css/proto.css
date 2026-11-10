@@ -486,3 +486,11 @@ img.bu.in{opacity:1;filter:none;transform:none}
 @media (max-width:760px){
   .media.soon .m-tags span{height:26px!important;padding:0 10px!important;display:inline-flex!important;align-items:center;background:color-mix(in srgb,var(--card) 88%,transparent)!important;color:var(--ink-2)!important}
 }
+
+/* мобильная главная: строка компаний — аккуратнее отступ и тонкая обводка логотипов */
+@media (max-width:760px){
+  .m-brands .k{margin-bottom:12px!important}
+  .m-brands .stk img{width:32px;height:32px;box-shadow:0 0 0 1.5px var(--card)!important}
+  .m-brands .stk img + img{margin-left:-6px}
+  .m-brands .stk img:nth-child(3){box-shadow:0 0 0 1.5px var(--card),0 0 0 2.5px rgba(15,20,20,.06)!important}
+}
