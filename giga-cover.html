@@ -36,49 +36,32 @@ h1{font:500 28px/1.2 var(--font);letter-spacing:-.02em;margin:0 0 6px}
 .gc-orb{position:absolute;left:192px;top:590px;width:60px;height:60px;border-radius:50%;pointer-events:none;
   box-shadow:0 0 0 0 rgba(120,255,170,0);transition:box-shadow .8s ease,transform .8s cubic-bezier(.34,1.56,.64,1)}
 
-/* шторка чата */
-.gc-sh{position:absolute;z-index:3;left:8px;right:8px;bottom:-8px;height:300px;border-radius:36px 36px 0 0;
-  background:rgba(30,31,33,.86);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 -20px 40px rgba(0,0,0,.35);
-  transform:translateY(105%);transition:transform 1s cubic-bezier(.22,1,.36,1);padding:16px 22px 0;color:#fff}
-.gc-sh:before{content:"";display:block;width:44px;height:5px;border-radius:3px;background:rgba(255,255,255,.22);margin:0 auto 26px}
-.gc-u{margin-left:auto;width:max-content;max-width:80%;padding:13px 20px;border-radius:24px 24px 6px 24px;background:#fff;color:#111;font-size:20px;line-height:1.2;
-  opacity:0;transform:translateY(10px) scale(.96);transform-origin:100% 100%;transition:opacity .5s ease,transform .7s cubic-bezier(.22,1,.36,1)}
-.gc-a{display:flex;align-items:center;gap:12px;margin-top:22px;font-size:19px;line-height:1.25;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .7s cubic-bezier(.22,1,.36,1)}
-.gc-a b{flex:none;width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#B8FFC9 0%,#3BE38A 35%,#11A6C9 80%);box-shadow:0 0 18px rgba(80,255,170,.45);
-  animation:gcBreath 2.4s ease-in-out infinite}
-.gc-a span{position:relative;display:grid}
-.gc-a em{grid-area:1/1;font-style:normal;transition:opacity .5s ease}
-.gc-a .t1{background:linear-gradient(90deg,rgba(255,255,255,.45) 0%,#fff 40%,rgba(255,255,255,.45) 80%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gcShine 1.6s linear infinite}
-.gc-a .t2{opacity:0}
-.gc-a .t2:before{content:"✓";display:inline-grid;place-items:center;width:22px;height:22px;margin-right:8px;border-radius:50%;background:#2ECC71;color:#fff;font-size:13px;vertical-align:2px}
-@keyframes gcShine{from{background-position:150% 0}to{background-position:-50% 0}}
-@keyframes gcBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-
-/* «сканирование» в комнате: тонкие круги от колонки */
-.gc-rings{position:absolute;left:1465px;top:330px;width:0;height:0;pointer-events:none}
-.gc-rings i{position:absolute;left:-60px;top:-60px;width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(170,255,215,.7);
-  box-shadow:0 0 16px rgba(120,255,190,.25),inset 0 0 16px rgba(120,255,190,.12);opacity:0}
-.gc.scan .gc-rings i{animation:gcRing 2.4s cubic-bezier(.2,.6,.3,1) infinite}
-.gc.scan .gc-rings i:nth-child(2){animation-delay:.8s}
-.gc.scan .gc-rings i:nth-child(3){animation-delay:1.6s}
-@keyframes gcRing{0%{opacity:0;transform:scale(.6)}15%{opacity:.9}100%{opacity:0;transform:scale(5.2)}}
-
-/* состояния */
-.gc.listen .gc-orb{box-shadow:0 0 0 10px rgba(120,255,170,.18),0 0 40px 10px rgba(80,255,170,.35);transform:scale(1.06)}
-.gc.chat .gc-sh{transform:none}
-.gc.chat .gc-u{opacity:1;transform:none;transition-delay:.35s}
-.gc.ask .gc-a{opacity:1;transform:none}
-.gc.found .gc-a .t1{opacity:0}
-.gc.found .gc-a .t2{opacity:1}
-.gc.on .gc-dome i{opacity:1}
+/* экран ассистента поверх «Моего дома» — как в анимации из кейса */
+.gc-as{position:absolute;z-index:3;left:0;top:50px;right:0;bottom:0;background:#121212;opacity:0;transition:opacity .6s ease}
+.gc-as .gl{position:absolute;left:-20%;right:-20%;bottom:-10%;height:90%;opacity:0;transition:opacity 1s ease;
+  background:radial-gradient(60% 55% at 50% 100%,rgba(215,115,25,.7),rgba(150,70,10,.22) 55%,transparent 75%)}
+.gc-as .gl.t{background:radial-gradient(60% 55% at 50% 100%,rgba(40,175,165,.7),rgba(20,110,110,.24) 55%,transparent 75%)}
+.gc-gear{position:absolute;right:26px;top:40px;width:22px;height:22px;color:rgba(255,255,255,.4)}
+.gc-tx{position:absolute;left:26px;right:26px;top:96px;display:grid;font-size:19px;line-height:1.3;color:#EDEDED}
+.gc-tx em{grid-area:1/1;font-style:normal;transition:opacity .45s ease}
+.gc-tx .t2{opacity:0;background:linear-gradient(90deg,#EDEDED 0%,#EDEDED 35%,rgba(237,237,237,.3) 50%,#EDEDED 65%,#EDEDED 100%);background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}
+.gc-btn{position:absolute;top:520px;width:50px;height:50px;border-radius:50%;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.14);display:grid;place-items:center;color:rgba(255,255,255,.55)}
+.gc-btn.l{left:36px}.gc-btn.r{right:36px}
+.gc-cv{position:absolute;left:50%;top:545px;width:150px;height:150px;margin:-75px 0 0 -75px}
+.gc-home{position:absolute;left:50%;bottom:40px;width:130px;height:5px;margin-left:-65px;border-radius:3px;background:rgba(255,255,255,.75)}
+.gc.as .gc-as{opacity:1}
+.gc.or .gl.o{opacity:1}
+.gc.te .gl.t{opacity:1}
+.gc.chk .gc-tx .t1{opacity:0}
+.gc.chk .gc-tx .t2{opacity:1;animation:gcShine 1.8s linear infinite}
+@keyframes gcShine{from{background-position:100% 0}to{background-position:0 0}}
 @media (prefers-reduced-motion:reduce){.gc *{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Обложка Гигасправки — прототип</h1>
-  <p class="sub">Мой дом → чат «Не вижу лампочку» → лёгкое сканирование → лампочка загорается. Цикл ~10 секунд.</p>
+  <p class="sub">Укороченная анимация из кейса: «Мой дом» → оранжевый, затем голубой огонёк → «Не вижу лампочку» → «Проверяю состояние устройства». Цикл 8 секунд.</p>
   <div class="row">
     <div class="card"><span class="k">Десктоп · как в карточке кейса</span><div class="gc" data-gc></div></div>
     <div class="card m"><span class="k">Телефон</span><div class="gc" data-gc></div></div>
@@ -89,17 +72,20 @@ h1{font:500 28px/1.2 var(--font);letter-spacing:-.02em;margin:0 0 6px}
 <template id="gcT">
   <div class="gc-st">
     <img class="gc-bg" src="assets/img/giga/cover-v3/bg.webp" alt="">
-    <div class="gc-rings"><i></i><i></i><i></i></div>
     <div class="gc-scr">
       <img class="gc-boom" src="assets/img/giga/cover-v3/boom.webp" alt="">
       <i class="gc-ext"></i>
       <img class="gc-lamp" src="assets/img/giga/cover-v3/lamp.webp" alt="">
       <div class="gc-dome"><i></i></div>
       <img class="gc-tab" src="assets/img/giga/cover-v3/tab.webp" alt="">
-      <i class="gc-orb"></i>
-      <div class="gc-sh">
-        <div class="gc-u">Не вижу лампочку</div>
-        <div class="gc-a"><b></b><span><em class="t1">Ищу лампочку в сети</em><em class="t2">Лампочка снова в сети</em></span></div>
+      <div class="gc-as">
+        <i class="gl o"></i><i class="gl t"></i>
+        <svg class="gc-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/></svg>
+        <div class="gc-tx"><em class="t1"></em><em class="t2">Проверяю состояние устройства.</em></div>
+        <span class="gc-btn l"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+        <span class="gc-btn r"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+        <canvas class="gc-cv" width="300" height="300"></canvas>
+        <i class="gc-home"></i>
       </div>
     </div>
   </div>
@@ -108,17 +94,39 @@ h1{font:500 28px/1.2 var(--font);letter-spacing:-.02em;margin:0 0 6px}
 <script>
 (function(){
   var T=document.getElementById('gcT').innerHTML,all=[];
+  /* точки сферы (как в анимации ассистента): равномерно по поверхности */
+  var N=900,P=[];for(var i=0;i<N;i++){var y=1-2*(i+.5)/N,r=Math.sqrt(1-y*y),a=i*2.39996;P.push([Math.cos(a)*r,y,Math.sin(a)*r,Math.random()*2-1,Math.random()*2-1,Math.random()*2-1])}
+  function orb(cv){var c=cv.getContext('2d'),st={mix:0,col:0,t0:performance.now()};
+    function draw(now){if(!cv.isConnected)return;var t=(now-st.t0)/1000,R=66,cx=150,cy=150,rot=t*.6,k=st.mix,e=k*k*(3-2*k);
+      c.clearRect(0,0,300,300);
+      var r1=[226,150,60],r2=[120,225,210],cc=r1.map(function(v,j){return Math.round(v+(r2[j]-v)*st.col)});
+      for(var i=0;i<N;i++){var p=P[i],x=p[0]*Math.cos(rot)-p[2]*Math.sin(rot),z=p[0]*Math.sin(rot)+p[2]*Math.cos(rot),y=p[1];
+        /* до сборки — облако частиц, после — сфера */
+        var sx=x*(e)+p[3]*(1-e)*.9,sy=y*(e)+p[4]*(1-e)*1.1,sz=z*e+p[5]*(1-e);
+        var al=(.35+.65*((sz+1)/2))*(.45+.55*e)*st.vis;
+        c.fillStyle='rgba('+cc+','+al.toFixed(3)+')';c.fillRect(cx+sx*R-1,cy+sy*R-1,2,2)}
+      requestAnimationFrame(draw)}
+    st.vis=0;requestAnimationFrame(draw);return st}
   document.querySelectorAll('[data-gc]').forEach(function(g){
-    g.innerHTML=T;g.setAttribute('role','img');g.setAttribute('aria-label','Приложение «Мой дом»: пользователь пишет «Не вижу лампочку», ассистент находит её, лампочка снова горит');
+    g.innerHTML=T;g.setAttribute('role','img');g.setAttribute('aria-label','Приложение «Мой дом»: пользователь говорит ассистенту «Не вижу лампочку», ассистент проверяет состояние устройства');
     var st=g.querySelector('.gc-st');
     function fit(){var s=Math.max(g.clientWidth/1672,g.clientHeight/941);st.style.transform='scale('+s+') translate(-50%,-50%)'}
-    fit();new ResizeObserver(fit).observe(g);all.push(g)});
-  /* сюжет: [время от начала, классы] */
-  var steps=[[0,''],[1600,'listen'],[2300,'listen chat'],[3300,'chat ask scan'],[6200,'chat ask found'],[7400,'on'],[10400,'']],timers=[];
+    fit();new ResizeObserver(fit).observe(g);
+    all.push({g:g,o:orb(g.querySelector('.gc-cv')),t1:g.querySelector('.t1')})});
+  function tween(f,from,to,ms){var t0=performance.now();(function s(n){var k=Math.min(1,(n-t0)/ms);all.forEach(function(x){f(x,from+(to-from)*k)});if(k<1)requestAnimationFrame(s)})(t0)}
+  var timers=[];function at(ms,fn){timers.push(setTimeout(fn,ms))}
+  function cls(c){all.forEach(function(x){x.g.className='gc '+c})}
+  function type(txt,ms){for(var i=0;i<=txt.length;i++)(function(i){at(ms+i*55,function(){all.forEach(function(x){x.t1.textContent=txt.slice(0,i)})})})(i)}
   function run(){timers.forEach(clearTimeout);timers=[];
-    steps.forEach(function(s){timers.push(setTimeout(function(){all.forEach(function(g){g.className='gc '+s[1]})},s[0]))});
-    timers.push(setTimeout(run,steps[steps.length-1][0]+600))}
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches){all.forEach(function(g){g.className='gc on'})}else run();
+    cls('');all.forEach(function(x){x.t1.textContent='';x.o.mix=0;x.o.col=0;x.o.vis=0});
+    at(1400,function(){cls('as or');tween(function(x,v){x.o.vis=v},0,1,500)});          /* затемнение, оранжевые частицы */
+    at(1700,function(){tween(function(x,v){x.o.mix=v},0,1,900)});                       /* частицы собираются в сферу */
+    at(2600,function(){cls('as te');tween(function(x,v){x.o.col=v},0,1,700)});          /* оранжевый → голубой */
+    type('Не вижу лампочку',2800);
+    at(4300,function(){cls('as te chk')});                                             /* «Проверяю состояние устройства» */
+    at(6800,function(){cls('');tween(function(x,v){x.o.vis=v},1,0,500)});                /* обратно на «Мой дом» */
+    at(8000,run)}
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){all.forEach(function(x){x.o.mix=1;x.o.col=1;x.o.vis=1;x.t1.textContent='Не вижу лампочку'});cls('as te')}else run();
   document.getElementById('replay').onclick=run;
 })();
 </script>
