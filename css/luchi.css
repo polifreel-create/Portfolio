@@ -321,42 +321,45 @@
 
 /* =========================================================
    Задача 02 · «Главная: собрала вокруг ДМС для бизнеса»
-   Шаги по порядку: заголовок + «зачем», под ними крупно макеты было / стало
+   Как главы в Телемосте: слева карточка с текстом, справа экран с ползунком было / стало
    ========================================================= */
 .lu-kpi b small{margin-left:6px;font-size:28px;letter-spacing:-.02em}
 .lu-lead{margin:0;max-width:40em;font:400 18px/1.5 var(--font);color:var(--ink-2)}
-.lu-step{padding:32px;border-radius:var(--r-in);background:var(--chip);display:flex;flex-direction:column;gap:var(--s-5)}
-.lu-step-h{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:var(--s-6);align-items:start}
-.lu-step-h .t{display:flex;flex-direction:column;gap:var(--s-2)}
-.lu-step-h .n{font:var(--t-caption);letter-spacing:.06em;color:var(--lu-ink)}
-.lu-step-h h4{margin:0;font:500 24px/1.2 var(--font);letter-spacing:-.02em;color:var(--ink);text-wrap:balance}
-.lu-step-h p{margin:0;padding-top:22px;font:400 17px/1.5 var(--font);color:var(--ink-2)}
-.lu-cmp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s-3)}
-.lu-cmp.one{grid-template-columns:1fr}
-.lu-cmp figure{margin:0;display:flex;flex-direction:column;gap:10px}
-.lu-cmp .img{position:relative;overflow:hidden;border-radius:20px;background:#fff;aspect-ratio:16/10;box-shadow:0 1px 2px rgba(15,20,20,.05)}
-.lu-cmp.one .img{aspect-ratio:auto}
-.lu-cmp.r2 .img{aspect-ratio:2/1}
-.lu-cmp img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
-.lu-cmp.one img{height:auto}
-.lu-cmp .was img{filter:saturate(.4);opacity:.85;transition:filter .35s,opacity .35s}
-.lu-step:hover .lu-cmp .was img{filter:none;opacity:1}
-.lu-cmp .lab{flex:none;padding:5px 10px;border-radius:999px;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;background:rgba(15,20,20,.08);color:var(--ink-3)}
-.lu-cmp .now .lab{background:var(--lu);color:#fff}
-.lu-cmp figcaption{display:flex;align-items:center;gap:10px;padding:0 4px;font:400 15px/1.4 var(--font);color:var(--ink-3)}
-.lu-cmp .now figcaption{color:var(--ink-2)}
+.lu-ch{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:var(--s-3)}
+.lu-ch-copy{padding:32px;border-radius:var(--r-in);background:var(--chip);display:flex;flex-direction:column;gap:var(--s-4)}
+.lu-ch-copy .mode-title{margin:0;font:500 24px/1.2 var(--font);letter-spacing:-.025em;text-wrap:balance}
+.lu-ch-copy .mode-n{background:var(--card);color:var(--lu-ink)}
+.lu-why{margin:0;padding:18px 20px;border-radius:20px;background:var(--card);font:500 17px/1.4 var(--font);color:var(--ink)}
+.lu-why span{display:block;margin-bottom:6px;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--lu-ink)}
+.lu-ch-copy ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.lu-ch-copy li{position:relative;padding-left:20px;font:400 16px/1.45 var(--font);color:var(--ink-2)}
+.lu-ch-copy li::before{content:"";position:absolute;left:2px;top:.62em;width:7px;height:7px;border-radius:50%;background:var(--lu)}
+.lu-ch-stage{padding:24px;border-radius:var(--r-in);background:var(--chip);display:flex;align-items:center}
+.lu-ch-stage > figure{width:100%;margin:0}
+/* «было» приглушено серым, при перетаскивании видно контраст */
+.lu-ba-was{border-radius:20px;background:#fff;box-shadow:0 1px 2px rgba(15,20,20,.05)}
+.lu-ba-was > .layer img{object-position:top left}
+.lu-ba-was > .before img{filter:saturate(.3) brightness(1.03)}
+.lu-ba-was .lab{top:auto;bottom:12px}
+.lu-ba-was .lab.l{left:12px}.lu-ba-was .lab.r{right:12px}
+.lu-one{position:relative;overflow:hidden;border-radius:20px;background:#fff;box-shadow:0 1px 2px rgba(15,20,20,.05)}
+.lu-one img{display:block;width:100%;height:auto}
+.lu-one .lab{position:absolute;right:12px;top:12px;padding:6px 12px;border-radius:999px;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;background:var(--lu);color:#fff}
 .lu-also{margin:0;padding:0 4px;font:400 15px/1.5 var(--font);color:var(--ink-3)}
 .lu-also b{font-weight:500;color:var(--ink-2)}
-@media (max-width:1100px) and (min-width:761px){ .lu-step-h{grid-template-columns:1fr;gap:var(--s-3)} .lu-step-h p{padding-top:0} }
+@media (max-width:1100px) and (min-width:761px){ .lu-ch{grid-template-columns:1fr} }
 @media (max-width:760px){
   .lu-lead{font-size:15px}
-  .lu-step{padding:20px 16px;gap:var(--s-4)}
-  .lu-step-h{grid-template-columns:1fr;gap:var(--s-2);padding:0 4px}
-  .lu-step-h h4{font-size:20px}
-  .lu-step-h p{padding-top:0;font-size:14px;line-height:1.45}
-  .lu-cmp{grid-template-columns:1fr;gap:var(--s-4)}
-  .lu-cmp .img{border-radius:16px}
-  .lu-cmp figcaption{font-size:13px}
+  .lu-ch{grid-template-columns:1fr;gap:8px}
+  .lu-ch-stage{order:-1;padding:12px}
+  .lu-ch-copy{padding:20px;gap:var(--s-3)}
+  .lu-ch-copy .mode-title{font-size:20px}
+  .lu-why{padding:14px 16px;font-size:15px}
+  .lu-ch-copy li{font-size:14px}
+  .lu-ba-was,.lu-one{border-radius:14px}
+  .lu-ba-was .lab{top:auto;bottom:8px;padding:5px 10px}
+  .lu-ba-was .lab.l{left:8px}.lu-ba-was .lab.r{right:8px}
+  .lu-one .lab{top:8px;right:8px}
   .lu-kpi b small{font-size:16px;margin-left:4px}
   .lu-also{font-size:14px}
 }

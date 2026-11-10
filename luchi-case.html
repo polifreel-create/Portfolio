@@ -8,7 +8,7 @@
   <link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/v2.css?v=77">
   <link rel="stylesheet" href="css/case.css?v=73">
-  <link rel="stylesheet" href="css/luchi.css?v=25">
+  <link rel="stylesheet" href="css/luchi.css?v=28">
 </head>
 <body class="theme-lu">
 <div class="wrap">
@@ -156,7 +156,7 @@
       </figure>
     </div>
 
-    <!-- главная: собрана вокруг ДМС для бизнеса — шаги по порядку, крупные фрагменты макетов «было → стало» -->
+    <!-- главная: собрана вокруг ДМС для бизнеса — как главы в Телемосте: слева текст, справа экран с ползунком «было / стало» -->
     <div class="lu-block">
       <div class="lu-block-h"><h3 class="lu-sub">Главная: собрала вокруг ДМС для&nbsp;бизнеса</h3></div>
       <p class="lu-lead">ДМС для&nbsp;бизнеса&nbsp;— самый продаваемый продукт Лучей. Старая главная открывалась огромной обложкой, а&nbsp;продукты прятались в&nbsp;табах. Я&nbsp;убрала лишнее и&nbsp;шаг за&nbsp;шагом собрала страницу вокруг того, что&nbsp;нужно HR.</p>
@@ -166,41 +166,76 @@
         <div class="lu-kpi"><b>11→8</b><span>блоков: убрала декоративные блоки и&nbsp;дубли</span></div>
       </div>
 
-      <div class="lu-step">
-        <div class="lu-step-h"><div class="t"><span class="n">01</span><h4>Сократила хиро-баннер</h4></div><p>Огромная обложка занимала весь первый экран и&nbsp;ничего не&nbsp;давала. Теперь баннер компактный, и&nbsp;сразу видно, что&nbsp;ниже есть продукты и&nbsp;отзывы.</p></div>
-        <div class="lu-cmp">
-          <figure class="was"><div class="img"><img src="assets/img/luchi/main/old-fs.webp" alt="Первый экран старой главной: обложка на весь экран" loading="lazy" decoding="async"></div><figcaption><span class="lab">Было</span>Обложка на&nbsp;весь экран</figcaption></figure>
-          <figure class="now"><div class="img"><img src="assets/img/luchi/main/new-fs.webp" alt="Первый экран новой главной: компактный баннер, продукты и начало отзывов" loading="lazy" decoding="async"></div><figcaption><span class="lab">Стало</span>Баннер, продукты и&nbsp;начало отзывов</figcaption></figure>
+      <div class="lu-ch">
+        <div class="lu-ch-copy">
+          <h4 class="mode-title"><span class="mode-n">01</span>Сократила хиро-баннер</h4>
+          <p class="lu-why"><span>Зачем</span>Огромная обложка занимала весь первый экран и&nbsp;ничего не&nbsp;давала пользователю.</p>
+          <ul><li>Баннер стал компактнее</li><li>На&nbsp;первом экране сразу видны продукты и&nbsp;начало отзывов</li></ul>
+        </div>
+        <div class="lu-ch-stage">
+        <figure class="lu-ba lu-ba-was" data-ba style="aspect-ratio:16/10">
+          <div class="layer after"><img src="assets/img/luchi/main/new-fs.webp" alt="Первый экран новой главной: компактный баннер, продукты и начало отзывов" loading="lazy" decoding="async"></div>
+          <div class="layer before"><img src="assets/img/luchi/main/old-fs.webp" alt="Первый экран старой главной: обложка на весь экран" loading="lazy" decoding="async"></div>
+          <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+          <span class="lab l">Было</span><span class="lab r">Стало</span>
+          <input type="range" min="0" max="100" value="50" aria-label="Сравнить: было и стало">
+        </figure>
         </div>
       </div>
 
-      <div class="lu-step">
-        <div class="lu-step-h"><div class="t"><span class="n">02</span><h4>Вынесла главные продукты под&nbsp;баннер</h4></div><p>Чтобы не&nbsp;идти в&nbsp;каталог: 4&nbsp;карточки ведут в&nbsp;продукт за&nbsp;1&nbsp;клик. ДМС для&nbsp;бизнеса&nbsp;— первым, потому что&nbsp;это главный продукт и&nbsp;его должны найти сразу.</p></div>
-        <div class="lu-cmp r2">
-          <figure class="was"><div class="img"><img src="assets/img/luchi/main/old-path.webp" alt="Старый блок «Наши решения»: табы и карусель" loading="lazy" decoding="async"></div><figcaption><span class="lab">Было</span>Табы и&nbsp;карусель во&nbsp;втором блоке, бизнес&nbsp;— в&nbsp;4‑м табе</figcaption></figure>
-          <figure class="now"><div class="img"><img src="assets/img/luchi/main/new-cards.webp" alt="Новый первый экран: баннер и 4 карточки продуктов, ДМС для бизнеса первой" loading="lazy" decoding="async"></div><figcaption><span class="lab">Стало</span>4&nbsp;входа под&nbsp;баннером, ДМС для&nbsp;бизнеса первой</figcaption></figure>
+      <div class="lu-ch">
+        <div class="lu-ch-copy">
+          <h4 class="mode-title"><span class="mode-n">02</span>Вынесла главные продукты под&nbsp;баннер</h4>
+          <p class="lu-why"><span>Зачем</span>ДМС для&nbsp;бизнеса&nbsp;— главный продукт, его должны найти сразу, без&nbsp;похода в&nbsp;каталог.</p>
+          <ul><li>Было: табы и&nbsp;карусель, бизнес&nbsp;— в&nbsp;4‑м табе</li><li>Стало: 4&nbsp;карточки под&nbsp;баннером, ДМС для&nbsp;бизнеса первой</li><li>До&nbsp;продукта&nbsp;— 1&nbsp;клик</li></ul>
+        </div>
+        <div class="lu-ch-stage">
+        <figure class="lu-ba lu-ba-was" data-ba style="aspect-ratio:2/1">
+          <div class="layer after"><img src="assets/img/luchi/main/new-cards.webp" alt="Карточки продуктов под баннером, ДМС для бизнеса первой" loading="lazy" decoding="async"></div>
+          <div class="layer before"><img src="assets/img/luchi/main/old-path.webp" alt="Старый блок «Наши решения»: табы и карусель" loading="lazy" decoding="async"></div>
+          <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+          <span class="lab l">Было</span><span class="lab r">Стало</span>
+          <input type="range" min="0" max="100" value="50" aria-label="Сравнить: было и стало">
+        </figure>
         </div>
       </div>
 
-      <div class="lu-step">
-        <div class="lu-step-h"><div class="t"><span class="n">03</span><h4>Добавила отдельный блок для&nbsp;бизнеса</h4></div><p>Для HR, который пролистал ниже: условие «от&nbsp;2&nbsp;сотрудников» сразу на&nbsp;карточке и&nbsp;понятное действие «Рассчитать тариф» вместо «Подробнее».</p></div>
-        <div class="lu-cmp one">
-          <figure class="now"><div class="img"><img src="assets/img/luchi/main/new-biz.webp" alt="Блок «Решение ваших бизнес-задач»: ДМС для бизнеса и Платформа здоровья" loading="lazy" decoding="async"></div><figcaption><span class="lab">Новый блок</span>ДМС для&nbsp;бизнеса и&nbsp;Платформа здоровья</figcaption></figure>
+      <div class="lu-ch">
+        <div class="lu-ch-copy">
+          <h4 class="mode-title"><span class="mode-n">03</span>Добавила отдельный блок для&nbsp;бизнеса</h4>
+          <p class="lu-why"><span>Зачем</span>HR, который пролистал ниже, снова видит свой продукт и&nbsp;понятный следующий шаг.</p>
+          <ul><li>Условие «от&nbsp;2&nbsp;сотрудников» сразу на&nbsp;карточке</li><li>«Рассчитать тариф» вместо «Подробнее»</li></ul>
+        </div>
+        <div class="lu-ch-stage">
+        <figure class="lu-one"><img src="assets/img/luchi/main/new-biz.webp" alt="Блок «Решение ваших бизнес-задач»: ДМС для бизнеса и Платформа здоровья" loading="lazy" decoding="async"><span class="lab">Новый блок</span></figure>
         </div>
       </div>
 
-      <div class="lu-step">
-        <div class="lu-step-h"><div class="t"><span class="n">04</span><h4>Добавила отзывы компаний</h4></div><p>HR должны видеть, что&nbsp;с&nbsp;нами работают известные компании и&nbsp;они довольны. Истории с&nbsp;именем, должностью и&nbsp;видео стоят сразу после первого экрана.</p></div>
-        <div class="lu-cmp one">
-          <figure class="now"><div class="img"><img src="assets/img/luchi/main/new-rev.webp" alt="Блок «Истории успеха наших клиентов»" loading="lazy" decoding="async"></div><figcaption><span class="lab">Новый блок</span>Genotek, Faberlic, HRlink, TIMELESS, Cloud.ru</figcaption></figure>
+      <div class="lu-ch">
+        <div class="lu-ch-copy">
+          <h4 class="mode-title"><span class="mode-n">04</span>Добавила отзывы компаний</h4>
+          <p class="lu-why"><span>Зачем</span>HR должны видеть, что&nbsp;с&nbsp;нами работают известные компании и&nbsp;они довольны.</p>
+          <ul><li>Истории с&nbsp;именем, должностью и&nbsp;видео</li><li>Стоят сразу после первого экрана</li></ul>
+        </div>
+        <div class="lu-ch-stage">
+        <figure class="lu-one"><img src="assets/img/luchi/main/new-rev.webp" alt="Блок «Истории успеха наших клиентов»" loading="lazy" decoding="async"><span class="lab">Новый блок</span></figure>
         </div>
       </div>
 
-      <div class="lu-step">
-        <div class="lu-step-h"><div class="t"><span class="n">05</span><h4>Заменила статьи новостями о&nbsp;компании</h4></div><p>Показываем, что&nbsp;Лучи развиваются и&nbsp;активны: партнёрства с&nbsp;Т‑Банком и&nbsp;«Точкой», публикации в&nbsp;Forbes. Это убедительнее статей про&nbsp;SPF. Переключатель ведёт в&nbsp;блог.</p></div>
-        <div class="lu-cmp">
-          <figure class="was"><div class="img"><img src="assets/img/luchi/main/old-blog.webp" alt="Старый блок: статьи про SPF и капли от насморка" loading="lazy" decoding="async"></div><figcaption><span class="lab">Было</span>Lifestyle‑статьи</figcaption></figure>
-          <figure class="now"><div class="img"><img src="assets/img/luchi/main/new-news.webp" alt="Новый блок: новости о компании из СМИ" loading="lazy" decoding="async"></div><figcaption><span class="lab">Стало</span>Новости о&nbsp;компании и&nbsp;переход в&nbsp;блог</figcaption></figure>
+      <div class="lu-ch">
+        <div class="lu-ch-copy">
+          <h4 class="mode-title"><span class="mode-n">05</span>Заменила статьи новостями о&nbsp;компании</h4>
+          <p class="lu-why"><span>Зачем</span>Показываем, что&nbsp;Лучи развиваются и&nbsp;активны, а&nbsp;не&nbsp;только говорят, что&nbsp;с&nbsp;ними работают.</p>
+          <ul><li>Партнёрства с&nbsp;Т‑Банком и&nbsp;«Точкой», публикации в&nbsp;Forbes</li><li>Переключатель ведёт в&nbsp;блог</li></ul>
+        </div>
+        <div class="lu-ch-stage">
+        <figure class="lu-ba lu-ba-was" data-ba style="aspect-ratio:2.1/1">
+          <div class="layer after"><img src="assets/img/luchi/main/new-news.webp" alt="Новый блок: новости о компании из СМИ" loading="lazy" decoding="async"></div>
+          <div class="layer before"><img src="assets/img/luchi/main/old-blog.webp" alt="Старый блок: статьи про SPF и капли от насморка" loading="lazy" decoding="async"></div>
+          <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
+          <span class="lab l">Было</span><span class="lab r">Стало</span>
+          <input type="range" min="0" max="100" value="50" aria-label="Сравнить: было и стало">
+        </figure>
         </div>
       </div>
 
