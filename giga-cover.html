@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Прототип обложки Гигасправки</title>
+<meta name="robots" content="noindex">
+<link rel="preload" href="assets/fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/v2.css?v=85">
+<style>
+body{background:#EBEEF1;margin:0;font-family:var(--font);color:#0F1414}
+.wrap{max-width:980px;margin:0 auto;padding:40px 24px 80px}
+h1{font:500 28px/1.2 var(--font);letter-spacing:-.02em;margin:0 0 6px}
+.sub{margin:0 0 24px;color:#525A5B;font-size:15px}
+.row{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap}
+.card{background:#fff;border-radius:32px;padding:12px;flex:1 1 560px}
+.card.m{flex:0 0 340px}
+.k{font:500 13px/1 var(--font);color:#959C9E;margin:4px 8px 10px;display:block}
+.btn{margin-top:20px;height:44px;padding:0 20px;border:0;border-radius:999px;background:#0F1414;color:#fff;font:500 15px/1 var(--font);cursor:pointer}
+
+/* ===== сама обложка ===== */
+.gc{position:relative;aspect-ratio:900/493;border-radius:24px;overflow:hidden;background:#2a1a10}
+.gc-st{position:absolute;left:50%;top:50%;width:1672px;height:941px;transform-origin:0 0}
+.gc-bg{position:absolute;inset:0;width:100%;height:100%}
+.gc-scr{position:absolute;left:611px;top:257px;width:443px;height:684px;border-radius:52px 52px 0 0;overflow:hidden}
+.gc-scr img{position:absolute;display:block}
+.gc-boom{left:17px;top:183px;width:412px;height:184px}
+.gc-lamp{left:17px;top:369px;width:412px;height:137px}
+.gc-ext{position:absolute;left:19px;top:503px;width:406px;height:200px;background:rgb(21,21,22)}
+.gc-dome{position:absolute;left:126px;top:454px;width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle at 50% 28%,#4A4A4A 0%,#363636 45%,#2A2A2A 100%)}
+.gc-dome i{position:absolute;inset:0;border-radius:50%;opacity:0;
+  background:radial-gradient(circle at 50% 26%,#F4E7AE 0%,#E3CD86 42%,#CDB167 78%,#BC9E55 100%);
+  box-shadow:0 0 70px 14px rgba(255,212,120,.38);transition:opacity 1.6s ease}
+.gc-tab{left:0;top:579px;width:443px;height:105px}
+.gc-orb{position:absolute;left:192px;top:590px;width:60px;height:60px;border-radius:50%;pointer-events:none;
+  box-shadow:0 0 0 0 rgba(120,255,170,0);transition:box-shadow .8s ease,transform .8s cubic-bezier(.34,1.56,.64,1)}
+
+/* шторка чата */
+.gc-sh{position:absolute;z-index:3;left:8px;right:8px;bottom:-8px;height:300px;border-radius:36px 36px 0 0;
+  background:rgba(30,31,33,.86);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 -20px 40px rgba(0,0,0,.35);
+  transform:translateY(105%);transition:transform 1s cubic-bezier(.22,1,.36,1);padding:16px 22px 0;color:#fff}
+.gc-sh:before{content:"";display:block;width:44px;height:5px;border-radius:3px;background:rgba(255,255,255,.22);margin:0 auto 26px}
+.gc-u{margin-left:auto;width:max-content;max-width:80%;padding:13px 20px;border-radius:24px 24px 6px 24px;background:#fff;color:#111;font-size:20px;line-height:1.2;
+  opacity:0;transform:translateY(10px) scale(.96);transform-origin:100% 100%;transition:opacity .5s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.gc-a{display:flex;align-items:center;gap:12px;margin-top:22px;font-size:19px;line-height:1.25;opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.gc-a b{flex:none;width:32px;height:32px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#B8FFC9 0%,#3BE38A 35%,#11A6C9 80%);box-shadow:0 0 18px rgba(80,255,170,.45);
+  animation:gcBreath 2.4s ease-in-out infinite}
+.gc-a span{position:relative;display:grid}
+.gc-a em{grid-area:1/1;font-style:normal;transition:opacity .5s ease}
+.gc-a .t1{background:linear-gradient(90deg,rgba(255,255,255,.45) 0%,#fff 40%,rgba(255,255,255,.45) 80%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gcShine 1.6s linear infinite}
+.gc-a .t2{opacity:0}
+.gc-a .t2:before{content:"✓";display:inline-grid;place-items:center;width:22px;height:22px;margin-right:8px;border-radius:50%;background:#2ECC71;color:#fff;font-size:13px;vertical-align:2px}
+@keyframes gcShine{from{background-position:150% 0}to{background-position:-50% 0}}
+@keyframes gcBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+
+/* «сканирование» в комнате: тонкие круги от колонки */
+.gc-rings{position:absolute;left:1465px;top:330px;width:0;height:0;pointer-events:none}
+.gc-rings i{position:absolute;left:-60px;top:-60px;width:120px;height:120px;border-radius:50%;border:1.5px solid rgba(170,255,215,.7);
+  box-shadow:0 0 16px rgba(120,255,190,.25),inset 0 0 16px rgba(120,255,190,.12);opacity:0}
+.gc.scan .gc-rings i{animation:gcRing 2.4s cubic-bezier(.2,.6,.3,1) infinite}
+.gc.scan .gc-rings i:nth-child(2){animation-delay:.8s}
+.gc.scan .gc-rings i:nth-child(3){animation-delay:1.6s}
+@keyframes gcRing{0%{opacity:0;transform:scale(.6)}15%{opacity:.9}100%{opacity:0;transform:scale(5.2)}}
+
+/* состояния */
+.gc.listen .gc-orb{box-shadow:0 0 0 10px rgba(120,255,170,.18),0 0 40px 10px rgba(80,255,170,.35);transform:scale(1.06)}
+.gc.chat .gc-sh{transform:none}
+.gc.chat .gc-u{opacity:1;transform:none;transition-delay:.35s}
+.gc.ask .gc-a{opacity:1;transform:none}
+.gc.found .gc-a .t1{opacity:0}
+.gc.found .gc-a .t2{opacity:1}
+.gc.on .gc-dome i{opacity:1}
+@media (prefers-reduced-motion:reduce){.gc *{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Обложка Гигасправки — прототип</h1>
+  <p class="sub">Мой дом → чат «Не вижу лампочку» → лёгкое сканирование → лампочка загорается. Цикл ~10 секунд.</p>
+  <div class="row">
+    <div class="card"><span class="k">Десктоп · как в карточке кейса</span><div class="gc" data-gc></div></div>
+    <div class="card m"><span class="k">Телефон</span><div class="gc" data-gc></div></div>
+  </div>
+  <button class="btn" id="replay" type="button">Проиграть сначала</button>
+</div>
+
+<template id="gcT">
+  <div class="gc-st">
+    <img class="gc-bg" src="assets/img/giga/cover-v3/bg.webp" alt="">
+    <div class="gc-rings"><i></i><i></i><i></i></div>
+    <div class="gc-scr">
+      <img class="gc-boom" src="assets/img/giga/cover-v3/boom.webp" alt="">
+      <i class="gc-ext"></i>
+      <img class="gc-lamp" src="assets/img/giga/cover-v3/lamp.webp" alt="">
+      <div class="gc-dome"><i></i></div>
+      <img class="gc-tab" src="assets/img/giga/cover-v3/tab.webp" alt="">
+      <i class="gc-orb"></i>
+      <div class="gc-sh">
+        <div class="gc-u">Не вижу лампочку</div>
+        <div class="gc-a"><b></b><span><em class="t1">Ищу лампочку в сети</em><em class="t2">Лампочка снова в сети</em></span></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+(function(){
+  var T=document.getElementById('gcT').innerHTML,all=[];
+  document.querySelectorAll('[data-gc]').forEach(function(g){
+    g.innerHTML=T;g.setAttribute('role','img');g.setAttribute('aria-label','Приложение «Мой дом»: пользователь пишет «Не вижу лампочку», ассистент находит её, лампочка снова горит');
+    var st=g.querySelector('.gc-st');
+    function fit(){var s=Math.max(g.clientWidth/1672,g.clientHeight/941);st.style.transform='scale('+s+') translate(-50%,-50%)'}
+    fit();new ResizeObserver(fit).observe(g);all.push(g)});
+  /* сюжет: [время от начала, классы] */
+  var steps=[[0,''],[1600,'listen'],[2300,'listen chat'],[3300,'chat ask scan'],[6200,'chat ask found'],[7400,'on'],[10400,'']],timers=[];
+  function run(){timers.forEach(clearTimeout);timers=[];
+    steps.forEach(function(s){timers.push(setTimeout(function(){all.forEach(function(g){g.className='gc '+s[1]})},s[0]))});
+    timers.push(setTimeout(run,steps[steps.length-1][0]+600))}
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){all.forEach(function(g){g.className='gc on'})}else run();
+  document.getElementById('replay').onclick=run;
+})();
+</script>
+</body>
+</html>
