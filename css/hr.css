@@ -134,7 +134,7 @@
 @media (max-width:760px){ .logos img{width:44px;height:44px} }
 
 /* аватары внахлёст */
-.logos.stack{gap:0;flex-wrap:nowrap}
+.logos.stack{gap:0;flex-wrap:nowrap;margin-top:auto}
 .logos.stack > *{flex:none;width:60px;height:60px;border-radius:50%;margin-left:-16px;box-shadow:0 0 0 4px var(--chip),0 6px 14px rgba(16,24,32,.08);object-fit:cover}
 .logos.stack > :first-child{margin-left:0}
 .logos.stack .ph{background:linear-gradient(160deg,#E9EEF3,#DCE3EA)}
