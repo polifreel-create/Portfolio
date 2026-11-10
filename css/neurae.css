@@ -251,8 +251,7 @@
   .ne-idea{min-height:150px;padding:var(--s-4)}
   .ne-idea b{font-size:17px}
   .ne-goals{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .ne-theses{gap:6px}
-  .ne-theses span{font-size:13px;line-height:1.2;min-height:30px;padding:6px 12px}
+  .ne-theses span{font-size:14px;min-height:38px;padding:8px 14px}
 }
 @media (prefers-reduced-motion:reduce){ .ne-page{transition:none} .ne-bar div i,.ne-stage .ph img{transition:none} }
 
