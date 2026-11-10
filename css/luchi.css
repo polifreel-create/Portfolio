@@ -320,31 +320,39 @@
 @media (max-width:760px){ .lu-index ol,.lu-loop.lu-loop3{grid-template-columns:1fr} }
 
 /* =========================================================
-   Задача 02 · «Главная: что изменилось» — цифры + карточки «было → стало»
+   Задача 02 · «Главная: собрала вокруг ДМС для бизнеса»
+   Цифры + строки «текст слева · фрагменты макетов было/стало справа»
    ========================================================= */
 .lu-kpi b small{margin-left:6px;font-size:28px;letter-spacing:-.02em}
-.lu-chg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s-3)}
-.lu-c{padding:28px;border-radius:var(--r-in);background:var(--chip);display:flex;flex-direction:column;gap:var(--s-2)}
-.lu-c .k{align-self:flex-start;margin-bottom:var(--s-2);padding:5px 10px;border-radius:10px;background:#fff;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
-.lu-c h4{margin:0 0 var(--s-3);font:500 20px/1.3 var(--font);letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
-.lu-c.hot{background:var(--lu-soft)}
-.lu-c.hot .k{color:var(--lu-ink)}
-.lu-c dl{margin:auto 0 0;display:flex;flex-direction:column}
-.lu-c dl > div{display:grid;grid-template-columns:52px 1fr;gap:10px;align-items:baseline;padding:12px 0;border-top:1px solid rgba(15,20,20,.07)}
-.lu-c dt{font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
-.lu-c dd{margin:0;font:400 15px/1.4 var(--font);color:var(--ink-3)}
-.lu-c .now dt{color:var(--lu-ink)}
-.lu-c .now dd{color:var(--ink);font-weight:500}
-.lu-c dl > div:last-child{padding-bottom:0}
+.lu-lead{margin:0;max-width:40em;font:400 18px/1.5 var(--font);color:var(--ink-2)}
+.lu-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.4fr);gap:var(--s-5);align-items:center;
+  padding:28px;border-radius:var(--r-in);background:var(--chip)}
+.lu-row-t{display:flex;flex-direction:column;gap:var(--s-2)}
+.lu-row-t .n{font:var(--t-caption);letter-spacing:.06em;color:var(--lu-ink)}
+.lu-row-t h4{margin:0;font:500 20px/1.3 var(--font);letter-spacing:-.01em;color:var(--ink);text-wrap:balance}
+.lu-row-t p{margin:0;font:400 15px/1.45 var(--font);color:var(--ink-2)}
+.lu-cmp{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.lu-cmp.one{grid-template-columns:1fr}
+.lu-cmp figure{position:relative;margin:0;overflow:hidden;border-radius:20px;background:#fff;aspect-ratio:2/1;box-shadow:0 1px 2px rgba(15,20,20,.05)}
+.lu-cmp.one figure{aspect-ratio:auto}
+.lu-cmp img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
+.lu-cmp.one img{height:auto}
+.lu-cmp .was img{filter:saturate(.4);opacity:.85;transition:filter .35s,opacity .35s}
+.lu-row:hover .lu-cmp .was img{filter:none;opacity:1}
+.lu-cmp .lab{position:absolute;right:10px;top:10px;padding:5px 10px;border-radius:999px;font:var(--t-caption);letter-spacing:.06em;text-transform:uppercase;
+  background:rgba(15,20,20,.72);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.lu-cmp .now .lab{background:var(--lu)}
 .lu-also{margin:0;padding:0 4px;font:400 15px/1.5 var(--font);color:var(--ink-3)}
 .lu-also b{font-weight:500;color:var(--ink-2)}
-@media (max-width:1100px) and (min-width:761px){ .lu-chg{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:1100px) and (min-width:761px){ .lu-row{grid-template-columns:1fr;gap:var(--s-4)} }
 @media (max-width:760px){
-  .lu-chg{grid-template-columns:1fr;gap:8px}
-  .lu-c{padding:20px}
-  .lu-c h4{font-size:18px;margin-bottom:var(--s-2)}
-  .lu-c dd{font-size:14px}
-  .lu-c dl > div{padding:10px 0}
+  .lu-lead{font-size:15px}
+  .lu-row{grid-template-columns:1fr;gap:var(--s-3);padding:16px 16px 16px}
+  .lu-row-t{padding:4px 4px 0}
+  .lu-row-t h4{font-size:18px}
+  .lu-row-t p{font-size:14px}
+  .lu-cmp{grid-template-columns:1fr;gap:8px}
+  .lu-cmp figure{border-radius:16px}
   .lu-kpi b small{font-size:16px;margin-left:4px}
   .lu-also{font-size:14px}
 }
