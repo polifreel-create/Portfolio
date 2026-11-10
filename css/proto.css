@@ -474,6 +474,10 @@ img.bu.in{opacity:1;filter:none;transform:none}
 
 /* мобильная версия: под лидом — строка про AI; контакты сверху убраны (они есть в нижнем таб-баре) */
 @media (max-width:760px){
-  .intro .bio p.b-ai{display:block!important;margin-top:8px;font-size:15px!important;line-height:1.45!important;color:var(--ink-2)}
+  /* лид и строка про AI — один абзац одним стилем */
+  .intro .bio{display:block!important}
+  .intro .bio p.lead,.intro .bio p.b-ai{display:inline!important;margin:0!important}
+  .intro .bio p.b-ai{font-size:var(--fs-t)!important;line-height:1.35!important;letter-spacing:-.015em!important;font-weight:500!important;color:var(--ink)!important}
+  .intro .bio p.b-ai::before{content:" "}
   .intro .contacts{display:none!important}
 }
