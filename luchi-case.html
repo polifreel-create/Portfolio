@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="css/v2.css?v=77">
   <link rel="stylesheet" href="css/case.css?v=73">
   <link rel="stylesheet" href="css/luchi.css?v=31">
+  <link rel="stylesheet" href="css/hr.css?v=1">
 </head>
 <body class="theme-lu">
 <div class="wrap">
-
   <nav class="crumbs" aria-label="Навигация">
     <a href="index.html" onclick="if(document.referrer&&new URL(document.referrer).origin===location.origin){history.back();return false}"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>Главная</a>
     <span class="sep">/</span><span>Лучи</span>
@@ -32,83 +32,95 @@
     </dl>
   </header>
 
+  <!-- Кратко -->
+  <section class="brief card" aria-labelledby="brief-title">
+    <header class="sec-head"><h2 id="brief-title">Кратко</h2><span class="read-time">30&nbsp;секунд на&nbsp;чтение</span></header>
+    <div class="brief-grid">
+      <div class="brief-item"><h3>Проблема</h3><p class="big"><em>2,5&nbsp;млн&nbsp;₽</em> теряла компания на&nbsp;ошибках в&nbsp;кабинете</p><p>Жалоб от&nbsp;HR много, но&nbsp;никто не&nbsp;разбирался, каких и&nbsp;почему.</p></div>
+      <div class="brief-item"><h3>Исследование</h3><p class="big"><em>12&nbsp;интервью</em> с&nbsp;HR и&nbsp;поддержкой</p><p>Плюс доска поддержки, разговоры с&nbsp;разработкой и&nbsp;разбор конкурентов. Нашла 16&nbsp;проблем.</p></div>
+      <div class="brief-item accent"><h3>Результат</h3><p class="big"><em>3&nbsp;задачи</em> сразу ушли в&nbsp;дизайн</p><p>Приоритизировала по&nbsp;деньгам, рискам и&nbsp;ручной работе и&nbsp;принесла на&nbsp;груминг. Редизайн в&nbsp;работе.</p></div>
+    </div>
+  </section>
 
-  <!-- 01 HR‑кабинет — кейс про процесс, сканируется за полминуты; макеты пока под NDA -->
-  <article class="lu-task card" id="t1">
-    <header>
-      <div class="top"><span class="eyebrow">Исследование</span><div class="tags"><span>B2B</span><span>Research</span></div></div>
-      <h2>Разобралась, на&nbsp;что&nbsp;жалуются клиенты HR‑кабинета, и&nbsp;собрала план редизайна</h2>
-    </header>
-
-    <!-- контекст и проблема: проблема сразу с деньгами -->
-    <div class="lu-intro">
-      <div class="ctx">
-        <span class="k">Контекст</span>
-        <p>HR‑кабинет&nbsp;— сервис, где&nbsp;HR компаний-клиентов прикрепляют сотрудников к&nbsp;ДМС и&nbsp;работают с&nbsp;документами.</p>
-      </div>
-      <div class="pain">
-        <img src="assets/img/luchi/hr-rush.webp" alt="" width="400" height="400" loading="lazy">
-        <span class="k">Проблема</span>
-        <b>2,5&nbsp;млн&nbsp;₽</b>
-        <p>теряла компания на&nbsp;ошибках в&nbsp;возрастных коэффициентах. Жалоб на&nbsp;кабинет много, но&nbsp;никто не&nbsp;разбирался, каких и&nbsp;почему.</p>
+  <!-- 01 Контекст -->
+  <section class="hr-sec card" id="t1">
+    <header><span class="eyebrow"><span class="num">01</span>&nbsp;· Контекст</span><h2>HR компаний‑клиентов каждый день работают в&nbsp;кабинете</h2>
+      <p class="lead2">Через кабинет они прикрепляют сотрудников к&nbsp;ДМС, загружают списки и&nbsp;подписывают документы. Если что‑то не&nbsp;получается&nbsp;— пишут аккаунт‑менеджеру.</p></header>
+    <div class="hr-ctx">
+      <figure class="hr-photo"><img src="assets/img/luchi/hr-photo.webp" alt="HR‑специалист работает за ноутбуком" loading="lazy"><figcaption>HR компании‑клиента</figcaption></figure>
+      <div class="hr-jobs">
+        <div class="hr-job"><div class="sc"><div class="row"><span class="av"></span><i class="m"></i></div><i class="s"></i><span class="btn"></span></div><div><b>Прикрепить сотрудника</b><span>к&nbsp;программе ДМС</span></div></div>
+        <div class="hr-job"><div class="sc"><div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="ok"></span></div><div><b>Загрузить список</b><span>десятки сотрудников из&nbsp;Excel</span></div></div>
+        <div class="hr-job"><div class="sc"><i class="m"></i><i></i><i class="s"></i><span class="ok"></span></div><div><b>Подписать документы</b><span>договоры и&nbsp;допсоглашения</span></div></div>
       </div>
     </div>
+  </section>
 
-    <!-- моя работа: цифры и шаги -->
-    <div class="lu-block">
-      <h3 class="lu-sub">Как шла работа</h3>
-      <div class="lu-kpis">
-        <div class="lu-kpi"><b>12</b><span>интервью: 7&nbsp;HR клиентов и&nbsp;5&nbsp;сотрудников поддержки</span></div>
-        <div class="lu-kpi"><b>16</b><span>проблем собрала в&nbsp;бэклог и&nbsp;проверила по&nbsp;источникам</span></div>
-        <div class="lu-kpi"><b>3</b><span>задачи сразу ушли в&nbsp;дизайн после груминга</span></div>
-      </div>
-      <ol class="lu-flow">
-        <li><span class="n">01</span><b>Разработка</b><div class="lu-chips"><span>Частые ошибки</span><span>Их причины</span></div></li>
-        <li><span class="n">02</span><b>Доска поддержки</b><div class="lu-chips"><span class="lg"><i style="background:#FC3F1D;color:#fff">Я</i>Яндекс Трекер</span><span>Обращения</span><span>Баги</span></div></li>
-        <li><span class="n">03</span><b>Интервью</b><div class="lu-chips"><span class="lg"><i style="background:#0C73FE;color:#fff">A</i>Авиасейлс</span><span class="lg"><i style="background:#025164;color:#fff">О</i>Островок</span><span>+5 компаний</span><span>Поддержка</span></div></li>
-        <li><span class="n">04</span><b>Конкуренты</b><div class="lu-chips"><span class="lg"><i style="background:#E4312B;color:#fff">В</i>ВСК</span><span class="lg"><i style="background:#0B4DA2;color:#fff">С</i>СОГАЗ</span><span class="lg"><i style="background:#0F1414;color:#fff">Z</i>Zetta</span><span class="lg"><i style="background:#EF3124;color:#fff">А</i>Альфа</span></div></li>
-        <li><span class="n">05</span><b>Приоритеты</b><div class="lu-chips"><span>Деньги</span><span>Ручная работа</span><span>Риски</span></div></li>
-        <li class="pic" aria-hidden="true"><img src="assets/img/luchi/hr-call.webp" alt="" width="400" height="400" loading="lazy"></li>
-      </ol>
-    </div>
-
-    <!-- находки: заголовок говорит всё, текст — одна строка -->
-    <div class="lu-block">
-      <div class="lu-block-h"><h3 class="lu-sub">Что нашла</h3></div>
-      <div class="lu-probs">
-        <div class="lu-prob hot"><span class="k">Выручка</span><h4>Возраст не&nbsp;сверяется с&nbsp;тарифом</h4><p>Компания недополучает страховую премию.</p></div>
-        <div class="lu-prob hot"><span class="k">Юридический риск</span><h4>Изменения в&nbsp;запретный период</h4><p>Каждый случай разбирают юристы.</p></div>
-        <div class="lu-prob"><span class="k">Ручная работа</span><h4>Кнопка «Прикрепить» прячется</h4><p>Крупные клиенты шлют Excel аккаунту.</p></div>
-        <div class="lu-prob"><span class="k">Ручная работа</span><h4>«Номер занят»</h4><p>Самый частый повод написать в&nbsp;поддержку.</p></div>
-        <div class="lu-prob"><span class="k">Ручная работа</span><h4>Excel молчит об&nbsp;ошибках</h4><p>Клиенты бросают загрузку после первой неудачи.</p></div>
-        <div class="lu-prob"><span class="k">Ручная работа</span><h4>Нет отмены действия</h4><p>Исправляет только поддержка.</p></div>
+  <!-- 02 Проблема -->
+  <section class="hr-sec card">
+    <header><span class="eyebrow"><span class="num">02</span>&nbsp;· Проблема</span><h2>Жалоб много, но&nbsp;никто не&nbsp;разбирался, каких и&nbsp;почему</h2></header>
+    <div class="hr-prob">
+      <div class="pain"><span class="k">Цена проблемы</span><b>2,5&nbsp;млн&nbsp;₽</b><p>потеряла компания на&nbsp;ошибках в&nbsp;возрастных коэффициентах&nbsp;— кабинет их&nbsp;не&nbsp;проверял.</p></div>
+      <div class="hr-chat">
+        <span class="hr-draft">Цитаты — черновик, заменим на&nbsp;реальные</span>
+        <div class="bub">Не&nbsp;нашла, где прикрепить сотрудника, отправила Excel аккаунту в&nbsp;Telegram.<small>HR, ИТ‑компания</small></div>
+        <div class="bub r">Каждый день вручную перепривязываем сотрудников с&nbsp;«занятым» номером.<small>Аккаунт‑менеджер Лучей</small></div>
+        <div class="bub">Загрузила список, кабинет ничего не&nbsp;сказал. Потом выяснилось, что половина не&nbsp;прикрепилась.<small>HR, ритейл</small></div>
       </div>
     </div>
+  </section>
 
-    <!-- груминг -->
-    <div class="lu-block">
-      <div class="lu-block-h"><h3 class="lu-sub">Что принесла на&nbsp;груминг</h3></div>
+  <!-- 03 Исследование -->
+  <section class="hr-sec card">
+    <header><span class="eyebrow"><span class="num">03</span>&nbsp;· Исследование</span><h2>Поговорила со&nbsp;всеми, кто сталкивается с&nbsp;кабинетом</h2></header>
+    <div class="hr-res">
+      <div class="c2"><span class="k">Интервью</span><span class="bn">7</span><h4>HR из&nbsp;компаний‑клиентов</h4><div class="logos"><span>А</span><span>О</span><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span></div></div>
+      <div class="c2"><span class="k">Интервью</span><span class="bn">5</span><h4>Аккаунт‑менеджеров и&nbsp;поддержки</h4><div class="logos"><span>●</span><span>●</span><span>●</span><span>●</span><span>●</span></div></div>
+      <div class="c2"><span class="k">Разработка</span><span class="bn">16</span><h4>проблем собрала в&nbsp;бэклог</h4><p style="margin:0;font:400 15px/1.45 var(--font);color:var(--ink-2)">Частые ошибки и&nbsp;их&nbsp;причины проверила с&nbsp;разработчиками.</p></div>
+      <div class="c3"><span class="k">Доска поддержки · Яндекс Трекер</span><h4>Посчитала, с&nbsp;чем чаще всего приходят</h4><div class="board"><div><i class="r"></i><i class="r"></i><i></i></div><div><i class="r"></i><i class="y"></i><i></i><i></i></div><div><i class="y"></i><i></i></div><div><i></i><i></i><i class="y"></i></div></div></div>
+      <div class="c3"><span class="k">Конкуренты</span><h4>Что есть у&nbsp;других страховых</h4>
+        <table class="cmpt"><tr><th></th><th>Массовая загрузка</th><th>Проверка данных</th><th>Отмена</th></tr>
+        <tr><td><i></i>ВСК</td><td class="y">✓</td><td class="n">✕</td><td class="n">✕</td></tr>
+        <tr><td><i></i>СОГАЗ</td><td class="y">✓</td><td class="y">✓</td><td class="n">✕</td></tr>
+        <tr><td><i></i>Zetta</td><td class="y">✓</td><td class="n">✕</td><td class="y">✓</td></tr>
+        <tr class="us"><td><i style="background:var(--lu)"></i>Лучи</td><td class="y">✓</td><td class="n">✕</td><td class="n">✕</td></tr></table>
+        <span class="hr-draft">Галочки — черновик, сверим</span></div>
+      <div class="c6"><span class="k">Как шла работа</span><div class="hr-steps"><span>Разработка</span><i>→</i><span>Доска поддержки</span><i>→</i><span>12&nbsp;интервью</span><i>→</i><span>Конкуренты</span><i>→</i><span>Приоритеты</span><i>→</i><span class="on">Груминг</span></div></div>
+    </div>
+  </section>
+
+  <!-- 04 Находки -->
+  <section class="hr-sec card">
+    <header><span class="eyebrow"><span class="num">04</span>&nbsp;· Находки</span><h2>Шесть проблем, которые стоят денег и&nbsp;ручной работы</h2></header>
+    <div class="hr-finds"><div class="hr-find hot"><div class="sc"><div class="row"><span class="av"></span><i class="m"></i></div><div class="tag"><i></i><i class="c"></i></div><i class="s"></i><span class="toast" style="background:#fff;box-shadow:inset 0 0 0 1.5px var(--lu)"></span></div><span class="k">Выручка</span><h4>Возраст не&nbsp;сверяется с&nbsp;тарифом</h4><p>Компания недополучает страховую премию.</p></div><div class="hr-find hot"><div class="sc"><div class="cal"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="lk"></i><i class="lk"></i><i class="lk"></i><i class="lk"></i><i class="lk"></i><i class="lk"></i><i class="lk"></i><i></i><i></i><i></i><i></i></div><span class="lock"></span></div><span class="k">Юридический риск</span><h4>Изменения в&nbsp;запретный период</h4><p>Каждый случай разбирают юристы.</p></div><div class="hr-find"><div class="sc"><i class="m"></i><i></i><i class="s"></i><span class="ghost"></span></div><span class="k">Ручная работа</span><h4>Кнопка «Прикрепить» прячется</h4><p>Крупные клиенты шлют Excel аккаунту.</p></div><div class="hr-find"><div class="sc"><div class="row"><span class="av"></span><i class="m"></i></div><i class="s"></i><span class="toast"></span></div><span class="k">Ручная работа</span><h4>«Номер занят»</h4><p>Самый частый повод написать в&nbsp;поддержку.</p></div><div class="hr-find"><div class="sc"><div class="grid"><i></i><i></i><i></i><i></i><i></i><i></i><i class="bad"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="bad"></i><i></i><i></i></div></div><span class="k">Ручная работа</span><h4>Excel молчит об&nbsp;ошибках</h4><p>Клиенты бросают загрузку после первой неудачи.</p></div><div class="hr-find"><div class="sc"><i class="m"></i><i class="s"></i><span class="undo"></span></div><span class="k">Ручная работа</span><h4>Нет отмены действия</h4><p>Исправляет только поддержка.</p></div></div>
+  </section>
+
+  <!-- 05 Приоритеты -->
+  <section class="hr-sec card">
+    <header><span class="eyebrow"><span class="num">05</span>&nbsp;· Приоритеты</span><h2>Разложила проблемы по&nbsp;деньгам, рискам и&nbsp;частоте и&nbsp;принесла на&nbsp;груминг</h2></header>
+    <div class="hr-mx">
+      <div class="mx"><svg viewBox="0 0 520 420" role="img" aria-label="Матрица приоритетов: деньги и риск по вертикали, частота по горизонтали">
+<rect x="44" y="16" width="230.0" height="180.0" rx="14" fill="#FFF1F1"/>
+<rect x="274.0" y="16" width="230.0" height="180.0" rx="14" fill="#FFE3E4"/>
+<rect x="44" y="196.0" width="230.0" height="180.0" rx="14" fill="#fff"/>
+<rect x="274.0" y="196.0" width="230.0" height="180.0" rx="14" fill="#fff"/>
+<text x="44" y="406" font-family="Onest,sans-serif" font-size="13" fill="#959C9E">редко</text>
+<text x="504" y="406" text-anchor="end" font-family="Onest,sans-serif" font-size="13" fill="#959C9E">часто →</text>
+<text x="14" y="376" transform="rotate(-90 14 376)" font-family="Onest,sans-serif" font-size="13" fill="#959C9E">деньги и риск →</text>
+<g><circle cx="297.0" cy="59.19999999999999" r="17" fill="#FF7377" stroke="none" stroke-width="2"/><text x="297.0" y="64.19999999999999" text-anchor="middle" font-family="Onest,sans-serif" font-size="14" font-weight="600" fill="#fff">1</text></g><g><circle cx="159.0" cy="95.19999999999999" r="17" fill="#FF7377" stroke="none" stroke-width="2"/><text x="159.0" y="100.19999999999999" text-anchor="middle" font-family="Onest,sans-serif" font-size="14" font-weight="600" fill="#fff">2</text></g><g><circle cx="421.2" cy="177.99999999999997" r="17" fill="#fff" stroke="#E0484E" stroke-width="2"/><text x="421.2" y="182.99999999999997" text-anchor="middle" font-family="Onest,sans-serif" font-size="14" font-weight="600" fill="#E0484E">3</text></g><g><circle cx="458.0" cy="250.0" r="17" fill="#fff" stroke="#E0484E" stroke-width="2"/><text x="458.0" y="255.0" text-anchor="middle" font-family="Onest,sans-serif" font-size="14" font-weight="600" fill="#E0484E">4</text></g><g><circle cx="366.0" cy="275.2" r="17" fill="#fff" stroke="#E0484E" stroke-width="2"/><text x="366.0" y="280.2" text-anchor="middle" font-family="Onest,sans-serif" font-size="14" font-weight="600" fill="#E0484E">5</text></g><g><circle cx="228.0" cy="296.8" r="17" fill="#fff" stroke="#E0484E" stroke-width="2"/><text x="228.0" y="301.8" text-anchor="middle" font-family="Onest,sans-serif" font-size="14" font-weight="600" fill="#E0484E">6</text></g></svg></div>
       <div class="lu-prio">
         <div class="go"><h4><b>3</b>Рисуем сейчас</h4><ul><li>Видимая кнопка «Прикрепить»</li><li>Несколько продуктов в&nbsp;одной форме</li><li>Понятные ошибки Excel</li></ul></div>
-        <div><h4><b>5</b>В&nbsp;аналитику</h4><ul><li>Запретный период</li><li>Повторное прикрепление</li><li>Логи Excel</li><li>Отмена действий</li><li>Перевод между юрлицами</li></ul></div>
-        <div><h4><b>3</b>Откладываем</h4><ul><li>Финансы по&nbsp;всем юрлицам</li><li>Обратная связь из&nbsp;кабинета</li><li>Роли и&nbsp;доступы</li></ul></div>
+        <div><h4><b>5</b>В&nbsp;аналитику</h4><ul><li>Запретный период, повторное прикрепление, логи Excel, отмена действий, перевод между юрлицами</li></ul></div>
+        <div><h4><b>3</b>Откладываем</h4><ul><li>Финансы по&nbsp;юрлицам, обратная связь, роли и&nbsp;доступы</li></ul></div>
       </div>
     </div>
+  </section>
 
-    <!-- было / стало: макеты под NDA, поэтому размыто -->
-    <div class="lu-block">
-      <div class="lu-block-h"><h3 class="lu-sub">Было / стало</h3></div>
-      <figure class="lu-ba lu-ba-nda" data-ba>
-        <div class="layer after"><div class="lu-skel new" aria-hidden="true"><i class="sb"></i><div class="mn"><i class="hd"></i><i class="fl"></i><i class="rw"></i><i class="rw"></i><i class="rw"></i><i class="rw"></i><i class="rw"></i><i class="rw"></i><i class="rw"></i></div></div></div>
-        <div class="layer before"><img src="assets/img/luchi/cover/hr-cover-blur.webp" alt="" loading="lazy" decoding="async"></div>
-        <span class="line"><span class="knob"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg></span></span>
-        <span class="lab l">Было</span><span class="lab r">Стало</span>
-        <span class="lu-lock"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>NDA · покажу на&nbsp;встрече</span>
-        <input type="range" min="0" max="100" value="50" aria-label="Сравнить HR‑кабинет до и после (размыто, под NDA)">
-      </figure>
-    </div>
-  </article>
-
+  <!-- 06 Что дальше -->
+  <section class="hr-sec card">
+    <header><span class="eyebrow"><span class="num">06</span>&nbsp;· Что дальше</span><h2>Редизайн в&nbsp;работе: первые три задачи уже в&nbsp;макетах</h2></header>
+    <div class="hr-next"><img src="assets/img/luchi/cover/hr-cover-blur.webp" alt="" loading="lazy"><span class="lu-lock"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2.5"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>NDA · покажу на&nbsp;встрече</span></div>
+  </section>
 
   <!-- Соседние кейсы: назад и вперёд по кругу -->
   <nav class="case-nav card" aria-label="Другие кейсы">
