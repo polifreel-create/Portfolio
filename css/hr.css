@@ -125,3 +125,10 @@
   .hr-find h4{font-size:18px}
   .hr-next{min-height:240px}
 }
+
+/* логотипы‑бейджи */
+.logos img{width:56px;height:56px;border-radius:50%;box-shadow:0 4px 12px rgba(16,24,32,.06)}
+.cmpt td:first-child img{display:inline-block;vertical-align:middle;margin-right:8px;width:24px;height:24px;border-radius:50%}
+.hr-tool{display:inline-flex;align-items:center;gap:8px}
+.hr-tool img{width:24px;height:24px;border-radius:50%}
+@media (max-width:760px){ .logos img{width:44px;height:44px} }
