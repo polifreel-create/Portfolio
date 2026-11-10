@@ -481,3 +481,8 @@ img.bu.in{opacity:1;filter:none;transform:none}
   .intro .bio p.b-ai::before{content:" "}
   .intro .contacts{display:none!important}
 }
+
+/* обложка NEURAE («Обложка скоро»): теги на мобильном такие же, как у остальных кейсов */
+@media (max-width:760px){
+  .media.soon .m-tags span{height:26px!important;padding:0 10px!important;display:inline-flex!important;align-items:center;background:color-mix(in srgb,var(--card) 88%,transparent)!important;color:var(--ink-2)!important}
+}
