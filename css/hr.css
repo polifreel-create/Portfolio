@@ -258,3 +258,11 @@
 .hr-p{margin:0;font:400 15px/1.5 var(--font);color:var(--ink-2)}
 .hr-ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
 .hr-ul li{height:32px;padding:0 12px;border-radius:999px;background:var(--card);display:inline-flex;align-items:center;font:400 14px/1 var(--font)}
+
+/* Кратко: проблемы · роль · стратегия */
+.hr-brief .brief-item{min-height:0}
+.hr-brief ul{margin:var(--s-5) 0 0;padding:0;list-style:none;display:grid;gap:12px}
+.hr-brief li{position:relative;padding-left:18px;font:400 16px/1.5 var(--font);color:var(--ink)}
+.hr-brief li::before{content:"";position:absolute;left:1px;top:.6em;width:7px;height:7px;border-radius:50%;background:var(--lu)}
+.hr-brief .brief-item p{margin-top:var(--s-5);font:400 16px/1.5 var(--font);color:var(--ink)}
+.hr-brief .brief-item p+p{margin-top:12px;color:var(--ink-2)}
