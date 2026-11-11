@@ -253,3 +253,8 @@
   .hr-tour-list b{font:500 16px/1.3 var(--font)}
   .hr-tour-list span{font:400 14px/1.4 var(--font);color:var(--ink-2);margin-top:2px}
 }
+
+/* 07 · результаты */
+.hr-p{margin:0;font:400 15px/1.5 var(--font);color:var(--ink-2)}
+.hr-ul{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.hr-ul li{height:32px;padding:0 12px;border-radius:999px;background:var(--card);display:inline-flex;align-items:center;font:400 14px/1 var(--font)}
