@@ -209,3 +209,12 @@
   .hr-dec li{font-size:14px}
 }
 .hr-dec .d.an .dt::before{background:var(--lu-azure)}.hr-dec .d.ps .dt::before{background:#B7BFC5}
+
+/* приоритеты: низкая детализация — только точки, смысл в карточках справа */
+.mx-grid .q{position:relative;min-height:0;padding:0;border-radius:20px}
+.mx-grid i{position:absolute;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;box-shadow:0 0 0 4px #fff,0 4px 10px rgba(16,24,32,.12)}
+.mx-grid .q.hot i{box-shadow:0 0 0 4px var(--lu-soft),0 4px 10px rgba(16,24,32,.12)}
+.mx-grid i.go{background:var(--lu)}.mx-grid i.an{background:var(--lu-azure)}.mx-grid i.ps{background:#B7BFC5}
+.hr-mx .mx{gap:12px}
+.mx-x{padding-left:34px}
+@media (max-width:760px){ .mx-grid{min-height:300px} .mx-grid i{width:14px;height:14px;margin:-7px 0 0 -7px} }
