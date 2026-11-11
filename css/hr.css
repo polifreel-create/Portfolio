@@ -229,3 +229,10 @@
 /* выравнивание: иконка Трекера не раздувает строку, доска начинается вровень с шапкой таблицы */
 .hr-tool img{margin:-6px 0}
 .hr-res .c3 .board{margin-top:6px}
+/* значки «есть/нет»: маленькие тонкие линии без заливки */
+.cmpt i.ck,.cmpt i.no,.cmpt tr.us i.no{width:16px;height:16px;border-radius:0;background:none}
+.cmpt i.ck::after{left:5px;top:1px;width:5px;height:10px;border-width:0 1.75px 1.75px 0;border-color:var(--lu-azure);opacity:.85}
+.cmpt i.no::before,.cmpt i.no::after{content:"";position:absolute;left:2px;right:2px;top:7.25px;height:1.5px;border-radius:2px;background:#C3CACF}
+.cmpt i.no::before{transform:rotate(45deg)}
+.cmpt i.no::after{transform:rotate(-45deg)}
+.cmpt i.no::before,.cmpt i.no::after{left:3.5px;right:3.5px;height:1.5px;background:#CDD3D8}
