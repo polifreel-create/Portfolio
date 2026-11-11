@@ -3,8 +3,6 @@
    (фото, мини‑схемы UI без текста, бенто, матрица приоритетов)
    ========================================================= */
 /* ===== прототип HR‑кабинета: визуальный ритм как в Гигасправке ===== */
-.theme-lu .brief-item.accent::before{background:radial-gradient(closest-side,rgba(255,115,119,.7),rgba(255,154,139,.25) 60%,transparent)}
-.theme-lu .brief-item.accent .big em{background:linear-gradient(115deg,#FFB199,#FF7377 60%,#FF9A8B);-webkit-background-clip:text;background-clip:text}
 .hr-sec{padding:var(--pad);display:flex;flex-direction:column;gap:var(--s-6);scroll-margin-top:64px}
 .hr-sec > header{display:flex;flex-direction:column;gap:var(--s-3)}
 .hr-sec h2{margin:0;font:var(--t-h2);letter-spacing:-.03em;max-width:22em;text-wrap:balance}
@@ -31,7 +29,7 @@
 .sc .grid i.bad{background:#FFC9CB;box-shadow:inset 0 0 0 1.5px var(--lu)}
 .sc .ok{position:absolute;right:10px;bottom:10px;width:22px;height:22px;border-radius:50%;background:#2FB36B}
 .sc .ok::after{content:"";position:absolute;left:7px;top:5px;width:6px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
-.sc .toast{position:absolute;left:10px;right:10px;bottom:10px;height:24px;border-radius:10px;background:#0F1414;display:flex;align-items:center;gap:6px;padding:0 8px}
+.sc .toast{position:absolute;left:10px;right:10px;bottom:10px;height:24px;border-radius:10px;background:var(--lu-azure);display:flex;align-items:center;gap:6px;padding:0 8px}
 .sc .toast::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--lu)}
 .sc .toast::after{content:"";flex:1;height:5px;border-radius:4px;background:rgba(255,255,255,.35)}
 .sc .ghost{margin-top:auto;align-self:flex-end;width:34%;height:18px;border-radius:9px;background:#F4F6F8;opacity:.6}
@@ -137,7 +135,7 @@
 .hr-ava.stack{gap:0;flex-wrap:nowrap;margin-top:auto}
 .hr-ava.stack > *{flex:none;width:60px;height:60px;border-radius:50%;margin-left:-16px;box-shadow:0 0 0 4px var(--chip),0 6px 14px rgba(16,24,32,.08);object-fit:cover}
 .hr-ava.stack > :first-child{margin-left:0}
-.hr-ava.stack .ph{background:linear-gradient(160deg,#E9EEF3,#DCE3EA)}
+.hr-ava.stack .ph{background:#E3E8EC}
 .hr-ava.stack .more{display:grid;place-items:center;background:#fff;font:500 16px/1 var(--font);color:var(--ink-2)}
 @media (max-width:760px){ .hr-ava.stack > *{width:48px;height:48px;margin-left:-12px} }
 /* .hr-ava, а не .logos: у главной сайта свой .logos с display:block на мобильном */
@@ -163,3 +161,10 @@
   .hr-mx .mx-svg{min-height:0}
   .board i{min-height:40px;padding:7px}
 }
+
+/* цвета Лучей без градиентов: коралловый и азурный, плоские */
+.theme-lu .brief-item.accent{background:var(--lu-azure)}
+.theme-lu .brief-item.accent::before{display:none}
+.theme-lu .brief-item.accent .big em{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--lu)}
+.theme-lu .brief-item.accent h3{color:rgba(255,255,255,.6)}
+.theme-lu .brief-item .big em{background:none;-webkit-background-clip:border-box;background-clip:border-box;color:var(--lu)}

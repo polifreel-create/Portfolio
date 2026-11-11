@@ -6,7 +6,7 @@
 
 .theme-lu{
   --lu:#FF7377; --lu-ink:#E0484E; --lu-soft:#FFF1F1;
-  --lu-grad:linear-gradient(135deg,#FF9A8B 0%,#FF7377 55%,#F2556A 100%);
+  --lu-grad:#FF7377;
   --sber:var(--lu); --sber-ink:var(--lu-ink); --sber-grad:var(--lu-grad);
 }
 .theme-lu .next .arrow{background:var(--lu)}
@@ -50,9 +50,9 @@
 
 /* заглушка, пока нет скриншота: видно, какой кадр сюда нужен */
 .lu-ph{position:absolute;inset:0;display:grid;place-items:center;padding:var(--s-5);text-align:center;
-  background:radial-gradient(120% 90% at 85% 10%,rgba(255,115,119,.22),transparent 60%),linear-gradient(160deg,#FBF4F4,#F4F7FA);
+  background:#F4F7FA;
   font:500 15px/1.4 var(--font);color:var(--ink-3)}
-.lu-ph.alt{background:radial-gradient(120% 90% at 15% 90%,rgba(255,115,119,.30),transparent 60%),linear-gradient(200deg,#FFF1F1,#F4F7FA)}
+.lu-ph.alt{background:var(--lu-soft)}
 .lu-ph span{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.8);backdrop-filter:blur(8px)}
 
 /* до / после — тянем разделитель */
@@ -261,7 +261,7 @@
 /* было / стало под NDA: оба слоя размыты, сверху замок */
 .lu-ba-nda > .layer{filter:blur(10px);transform:scale(1.04)}
 .lu-ba-nda > .before img{filter:none}
-.lu-ba-nda .after{background:linear-gradient(180deg,#EAF6FF,#F7FAFC)}
+.lu-ba-nda .after{background:#EAF6FF}
 .lu-lock{position:absolute;left:50%;top:50%;translate:-50% -50%;z-index:3;height:44px;padding:0 18px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;
   background:rgba(15,20,20,.82);color:#fff;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 8px 24px rgba(15,20,20,.2);
   font:500 15px/1 var(--font);white-space:nowrap;pointer-events:none}
