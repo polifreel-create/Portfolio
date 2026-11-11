@@ -218,3 +218,14 @@
 .hr-mx .mx{gap:12px}
 .mx-x{padding-left:34px}
 @media (max-width:760px){ .mx-grid{min-height:300px} .mx-grid i{width:14px;height:14px;margin:-7px 0 0 -7px} }
+
+/* таблица конкурентов: аккуратные значки вместо ✓/✕ */
+.cmpt i.ck,.cmpt i.no{display:inline-block;vertical-align:middle;width:22px;height:22px;border-radius:50%;position:relative}
+.cmpt i.ck{background:var(--lu-azure)}
+.cmpt i.ck::after{content:"";position:absolute;left:8px;top:5px;width:5px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.cmpt i.no{background:#EEF1F4}
+.cmpt i.no::after{content:"";position:absolute;left:7px;right:7px;top:10px;height:2px;border-radius:2px;background:#B7BFC5}
+.cmpt tr.us i.no{background:#fff}
+/* выравнивание: иконка Трекера не раздувает строку, доска начинается вровень с шапкой таблицы */
+.hr-tool img{margin:-6px 0}
+.hr-res .c3 .board{margin-top:6px}
