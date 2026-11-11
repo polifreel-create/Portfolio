@@ -146,3 +146,20 @@
 /* цитаты: логотип компании вместо серого кружка */
 .bub small:has(img)::before{display:none}
 .bub small img{width:20px;height:20px;border-radius:50%;flex:none}
+
+/* матрица приоритетов: выше и подробнее */
+.hr-mx .mx{display:flex;padding:20px}
+.hr-mx .mx-svg{display:block;width:100%;height:100%;min-height:520px}
+/* доска поддержки: на всю высоту карточки */
+.hr-res .c3:has(.board){display:flex;flex-direction:column}
+.board{flex:1;align-items:stretch;filter:none}
+.board > div{gap:8px}
+.board i{position:relative;height:auto;min-height:52px;padding:10px;display:flex;flex-direction:column;gap:6px;background:#F4F6F8}
+.board i b,.board i em{display:block;height:6px;border-radius:4px;background:rgba(15,20,20,.10)}
+.board i b{width:80%}.board i em{width:45%}
+.board i::after{content:"";position:absolute;right:8px;bottom:8px;width:12px;height:12px;border-radius:50%;background:#DDE3E8}
+@media (max-width:760px){
+  .hr-mx .mx{padding:10px}
+  .hr-mx .mx-svg{min-height:0}
+  .board i{min-height:40px;padding:7px}
+}
