@@ -236,3 +236,20 @@
 .cmpt i.no::before{transform:rotate(45deg)}
 .cmpt i.no::after{transform:rotate(-45deg)}
 .cmpt i.no::before,.cmpt i.no::after{left:3.5px;right:3.5px;height:1.5px;background:#CDD3D8}
+
+/* 06 · экран «Что нового» — встроенный тур */
+.hr-tour{position:relative;aspect-ratio:16/10;border-radius:var(--r-in);overflow:hidden;background:#012028}
+.hr-tour iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.hr-tour-foot{display:flex;align-items:center;justify-content:space-between;gap:var(--s-4);flex-wrap:wrap}
+.hr-tour-foot .lu-live{align-self:auto}
+.hr-tour-foot .hint{font:400 14px/1.4 var(--font);color:var(--ink-3)}
+.hr-tour-list{display:none}
+@media (max-width:760px){
+  .hr-tour{border-radius:20px}
+  .hr-tour-foot .hint{display:none}
+  .hr-tour-list{display:grid;gap:8px;margin:0;padding:0;list-style:none;counter-reset:t}
+  .hr-tour-list li{counter-increment:t;display:grid;grid-template-columns:28px 1fr;column-gap:12px;padding:14px 16px;border-radius:20px;background:var(--lu-soft)}
+  .hr-tour-list li::before{content:counter(t);grid-row:span 2;width:28px;height:28px;border-radius:50%;background:var(--lu);color:#fff;display:grid;place-items:center;font:500 13px/1 var(--font)}
+  .hr-tour-list b{font:500 16px/1.3 var(--font)}
+  .hr-tour-list span{font:400 14px/1.4 var(--font);color:var(--ink-2);margin-top:2px}
+}
