@@ -142,3 +142,7 @@
 @media (max-width:760px){ .hr-ava.stack > *{width:48px;height:48px;margin-left:-12px} }
 /* .hr-ava, а не .logos: у главной сайта свой .logos с display:block на мобильном */
 .hr-ava.stack > *{flex:none}
+
+/* цитаты: логотип компании вместо серого кружка */
+.bub small:has(img)::before{display:none}
+.bub small img{width:20px;height:20px;border-radius:50%;flex:none}
