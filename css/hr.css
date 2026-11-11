@@ -140,3 +140,11 @@
 .logos.stack .ph{background:linear-gradient(160deg,#E9EEF3,#DCE3EA)}
 .logos.stack .more{display:grid;place-items:center;background:#fff;font:500 16px/1 var(--font);color:var(--ink-2)}
 @media (max-width:760px){ .logos.stack > *{width:48px;height:48px;margin-left:-12px} }
+
+/* HR: лица участников + компании под ними */
+.hr-who{margin-top:auto;display:flex;flex-direction:column;gap:14px}
+.hr-who .logos.stack{margin-top:0}
+.hr-cos{display:flex;align-items:center;gap:10px;font:400 14px/1.35 var(--font);color:var(--ink-3);white-space:nowrap}
+.hr-cos .cos{display:flex;flex:none}
+.hr-cos img{width:28px;height:28px;border-radius:50%;margin-left:-8px;box-shadow:0 0 0 3px var(--chip)}
+.hr-cos img:first-child{margin-left:0}
