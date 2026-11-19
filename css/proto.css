@@ -497,3 +497,6 @@ img.bu.in{opacity:1;filter:none;transform:none}
 /* котика убрали — место под него в футере больше не держим */
 .finale .k{padding-right:0!important;min-height:0!important}
 @media (min-width:761px){ .finale .acts{padding-right:0} }
+/* Гигасправка: спокойная обложка — колонка, лампочки и интерфейс Гигачата */
+.case .media > img.gc-cv{object-position:50% 45%}
+@media (max-width:760px){ .cases-track .case .media > img.gc-cv{object-position:42% 50%} }
