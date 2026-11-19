@@ -579,3 +579,8 @@ h1,h2,h3{text-wrap:balance}
 /* обложка в шапке всегда на всю ширину карточки: в Safari пропорция + max-height могли сужать её и оставлять пустоту справа */
 .hero .shot{width:100%;align-self:stretch;box-sizing:border-box}
 .hero .shot > img,.hero .shot > video{width:100%;height:100%;object-fit:cover;display:block}
+/* Гигасправка: в шапке средний план — телефон целиком, колонки по бокам */
+.hero .shot.gc-shot{aspect-ratio:1340/680}
+.hero .shot.gc-shot img{object-position:50% 70%}
+@media (max-width:760px){ .hero .shot.gc-shot{aspect-ratio:4/3} .hero .shot.gc-shot img{object-position:50% 70%} }
+.hero .shot.gc-shot{max-height:none}
