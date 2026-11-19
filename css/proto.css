@@ -494,3 +494,6 @@ img.bu.in{opacity:1;filter:none;transform:none}
   .m-brands .stk img + img{margin-left:-6px}
   .m-brands .stk img:nth-child(3){box-shadow:0 0 0 1.5px var(--card),0 0 0 2.5px rgba(15,20,20,.06)!important}
 }
+/* котика убрали — место под него в футере больше не держим */
+.finale .k{padding-right:0!important;min-height:0!important}
+@media (min-width:761px){ .finale .acts{padding-right:0} }
