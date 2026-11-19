@@ -588,3 +588,6 @@ h1,h2,h3{text-wrap:balance}
 .hero .shot.gc-shot{aspect-ratio:1095/615}
 .hero .shot.gc-shot img{object-position:50% 50%}
 @media (max-width:760px){ .hero .shot.gc-shot{aspect-ratio:1095/615} }
+/* шапка Гигасправки: тот же кадр, что на главной, целиком */
+.hero .shot.gc-shot{aspect-ratio:1672/941;background:#D9D9D7}
+@media (max-width:760px){ .hero .shot.gc-shot{aspect-ratio:1672/941} }
