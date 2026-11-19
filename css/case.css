@@ -591,3 +591,5 @@ h1,h2,h3{text-wrap:balance}
 /* шапка Гигасправки: тот же кадр, что на главной, целиком */
 .hero .shot.gc-shot{aspect-ratio:1672/941;background:#D9D9D7}
 @media (max-width:760px){ .hero .shot.gc-shot{aspect-ratio:1672/941} }
+.hero .shot.gc-shot{aspect-ratio:1113/626}
+@media (max-width:760px){ .hero .shot.gc-shot{aspect-ratio:1113/626} }
