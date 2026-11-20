@@ -421,3 +421,8 @@
   .ne-review{padding:20px}
   .ne-review p{font-size:16px!important;line-height:1.5!important}
 }
+
+/* единая шапка: знак бренда того же размера, что иконки других кейсов; телефоны под пропорцию 16:9 и 4:3 */
+.ne-mark{width:88px;height:88px;border-radius:30px}
+.ne-hero-ph{bottom:-22%}
+@media (max-width:760px){ .ne-mark{width:64px;height:64px;border-radius:22px} .ne-hero-ph{width:50%;right:5%;bottom:-30%} }
