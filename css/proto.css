@@ -500,3 +500,6 @@ img.bu.in{opacity:1;filter:none;transform:none}
 /* Гигасправка: новая обложка — телефон «Мой дом» между колонками SberBoom */
 .case .media > img.gc-cv{object-position:50% 50%}
 @media (max-width:760px){ .cases-track .case .media > img.gc-cv{object-position:49% 50%} }
+/* HR-кабинет: обложка — ноутбук на сером фоне */
+.case .media.lu-media.lu-hr{background:#BAB6B4}
+.case .media.lu-hr > img,.cases-track .case .media.lu-media.lu-hr > img{object-position:50% 50%}
