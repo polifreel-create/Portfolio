@@ -789,3 +789,6 @@ body{letter-spacing:-.01em}
   .m-row em{font-size:var(--fs-c)!important}
   .w-t{font-size:var(--fs-ui)!important;line-height:1.3!important}
 }
+
+/* последний элемент карточки не добавляет свой отступ снизу — у всех карточек отступ одинаковый (40 / 24) */
+.block > .chips:last-child{margin-bottom:0}
