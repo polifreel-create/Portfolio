@@ -608,5 +608,5 @@ h1,h2,h3{text-wrap:balance}
 .crumbs{min-height:68px}
 @media (max-width:760px){ .crumbs{min-height:66px} }
 .brief .sec-head h2 .spark{width:28px;height:28px;flex:none;transform:translateY(-3px)}
-.hero .shot.lu-hr-shot{background:#BAB6B4}
+.hero .shot.lu-hr-shot{background:#ACC4D7}
 .hero .shot.lu-hr-shot img{object-position:50% 50%}
